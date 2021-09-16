@@ -1,10 +1,10 @@
 const compress_images = require('compress-images');
+const fs = require('fs');
 
-// We will be compressing images [jpg] with two algorithms, [webp] and [jpg];
+fs.rmdirSync("_site/images/", { recursive: true });
 
-//[jpg] ---to---> [webp]
 compress_images(
-  "_site/images/**/*.{jpg,JPG,jpeg,JPEG}",
+  "images/**/*.{jpg,JPG,jpeg,JPEG}",
   "_site/images/",
   { compress_force: false, statistic: true, autoupdate: true },
   false,
