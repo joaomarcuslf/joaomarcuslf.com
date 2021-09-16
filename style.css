@@ -11282,6 +11282,311 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   padding: 3rem 1.5rem 6rem;
 }
 
+@font-face {
+  font-family: Montserrat;
+  src: url("/fonts/Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: FiraCode;
+  src: url("/fonts/FiraCode-Medium.ttf");
+}
+
+#preload-0 {
+  background: url(images/404.jpg);
+  display: none;
+}
+
+#preload-1 {
+  background: url(images/background-computer.jpg);
+  display: none;
+}
+
+#preload-2 {
+  background: url(images/config.png);
+  display: none;
+}
+
+#preload-3 {
+  background: url(images/first-post.png);
+  display: none;
+}
+
+#preload-4 {
+  background: url(images/jekyll-logo.png);
+  display: none;
+}
+
+#preload-5 {
+  background: url(images/jekyll-now-theme-screenshot.jpg);
+  display: none;
+}
+
+#preload-6 {
+  background: url(images/joaomarcuslf-coder.png);
+  display: none;
+}
+
+#preload-7 {
+  background: url(images/joaomarcuslf-coder.svg);
+  display: none;
+}
+
+#preload-8 {
+  background: url(images/joaomarcuslf-coffee.png);
+  display: none;
+}
+
+#preload-9 {
+  background: url(images/joaomarcuslf-coffee.svg);
+  display: none;
+}
+
+#preload-10 {
+  background: url(images/joaomarcuslf-none.png);
+  display: none;
+}
+
+#preload-11 {
+  background: url(images/joaomarcuslf-none.svg);
+  display: none;
+}
+
+#preload-12 {
+  background: url(images/joaomarcuslf-profile.jpg);
+  display: none;
+}
+
+#preload-13 {
+  background: url(images/logo-hex.png);
+  display: none;
+}
+
+#preload-14 {
+  background: url(images/logo-hex.svg);
+  display: none;
+}
+
+#preload-15 {
+  background: url(images/logo-typo.png);
+  display: none;
+}
+
+#preload-16 {
+  background: url(images/placeholder.png);
+  display: none;
+}
+
+#preload-17 {
+  background: url(images/step1.gif);
+  display: none;
+}
+
+#preload-18 {
+  background: url(images/companies/arctouch.png);
+  display: none;
+}
+
+#preload-19 {
+  background: url(images/companies/b2w-digital.png);
+  display: none;
+}
+
+#preload-20 {
+  background: url(images/companies/faeterj-rio.png);
+  display: none;
+}
+
+#preload-21 {
+  background: url(images/companies/minds-at-work.png);
+  display: none;
+}
+
+#preload-22 {
+  background: url(images/companies/working-minds.png);
+  display: none;
+}
+
+#preload-23 {
+  background: url(images/companies/zoox.jpeg);
+  display: none;
+}
+
+#preload-24 {
+  background: url(images/icons/close-icon.png);
+  display: none;
+}
+
+#preload-25 {
+  background: url(images/icons/dropdown-icon.png);
+  display: none;
+}
+
+#preload-26 {
+  background: url(images/icons/facebook-icon.png);
+  display: none;
+}
+
+#preload-27 {
+  background: url(images/icons/flag-br.png);
+  display: none;
+}
+
+#preload-28 {
+  background: url(images/icons/flag-uk.png);
+  display: none;
+}
+
+#preload-29 {
+  background: url(images/icons/github-icon.png);
+  display: none;
+}
+
+#preload-30 {
+  background: url(images/icons/left-icon.png);
+  display: none;
+}
+
+#preload-31 {
+  background: url(images/icons/linkedin-icon.png);
+  display: none;
+}
+
+#preload-32 {
+  background: url(images/icons/medium-icon.png);
+  display: none;
+}
+
+#preload-33 {
+  background: url(images/icons/menu-icon.png);
+  display: none;
+}
+
+#preload-34 {
+  background: url(images/icons/right-icon.png);
+  display: none;
+}
+
+#preload-35 {
+  background: url(images/icons/twitter-icon.png);
+  display: none;
+}
+
+#preload-36 {
+  background: url(images/portfolio/banner-alien.jpeg);
+  display: none;
+}
+
+#preload-37 {
+  background: url(images/portfolio/clojure-catalog-service.png);
+  display: none;
+}
+
+#preload-38 {
+  background: url(images/portfolio/clojure-rest-api.png);
+  display: none;
+}
+
+#preload-39 {
+  background: url(images/portfolio/fastformater.png);
+  display: none;
+}
+
+#preload-40 {
+  background: url(images/portfolio/fileminer.png);
+  display: none;
+}
+
+#preload-41 {
+  background: url(images/portfolio/gemlist.png);
+  display: none;
+}
+
+#preload-42 {
+  background: url(images/portfolio/github-react-api.jpeg);
+  display: none;
+}
+
+#preload-43 {
+  background: url(images/portfolio/hellslist.png);
+  display: none;
+}
+
+#preload-44 {
+  background: url(images/portfolio/rails-angularjs-app.png);
+  display: none;
+}
+
+#preload-45 {
+  background: url(images/portfolio/rasp-monitor-bot.png);
+  display: none;
+}
+
+#preload-46 {
+  background: url(images/portfolio/react-layout-test.jpeg);
+  display: none;
+}
+
+#preload-47 {
+  background: url(images/portfolio/rfid-node-reader.png);
+  display: none;
+}
+
+#preload-48 {
+  background: url(images/portfolio/todoapp.png);
+  display: none;
+}
+
+#preload-49 {
+  background: url(images/posts/data-structure-101-part-01.jpeg);
+  display: none;
+}
+
+#preload-50 {
+  background: url(images/posts/data-structure-101-part-02.jpeg);
+  display: none;
+}
+
+#preload-51 {
+  background: url(images/posts/data-structure-101-part-03.jpeg);
+  display: none;
+}
+
+#preload-52 {
+  background: url(images/posts/git-and-github.png);
+  display: none;
+}
+
+#preload-53 {
+  background: url(images/posts/how-moving-from-design.jpeg);
+  display: none;
+}
+
+#preload-54 {
+  background: url(images/posts/it-front-end-tdc.jpeg);
+  display: none;
+}
+
+#preload-55 {
+  background: url(images/posts/mocha-es6-gulp.jpeg);
+  display: none;
+}
+
+#preload-56 {
+  background: url(images/posts/tdc-teaser.jpeg);
+  display: none;
+}
+
+#preload-57 {
+  background: url(images/posts/women-in-tech.png);
+  display: none;
+}
+
+#preload-58 {
+  background: url(images/presentations/front-end-2020.png);
+  display: none;
+}
+
 /*
   Tools Layer
 */
