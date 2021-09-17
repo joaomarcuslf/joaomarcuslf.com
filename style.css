@@ -8391,297 +8391,157 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 }
 
 #preload-0 {
-  background: url(images/404.jpg);
+  background: url(images/background-about-me.jpg);
   display: none;
 }
 
 #preload-1 {
-  background: url(images/background-computer.jpg);
+  background: url(images/background-home.jpg);
   display: none;
 }
 
 #preload-2 {
-  background: url(images/config.png);
+  background: url(images/background-mentorship.jpg);
   display: none;
 }
 
 #preload-3 {
-  background: url(images/first-post.png);
+  background: url(images/background-posts.jpg);
   display: none;
 }
 
 #preload-4 {
-  background: url(images/jekyll-logo.png);
+  background: url(images/background-projects.jpg);
   display: none;
 }
 
 #preload-5 {
-  background: url(images/jekyll-now-theme-screenshot.jpg);
-  display: none;
-}
-
-#preload-6 {
   background: url(images/joaomarcuslf-coder.png);
   display: none;
 }
 
-#preload-7 {
+#preload-6 {
   background: url(images/joaomarcuslf-coder.svg);
   display: none;
 }
 
-#preload-8 {
+#preload-7 {
   background: url(images/joaomarcuslf-coffee.png);
   display: none;
 }
 
-#preload-9 {
+#preload-8 {
   background: url(images/joaomarcuslf-coffee.svg);
   display: none;
 }
 
-#preload-10 {
+#preload-9 {
   background: url(images/joaomarcuslf-none.png);
   display: none;
 }
 
-#preload-11 {
+#preload-10 {
   background: url(images/joaomarcuslf-none.svg);
   display: none;
 }
 
-#preload-12 {
+#preload-11 {
   background: url(images/joaomarcuslf-profile.jpg);
   display: none;
 }
 
-#preload-13 {
+#preload-12 {
   background: url(images/logo-hex.png);
   display: none;
 }
 
-#preload-14 {
+#preload-13 {
   background: url(images/logo-hex.svg);
   display: none;
 }
 
-#preload-15 {
+#preload-14 {
   background: url(images/logo-typo.png);
   display: none;
 }
 
-#preload-16 {
-  background: url(images/placeholder.png);
-  display: none;
-}
-
-#preload-17 {
-  background: url(images/step1.gif);
-  display: none;
-}
-
-#preload-18 {
+#preload-15 {
   background: url(images/companies/arctouch.png);
   display: none;
 }
 
-#preload-19 {
+#preload-16 {
   background: url(images/companies/b2w-digital.png);
   display: none;
 }
 
-#preload-20 {
+#preload-17 {
   background: url(images/companies/faeterj-rio.png);
   display: none;
 }
 
-#preload-21 {
+#preload-18 {
   background: url(images/companies/minds-at-work.png);
   display: none;
 }
 
-#preload-22 {
+#preload-19 {
   background: url(images/companies/working-minds.png);
   display: none;
 }
 
-#preload-23 {
+#preload-20 {
   background: url(images/companies/zoox.jpeg);
   display: none;
 }
 
-#preload-24 {
-  background: url(images/icons/close-icon.png);
-  display: none;
-}
-
-#preload-25 {
-  background: url(images/icons/dropdown-icon.png);
-  display: none;
-}
-
-#preload-26 {
-  background: url(images/icons/facebook-icon.png);
-  display: none;
-}
-
-#preload-27 {
-  background: url(images/icons/flag-br.png);
-  display: none;
-}
-
-#preload-28 {
-  background: url(images/icons/flag-uk.png);
-  display: none;
-}
-
-#preload-29 {
-  background: url(images/icons/github-icon.png);
-  display: none;
-}
-
-#preload-30 {
-  background: url(images/icons/left-icon.png);
-  display: none;
-}
-
-#preload-31 {
-  background: url(images/icons/linkedin-icon.png);
-  display: none;
-}
-
-#preload-32 {
-  background: url(images/icons/medium-icon.png);
-  display: none;
-}
-
-#preload-33 {
-  background: url(images/icons/menu-icon.png);
-  display: none;
-}
-
-#preload-34 {
-  background: url(images/icons/right-icon.png);
-  display: none;
-}
-
-#preload-35 {
-  background: url(images/icons/twitter-icon.png);
-  display: none;
-}
-
-#preload-36 {
+#preload-21 {
   background: url(images/posts/data-structure-101-part-01.jpeg);
   display: none;
 }
 
-#preload-37 {
+#preload-22 {
   background: url(images/posts/data-structure-101-part-02.jpeg);
   display: none;
 }
 
-#preload-38 {
+#preload-23 {
   background: url(images/posts/data-structure-101-part-03.jpeg);
   display: none;
 }
 
-#preload-39 {
+#preload-24 {
   background: url(images/posts/git-and-github.png);
   display: none;
 }
 
-#preload-40 {
+#preload-25 {
   background: url(images/posts/how-moving-from-design.jpeg);
   display: none;
 }
 
-#preload-41 {
+#preload-26 {
   background: url(images/posts/it-front-end-tdc.jpeg);
   display: none;
 }
 
-#preload-42 {
+#preload-27 {
   background: url(images/posts/mocha-es6-gulp.jpeg);
   display: none;
 }
 
-#preload-43 {
+#preload-28 {
   background: url(images/posts/tdc-teaser.jpeg);
   display: none;
 }
 
-#preload-44 {
+#preload-29 {
   background: url(images/posts/women-in-tech.png);
   display: none;
 }
 
-#preload-45 {
+#preload-30 {
   background: url(images/presentations/front-end-2020.png);
-  display: none;
-}
-
-#preload-46 {
-  background: url(images/portfolio/banner-alien.jpeg);
-  display: none;
-}
-
-#preload-47 {
-  background: url(images/portfolio/clojure-catalog-service.png);
-  display: none;
-}
-
-#preload-48 {
-  background: url(images/portfolio/clojure-rest-api.png);
-  display: none;
-}
-
-#preload-49 {
-  background: url(images/portfolio/fastformater.png);
-  display: none;
-}
-
-#preload-50 {
-  background: url(images/portfolio/fileminer.png);
-  display: none;
-}
-
-#preload-51 {
-  background: url(images/portfolio/gemlist.png);
-  display: none;
-}
-
-#preload-52 {
-  background: url(images/portfolio/github-react-api.jpeg);
-  display: none;
-}
-
-#preload-53 {
-  background: url(images/portfolio/hellslist.png);
-  display: none;
-}
-
-#preload-54 {
-  background: url(images/portfolio/rails-angularjs-app.png);
-  display: none;
-}
-
-#preload-55 {
-  background: url(images/portfolio/rasp-monitor-bot.png);
-  display: none;
-}
-
-#preload-56 {
-  background: url(images/portfolio/react-layout-test.jpeg);
-  display: none;
-}
-
-#preload-57 {
-  background: url(images/portfolio/rfid-node-reader.png);
-  display: none;
-}
-
-#preload-58 {
-  background: url(images/portfolio/todoapp.png);
   display: none;
 }
 
@@ -8999,20 +8859,6 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   @include media-query('desktop') {
   @include media-query('big-screen') {
 */
-.hero.computer-bg {
-  min-height: 55vh;
-  background: url(images/background-computer.jpg) no-repeat center center;
-  background-size: cover;
-  display: flex;
-}
-
-.hero.computer-bg .hero-body {
-  background-color: rgba(85, 22, 55, 0.7);
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
 .hero .hero-body {
   padding: 3rem;
 }
@@ -9479,6 +9325,157 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   @include media-query('desktop') {
   @include media-query('big-screen') {
 */
+.hero.has-background {
+  min-height: 55vh;
+  display: flex;
+}
+
+.hero.has-background .hero-body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.hero.has-background.bg-home {
+  background: url(images/background-home.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+.hero.has-background.bg-home .hero-body {
+  background-color: rgba(69, 6, 23, 0.7);
+}
+
+.hero.has-background.bg-about-me {
+  background: url(images/background-about-me.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+.hero.has-background.bg-about-me .hero-body {
+  background-color: rgba(234, 209, 220, 0.7);
+}
+
+.hero.has-background.bg-mentorship {
+  background: url(images/background-mentorship.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+.hero.has-background.bg-mentorship .hero-body {
+  background-color: rgba(213, 166, 189, 0.7);
+}
+
+.hero.has-background.bg-posts {
+  background: url(images/background-posts.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+.hero.has-background.bg-posts .hero-body {
+  background-color: rgba(213, 166, 189, 0.7);
+}
+
+.hero.has-background.bg-projects {
+  background: url(images/background-projects.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+.hero.has-background.bg-projects .hero-body {
+  background-color: rgba(85, 22, 55, 0.7);
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url("/fonts/Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: FiraCode;
+  src: url("/fonts/FiraCode-Medium.ttf");
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url("/fonts/Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: FiraCode;
+  src: url("/fonts/FiraCode-Medium.ttf");
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url("/fonts/Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: FiraCode;
+  src: url("/fonts/FiraCode-Medium.ttf");
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url("/fonts/Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: FiraCode;
+  src: url("/fonts/FiraCode-Medium.ttf");
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url("/fonts/Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: FiraCode;
+  src: url("/fonts/FiraCode-Medium.ttf");
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url("/fonts/Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: FiraCode;
+  src: url("/fonts/FiraCode-Medium.ttf");
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url("/fonts/Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: FiraCode;
+  src: url("/fonts/FiraCode-Medium.ttf");
+}
+
+/*
+  How to use:
+  .header-title {
+    font-size: 2rem;
+
+    @include for-phone-only {
+        font-size: 1rem;
+    }
+  }
+
+  @include for-big-desktop-only {}
+  @include for-desktop-and-down {}
+  @include for-desktop-up {}
+  @include for-tablet-landscape-and-down {}
+  @include for-tablet-landscape-up {}
+  @include for-tablet-portrait-and-down {}
+  @include for-tablet-portrait-up {}
+  @include for-phone-only {}
+
+  @include media-query('phone') {
+  @include media-query('tablet-portrait') {
+  @include media-query('tablet-landscape') {
+  @include media-query('desktop') {
+  @include media-query('big-screen') {
+*/
 .flex-container, .horizontal-center-container, .mentorship-lists-section .mentorship-lists-section-group .mentorship-lists-section-item, .skills-section .skills-section-group .skills-section-item, .images-section .images-section-group .images-section-item, .vertical-center-container, .flag-toggle {
   display: flex;
   width: 100%;
@@ -9809,13 +9806,13 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 */
 @media (min-width: 900px) {
   .typewriter h1 {
-    overflow: hidden;
-    border-right: 0.15em solid #ead1dc;
+    position: relative;
+    margin: 2rem auto;
     white-space: nowrap;
-    margin: 0 auto;
-    letter-spacing: .15em;
-    max-width: 100%;
-    animation: typing 4.5s steps(40, end), blink-caret 0.75s step-end infinite;
+    overflow: hidden;
+    max-width: min-content;
+    border-right: 0.15em solid #ead1dc;
+    animation: typing 5.5s steps(40, end), blink-caret 1s step-end infinite;
   }
   /* The typing effect */
   @keyframes typing {
@@ -9823,7 +9820,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
       width: 0;
     }
     to {
-      width: 21em;
+      width: 100%;
     }
   }
   /* The typewriter cursor effect */
@@ -9831,7 +9828,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
     from, to {
       border-color: transparent;
     }
-    50% {
+    35% {
       border-color: #ead1dc;
     }
   }
