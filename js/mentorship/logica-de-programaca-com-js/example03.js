@@ -1,0 +1,1 @@
+function submitExample03(e,o){$textarea=document.querySelector("#"+o+" .textarea"),$scenario=document.querySelector("#"+o+" .scenario"),submitCode(e,o,$scenario,$textarea,['var $boy01 = pegarElemento("example03_Boy01")',"var codigoBoy01 = pegarCodigo($boy01)",'var codigoAtual = "0001"',"if (codigoBoy01 == codigoAtual) {","removerDaFila($boy01)","}"])}
