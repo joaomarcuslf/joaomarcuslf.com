@@ -5,7 +5,7 @@ name_pt: Full-stack Developer - Pleno
 tags: JavaScript,React,Node.js,Ruby on Rails,Angular,Ionic
 description: "Working Minds is a software consulting company, therefore, it has in its repertoires several projects with many technologies, so it is necessary a multidisciplinary team focused on quality deliveries."
 start_date: "01/2020"
-end_date: "~"
+end_date: "01/2021"
 key: 2020-01-working-minds
 company_name: Working Minds
 company_img: working-minds.png
