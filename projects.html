@@ -2,11 +2,15 @@
 layout: default
 ---
 
+
+{% capture title %}{% t projects.title %}{% endcapture %}
+{% capture subtitle %}{% t projects.subtitle %}{% endcapture %}
+
 {%
   include introduction.html
     theme="warning"
-    title="Projects Page"
-    subtitle="Most of my projects are open source and contains some things I'm studying, here, check it out."
+    title=title
+    subtitle=subtitle
     class="has-background bg-projects typewriter"
 %}
 

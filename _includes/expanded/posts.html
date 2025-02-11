@@ -3,7 +3,7 @@
     <h2 class="images-section-title">Posts</h2>
 
     <div class="tags">
-      <a id="tag-all" href="#all" class="tag is-info" onclick="filterPosts(getTagFromEvent(event))">Clear</a>
+      <a id="tag-all" href="#all" class="tag is-info" onclick="filterPosts(getTagFromEvent(event))">{% t posts.clear %}</a>
       {% for tag in site.tags %}
         {% assign filtered = tag[1] | where: 'draft', false %}
 
@@ -31,4 +31,4 @@
   </div>
 </section>
 
-<script src="{{ site.baseurl }}/assets/js/posts.js"></script>
+<script src="{{ "/assets/js/posts.js" | prepend: site.baseurl_root }}"></script>

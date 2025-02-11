@@ -2,22 +2,27 @@
 layout: default
 ---
 
+{% capture title %}{% t mentorship.title %}{% endcapture %}
+{% capture subtitle %}{% t mentorship.subtitle %}{% endcapture %}
+
 {% include introduction.html
     theme="link"
-    title="Mentorship"
-    subtitle="Hey you! I'm glad you are here with me.<br /> I work since 2015, and since them, I've worked with many people, and a bunch of them thought great thing to me, and now it's my time to give it back to the community."
+    title=title
+    subtitle=subtitle
     class="has-background bg-mentorship typewriter"
 %}
 
 <section class="hero mentorship-lists-section is-dark">
   <div class="hero-body mentorship-tree">
-    <h2 class="mentorship-lists-section-title main">Spoken language:</h1>
+    <h2 class="mentorship-lists-section-title main">{% t mentorship.languages.title %}:</h1>
 
     <div class="mentorship-lists-section-group mentorship-tree-element">
       <div class="mentorship-lists-tree-categories">
-        {% include components/mentorship-item.html item="Portuguese" %}
+        {% capture portuguese %}{% t mentorship.languages.portuguese %}{% endcapture %}
+        {% capture english %}{% t mentorship.languages.english %}{% endcapture %}
 
-        {% include components/mentorship-item.html item="English" %}
+        {% include components/mentorship-item.html item=portuguese %}
+        {% include components/mentorship-item.html item=english %}
       </div>
     </div>
   </div>
@@ -25,7 +30,7 @@ layout: default
 
 <section class="hero mentorship-lists-section is-light">
   <div class="hero-body mentorship-tree">
-    <h2 class="mentorship-lists-section-title main">Techs I can teach:</h1>
+    <h2 class="mentorship-lists-section-title main">{% t mentorship.techs.title %}:</h1>
 
     <div class="mentorship-lists-section-group mentorship-tree-element">
       <div class="mentorship-lists-tree-categories">
@@ -50,7 +55,7 @@ layout: default
 
 <section class="hero mentorship-lists-section is-dark">
   <div class="hero-body mentorship-tree">
-    <h2 class="mentorship-lists-section-title main">Stacks you can choose:</h1>
+    <h2 class="mentorship-lists-section-title main">{% t mentorship.stacks.title %}:</h1>
 
     <div class="mentorship-lists-section-group mentorship-tree-element">
       <div class="mentorship-lists-tree-categories">
@@ -64,15 +69,21 @@ layout: default
 
 <section class="hero mentorship-lists-section is-light">
   <div class="hero-body mentorship-tree">
-    <h2 class="mentorship-lists-section-title main">Objectives:</h1>
+    <h2 class="mentorship-lists-section-title main">{% t mentorship.objectives.title %}:</h1>
 
     <div class="mentorship-lists-section-group mentorship-tree-element">
       <div class="mentorship-lists-tree-categories">
-        {% include components/mentorship-item.html item="Depth techs introduction" %}
-        {% include components/mentorship-item.html item="Professional improvement" %}
-        {% include components/mentorship-item.html item="Emulate real life situations" %}
-        {% include components/mentorship-item.html item="Learn good practices and patterns" %}
-        {% include components/mentorship-item.html item="Share know-how" %}
+        {% capture depth_techs_introduction %}{% t mentorship.objectives.list.depth_techs_introduction %}{% endcapture %}
+        {% capture professional_improvement %}{% t mentorship.objectives.list.professional_improvement %}{% endcapture %}
+        {% capture emulate_real_life_situations %}{% t mentorship.objectives.list.emulate_real_life_situations %}{% endcapture %}
+        {% capture learn_good_practices_and_patterns %}{% t mentorship.objectives.list.learn_good_practices_and_patterns %}{% endcapture %}
+        {% capture know_how %}{% t mentorship.objectives.list.know_how %}{% endcapture %}
+
+        {% include components/mentorship-item.html item=depth_techs_introduction %}
+        {% include components/mentorship-item.html item=professional_improvement %}
+        {% include components/mentorship-item.html item=emulate_real_life_situations %}
+        {% include components/mentorship-item.html item=learn_good_practices_and_patterns %}
+        {% include components/mentorship-item.html item=know_how %}
       </div>
     </div>
   </div>
@@ -80,16 +91,23 @@ layout: default
 
 <section class="hero mentorship-lists-section is-dark">
   <div class="hero-body mentorship-tree">
-    <h2 class="mentorship-lists-section-title main">Services:</h1>
+    <h2 class="mentorship-lists-section-title main">{% t mentorship.services.title %}:</h1>
 
     <div class="mentorship-lists-section-group mentorship-tree-element">
       <div class="mentorship-lists-tree-categories">
-        {% include components/mentorship-item.html item="Hands-on challenges" %}
-        {% include components/mentorship-item.html item="Code review" %}
-        {% include components/mentorship-item.html item="Dojos" %}
-        {% include components/mentorship-item.html item="Lessons" %}
-        {% include components/mentorship-item.html item="Pair programming" %}
-        {% include components/mentorship-item.html item="Post/Content generation" %}
+        {% capture hands_on_challenges %}{% t mentorship.services.list.hands_on_challenges %}{% endcapture %}
+        {% capture code_review %}{% t mentorship.services.list.code_review %}{% endcapture %}
+        {% capture dojos %}{% t mentorship.services.list.dojos %}{% endcapture %}
+        {% capture lessons %}{% t mentorship.services.list.lessons %}{% endcapture %}
+        {% capture pair_programming %}{% t mentorship.services.list.pair_programming %}{% endcapture %}
+        {% capture post_content_generation %}{% t mentorship.services.list.post_content_generation %}{% endcapture %}
+
+        {% include components/mentorship-item.html item=hands_on_challenges %}
+        {% include components/mentorship-item.html item=code_review %}
+        {% include components/mentorship-item.html item=dojos %}
+        {% include components/mentorship-item.html item=lessons %}
+        {% include components/mentorship-item.html item=pair_programming %}
+        {% include components/mentorship-item.html item=post_content_generation %}
       </div>
     </div>
   </div>
@@ -98,17 +116,17 @@ layout: default
 <section class="hero is-info">
   <div class="hero-body">
     <h2 class="title">
-      Hey, If I got you until here, I think you liked.
+      {% t mentorship.contact.title %}
     </h2>
 
     <h2 class="subtitle">
-      So, let's talk about your needs, and learn together? <br />
+      {% t mentorship.contact.subtitle %} <br />
     </h2>
 
     <button class="button is-primary is-outlined is-medium is-fullwidth" onclick="mailMe()">
-      Send me a E-mail!
+      {% t mentorship.contact.contact_me %}
     </button>
   </div>
 </section>
 
-<script src="{{ site.baseurl }}/assets/js/mentorship.js"></script>
+<script src="{{ "/assets/js/mentorship.js" | prepend: site.baseurl_root }}"></script>

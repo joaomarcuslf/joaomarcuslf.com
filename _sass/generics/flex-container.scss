@@ -16,4 +16,16 @@
   .to-right {
     justify-content: flex-end;
   }
+
+  &.has-space-between {
+    justify-content: space-between;
+  }
+
+  &.has-space-around {
+    justify-content: space-around;
+  }
+
+  &.has-space-evenly {
+    justify-content: space-evenly;
+  }
 }

@@ -1,6 +1,6 @@
 <section id="posts" class="hero images-section is-light">
   <div class="hero-body">
-    <h2 class="images-section-title">Highlighted Posts</h2>
+    <h2 class="images-section-title">{% t highlighted_posts.title %}</h2>
 
     <div class="images-section-group is-highlight">
       {% assign filtered = site.posts | where: 'draft', false %}

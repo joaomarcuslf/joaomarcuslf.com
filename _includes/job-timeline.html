@@ -1,14 +1,14 @@
 <section class="timeline hero is-light">
   <div class="hero-body">
-    <h2 class="title">Work Timeline</h2>
+    <h2 class="title">{% t job_timeline.timeline %}</h2>
     <div class="timeline-content">
-      <div class="initial-date">Aug 2015</div>
+      <div class="initial-date">{% t job_timeline.initial_date %}</div>
       <div class="timeline-bar"></div>
-      <div class="final-date">Present</div>
+      <div class="final-date">{% t job_timeline.final_date %}</div>
       <div class="events">
         {% for job in site.jobs %}
         <button id="{{job.key}}" type="button" class="event" onclick="showDescription('{{job.key}}')">
-          <img class="timeline-company-image" src="/assets/images/companies/{{job.company_img}}" alt="{{job.name}}" width="60" height="60" />
+          <img class="timeline-company-image" src="/assets/images/companies/{{job.company_img}}" alt="{{job.name[site.lang]}}" width="60" height="60" />
 
           <div class="description-hidden" aria-hidden="true">
             <div class="card">
@@ -17,13 +17,13 @@
                   <div class="media">
                     <div class="media-left">
                       <figure class="image is-48x48">
-                        <img src="/assets/images/companies/{{job.company_img}}" alt="{{job.company_name}} - {{job.name}}" />
+                        <img src="/assets/images/companies/{{job.company_img}}" alt="{{job.company_name}} - {{job.name[site.lang]}}" />
                       </figure>
                     </div>
 
                     <div class="media-content">
                       <p class="title is-4 has-text-left">
-                        {{job.name}}
+                        {{job.name[site.lang]}}
                       </p>
                       <a href="{{job.company_ref}}" taget="blank" class="subtitle is-6 has-text-left">
                         {{job.company_name}}
@@ -31,7 +31,7 @@
                     </div>
                   </div>
                   <div class="content">
-                    {{job.description}}
+                    {{job.description[site.lang]}}
 
                     <br />
 

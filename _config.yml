@@ -1,6 +1,7 @@
 name: "@joaomarcuslf.com - Full-stack Software engineer"
 description: I'm Software Engineer since 2015 with great expertise in Front-end development. I like to teach a lot, and write some posts, you can check more here.
 author: João Marcus de Lemos Fernandes
+username: joaomarcuslf
 canonical: https://joaomarcuslf.com/
 keywords: Developer, Software engineer, Front-end, Full-stack, React, Javascript, Flask, Python, Joaomarcuslf, Tech Mentor, Mentorship, Mentoria, Senior Developer, Web development
 abstract: My presentation website as Software developer
@@ -60,6 +61,11 @@ plugins:
   - jekyll-minifier
   - jekyll-image-optim
   - jekyll-redirect-from
+  - jekyll-multiple-languages-plugin
+
+languages: [ "en", "pt"]
+
+exclude_from_localizations: ["assets", ".github", "_sass", ".vscode", "run", "_posts", "_skills", "_projects", "_jobs", "_graduations", "_qualifications"]
 
 jekyll-minifier:
   preserve_php: true                # Default: false
@@ -108,107 +114,3 @@ exclude:
   - tmp
   - yarn-error.log
   - yarn.lock
-
-resume:
-  name: João Marcus de Lemos Fernandes
-  age: 25
-  email: jmarcusfernandes@gmail.com
-  mobile: (21) 98843-2606
-  site: https://joaomarcuslf.com/
-  pt:
-    from: Rio de Janeiro, Brasil
-  en:
-    from: Rio de Janeiro, Brazil
-  skype: joao_marcus_l
-  github: https://github.com/joaomarcuslf
-  linkedin: linkedin.com/in/joaomarcuslf
-  skills:
-    hard:
-      pt:
-        - Javascript
-        - 'React.js'
-        - 'Vue.js'
-        - 'Node.js'
-        - 'ExpressJS'
-        - 'Mocha + Chai.js'
-        - Jest
-        - SCSS
-        - SQL
-        - PostgreSQL
-        - MongoDB
-        - Go
-        - Python
-        - Flask
-        - Ruby
-        - 'Ruby on Rails'
-        - R
-        - Git
-        - Agile
-        - Webpack
-        - Docker
-        - Linux
-        - Rest
-        - AWS
-        - Clean Code
-        - Estatística
-        - Matemática Discreta
-        - Visualização de dados
-        - Desenvolvimento Cloud
-      en:
-        - Javascript
-        - 'React.js'
-        - 'Vue.js'
-        - 'Node.js'
-        - 'ExpressJS'
-        - 'Mocha + Chai.js'
-        - Jest
-        - SCSS
-        - SQL
-        - PostgreSQL
-        - MongoDB
-        - Golang
-        - Python
-        - Flask
-        - Ruby
-        - 'Ruby on Rails'
-        - R
-        - Git
-        - Agile
-        - Webpack
-        - Docker
-        - Linux
-        - Rest
-        - AWS
-        - Clean Code
-        - Statistics
-        - Math
-        - Data Visualization
-        - Cloud Engineering
-
-    soft:
-      pt:
-        - Resolução de Conflitos
-        - Trabalho em Equipe
-        - Mentoria
-        - Autodidata
-        - Troca de Feedback
-        - Comunicação não violenta
-        - Ownership
-        - Proativo
-        - Pensamento Crítico
-        - Storytelling
-        - Detalhista
-        - Visão de Negócio
-      en:
-        - Conflict resolution
-        - Team work
-        - Mentoring
-        - Self-taught
-        - Feedback exchange
-        - Non-violent communication
-        - Ownership
-        - Proactive
-        - Critical Thinking
-        - Storytelling
-        - Detail
-        - Business Acumen

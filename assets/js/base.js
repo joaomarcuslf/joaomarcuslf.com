@@ -58,6 +58,29 @@ function expandView(target) {
   }, 250)
 }
 
+function expandSkillTree(target) {
+  var $target = document.getElementById(target);
+  var $highlights = document.querySelector('#' + target + ' .is-highlight');
+  var $button = document.querySelector('#' + target + ' .button.has-icon');
+  var $elements = document.querySelectorAll('.skill-tree-element');
+
+  $elements.forEach(function (elm) {
+    if (elm.id !== target && !elm.classList.contains('is-closed')) {
+      elm.classList.toggle('is-closed');
+      document.querySelector('.button.has-icon').classList.toggle('is-flipped');
+      document.querySelector('.is-highlight').classList.toggle('is-expanded');
+    }
+  });
+
+  $target.classList.toggle('is-closed')
+  $button.classList.toggle('is-flipped');
+  $highlights.classList.toggle('is-expanded');
+
+  setTimeout(function () {
+    smoothScroll('#' + target);
+  }, 250)
+}
+
 function showDescription(id) {
   var cleanUpElm = document.getElementsByClassName('event is-active');
 

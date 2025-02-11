@@ -92,6 +92,12 @@
           font-size: 1rem;
         }
       }
+
+      &.is-closed {
+        .skills-tree-categories.is-highlight {
+          max-height: 0;
+        }
+      }
     }
 
     .skills-section-item {

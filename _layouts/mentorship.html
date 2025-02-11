@@ -5,10 +5,10 @@
 
     {% include meta.html %}
 
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/vendors.css" />
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/mentorship.css" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+    <link rel="stylesheet" type="text/css" href="{{ "/assets/css/vendors.css" | prepend: site.baseurl_root }}" />
+    <link rel="stylesheet" type="text/css" href="{{ "/assets/css/style.css" | prepend: site.baseurl_root }}" />
+    <link rel="stylesheet" type="text/css" href="{{ "/assets/css/mentorship.css" | prepend: site.baseurl_root }}" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ "/feed.xml" | prepend: site.baseurl_root }}" />
   </head>
 
   <body>
@@ -18,6 +18,6 @@
 
     {% include analytics.html %}
 
-    <script src="{{ site.baseurl }}/assets/js/base.js"></script>
+    <script src="{{ "/assets/js/base.js" | prepend: site.baseurl_root }}"></script>
   </body>
 </html>

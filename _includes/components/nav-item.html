@@ -1,0 +1,18 @@
+{% if site.lang == "en" %}
+  {% capture href %}{{include.href}}{% endcapture %}
+{% else %}
+  {% capture href %}/{{site.lang}}{{include.href}}{% endcapture %}
+{% endif %}
+
+
+{% capture append_href %}{{ include.href | append: "/" }}{% endcapture %}
+
+{% capture is_active %}{% if page.url == include.href %}true{% else %}false{% endif %}{% endcapture%}
+{% capture is_post %}{% if page.url contains append_href  %}true{% else %}false{% endif %}{% endcapture%}
+
+<a
+  class="navbar-item {% if is_active == "true" %}is-active{% endif %}{% if is_post == "true" %}is-active{% endif %}"
+  href="{{ href }}"
+>
+  {{include.text}}
+</a>

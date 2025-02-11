@@ -3,6 +3,10 @@
 @import "settings/settings";
 @import "settings/fonts";
 
+@import "generics/flex-container";
+@import "generics/horizontal-center-container";
+@import "generics/vertical-center-container";
+
 body {
   font-size: 14px;
   display: flex;
@@ -30,7 +34,7 @@ h2 {
 }
 
 section {
-  padding: 0.5rem 0;
+  padding: 0.15rem 0;
 }
 
 .main {

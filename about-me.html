@@ -2,11 +2,14 @@
 layout: default
 ---
 
+{% capture title %}{% t about_me.title %}{% endcapture %}
+{% capture subtitle %}{% t about_me.subtitle %}{% endcapture %}
+
 {%
   include introduction.html
     theme="success"
-    title="About Me"
-    subtitle="Hey you again! Hope you have liked what you saw up to here. <br /><br /> I'm a Full-stack developer, I work with a lot of things, you can check more about <a href='/skill-tree' aria-label='Link for the skill-tree page'>my skills</a>, I love to learn, and teach, so I value a lot either soft-skills and hard-skills, if you want to reach me, you can <a href='/mail-me' aria-label='Link for e-mail me page'>also e-mail me</a>."
+    title=title
+    subtitle=subtitle
     class="has-background bg-about-me typewriter"
 %}
 

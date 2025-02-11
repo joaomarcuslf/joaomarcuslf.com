@@ -2,11 +2,14 @@
 layout: default
 ---
 
+{% capture title %}{% t posts.title %}{% endcapture %}
+{% capture subtitle %}{% t posts.subtitle %}{% endcapture %}
+
 {%
   include introduction.html
     theme="danger"
-    title="Posts Page"
-    subtitle="Hey you! I've written and gave some presentations, here you can check out then."
+    title=title
+    subtitle=subtitle
     class="has-background bg-posts typewriter"
 %}
 

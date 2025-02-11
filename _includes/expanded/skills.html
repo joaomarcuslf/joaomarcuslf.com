@@ -1,8 +1,10 @@
 <section class="hero skills-section is-dark">
   <div class="hero-body">
-    <h2 class="skills-section-title">Skills</h2>
+    <h2 class="skills-section-title">{% t skills.title %}</h2>
 
-    <div class="has-text-right"><a href="/skill-tree">Expand Skills</a></div>
+    {% capture skill_tree %}{% if site.lang == "en" %}{% else %}{{ site.lang | prepend: "/" }}{% endif %}{% endcapture %}
+
+    <div class="has-text-right"><a href="{{"/skill-tree" | prepend: skill_tree }}" class="button is-primary">{% t skills.expand %}</a></div>
 
     <div class="skills-section-group">
 

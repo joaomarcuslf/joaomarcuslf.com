@@ -1,0 +1,167 @@
+global:
+  lang: en
+  title: "@joaomarcuslf.com - Full-stack Software engineer"
+  description: I've been a developer since 2015, with a strong focus on Full-stack, I have experience mainly with Javascript, Go, and Python, but I love learning new technologies and techniques on a daily basis. I enjoy writing, and teaching, you can check out my posts, and get in touch with me if you need a mentor. Come and get to know me better.
+  navigation:
+    home: Home
+    posts: Posts
+    projects: Projects
+    mentorship: Mentorship
+    about_me: About Me
+
+index:
+  title: Hi, I'm João&nbsp;Marcus&nbsp;Fernandes
+  subtitle: I'm Full-stack web developer since 2015, I've worked mostly with Javascript, Go, and Python,<br />but I love to learn new techs, and learn new things along the way.<br />I love to write, and teach, you can check <a href='/posts' aria-label='Link for my posts page'>my posts</a>, and if you need a <a href='/mentorship' aria-label='Link for my mentorship page'>tech mentor</a> you can contact me, I'll be glad to help you.<br />I'm also graduated at Analysis and development of systems on Faeterj-RIO.
+
+job_timeline:
+  timeline: Work Timeline
+  initial_date: Aug 2015
+  final_date: Present
+  from: From
+  to: To
+
+highlighted_skills:
+  title: Highlighted Skills
+  see_more: See more...
+
+highlighted_posts:
+  title: Highlighted Posts
+  see_more: See more...
+
+highlighted_projects:
+  title: Highlighted Projects
+  see_more: See more...
+
+footer:
+  made_by_01: Made by
+  made_by_02: You can find more about me <a href="{{site.linktr}}" target="blank" aria-label='Link for my linktree page'>in my Linktree</a>.
+
+mentorship:
+  title: Mentorship
+  subtitle: Hey you! I'm glad you are here with me.<br /> I work since 2015, and since them, I've worked with many people, and a bunch of them thought great thing to me, and now it's my time to give it back to the community.
+  languages:
+    title: Spoken languages
+    portuguese: Portuguese
+    english: English
+  techs:
+    title: Techs I can teach
+  stacks:
+    title: Stacks you can choose
+  objectives:
+    title: Objectives
+    list:
+      depth_techs_introduction: Depth techs introduction
+      professional_improvement: Professional improvement
+      emulate_real_life_situations: Emulate real life situations
+      learn_good_practices_and_patterns: Learn good practices and patterns
+      know_how: Share know-how
+  services:
+    title: Services
+    list:
+      hands_on_challenges: Hands-on challenges
+      code_review: Code review
+      dojos: Dojos
+      lessons: Lessons
+      pair_programming: Pair programming
+      post_content_generation: Post/Content generation
+  contact:
+    title: Hey, If I got you until here, I think you liked.
+    subtitle: So, let's talk about your needs, and learn together?
+    contact_me: Send me a E-mail!
+
+posts:
+  title: Posts Page
+  subtitle: Hey you! I've written and gave some presentations, here you can check out then.
+  clear: Clear
+
+projects:
+  title: Projects Page
+  subtitle: Most of my projects are open source and contains some things I'm studying, here, check it out.
+  section: Projects
+
+skills:
+  title: Skills
+  expand: Expand Skills
+
+skill_tree:
+  title: Skill Tree
+  subtitle: This page will show all skills and it's subtopics.
+
+about_me:
+  title: About Me
+  subtitle: Hey you again! Hope you have liked what you saw up to here. <br /><br /> I'm a Full-stack developer, I work with a lot of things, you can check more about <a href='/skill-tree' aria-label='Link for the skill-tree page'>my skills</a>, I love to learn, and teach, so I value a lot either soft-skills and hard-skills, if you want to reach me, you can <a href='/mail-me' aria-label='Link for e-mail me page'>also e-mail me</a>.
+
+resume:
+  titles:
+    personal_info: Personal Info
+    contact_info: Contact Info
+    personal_description: Personal Description
+    graduation: Graduation
+    qualifications: Qualifications
+    hard_skills: Hard Skills
+    soft_skills: Soft Skills
+    work_experience: Work experience
+  strongs:
+    mobile: Mobile
+    e_mail: E-mail
+    site: Site
+  descriptions:
+    line_01: "I am a software developer with a focus on Web systems, I have been learning to develop fo web since 2014 when I started doing small jobs with websites, and digital portals, after that I went deeper into development following a Full-stack trail, having experience using Go, Python and Node.js on the back-end, and for the front-end I've worked with React / React Native, AngularJS (1.x), Angular 4 and Vue.js. I also have experience in developing api and generating graph reports with Python BI and Data Science areas."
+    line_02: "I also have experience in using Linux and MacOS as operating systems, I've worked a long time with Git for versioning and have worked with agile several methodologies: Scrum, Kanban, and XP."
+    line_03: "I am always committed to learning, and I like to keep myself updated with the best practices, and with future technologies. I like to write, and teach, I'm working a lot o improving my communication and teach skills."
+  name: João Marcus de Lemos Fernandes
+  age: "25"
+  age_suffix: years old
+  email: jmarcusfernandes@gmail.com
+  mobile: (21) 98843-2606
+  site: https://joaomarcuslf.com/
+  from: Rio de Janeiro, Brazil
+  skype: joao_marcus_l
+  github: https://github.com/joaomarcuslf
+  linkedin: linkedin.com/in/joaomarcuslf
+  graduation_suffix: ended at
+  qualification_suffix: Ended at
+  skills:
+    hard:
+      javascript: Javascript
+      react_js: 'React.js'
+      vue_js: 'Vue.js'
+      node_js: 'Node.js'
+      express_js: 'ExpressJS'
+      mocha_chai_js: 'Mocha + Chai.js'
+      jest: Jest
+      scss: SCSS
+      sql: SQL
+      postgre_sql: PostgreSQL
+      mongo_db: MongoDB
+      golang: Golang
+      python: Python
+      flask: Flask
+      ruby: Ruby
+      ruby_on_rails: 'Ruby on Rails'
+      r: R
+      git: Git
+      agile: Agile
+      webpack: Webpack
+      docker: Docker
+      linux: Linux
+      rest: Rest
+      aws: AWS
+      clean_code: Clean Code
+      statistics: Statistics
+      math: Math
+      data_visualization: Data Visualization
+      cloud_engineering: Cloud Engineering
+    soft:
+      conflict_resolution: Conflict resolution
+      team_work: Team work
+      mentoring: Mentoring
+      self_taught: Self-taught
+      feedback_exchange: Feedback exchange
+      non_violent_communication: Non-violent communication
+      ownership: Ownership
+      proactive: Proactive
+      critical_thinking: Critical Thinking
+      storytelling: Storytelling
+      detail: Detail
+      business_acumen: Business Acumen

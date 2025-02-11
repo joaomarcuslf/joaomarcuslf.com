@@ -1,0 +1,167 @@
+global:
+  lang: pt
+  title: "@joaomarcuslf.com - Full-stack Software engineer"
+  description: Sou uma pessoa desenvolvedora desde 2015, com grande foco em Full-stack, tenho experiência principalmente com Javascript, Go, e Python, mas eu adoro aprender novas tecnologias e técnicas no dia-a-dia. Gosto de escrever, e ensinar, você pode conferir os meus posts, e entrar em contato comigo caso precise de um mentor. Venha me conhecer melhor.
+  navigation:
+    home: Principal
+    posts: Posts
+    projects: Projectos
+    mentorship: Mentoria
+    about_me: Sobre mim
+
+index:
+  title: Olá, eu sou João&nbsp;Marcus&nbsp;Fernandes
+  subtitle: Sou uma pessoa desenvolvedora desde 2015, com grande foco em Full-stack, <br />tenho experiência principalmente com Javascript, Go, e Python,<br />mas eu adoro aprender novas tecnologias e técnicas no dia-a-dia.<br />Gosto de escrever, e ensinar, você pode seguir esse link para <a href='/posts' aria-label='Link for my posts page'>os meus posts</a>,<br />e se você precisa de um <a href='/mentorship' aria-label='Link for my mentorship page'>mentor</a> pode entrar em contato comigo, estarei feliz em te ajudar.<br /> Sou formado em Análise e desenvolvimento de sistemas na Faeterj-RIO.
+
+job_timeline:
+  timeline: Linha do tempo de trabalho
+  initial_date: Ago 2015
+  final_date: Presente
+  from: De
+  to: Até
+
+highlighted_skills:
+  title: Habilidades em destaque
+  see_more: Veja mais...
+
+highlighted_posts:
+  title: Posts em destaque
+  see_more: See more...
+
+highlighted_projects:
+  title: Projetos em destaque
+  see_more: See more...
+
+footer:
+  made_by_01: Feito por
+  made_by_02: Você pode achar mais coisas sobre mim no meu <a href="{{site.linktr}}" target="blank" aria-label='Link for my linktree page'>Linktree</a>.
+
+mentorship:
+  title: Mentoria
+  subtitle: Ei você! Estou feliz que você esteja aqui comigo.<br /> Eu trabalho desde 2015, e desde então, trabalhei com muitas pessoas, e elas me ensinaram muitas coisas para mim, e agora é a minha hora de dar de volta à comunidade.
+  languages:
+    title: Línguas que falo
+    portuguese: Português
+    english: Inglês
+  techs:
+    title: Tecnologias que posso ensinar
+  stacks:
+    title: Stacks que você pode escolher
+  objectives:
+    title: Objetivos
+    list:
+      depth_techs_introduction: Introdução e aprofundamento de tecnologias
+      professional_improvement: Melhoria profissional
+      emulate_real_life_situations: Emular situações reais da vida
+      learn_good_practices_and_patterns: Aprenda boas práticas e padrões
+      know_how: Compartilhar know-how
+  services:
+    title: Serviços
+    list:
+      hands_on_challenges: Desafios de hands-on
+      code_review: Revisão de código
+      dojos: Dojos
+      lessons: Aulas
+      pair_programming: Programação pareada
+      post_content_generation: Geração de conteúdo
+  contact:
+    title: Ei, se você chegou até aqui, acho que você gostou.
+    subtitle: Então, vamos falar sobre suas necessidades e aprender juntos?
+    contact_me: Me mande um e-mail!
+
+posts:
+  title: Meus posts
+  subtitle: Ei você! Eu escrevi e dei algumas apresentações, aqui você pode encontra-lôs.
+  clear: Limpar
+
+projects:
+  title: Meus projetos
+  subtitle: A maioria dos meus projetos são de código aberto e contém algumas coisas que estou estudando, confira.
+  section: Projetos
+
+skills:
+  title: Habilidades
+  expand: Expandir habilidades
+
+skill_tree:
+  title: Árvore de habilidade
+  subtitle: Esta página mostrará todas as habilidades e são subtópicos.
+
+about_me:
+  title: Sobre mim
+  subtitle: Ei você de novo! Espero que você tenha gostado do que você viu até aqui. <br /><br /> Eu sou uma pessoa desenvolvedora com foco em Full-stack, Eu trabalho com muitas coisas, Você pode ver mais sobre <a href='/skill-tree' aria-label='Link for the skill-tree page'>minhas habilidades</a>, eu amo aprender, e ensinar, por conta disso eu valorizo muito tanto soft-skills, quanto hard-skills, se você quiser falar comigo, você pode <a href='/mail-me' aria-label='Link for e-mail me page'>me enviar um e-mail</a>.
+
+resume:
+  titles:
+    personal_info: Informações Pessoais
+    contact_info: Contato
+    personal_description: Descrição Pessoal
+    graduation: Graduações
+    qualifications: Cursos Complementares
+    hard_skills: Hard Skills
+    soft_skills: Soft Skills
+    work_experience: Experiência Profissional
+  strongs:
+    mobile: Mobile
+    e_mail: E-mail
+    site: Site
+  descriptions:
+    line_01: "Eu sou uma pessoa desenvolvedora de software com foco em sistemas da Web, eu comecei a aprender desenvolvimento web em 2014 quando comecei a fazer pequenos trabalhos com sites e portais digitais, depois, eu me aprofundei no desenvolvimento com grande foco em Full-stack, tendo experiência usando Go, Python e Node.js no back-end, e para o front-end, eu trabalhei com React / React Native, AngularJS (1.x), Angular >4 e Vue.js. Eu também tenho experiência em desenvolver API e gerar relatórios gráficos com Python para as áreas de BI e Ciência de Dados."
+    line_02: "Também tenho experiência em usar o Linux e MacOS como sistemas operacionais, eu trabalhei muito tempo com o Git para a versão e trabalhei com várias metodologias ágeis: Scrum, Kanban e XP."
+    line_03: "Estou sempre comprometido com o aprendizado, e gosto de me manter atualizado com as melhores práticas e com futuras tecnologias. Eu gosto de escrever e ensinar, ando trabalhando muito para melhorar minha comunicação e habilidades em ensinar."
+  name: João Marcus de Lemos Fernandes
+  age: "25"
+  age_suffix: anos
+  email: jmarcusfernandes@gmail.com
+  mobile: (21) 98843-2606
+  site: https://joaomarcuslf.com/
+  from: Rio de Janeiro, Brazil
+  skype: joao_marcus_l
+  github: https://github.com/joaomarcuslf
+  linkedin: linkedin.com/in/joaomarcuslf
+  graduation_suffix: terminada em
+  qualification_suffix: Terminada em
+  skills:
+    hard:
+      javascript: Javascript
+      react_js: "React.js"
+      vue_js: "Vue.js"
+      node_js: "Node.js"
+      express_js: "ExpressJS"
+      mocha_chai_js: "Mocha + Chai.js"
+      jest: Jest
+      scss: SCSS
+      sql: SQL
+      postgre_sql: PostgreSQL
+      mongo_db: MongoDB
+      golang: Go
+      python: Python
+      flask: Flask
+      ruby: Ruby
+      ruby_on_rails: "Ruby on Rails"
+      r: R
+      git: Git
+      agile: Agile
+      webpack: Webpack
+      docker: Docker
+      linux: Linux
+      rest: Rest
+      aws: AWS
+      clean_code: Clean Code
+      statistics: Estatística
+      math: Matemática Discreta
+      data_visualization: Visualização de dados
+      cloud_engineering: Desenvolvimento Cloud
+    soft:
+      conflict_resolution: Resolução de Conflitos
+      team_work: Trabalho em Equipe
+      mentoring: Mentoria
+      self_taught: Autodidata
+      feedback_exchange: Troca de Feedback
+      non_violent_communication: Comunicação não violenta
+      ownership: Ownership
+      proactive: Proativo
+      critical_thinking: Pensamento Crítico
+      storytelling: Storytelling
+      detail: Detalhista
+      business_acumen: Visão de Negócio

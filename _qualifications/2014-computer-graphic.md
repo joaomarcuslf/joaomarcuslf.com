@@ -1,7 +1,8 @@
 ---
 layout: qualification
-title_en: Computer Graphic
-title_pt: Computação Gráfica
+title:
+  en: Computer Graphic
+  pt: Computação Gráfica
 institution: Seven
 end: 2014
 ---

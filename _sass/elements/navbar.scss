@@ -4,7 +4,7 @@
 
 .navbar {
   &.is-active {
-    @include for-phone-only {
+    @include for-tablet-landscape-and-down {
       position: fixed;
       height: 100vh;
       width: 100vw;
@@ -18,8 +18,12 @@
   }
 
   .navbar-menu {
+    @include for-tablet-landscape-and-down {
+      padding-bottom: 0;
+    }
+
     &.is-active {
-      @include for-phone-only {
+      @include for-tablet-landscape-and-down {
         background-color: $tertiary;
 
         position: inherit;
@@ -31,19 +35,24 @@
       }
 
       .navbar-start {
-        @include for-phone-only {
+        @include for-tablet-landscape-and-down {
         }
       }
 
       .navbar-end {
-        @include for-phone-only {
+        @include for-tablet-landscape-and-down {
+          align-self: flex-end;
+          justify-content: flex-end;
+          display: flex;
+          height: 100%;
+          align-items: flex-end;
         }
       }
     }
 
     .navbar-item {
       &.is-active {
-        @include for-phone-only {
+        @include for-tablet-landscape-and-down {
           background-color: rgba(223,237,248, .1);
         }
       }
