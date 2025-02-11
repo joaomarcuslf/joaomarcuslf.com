@@ -1,13 +1,13 @@
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    document.addEventListener('DOMContentLoaded', function() {
+        var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
         if ($navbarBurgers.length > 0) {
-            $navbarBurgers.forEach(el => {
-                el.addEventListener('click', () => {
+            $navbarBurgers.forEach(function(el) {
+                el.addEventListener('click', function() {
 
-                    const target = el.dataset.target;
-                    const $target = document.getElementById(target);
+                    var target = el.dataset.target;
+                    var $target = document.getElementById(target);
 
                     el.classList.toggle('is-active');
                     $target.classList.toggle('is-active');
@@ -16,14 +16,14 @@
             });
         }
 
-        const urlInfo = window.location.href.split('/')
+        var urlInfo = window.location.href.split('/')
 
-        const activeRouter = `${urlInfo[3] || 'home'}-navitem`;
+        var activeRouter = (urlInfo[3] || 'home') + '-navitem';
 
-        const elmList = document.getElementsByClassName(activeRouter);
+        var elmList = document.getElementsByClassName(activeRouter);
 
-        for(let i = 0; i < elmList.length; i++) {
-            const elm = elmList[i];
+        for(var i = 0; i < elmList.length; i++) {
+            var elm = elmList[i];
 
             elm.classList.toggle('is-active');
         }
