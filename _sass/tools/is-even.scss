@@ -1,5 +1,0 @@
-@mixin is-even {
-  &:nth-child(even) {
-    @content;
-  }
-}

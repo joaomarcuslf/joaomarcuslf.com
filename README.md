@@ -1,15 +1,16 @@
 # joaomarcuslf.com
 
 [![Build and Deploy](https://github.com/joaomarcuslf/joaomarcuslf.com/actions/workflows/build_deploy.yml/badge.svg)](https://github.com/joaomarcuslf/joaomarcuslf.com/actions/workflows/build_deploy.yml)
-[![Auto feed creator](https://github.com/joaomarcuslf/joaomarcuslf.com/actions/workflows/update_feed.yml/badge.svg)](https://github.com/joaomarcuslf/joaomarcuslf.com/actions/workflows/update_feed.yml)
 
-This is my professional website, its built in Jekyll, and uses gulp for advanced build tasks.
+## Getting Started
 
-## Getting started:
+First, run the development server:
 
-```sh
-    docker-compose up --build
+```bash
+npm run dev
 ```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Collaborators
 

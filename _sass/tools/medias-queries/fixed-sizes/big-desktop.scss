@@ -1,7 +1,0 @@
-@import "../../../settings/settings";
-
-@mixin for-big-desktop-only {
-  @media (min-width: $size-big-screen) {
-    @content;
-  }
-}

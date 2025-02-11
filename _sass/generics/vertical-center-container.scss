@@ -1,7 +1,0 @@
-@import "../generics/flex-container";
-
-.vertical-center-container {
-  @extend .flex-container;
-
-  justify-content: center;
-}
