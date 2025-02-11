@@ -14,13 +14,13 @@ jobs:
         uses: actions/github-script@v4
         with:
           script: |
-            const fs = require('fs');
+            let fs = require('fs');
 
-            const { author_association, body, created_at } = context.payload.comment
-            const { labels } = context.issue
+            let { author_association, body, created_at } = context.payload.comment
+            let { labels } = context.issue
 
             if (author_association == 'OWNER') {
-              const date = created_at.split("T")[0]
+              let date = created_at.split("T")[0]
 
               function getKey(body, key) {
                   return body.split("\r\n").reduce(function (acc, elm) {
@@ -36,39 +36,39 @@ jobs:
               }
 
               let filename = ''
+              let title = ''
 
-
-              const layout = getKey(body, 'layout')
+              let layout = getKey(body, 'layout')
 
               switch (layout) {
                 case 'graduation':
-                  const title = sanitizeName(getKey(body, 'title'))
-                  const year = getKey(body, 'end')
+                  title = sanitizeName(getKey(body, 'title'))
+                  let year = getKey(body, 'end')
 
                   filename = `${year}-${name}`
                   break;
 
                 case 'job':
-                  const title = sanitizeName(getKey(body, 'company_name'))
-                  const [month, year] = getKey(body, 'start_date').split('/')
+                  title = sanitizeName(getKey(body, 'company_name'))
+                  let [month, year] = getKey(body, 'start_date').split('/')
 
-                  filename = `${year}-${month}-${name}`
+                  filename = `${year}-${month}-${title}`
                   break;
 
                 case 'post':
-                  const title = sanitizeName(getKey(body, 'title'))
+                  title = sanitizeName(getKey(body, 'title'))
 
-                  filename = `${date}-${name}`
+                  filename = `${date}-${title}`
                   break;
 
                 case 'project':
-                  const title = sanitizeName(getKey(body, 'repo'))
+                  title = sanitizeName(getKey(body, 'repo'))
 
                   filename = `${date}-${name}`
                   break;
 
                 case 'skill':
-                  const title = sanitizeName(getKey(body, 'name'))
+                  title = sanitizeName(getKey(body, 'name'))
 
                   filename = `${name}`
                   break;
