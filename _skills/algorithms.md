@@ -1,5 +1,5 @@
 ---
 layout: skill
 name: "Algorithms"
-progress: 75
+progress: 80
 ---

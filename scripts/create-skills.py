@@ -74,7 +74,7 @@ files = {
         ]
     },
     'Algorithms': {
-        'progress': 75,
+        'progress': 80,
         'categories': []
     },
     'Software Engineer': {
@@ -83,6 +83,26 @@ files = {
             'Clean Code',
             'Code Quality',
             'TDD'
+        ]
+    },
+    'Python': {
+        'progress': 75,
+        'categories': [
+            'Django',
+            'Pandas',
+            'Data Visualization',
+            'Data Mining',
+            'Exploratory Data Analysis'
+        ]
+    },
+    'R': {
+        'progress': 65,
+        'categories': []
+    },
+    'Math': {
+        'progress': 65,
+        'categories': [
+            'Statistics',
         ]
     },
 }
