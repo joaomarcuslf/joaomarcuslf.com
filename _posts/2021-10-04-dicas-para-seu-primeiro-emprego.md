@@ -23,7 +23,7 @@ Se você está procurando seu primeiro emprego na área de desenvolvimento/TI, s
 
 Aqui nesse post, irei dar algumas dicas relacionadas às hard-skills, que são habilidades técnicas, no twitter, a Leticia irá falar sobre as soft-skills, sendo um conjunto de habilidades mais direcionadas ao social, e maturidade profissional. Não existe uma balança de quais habilidades são mais importantes, porém indicamos você dedicar pelo menos 50% de esforço em cada área, assim você será tanto uma pessoa capacitada tecnicamente, como uma pessoa agradável de se lidar, o que poderá abrir muitas portas para ti.
 
-Você pode ver a parte da Leticia <a target="blank" href="https://twitter.com/EngineerRabbit">seguindo esse link</a>.
+Você pode ver a parte da Leticia <a target="blank" href="https://twitter.com/EngineerRabbit/status/1446092310043938820t">seguindo esse link</a>.
 
 Vamos começar?
 
