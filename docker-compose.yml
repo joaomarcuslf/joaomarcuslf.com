@@ -4,10 +4,15 @@ services:
   jekyll:
     image: jekyll/jekyll:latest
     command: jekyll serve --future --watch --livereload
-    environment:
-      JEKYLL_ENV: "production"
     ports:
       - 4000:4000
       - 35729:35729
     volumes:
       - .:/srv/jekyll
+  gulp:
+    build: .
+    command: gulp watchSite
+    volumes:
+      - .:/app
+    depends_on:
+      - jekyll

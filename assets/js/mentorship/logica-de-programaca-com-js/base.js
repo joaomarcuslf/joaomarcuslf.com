@@ -16,7 +16,7 @@ function disfarcar(elemento1) {
     .querySelector("#" + elemento1.id + " figure")
     .classList.toggle("is-mirrored");
   document.querySelector("#" + elemento1.id + " img").src =
-    "/assets/images/mentorship/disfarce-01.webp";
+    "/assets/mentorship/disfarce-01.png";
 }
 
 function pegarCodigo(elemento1, codigo) {

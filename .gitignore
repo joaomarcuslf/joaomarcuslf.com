@@ -6,7 +6,6 @@ _site
 .sass-cache
 .jekyll-cache
 node_modules
-package-lock.json
 log
 tmp
 _image_optim_*

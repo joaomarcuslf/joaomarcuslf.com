@@ -24,6 +24,8 @@ const IMAGES_PATH = "./assets/images";
 const JAVASCRIPT_PATH = "./assets/js";
 const DIST_PATH = "dist";
 
+const SITE_PATH = "_site";
+
 export const clean = () => {
   return del([DIST_PATH]);
 };
@@ -155,6 +157,48 @@ export const vendorsJs = () => {
     }))
     .pipe(gulpUglify())
     .pipe(gulp.dest(`${JAVASCRIPT_PATH}/vendors`));
+};
+
+export const watchSite = () => {
+  // Purgecss
+  gulp.watch([`./assets/css/*.scss`, `./_sass/**/*.scss`], purgecss)
+
+  // Webp
+  gulp.watch([`./assets/images/*.{png,jpg,jpeg}`, `./assets/images/companies/*.{png,jpg,jpeg}`], () => gulp
+    .src(`${IMAGES_PATH}/**/*.{png,jpg,jpeg}`)
+    .pipe(
+      gulpWebp({
+        quality: 90,
+      })
+    )
+    .pipe(gulp.dest(`${SITE_PATH}/assets/images`)))
+
+  // Thumbnails
+  gulp.watch(`./assets/images/posts/**/*.{png,jpg,jpeg}`, () => parallel(
+    function smallThumb() {
+      return gulp
+        .src(`${IMAGES_PATH}/posts/**/*.webp`)
+        .pipe(
+          gulpImageResize({
+            width: 538,
+            cover: true,
+          })
+        )
+        .pipe(gulp.dest(`${SITE_PATH}/assets/images/thumbnails/small/posts`));
+    },
+
+    function mediumThumb() {
+      return gulp
+        .src(`${IMAGES_PATH}/posts/**/*.webp`)
+        .pipe(
+          gulpImageResize({
+            width: 1076,
+            cover: true,
+          })
+        )
+        .pipe(gulp.dest(`${SITE_PATH}/assets/images/thumbnails/medium/posts`));
+    }
+  ))
 };
 
 export default series(
