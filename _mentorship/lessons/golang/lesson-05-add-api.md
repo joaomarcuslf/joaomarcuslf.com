@@ -187,7 +187,7 @@ func Save(path string, data interface{}) {
 }
 ```
 
-Agora vamos ver como vamos utilizar esses métodos de forma mais eficaz.
+Agora vamos ver como vamos utilizar esses métodos no nosso Dummy DB, rode os seguintes comandos no seu terminal:
 
 ```bash
 mkdir database
@@ -197,7 +197,7 @@ touch ./db.json
 echo '{"Sites": []}' >> ./db.json
 ```
 
-Vamos preencher nosso `database/db.go` com os seguintes métodos:
+Vamos preencher nosso `database/db.go` como se fosse um banco de dados local:
 
 ```go
 package database
@@ -304,7 +304,10 @@ func (db *DB) Remove(id string) {
 }
 ```
 
-Dê uma analisada no código, o nosso objetivo não é aprender tudo sobre, porém esse é uma forma de lidar com JSON. Agora abra `server/http.go`:
+
+Espero que compreenda, o objetivo desses posts não é aprofundar em certas implementações, por isso não irei abordar como funciona DB locais, DB gerais, e etc. Caso surja curiosidade tente analisar o código acima, e em caso de dúvidas você pode <a href="#" onclick="mailMe('{{site.email}}')">entrar em contato comigo</a>.
+
+Agora abra `server/http.go`:
 
 ```go
 package server
