@@ -17,9 +17,8 @@ jobs:
             const fs = require('fs');
 
             const { author_association, body, created_at } = context.payload.comment
-            const { labels } = context.issue
 
-            console.log(labels)
+            console.log(context.issue)
 
             //if (author_association == 'OWNER') {
             //  console.log(context.payload.comment)
