@@ -8,7 +8,7 @@ start_date: "11/2015"
 end_date: "11/2016"
 key: 2015-11-faeterj-rio
 company_name: FAETERJ-Rio
-company_img: faeterj-rio.png
+company_img: faeterj-rio.webp
 company_ref: https://www.linkedin.com/school/faeterj-rio/
 short_description:
     en: I developed applications aimed at the academic area, in order to facilitate the teaching of computer science subjects in colleges, using HTML, CSS and JavaScript to develop the applications and Github so that the code was open and accessible to everyone. I also worked using several Agile practices, such as Kanban and Daily meetings, and we applied XP and Scrum during the projects.

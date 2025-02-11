@@ -8,7 +8,7 @@ start_date: "05/2016"
 end_date: "01/2017"
 key: 2016-05-minds-at-work
 company_name: Minds At Work Sistemas e Projetos Ltda
-company_img: minds-at-work.png
+company_img: minds-at-work.webp
 company_ref: https://www.linkedin.com/company/minds-at-work-sistemas-e-projetos-ltda/
 short_description:
     en: I developed high-risk and scalable applications using JavaScript in conjunction with other technologies and frameworks, I also worked with C#/.Net and Java/Spring for the Backend. I also worked with agile practices like Kanban and Scrum, I also worked using Jenkins for Continuous integration and Mercurial / HG for versioning, I worked with multidisciplinary teams on projects for different areas.

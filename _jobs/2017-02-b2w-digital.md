@@ -8,7 +8,7 @@ start_date: "02/2017"
 end_date: "09/2018"
 key: 2017-02-b2w-digital
 company_name: B2W Digital
-company_img: b2w-digital.png
+company_img: b2w-digital.webp
 company_ref: https://www.linkedin.com/company/b2w---companhia-global-do-varejo/
 short_description:
     en: I participated in projects for different areas and with different technologies, being the main JavaScript, using it from the front for the development of multiplatform apps, using React and React Native, even in the Back for APIs or Services like Back-Front. I also worked with AWS services like Elastic Beanstalk, EC2 and S3, also with Git, continuous deployment with Gitlab and Bamboo pipeline and Agiles practices, mainly with scrum.

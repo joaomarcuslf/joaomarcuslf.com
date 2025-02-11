@@ -9,9 +9,8 @@ jobs:
 
       - name: Optimize Images 🖼️
         run: |
-          npm install gifsicle pngquant-bin compress-images --quiet
-          node run/add-preload-files.js
-          node run/optimize-images.js
+          npm install
+          npm run build
 
       - name: Build Jekyll files 🔧
         run: |

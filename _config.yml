@@ -34,8 +34,6 @@ collections:
     output: false
     permalink: /:collection/:name
 
-google_analytics:
-
 url: http://joaomarcuslf.com
 
 baseurl: ""
@@ -91,12 +89,20 @@ exclude:
   - CNAME
   - run
   - tmp
+  - dist
   - _image_optim_cache.yml
   - _image_optim_archive
   - .github
   - .jekyll-cache
   - .sass-cache
   - .vscode
+  - gulpfile.babel.js
+  - node_modules
+  - package.json
+  - package-lock.json
+  - yarn.lock
+  - .babelrc
+  - .editorconfig
 
 resume:
   name: João Marcus de Lemos Fernandes

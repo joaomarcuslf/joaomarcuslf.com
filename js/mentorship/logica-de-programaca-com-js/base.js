@@ -23,7 +23,7 @@ function encontrar(elemento1, elemento2) {
 
 function disfarcar(elemento1) {
   document.querySelector("#" + elemento1.id + " figure").classList.toggle("is-mirrored")
-  document.querySelector("#" + elemento1.id + " img").src = "/images/mentorship/disfarce-01.png"
+  document.querySelector("#" + elemento1.id + " img").src = "/images/mentorship/disfarce-01.webp"
 }
 
 function pegarCodigo(elemento1, codigo) {

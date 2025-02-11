@@ -8,7 +8,7 @@ start_date: "01/2020"
 end_date: "01/2021"
 key: 2020-01-working-minds
 company_name: Working Minds
-company_img: working-minds.png
+company_img: working-minds.webp
 company_ref: https://www.linkedin.com/company/working-minds/
 short_description:
     en: I participated in projects using several technologies, such as Wordpress, Ruby on Rails, React, Ionic, Angular and Spring. The projects were based on the consulting model for other companies using Git and Jira for their management.

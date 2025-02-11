@@ -8,7 +8,7 @@ start_date: "08/2015"
 end_date: "04/2016"
 key: 2015-08-faeterj-rio
 company_name: FAETERJ-Rio
-company_img: faeterj-rio.png
+company_img: faeterj-rio.webp
 company_ref: https://www.linkedin.com/school/faeterj-rio/
 short_description:
     en: I worked managing the social media of the academic institution developing material focused on the IT public and searching for more effective forms of communication.
