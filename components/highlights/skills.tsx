@@ -1,5 +1,5 @@
 import Highlight from "@/components/highlights";
-import SkillView from "@/components/skill-view";
+import SkillView from "@/components/view/skill";
 import { SkillMetadata } from "@/types/skill";
 
 export default function HighlightedSkills({ skills }: { skills: SkillMetadata[] }) {

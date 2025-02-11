@@ -1,6 +1,6 @@
 import { ProjectMetadata } from "@/types/project";
 import Highlight from "@/components/highlights";
-import ProjectView from "@/components/project-view";
+import ProjectView from "@/components/view/project";
 
 export default function HighlightedProjects({ projects }: { projects: ProjectMetadata[] }) {
   return (

@@ -1,6 +1,6 @@
 import { ProjectMetadata } from "@/types/project";
 
-import ProjectView from "../project-view";
+import ProjectView from "@/components/view//project";
 
 export default function ExpandedProjects({ projects }: { projects: ProjectMetadata[] }) {
   return (

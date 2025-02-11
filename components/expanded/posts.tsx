@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 import { PostMetadata } from "@/types/post";
 
-import PostView from "../post-view";
+import PostView from "@/components/view//post";
 
 const getTags = (posts: PostMetadata[]) => {
   const tags = new Set();

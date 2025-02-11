@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import site from "@/site"
-import PostView from "@/components/post-view";
+import PostView from "@/components/view/post";
 import Hljs from "@/components/hljs";
 import { PostMetadata, postMetadataSerializer } from "@/types/post";
 import { getContentMetadataList, getPostContent } from "@/utils/metadata";

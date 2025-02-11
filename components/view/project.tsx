@@ -38,8 +38,10 @@ export default function ProjectView({ project }: { project: ProjectMetadata }) {
                   <span className="tag is-highlight">Collaborating</span>
                 )}
 
-                {project?.techs?.map((tech) => (
-                  <span className="tag" key={tech}>{tech}</span>
+                {project?.techs?.slice(0, 4)?.map((tech) => (
+                  <span className="tag" key={tech}>
+                    {tech}
+                  </span>
                 ))}
               </div>
             </div>

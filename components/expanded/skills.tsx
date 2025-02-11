@@ -1,9 +1,8 @@
 import { Suspense } from "react";
 
-import SkillView from "@/components/skill-view";
+import SkillView from "@/components/view/skill";
 import { SkillMetadata } from "@/types/skill";
-
-import MasiSkill from "../skill-view/main-skill";
+import MasiSkill from "@/components/view//main-skill";
 
 export default function ExpandedSkills({
   skills,
