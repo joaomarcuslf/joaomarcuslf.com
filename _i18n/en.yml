@@ -69,6 +69,8 @@ mentorship:
     title: Hey, If I got you until here, I think you liked.
     subtitle: So, let's talk about your needs, and learn together?
     contact_me: Send me a E-mail!
+  examples:
+    title: "Examples of mentorship lessons"
 
 posts:
   title: Posts Page
@@ -125,11 +127,11 @@ resume:
   skills:
     hard:
       javascript: Javascript
-      react_js: 'React.js'
-      vue_js: 'Vue.js'
-      node_js: 'Node.js'
-      express_js: 'ExpressJS'
-      mocha_chai_js: 'Mocha + Chai.js'
+      react_js: "React.js"
+      vue_js: "Vue.js"
+      node_js: "Node.js"
+      express_js: "ExpressJS"
+      mocha_chai_js: "Mocha + Chai.js"
       jest: Jest
       scss: SCSS
       sql: SQL
@@ -139,7 +141,7 @@ resume:
       python: Python
       flask: Flask
       ruby: Ruby
-      ruby_on_rails: 'Ruby on Rails'
+      ruby_on_rails: "Ruby on Rails"
       r: R
       git: Git
       agile: Agile

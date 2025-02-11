@@ -16,7 +16,9 @@
       transform: rotateX(180deg);
     }
 
-    &:hover, &:active, &:focus {
+    &:hover,
+    &:active,
+    &:focus {
       .icon i {
         color: $white !important;
       }
@@ -24,8 +26,12 @@
   }
 }
 
-  /* The typing effect */
-  @keyframes typing {
-    from { transform: rotateX(0deg); }
-    to { transform: rotateX(180deg); }
+/* The typing effect */
+@keyframes typing {
+  from {
+    transform: rotateX(0deg);
   }
+  to {
+    transform: rotateX(180deg);
+  }
+}

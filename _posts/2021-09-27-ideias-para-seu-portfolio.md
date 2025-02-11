@@ -51,6 +51,7 @@ Por padrão, estou contando que você tenha algum conhecimento de Git, quero fal
         <li><a href="#api-de-autenticação">API de Autenticação</a></li>
       </ul>
     </li>
+
   </ul>
 </aside>
 
@@ -123,7 +124,8 @@ No exemplo acima é a Newsletter do <a href="https://filipedeschamps.com.br/news
 <blockquote class="is-family-monospace">
   <strong>Extra tip:</strong> <br />
 
-  Não se esqueça de validar o e-mail do usuário, pode ser uma validação simples como se ele está no formato <span class="code">nome@dominio.sufixo</span>, você pode tanto tentar fazer com javascript quanto usando regex, teste os dois, veja qual a solução mais bonita.
+Não se esqueça de validar o e-mail do usuário, pode ser uma validação simples como se ele está no formato <span class="code">nome@dominio.sufixo</span>, você pode tanto tentar fazer com javascript quanto usando regex, teste os dois, veja qual a solução mais bonita.
+
 </blockquote>
 
 #### Buscador do Github
@@ -154,7 +156,8 @@ Esse tipo de projeto é ótimo pois você estará trabalhando consumindo uma API
 <blockquote class="is-family-monospace">
   <strong>Extra tip:</strong> <br />
 
-  Que tal além de criar o projeto você tentar também criar testes para o projeto? Pesquise sobre TDD, é uma forma de você escrever testes antes do código, o que faz com que seu código tenha uma segurança de como ele deve rodar.
+Que tal além de criar o projeto você tentar também criar testes para o projeto? Pesquise sobre TDD, é uma forma de você escrever testes antes do código, o que faz com que seu código tenha uma segurança de como ele deve rodar.
+
 </blockquote>
 
 ### Back-end
@@ -215,8 +218,8 @@ E elas são extremamente importantes para os softwares modernos, o desafio que e
 <blockquote class="is-family-monospace">
   <strong>Extra tip:</strong> <br />
 
-  1. Talvez te ajude na modelagem dos dados, você desenhar como os models em um papel mesmo, e pensar como eles se comunicam. <br />
-  2. Caso você não entenda muito de DB, você pode usar um ORM para facilitar lidar com os bancos.
+1. Talvez te ajude na modelagem dos dados, você desenhar como os models em um papel mesmo, e pensar como eles se comunicam. <br />
+2. Caso você não entenda muito de DB, você pode usar um ORM para facilitar lidar com os bancos.
 </blockquote>
 
 #### API de Autenticação
@@ -247,8 +250,8 @@ Você pode usar os conhecimentos que teve nos tópicos anteriores e aplicar JWT 
 <blockquote class="is-family-monospace">
   <strong>Extra tip:</strong> <br />
 
-  1. Pesquise posts no Medium sobre: <span class="code">REST api JWT</span>, vai te ajudar bastante. <br />
-  2. Talvez possa ser um desafio bom você implementar um prazo de validado para as JWT.
+1. Pesquise posts no Medium sobre: <span class="code">REST api JWT</span>, vai te ajudar bastante. <br />
+2. Talvez possa ser um desafio bom você implementar um prazo de validado para as JWT.
 </blockquote>
 
 ### Concluindo

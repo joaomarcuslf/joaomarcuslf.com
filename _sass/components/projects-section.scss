@@ -9,9 +9,8 @@
 @import "../generics/vertical-center-container";
 @import "../generics/horizontal-center-container";
 .projects-section {
-
   .hero-body > * {
-    padding: .5rem 0;
+    padding: 0.5rem 0;
 
     &:first-child {
       padding-top: 0;
@@ -66,13 +65,12 @@
       @include for-desktop-up {
         width: 32%;
 
-        padding: .75rem .5rem;
+        padding: 0.75rem 0.5rem;
       }
 
       @include for-tablet-landscape-and-down {
         opacity: 1;
         width: 50%;
-
 
         flex: 0 0 50% !important;
 
@@ -80,11 +78,11 @@
           padding-bottom: 1.5rem;
 
           @include is-even {
-            padding-left: .5rem;
+            padding-left: 0.5rem;
           }
 
           @include is-odd {
-            padding-right: .5rem;
+            padding-right: 0.5rem;
           }
         }
       }
@@ -100,10 +98,10 @@
       }
 
       .project-card {
-        background-color: rgba($tertiary, .1);
-        padding: .8rem;
-        border-radius: .5rem;
-        border: 2px solid rgba($quaternary, .8);
+        background-color: rgba($tertiary, 0.1);
+        padding: 0.8rem;
+        border-radius: 0.5rem;
+        border: 2px solid rgba($quaternary, 0.8);
 
         width: 100%;
         height: 100%;
@@ -124,7 +122,7 @@
           }
 
           .tag.is-highlight {
-            background-color: rgba($pre, .7);
+            background-color: rgba($pre, 0.7);
           }
         }
       }

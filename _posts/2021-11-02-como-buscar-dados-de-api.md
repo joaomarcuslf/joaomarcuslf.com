@@ -25,20 +25,20 @@ Você sabe o que é HTTP? Não, então vem comigo.
 
 HTTP é um tipo de protocolo de comunicação, existem muitos na web e fora dela, esses protocolos servem para definir um padrão de comunicação, esse padrão define como deve ser formatado uma requisição, e como você deve esperar uma resposta.
 
-Pensa assim, eu estou chamando minha cachorra e pedindo para ele me dar a patinha, se nós precisássemos definir um protocolo para esse tipo  de requisição funcionaria assim:
+Pensa assim, eu estou chamando minha cachorra e pedindo para ele me dar a patinha, se nós precisássemos definir um protocolo para esse tipo de requisição funcionaria assim:
 
 <span class="code">Requisição:</span>
-**Destino:** Nissa *|*
+**Destino:** Nissa _|_
 **Corpo da chamada:** Me dá a patinha!
 
 <span class="code">Resposta:</span>
-**Destino:** Remetente *|*
+**Destino:** Remetente _|_
 **Corpo da resposta:** Requisição bem sucedida.
 
 E dai, ela me daria a patinha dela. Esse tipo de analogia, a Nissa, minha cachorra, seria um servidor, esse servidor processou minha requisição com base no corpo da chamada, e daria uma resposta se foi bem sucedida ou não, caso ela não me obedecesse, e por exemplo, ao invés de me dar a pata saísse correndo, eu teria essa resposta:
 
 <span class="code">Resposta:</span>
-**Destino:** Remetente *|*
+**Destino:** Remetente _|_
 **Corpo da resposta:** Requisição não pôde ser processada corretamente.
 
 E com esse tipo de resposta, eu, o Front-end/Cliente teria que ter um comportamento para tratar esse tipo de erro. Ficou mais claro agora porquê precisamos definir esses tipos de padrões de comunicação?
@@ -46,18 +46,22 @@ E com esse tipo de resposta, eu, o Front-end/Cliente teria que ter um comportame
 Com isso em mente, vamos entender como o HTTP estrutura seus padrões:
 
 #### Requisição:
+
 <span class="code">Verbo:</span> Definindo qual o tipo da requisição, podendo ser **GET**, **POST**, **PUT**, **DELETE**, ou **OPTIONS**. Todos esses verbos são tratados pelo servidor para cada um ter seu comportamento definido. <br />
 <span class="code">URL:</span> Aqui contém a URL que o servidor que você quer está hospedado. <br />
 <span class="code">Cabeçalhos:</span> Aqui é onde podemos passar o que chamamos de metadata, podendo conter a origem da requisição, se possuímos algum tipo de autenticação, ou até mesmo quais valores esperamos receber. Vamos explorar tudo isso mais para frente. <br />
 <span class="code">Corpo:</span> Aqui é onde vamos passar dados que devem ser utilizados pelo servidor para poder processar nossa requisição de fato. <br />
 
 #### Resposta:
+
 <span class="code">Status:</span> Nessa parte, o servidor irá informar se foi bem sucedido, se falhou, ou qual tipo de resposta o cliente receberá, você pode ver quais <a href="https://http.cat/" target="blank">status mais usados nesse link</a>. <br />
 <span class="code">Cabeçalhos:</span> Semelhante aos cabeçalhos da requisição, porém aqui os metadata vêm do servidor, então contém qual o tipo de dado que a resposta contém, de onde o servidor responde, informações para cache, e por ai vai. <br />
 <span class="code">Corpo:</span> Aqui o servidor está te entregando o dado requisitado, ou alguma formatação informando o erro. <br />
 
 Veja esse exemplo:
+
 #### Requisição:
+
 <span class="code">Verbo:</span> **GET** <br />
 <span class="code">URL:</span> https://www.google.com/ <br />
 <span class="code">Cabeçalhos:</span> <br />
@@ -66,8 +70,8 @@ Veja esse exemplo:
 
 <span class="code">Corpo:</span> <br />
 
-
 #### Resposta:
+
 <span class="code">Status:</span> 200 **OK** <br />
 <span class="code">Cabeçalhos:</span> <br />
 
@@ -80,7 +84,6 @@ Veja esse exemplo:
 Essa requisição acontece toda vez que você acessa a página do Google, sem que você precise escreve uma linha sequer de código, na requisição nós estamos pedindo o conteúdo que estiver no / do Google, informando que é um GET, e estamos dizendo que esperamos receber imagens, HTML, ou algum tipo de XML. E o Google nos respondeu com a conteúdo do tipo HTML, contendo 36675 caracteres, e com o enconding BR pois estou com meu navegador em português. Você pôde perceber que o Corpo da requisição está vazio? Bom, por convenção o corpo da requisição é opcional em requisições do tipo GET e DELETE.
 
 Uma grande vantagem do HTTP é que ele trafega texto, então é muito fácil parsear e ler uma chamada HTTP. Talvez você ache que isso torna ele inseguro, e isso seria verdade se não existisse o HTTPS, HTTPS é uma extensão do protocolo HTTP padrão, porém ele criptografa o documento em formato texto, tornando mais seguro a navegação na internet.
-
 
 Viu como é fácil? HTTP faz parte do nosso dia-a-dia na internet, então não precisa ter medo de usá-lo, ele permite que a internet funcione do jeito que ela funciona hoje.
 
@@ -132,6 +135,7 @@ O Fetch possui uma estrutura muito padrãozinha, o que para mim é uma grande va
 Se você já se desesperou, tenha calma. Vamos analisar por partes, o Fetch abstrai muito do padrão HTTP, você se lembra que discutimos anteriormente sobre como montamos uma requisição? Nós precisamos do **Destino**, **Verbo**, e os **Headers**. Se você observar as primeiras linhas do nosso código, nós podemos destrinchar nossa requisição dessa forma:
 
 #### Requisição:
+
 <span class="code">Verbo:</span> **GET** <br />
 <span class="code">URL:</span> http://localhost:3000/users <br />
 <span class="code">Cabeçalhos:</span> <br />

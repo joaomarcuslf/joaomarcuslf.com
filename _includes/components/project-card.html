@@ -1,27 +1,50 @@
-<article class="project-card" data-gh-project="{{include.user}}/{{include.repo}}">
+<article
+  class="project-card"
+  data-gh-project="{{include.user}}/{{include.repo}}"
+>
   <figure class="project-card-image">
     <p class="image is-128x128">
       <img
         src="https://raw.githubusercontent.com/devicons/devicon/master/icons/{{include.main}}/{{include.main}}-original.svg"
-        alt="{{include.main}} logo" width="128" height="128" />
+        alt="{{include.main}} logo"
+        width="128"
+        height="128"
+      />
     </p>
   </figure>
 
   <div class="project-card-content">
     <header class="project-card-header">
-      <p class="project-card-suptitle">On <a target="blank" href="https://github.com/{{include.user}}/{{include.repo}}"
-          title="View on GitHub">GitHub</a></p>
+      <p class="project-card-suptitle">
+        On
+        <a
+          target="blank"
+          href="https://github.com/{{include.user}}/{{include.repo}}"
+          title="View on GitHub"
+          >GitHub</a
+        >
+      </p>
       <h6 class="project-card-title">{{include.name}}</h6>
     </header>
 
     <div class="project-card-body">
       <dl class="project-card-details">
         <dt>Forked</dt>
-        <dd class="fork"><a target="blank" href="https://github.com/{{include.user}}/{{include.repo}}/fork"
-            title="View fork details"></a></dd>
+        <dd class="fork">
+          <a
+            target="blank"
+            href="https://github.com/{{include.user}}/{{include.repo}}/fork"
+            title="View fork details"
+          ></a>
+        </dd>
         <dt>Starred</dt>
-        <dd class="star"><a target="blank" href="https://github.com/{{include.user}}/{{include.repo}}/stargazers "
-            title="View fork details"></a></dd>
+        <dd class="star">
+          <a
+            target="blank"
+            href="https://github.com/{{include.user}}/{{include.repo}}/stargazers "
+            title="View fork details"
+          ></a>
+        </dd>
       </dl>
     </div>
   </div>

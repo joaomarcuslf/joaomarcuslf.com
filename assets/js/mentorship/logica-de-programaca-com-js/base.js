@@ -1,24 +1,27 @@
 /* Helper Functions */
 
 function pegarElemento(id) {
-  return document.getElementById(id)
+  return document.getElementById(id);
 }
 
 function encontrar(elemento1, elemento2) {
-  elemento1.classList.remove("to-left")
-  elemento1.classList.add("to-right")
-  elemento2.classList.remove("to-right")
-  elemento2.classList.add("to-left")
+  elemento1.classList.remove("to-left");
+  elemento1.classList.add("to-right");
+  elemento2.classList.remove("to-right");
+  elemento2.classList.add("to-left");
 }
 
 function disfarcar(elemento1) {
-  document.querySelector("#" + elemento1.id + " figure").classList.toggle("is-mirrored")
-  document.querySelector("#" + elemento1.id + " img").src = "/assets/images/mentorship/disfarce-01.webp"
+  document
+    .querySelector("#" + elemento1.id + " figure")
+    .classList.toggle("is-mirrored");
+  document.querySelector("#" + elemento1.id + " img").src =
+    "/assets/images/mentorship/disfarce-01.webp";
 }
 
 function pegarCodigo(elemento1, codigo) {
-  $codigo = document.querySelector("#" + elemento1.id + " .codigo")
-  return $codigo.innerHTML
+  $codigo = document.querySelector("#" + elemento1.id + " .codigo");
+  return $codigo.innerHTML;
 }
 
 function fantasia(elemento1, fantasia) {
@@ -29,32 +32,32 @@ function fantasia(elemento1, fantasia) {
 
 function removerDaFila(elemento, time) {
   if (!time) {
-    elemento.remove()
+    elemento.remove();
   } else {
     setTimeout(function () {
-      elemento.remove()
+      elemento.remove();
     }, time);
   }
 }
 
 function removerDoCarnaval(elemento) {
-  console.log(elemento.id)
+  console.log(elemento.id);
 
-  document.getElementById(elemento.id).remove()
+  document.getElementById(elemento.id).remove();
 }
 
 /* Validation Functions */
 
 function validateCodeLines(code, lines) {
-  var valido = true
+  var valido = true;
 
   for (var i = 0; i < lines.length; i++) {
-    var linha = lines[i]
+    var linha = lines[i];
 
-    valido = valido && code.includes(linha)
+    valido = valido && code.includes(linha);
   }
 
-  return valido
+  return valido;
 }
 
 function submitCodeGeneric(event, $textarea, validation, callback) {
@@ -66,10 +69,8 @@ function submitCodeGeneric(event, $textarea, validation, callback) {
     $textarea.classList.remove("is-shake-error-animated");
     $textarea.classList.remove("is-success");
 
-    if (
-      validation()
-    ) {
-      callback()
+    if (validation()) {
+      callback();
 
       $textarea.classList.add("is-success");
     } else {
@@ -90,19 +91,19 @@ function submitCode(event, targetId, $scenario, $textarea, lines) {
       });
     },
     function () {
-      var newScript = document.createElement('script');
-      newScript.classList.add("target-script")
-      newScript.innerHTML = $textarea.value
+      var newScript = document.createElement("script");
+      newScript.classList.add("target-script");
+      newScript.innerHTML = $textarea.value;
 
-      var $script = document.querySelector("#" + targetId + " .target-script")
+      var $script = document.querySelector("#" + targetId + " .target-script");
 
       if ($script) {
-        $script.remove()
+        $script.remove();
       }
 
       $scenario.appendChild(newScript);
     }
-  )
+  );
 }
 
 function addTooltip(elem) {
@@ -136,7 +137,6 @@ function createResetButton(parentId, target, content) {
 
   $target.appendChild($button);
 
-
   $button.addEventListener("click", function (evt) {
     evt.preventDefault();
 
@@ -146,9 +146,11 @@ function createResetButton(parentId, target, content) {
 
     parent.innerHTML = content;
 
-    document.querySelectorAll("#" + parentId + " .has-popup-label").forEach(function (elem) {
-      addTooltip(elem);
-    });
+    document
+      .querySelectorAll("#" + parentId + " .has-popup-label")
+      .forEach(function (elem) {
+        addTooltip(elem);
+      });
 
     createResetButton(parentId, target, content);
   });

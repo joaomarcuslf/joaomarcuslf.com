@@ -1,28 +1,29 @@
 ---
 layout: compress
 ---
+
 <!DOCTYPE html>
 <html lang="{% t global.lang %}">
-  <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.author }}</title>
 
-    {% include meta.html %}
+<head>
+  <title>
+    {% if page.title %}{{ page.title }} – {% endif %}{{ site.author }}
+  </title>
 
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  {% include meta.html %}
+
+  <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" />
     <![endif]-->
 
-    <link rel="stylesheet" type="text/css" href="{{ "/assets/css/resume.css" | prepend: site.baseurl_root }}" />
-  </head>
+  <link rel="stylesheet" type="text/css" href="{{ "/assets/css/resume.css" | prepend: site.baseurl_root }}">
+  </script>
+</head>
 
-  <body>
-    <div id="main" role="main" class="main">
-      {{ content }}
-    </div>
+<body>
+  <div id="main" role="main" class="main">{{ content }}</div>
 
-    {% include analytics.html %}
-
-    <script src="{{ "/assets/js/base.js" | prepend: site.baseurl_root }}"></script>
+  {% include analytics.html %}
+  <script src="{{ "/assets/js/base.js" | prepend: site.baseurl_root }}" />
   </body>
 </html>
-

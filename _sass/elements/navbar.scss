@@ -53,7 +53,7 @@
     .navbar-item {
       &.is-active {
         @include for-tablet-landscape-and-down {
-          background-color: rgba(223,237,248, .1);
+          background-color: rgba(223, 237, 248, 0.1);
         }
       }
     }

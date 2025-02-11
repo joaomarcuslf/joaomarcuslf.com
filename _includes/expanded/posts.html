@@ -3,33 +3,22 @@
     <h2 class="images-section-title">Posts</h2>
 
     <div class="tags">
-      <a id="tag-all" href="#all" class="tag is-info" onclick="filterPosts(getTagFromEvent(event))">{% t posts.clear %}</a>
-      {% for tag in site.tags %}
-        {% assign filtered = tag[1] | where: 'draft', false %}
-
-        {% if filtered.size > 0 %}
-          <a id="tag-{{tag[0] | slugify}}" href="#{{ tag[0] | slugify }}" class="tag is-light" onclick="filterPosts(getTagFromEvent(event))">{{ tag[0] }}</a>
-        {% endif %}
-      {% endfor %}
+      <a id="tag-all" href="#all" class="tag is-info"
+        onclick="filterPosts(getTagFromEvent(event))">{% t posts.clear %}</a>
+      {% for tag in site.tags %} {% assign filtered = tag[1] | where: 'draft',
+      false %} {% if filtered.size > 0 %}
+      <a id="tag-{{tag[0] | slugify}}" href="#{{ tag[0] | slugify }}" class="tag is-light"
+        onclick="filterPosts(getTagFromEvent(event))">{{ tag[0] }}</a>
+      {% endif %} {% endfor %}
     </div>
 
     <div class="images-section-group">
-      {% assign filtered = site.posts | where: 'draft', false %}
-
-      {% for post in filtered %}
-      {%
-        include components/post.html
-          link=post.link
-          img=post.img
-          alt=post.alt
-          title=post.title
-          internal=post.internal
-          tags=post.tags
-          lang=post.lang
-      %}
-      {% endfor %}
+      {% assign filtered = site.posts | where: 'draft', false %} {% for post in
+      filtered %} {% include components/post.html link=post.link img=post.img
+      alt=post.alt title=post.title internal=post.internal tags=post.tags
+      lang=post.lang %} {% endfor %}
     </div>
   </div>
 </section>
 
-<script src="{{ "/assets/js/posts.js" | prepend: site.baseurl_root }}"></script>
+<script src="{{ "/assets/js/posts.js"| prepend: site.baseurl_root }}"></script>

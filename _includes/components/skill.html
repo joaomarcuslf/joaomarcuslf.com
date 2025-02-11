@@ -1,15 +1,19 @@
 <div class="skills-section-item card">
-    <div class="card-content">
-        <div class="media">
-            <div class="media-content">
-                <p class="skills-section-title is-4">
-                    {{include.name}}
-                </p>
-            </div>
-        </div>
-
-        <div class="content">
-            <progress class="progress is-success" value="{{include.progress}}" max="100">{{include.progress}}%</progress>
-        </div>
+  <div class="card-content">
+    <div class="media">
+      <div class="media-content">
+        <p class="skills-section-title is-4">{{include.name}}</p>
+      </div>
     </div>
+
+    <div class="content">
+      <progress
+        class="progress is-success"
+        value="{{include.progress}}"
+        max="100"
+      >
+        {{include.progress}}%
+      </progress>
+    </div>
+  </div>
 </div>

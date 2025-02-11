@@ -2,19 +2,13 @@
 layout: email
 ---
 
-{%
-  include introduction.html
-    theme="link"
-    title="E-mail me page"
-    subtitle="This page will open an popup for my e-mail."
-%}
+{% include introduction.html theme="link" title="E-mail me page" subtitle="This
+page will open an popup for my e-mail." %}
 
 <footer class="footer">
   <div class="content has-text-centered">
-    <p>
-      If this didn't work, send e-mail to: <strong>{{site.email}}</strong>
-    </p>
+    <p>If this didn't work, send e-mail to: <strong>{{site.email}}</strong></p>
   </div>
 </footer>
 
-<script src="{{ site.baseurl }}/assets/js/mail-me.js"></script>
+<script src="{{ site.baseurl }}/assets/js/mail-me.js" />

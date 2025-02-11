@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.author }}</title>
 
-    {% include meta.html %}
+<head>
+  <title>
+    {% if page.title %}{{ page.title }} – {% endif %}{{ site.author }}
+  </title>
 
-    <link rel="stylesheet" type="text/css" href="{{ "/assets/css/vendors.css" | prepend: site.baseurl_root }}" />
-    <link rel="stylesheet" type="text/css" href="{{ "/assets/css/style.css" | prepend: site.baseurl_root }}" />
-    <link rel="stylesheet" type="text/css" href="{{ "/assets/css/mentorship.css" | prepend: site.baseurl_root }}" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ "/feed.xml" | prepend: site.baseurl_root }}" />
-  </head>
+  {% include meta.html %}
+  <link rel="stylesheet" type="text/css" href="{{
+    "/assets/css/vendors.css"| prepend: site.baseurl_root }}">
+  </script>
+  <link rel="stylesheet" type="text/css" href="{{ "/assets/css/style.css" | prepend:
+    site.baseurl_root }}" />
+  <link rel="stylesheet" type="text/css" href="{{
+    "/assets/css/mentorship.css"| prepend: site.baseurl_root }}">
+  </script>
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{
+    site.description }}" href="{{ "/feed.xml" | prepend: site.baseurl_root }}" />
+</head>
 
-  <body>
-    <div id="main" role="main" class="main">
-      {{ content }}
-    </div>
+<body>
+  <div id="main" role="main" class="main">{{ content }}</div>
 
-    {% include analytics.html %}
+  {% include analytics.html %}
+  <script src="{{ "/assets/js/base.js" | prepend: site.baseurl_root }}"></script>
+</body>
 
-    <script src="{{ "/assets/js/base.js" | prepend: site.baseurl_root }}"></script>
-  </body>
 </html>

@@ -1,56 +1,85 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+    <title>
+      {% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{
+      site.description }}
+    </title>
 
     {% include meta.html %}
 
     <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" />
     <![endif]-->
 
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/vendors.css" />
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/assets/css/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ site.baseurl }}/assets/css/vendors.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ site.baseurl }}/assets/css/style.css"
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="{{ site.name }} - {{ site.description }}"
+      href="{{ site.baseurl }}/feed.xml"
+    />
   </head>
 
   <body class="vsc-initialized has-navbar-fixed-top">
-    <nav class="navbar is-fixed-top is-primary" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <div class="navbar-item">
-                <img src="/assets/images/logo-typo.webp" alt="Logo which is written { @ } JOAOMARCUSLF" height="50" width="100%" />
-            </div>
-
-            <button type="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMenuTarget">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </button>
+    <nav
+      class="navbar is-fixed-top is-primary"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="navbar-brand">
+        <div class="navbar-item">
+          <img
+            src="/assets/images/logo-typo.webp"
+            alt="Logo which is written { @ } JOAOMARCUSLF"
+            height="50"
+            width="100%"
+          />
         </div>
 
-        <div id="navbarMenuTarget" class="navbar-menu">
-            <div class="navbar-start is-hidden-mobile is-hidden-tablet-only">
-                <a class="navbar-item home-navitem" href="/">Home</a>
-                <a class="navbar-item posts-navitem" href="/posts">Posts</a>
-                <a class="navbar-item projects-navitem" href="/projects">Projects</a>
-                <a class="navbar-item about-me-navitem" href="/about-me">About Me</a>
-            </div>
+        <button
+          type="button"
+          class="navbar-burger burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarMenuTarget"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
 
-            <div class="navbar-start is-hidden-desktop">
-                <a class="navbar-item home-navitem" href="/">Home</a>
-                <a class="navbar-item posts-navitem" href="/posts">Posts</a>
-                <a class="navbar-item projects-navitem" href="/projects">Projects</a>
-                <a class="navbar-item about-me-navitem" href="/about-me">About Me</a>
-            </div>
+      <div id="navbarMenuTarget" class="navbar-menu">
+        <div class="navbar-start is-hidden-mobile is-hidden-tablet-only">
+          <a class="navbar-item home-navitem" href="/">Home</a>
+          <a class="navbar-item posts-navitem" href="/posts">Posts</a>
+          <a class="navbar-item projects-navitem" href="/projects">Projects</a>
+          <a class="navbar-item about-me-navitem" href="/about-me">About Me</a>
         </div>
+
+        <div class="navbar-start is-hidden-desktop">
+          <a class="navbar-item home-navitem" href="/">Home</a>
+          <a class="navbar-item posts-navitem" href="/posts">Posts</a>
+          <a class="navbar-item projects-navitem" href="/projects">Projects</a>
+          <a class="navbar-item about-me-navitem" href="/about-me">About Me</a>
+        </div>
+      </div>
     </nav>
 
-    <div id="main" role="main" class="main">
-      {{ content }}
-    </div>
+    <div id="main" role="main" class="main">{{ content }}</div>
 
     {% include analytics.html %}
 
-    <script src="{{ site.baseurl }}/assets/js/base.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/base.js" />
   </body>
 </html>

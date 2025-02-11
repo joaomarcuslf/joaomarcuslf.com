@@ -23,7 +23,8 @@
     }
   }
 
-  &.is-success *, &.is-light * {
+  &.is-success *,
+  &.is-light * {
     color: $quinary;
 
     &.progress {
@@ -32,6 +33,6 @@
   }
 
   &.is-dark {
-    background-color: rgba($quinary, .85) !important;
+    background-color: rgba($quinary, 0.85) !important;
   }
 }

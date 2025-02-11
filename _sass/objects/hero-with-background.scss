@@ -18,7 +18,8 @@
     }
 
     &.bg-home {
-      background: url("/assets/images/background-home.webp") no-repeat center center;
+      background: url("/assets/images/background-home.webp") no-repeat center
+        center;
       background-size: cover;
 
       .hero-body {
@@ -27,7 +28,8 @@
     }
 
     &.bg-about-me {
-      background: url("/assets/images/background-about-me.webp") no-repeat center center;
+      background: url("/assets/images/background-about-me.webp") no-repeat
+        center center;
       background-size: cover;
 
       .hero-body {
@@ -36,7 +38,8 @@
     }
 
     &.bg-mentorship {
-      background: url("/assets/images/background-mentorship.webp") no-repeat center center;
+      background: url("/assets/images/background-mentorship.webp") no-repeat
+        center center;
       background-size: cover;
 
       .hero-body {
@@ -45,7 +48,8 @@
     }
 
     &.bg-posts {
-      background: url("/assets/images/background-posts.webp") no-repeat center center;
+      background: url("/assets/images/background-posts.webp") no-repeat center
+        center;
       background-size: cover;
 
       .hero-body {
@@ -54,7 +58,8 @@
     }
 
     &.bg-projects {
-      background: url("/assets/images/background-projects.webp") no-repeat center center;
+      background: url("/assets/images/background-projects.webp") no-repeat
+        center center;
       background-size: cover;
 
       .hero-body {

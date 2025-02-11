@@ -20,6 +20,6 @@
   &.is-shown {
     display: block;
 
-    @include opacity-animate(.2s, 0, 1);
+    @include opacity-animate(0.2s, 0, 1);
   }
 }

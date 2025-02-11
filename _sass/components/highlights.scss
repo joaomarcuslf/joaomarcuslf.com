@@ -1,12 +1,13 @@
 .is-highlight {
-  transition: max-height .5s;
+  transition: max-height 0.5s;
 
-  height:auto;
+  height: auto;
 
   max-height: 300px;
   overflow: hidden;
 
-  .images-section-item, .skill-item {
+  .images-section-item,
+  .skill-item {
     height: 290px;
   }
 

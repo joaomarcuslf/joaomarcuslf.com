@@ -176,21 +176,21 @@
     .timeline-subtitle,
     .initial-date,
     .final-date {
-      color: rgba($secondary, .75);
+      color: rgba($secondary, 0.75);
     }
 
     .timeline-bar {
-      background-color: rgba($secondary, .75);
+      background-color: rgba($secondary, 0.75);
     }
 
     .timeline-company-image {
       background: $white;
-      border-color: rgba($secondary, .75);
+      border-color: rgba($secondary, 0.75);
     }
-  };
+  }
 
   @include light-section {
-    background-color: rgba($tertiary, .25) !important;
+    background-color: rgba($tertiary, 0.25) !important;
 
     .hero-body .title {
       color: $quinary;
@@ -200,16 +200,16 @@
     .timeline-subtitle,
     .initial-date,
     .final-date {
-      color: rgba($quinary, .75);
+      color: rgba($quinary, 0.75);
     }
 
     .timeline-bar {
-      background-color: rgba($quinary, .75);
+      background-color: rgba($quinary, 0.75);
     }
 
     .timeline-company-image {
       background: $white;
-      border-color: rgba($quinary, .75);
+      border-color: rgba($quinary, 0.75);
     }
-  };
+  }
 }

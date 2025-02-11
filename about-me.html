@@ -2,17 +2,8 @@
 layout: default
 ---
 
-{% capture title %}{% t about_me.title %}{% endcapture %}
-{% capture subtitle %}{% t about_me.subtitle %}{% endcapture %}
-
-{%
-  include introduction.html
-    theme="success"
-    title=title
-    subtitle=subtitle
-    class="has-background bg-about-me typewriter"
+{% capture title %}{% t about_me.title %}{% endcapture %} {% capture subtitle
+%}{% t about_me.subtitle %}{% endcapture %} {% include introduction.html
+theme="success" title=title subtitle=subtitle class="has-background bg-about-me
+typewriter" %} {% include job-timeline.html %} {% include expanded/skills.html
 %}
-
-{% include job-timeline.html %}
-
-{% include expanded/skills.html %}

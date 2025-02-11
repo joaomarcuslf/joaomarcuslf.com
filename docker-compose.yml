@@ -1,9 +1,11 @@
-version: '3'
+version: "3"
 
 services:
   jekyll:
     image: jekyll/jekyll:latest
-    command: jekyll serve --watch --livereload
+    command: jekyll serve --future --watch --livereload
+    environment:
+      JEKYLL_ENV: "production"
     ports:
       - 4000:4000
       - 35729:35729
