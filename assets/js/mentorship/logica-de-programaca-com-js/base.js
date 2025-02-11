@@ -80,7 +80,11 @@ function submitCodeGeneric(event, $textarea, validation, callback) {
   }, 1000);
 }
 
-function submitCode(event, targetId, $scenario, $textarea, ...lines) {
+function submitCode(event, targetId, $scenario, $textarea, lines) {
+  if (!Array.isArray(lines)) {
+    lines = [lines]
+  }
+
   return submitCodeGeneric(
     event,
     $textarea,
