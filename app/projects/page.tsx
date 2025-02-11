@@ -1,10 +1,10 @@
 import ExpandedProjects from "@/components/expanded/projects";
 import Introduction from "@/components/theme/introduction";
 import { ProjectMetadata, projectMetadataSerializer } from "@/types/project";
-import { getContentMetadata } from "@/utils/metadata";
+import { getContentMetadataList } from "@/utils/metadata";
 
 export default function Projects() {
-  const projectsMetadata = getContentMetadata<ProjectMetadata>(
+  const projectsMetadata = getContentMetadataList<ProjectMetadata>(
     "projects",
     projectMetadataSerializer,
     { reverse: true }

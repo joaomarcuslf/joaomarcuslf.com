@@ -2,7 +2,7 @@ import { Serializer } from '@/types/metadata';
 import fs from 'fs';
 import matter from 'gray-matter';
 
-export function getContentMetadata<T>(content: string, serializer: Serializer<T>, options?: {
+export function getContentMetadataList<T>(content: string, serializer: Serializer<T>, options?: {
   reverse?: boolean;
   top?: boolean;
   domain?: string;
@@ -34,4 +34,18 @@ export function getContentMetadata<T>(content: string, serializer: Serializer<T>
   }
 
   return contentData;
+}
+
+export function getPostContent(slug: string) {
+  const folder = 'contents/posts';
+  const files = folder + `/${slug}.md`;
+
+  const content = fs.readFileSync(files, 'utf8');
+
+  const result = matter(content);
+
+  return {
+    ...result,
+    content: result?.content?.replaceAll("class=", "className="),
+  };
 }

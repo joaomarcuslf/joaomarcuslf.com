@@ -1,10 +1,10 @@
 import ExpandedPosts from "@/components/expanded/posts";
 import Introduction from "@/components/theme/introduction";
 import { PostMetadata, postMetadataSerializer } from "@/types/post";
-import { getContentMetadata } from "@/utils/metadata";
+import { getContentMetadataList } from "@/utils/metadata";
 
 export default function Posts() {
-  const postsMetadata = getContentMetadata<PostMetadata>(
+  const postsMetadata = getContentMetadataList<PostMetadata>(
     "posts",
     postMetadataSerializer,
     { reverse: true }

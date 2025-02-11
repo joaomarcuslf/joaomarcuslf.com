@@ -10,42 +10,27 @@ import site from "@/site"
 import PostView from "@/components/post-view";
 import Hljs from "@/components/hljs";
 import { PostMetadata, postMetadataSerializer } from "@/types/post";
-import { getContentMetadata } from "@/utils/metadata";
+import { getContentMetadataList, getPostContent } from "@/utils/metadata";
 import { calcRT } from "@/utils/text";
 import "@/public/css/hljs.scss";
 
-const postsMetadata = getContentMetadata<PostMetadata>(
+const postsMetadata = getContentMetadataList<PostMetadata>(
   "posts",
   postMetadataSerializer,
   { reverse: true }
 );
 
-function getPostContent(slug: string) {
-  const folder = 'contents/posts';
-  const files = folder + `/${slug}.md`;
-
-  const content = fs.readFileSync(files, 'utf8');
-
-  const result = matter(content);
-
-  return {
-    ...result,
-    content: result?.content?.replaceAll("class=", "className="),
-  };
-}
-
-export const generateStaticParams = async () => {
+export async function generateStaticParams() {
   return postsMetadata.map((post) => ({
-    params: { slug: post.slug, title: post.title},
+    slug: post.key
   }));
 }
 
+
 export const generateMetadata = async ({
   params,
-  searchParams,
 }: {
-  params: { slug: string, title: string };
-  searchParams: { [key: string]: string | string[] | undefined };
+  params: { slug: string };
 }) => {
   const post = getPostContent(params.slug);
 

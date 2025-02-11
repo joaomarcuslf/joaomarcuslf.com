@@ -3,33 +3,33 @@ import ExpandedProjects from "@/components/expanded/projects";
 import Introduction from "@/components/theme/introduction";
 import JobTimeline from "@/components/job-timeline";
 import { JobMetadata, jobMetadataSerializer } from "@/types/job";
-import { getContentMetadata } from "@/utils/metadata";
+import { getContentMetadataList } from "@/utils/metadata";
 import { ProjectMetadata, projectMetadataSerializer } from "@/types/project";
 import { SkillMetadata, skillMetadataSerializer } from "@/types/skill";
 import site from "@/site";
 import { sortMetadataByRules, flatten } from "@/utils/helpers";
 
 export default function Projects() {
-  const techMetadata = getContentMetadata<SkillMetadata>(
+  const techMetadata = getContentMetadataList<SkillMetadata>(
     "skills/techs",
     skillMetadataSerializer,
     { domain: "tech" }
   );
-  const softSkillsMetadata = getContentMetadata<SkillMetadata>(
+  const softSkillsMetadata = getContentMetadataList<SkillMetadata>(
     "skills/soft-skills",
     skillMetadataSerializer,
     { domain: "soft-skill" }
   );
-  const hardSkillsMetadata = getContentMetadata<SkillMetadata>(
+  const hardSkillsMetadata = getContentMetadataList<SkillMetadata>(
     "skills/hard-skills",
     skillMetadataSerializer,
     { domain: "hard-skill" }
   );
-  const jobsMetadata = getContentMetadata<JobMetadata>(
+  const jobsMetadata = getContentMetadataList<JobMetadata>(
     "jobs",
     jobMetadataSerializer
   );
-  const projectsMetadata = getContentMetadata<ProjectMetadata>(
+  const projectsMetadata = getContentMetadataList<ProjectMetadata>(
     "projects",
     projectMetadataSerializer,
     { reverse: true }
