@@ -170,6 +170,60 @@ Existem alguns atalhos que eu criei para digitar menos, você pode checar na se�
 
 Também existem alguns outras aplicações que eu recomendo você instalar para aumentar a produtividade, você pode checar na seção [comandos](https://github.com/joaomarcuslf/dotfiles#recommended).
 
+### Atualização 2023-09-04
+
+Além de diversas configurações que eu fiz no meu ambiente, eu também criei um script para automatizar lidar com configurações do Git, e chaves SSH, esse script se chama `git-profile`.
+
+Se você já cumpriu todo o tutorial acima, o script já deve estar instalado, porém para garantir, siga os seguinte passo a passo no terminal:
+
+<pre class="is-hljs">
+  <code class="bash">
+  cd ~
+  cd dotfiles
+  git pull
+
+  refresh
+
+  cat ~/scripts/git-profile.js
+  </code>
+</pre>
+
+Se o arquivo existir, então você está pronto.
+
+#### Como usar
+
+O script `git-profile` é bem simples, ele tem alguns comandos, os principais são `set`, `create`, `remove`. Caso queira saber mais sobre, você pode rodar:
+
+<pre class="is-hljs">
+  <code class="bash">
+  git-profile help
+  </code>
+</pre>
+
+##### Criando um novo perfil
+
+Para criar um novo perfil, você deve rodar o comando `git-profile create <profilename>`, o padrão que eu assumi para o nome dos arquivos de ssh é `id_ed25519`, caso você esteja usando algum outro padrão, como por exemplo `id_rsa`, você deve passar no final do comando assim: `git-profile create <profilename> is_rsa`.
+
+Esse comando irá armazenar tanto o `.gitconfig`, quanto os arquivos dentro da pasta `~/.ssh` em uma pasta local chamada `.git-profile`.
+
+##### Setando um perfil
+
+Para alternar entre os perfis, você deve rodar o comando `git-profile set <profilename>`, esse comando irá copiar os arquivos do perfil para a pasta `~/.ssh`, e irá setar o `.gitconfig` para o perfil escolhido.
+
+##### Removendo um perfil
+
+Para remover um perfil, você deve rodar o comando `git-profile remove <profilename>`, esse comando irá remover os arquivos do perfil da pasta `~/.git-profile/.ssh`, e irá remover o `~/.git-profile/.gitconfig` do perfil.
+
+**Nenhuma mudança será feito nos arquivos locais, então sua `.ssh`, e `.gitconfig` estará intacta até que você mude de perfil.**
+
+##### Migrando
+
+Caso você já tenha usado o `git-profile` no passado, você precisará rodar o comando `git-profile migrate`, para gerar os arquivos de metadata que serão utilizados para melhorar o uso.
+
+##### Disclaimer
+
+Nenhuma informação de seu ssh, ou gitconfig serão compartilhadas, você pode validar essa informação no arquivo [git-profile.js)](https://github.com/joaomarcuslf/dotfiles/blob/master/scripts/git-profile.js), esse script é apenas um automatizador de comandos para movimentar/copiar arquivos.
+
 ### Concluindo
 
 Espero que você tenha gostado desse mini post. Caso você tenha algum problema, entre em contato comigo, eu estarei a disposição para ajudar.
