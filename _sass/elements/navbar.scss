@@ -20,7 +20,7 @@
   .navbar-menu {
     &.is-active {
       @include for-phone-only {
-        background-color: rgb(223,237,248);
+        background-color: $tertiary;
 
         position: inherit;
         height: 100vh;

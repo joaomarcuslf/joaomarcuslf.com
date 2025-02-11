@@ -2,6 +2,7 @@
   "scripts": {
     "build": "gulp",
     "webp": "gulp buildWebp",
+    "purgeCss": "gulp purgecss",
     "add-preload-files": "node run/add-preload-files"
   },
   "dependencies": {
@@ -14,6 +15,7 @@
     "gulp": "^4.0.2",
     "gulp-image-resize": "^0.13.1",
     "gulp-imagemin": "^7.0.0",
+    "gulp-purgecss": "^4.0.3",
     "gulp-uglify": "^3.0.2",
     "gulp-webp": "^4.0.1",
     "imagemin": "^8.0.1",

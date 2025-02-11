@@ -6,6 +6,7 @@ import gulpImagemin from 'gulp-imagemin';
 import gulpWebp from 'gulp-webp';
 import gulpUglify from 'gulp-uglify';
 import gulpImageResize from 'gulp-image-resize';
+import gulpPurgecss from 'gulp-purgecss';
 
 import imageminPngquant from 'imagemin-pngquant';
 import imageminZopfli from 'imagemin-zopfli';
@@ -110,6 +111,14 @@ export const buildWebp = series(
   thumbnails,
   move('./dist/images/**/*.webp', 'assets/images'),
 )
+
+export const purgecss = () => {
+  return gulp.src('_site/**/*.css')
+      .pipe(gulpPurgecss({
+          content: ['_site/**/*.html', '_site/**/*.js']
+      }))
+      .pipe(gulp.dest('_site'))
+}
 
 export default series(
   clean,
