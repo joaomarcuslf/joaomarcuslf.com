@@ -12,6 +12,7 @@ import { flatten, sortMetadataByRules } from "@/utils/helpers";
 import { getContent, getContentMetadataList } from "@/utils/metadata";
 import { CopyMetadata, copyMetadataSerializer } from "@/types/copy";
 import TOC from "@/components/theme/table-of-contents";
+import CalendarButton from "@/components/theme/calendar-button";
 
 export default function Home() {
   const techMetadata = getContentMetadataList<SkillMetadata>(
@@ -72,6 +73,8 @@ export default function Home() {
       />
       <HighlightedPosts posts={postsMetadata} />
       <HighlightedProjects projects={projectsMetadata} />
+
+      <CalendarButton />
 
       <TOC />
     </main>

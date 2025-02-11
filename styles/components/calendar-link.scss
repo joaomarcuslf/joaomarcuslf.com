@@ -1,0 +1,22 @@
+@import '../settings/settings.scss';
+@import "../tools/medias-queries/all";
+
+.calendar-link {
+  position: fixed;
+  left: 0.5rem;
+  bottom: 0.5rem;
+  background-color: $accent !important;
+  opacity: 0.75;
+  border-radius: 10px;
+
+  transition: background-color 0.5s, opacity 0.5s;
+
+  &:hover {
+    opacity: 1;
+    background-color: $senary !important;
+  }
+
+  @include for-tablet-portrait-and-down {
+    opacity: 0.9;
+  }
+}

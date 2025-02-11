@@ -43,8 +43,6 @@
       background: url("/images/background-home.webp") no-repeat center center;
       background-size: cover;
 
-      min-height: 75vh;
-
       .hero-body {
         background-color: rgba($senary, $opacity-value);
       }
@@ -53,8 +51,6 @@
     &.bg-about-me {
       background: url("/images/background-projects.webp") no-repeat center center;
       background-size: cover;
-
-      min-height: 75vh;
 
       .hero-body {
         background-color: rgba($quinary, $opacity-value);
@@ -65,8 +61,6 @@
       background: url("/images/background-mentorship.webp") no-repeat center center;
       background-size: cover;
 
-      min-height: 75vh;
-
       .hero-body {
         background-color: rgba($accent, $opacity-value);
       }
@@ -76,8 +70,6 @@
       background: url("/images/background-posts.webp") no-repeat center center;
       background-size: cover;
 
-      min-height: 75vh;
-
       .hero-body {
         background-color: rgba($quaternary, $opacity-value);
       }
@@ -86,8 +78,6 @@
     &.bg-projects {
       background: url("/images/background-mentorship.webp") no-repeat center center;
       background-size: cover;
-
-      min-height: 75vh;
 
       .hero-body {
         background-color: rgba($primary, $opacity-value);

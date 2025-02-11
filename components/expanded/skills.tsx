@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useCallback, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import SkillView from "@/components/view/skill";
@@ -26,7 +26,7 @@ function ExpandedSkills({
 
   const searchSkill = searchParams.get("skill");
 
-  const selectSkill = (searchSkill: string | null) => {
+  const selectSkill = useCallback((searchSkill: string | null) => {
     const foundSkill = skills.find((skill) => skill.key === searchSkill);
 
     if (foundSkill) {
@@ -36,7 +36,7 @@ function ExpandedSkills({
     }
 
     scrollToSection();
-  };
+  }, []);
 
   const scrollToSection = () => {
     if (!domain && !searchSkill && !skill) return;

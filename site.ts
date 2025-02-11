@@ -10,6 +10,7 @@ export default {
   "email": "jmarcusfernandes@gmail.com",
   "linktr": "https://linktr.ee/joaomarcuslf",
   "url": "https://joaomarcuslf.com",
+  "calendar": "https://calendly.com/joaomarcuslf",
   "themeColor": "#741b47",
   "socialMedias": [
     {
