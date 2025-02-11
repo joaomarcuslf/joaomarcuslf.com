@@ -10,4 +10,16 @@
       padding: 3rem 1.5rem;
     }
   }
+
+  &:not(.is-success) * {
+    color: $tertiary !important;
+  }
+
+  &.is-success *, &.is-light * {
+    color: $quinary !important;
+  }
+
+  &.is-dark {
+    background-color: rgba($quinary, .85) !important;
+  }
 }

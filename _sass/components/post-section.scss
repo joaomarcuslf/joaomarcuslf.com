@@ -37,7 +37,7 @@
     }
 
     .title {
-      color: $darker-gray;
+      color: $quinary;
 
       @include for-tablet-portrait-and-down {
         font-size: 1.5rem;
@@ -45,7 +45,7 @@
     }
 
     .subtitle {
-      color: $darkest-gray-75;
+      color: rgba($senary, .75);
 
       @include for-tablet-portrait-and-down {
         font-size: 1rem;

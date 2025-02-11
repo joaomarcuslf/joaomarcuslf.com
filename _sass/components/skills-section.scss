@@ -28,13 +28,13 @@
 
   .card {
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    background-color: $light-gray-25;
+    background-color: rgba($accent, .25);
   }
 
   .skills-section-group > .skills-section-item {
     @include is-even {
       &.card {
-        background-color: $lightest-gray-25;
+        background-color: rgba($tertiary, .25);
       }
     }
   }
@@ -64,7 +64,7 @@
 
 
       @include is-odd {
-        background-color: $dark-gray;
+        background-color: $quaternary;
       }
 
       .skills-tree-categories {
@@ -156,21 +156,6 @@
     }
   }
 
-  &.is-dark {
-    background-color: $darker-gray !important;
-
-    .skills-section-title,
-    .skills-section-subtitle {
-      color: $lighter-gray-75;
-    }
-  }
-
-  &.is-light {
-    background-color: $lightest-gray-25 !important;
-
-    .skills-section-title,
-    .skills-section-subtitle {
-      color: $darker-gray-75;
-    }
-  }
+  @include dark-section;
+  @include light-section;
 }

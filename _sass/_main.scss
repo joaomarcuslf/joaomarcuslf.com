@@ -1,6 +1,15 @@
-@import "settings/settings";
+/*
+  Theme: Purple Luxury
+  Author: João Marcus de Lemos Fernandes <jmarcuslfernandes@gmail.com>
+*/
 
+/*
+  Settings Layer
+*/
+
+@import "settings/settings";
 @import "vendors/bulma/bulma.sass";
+@import "settings/reset";
 
 /*
   Tools Layer
@@ -15,6 +24,8 @@
 @import "tools/not-last";
 @import "tools/not-first";
 @import "tools/medias-queries/all";
+@import "tools/dark-section";
+@import "tools/light-section";
 
 /*
   Generics Layer

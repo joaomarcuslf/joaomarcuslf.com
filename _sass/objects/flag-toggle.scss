@@ -21,7 +21,7 @@
     border: 2.5px solid transparent;
 
     &.is-active {
-      border: 2.5px solid $lighter-gray-50;
+      border: 2.5px solid rgba($secondary, .50);
     }
 
     img {

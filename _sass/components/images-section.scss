@@ -115,21 +115,6 @@
     }
   }
 
-  &.is-dark {
-    background-color: $darker-gray !important;
-
-    .images-section-title,
-    .images-section-subtitle {
-      color: $lighter-gray-75;
-    }
-  }
-
-  &.is-light {
-    background-color: $lightest-gray-25 !important;
-
-    .images-section-title,
-    .images-section-subtitle {
-      color: $darker-gray-75;
-    }
-  }
+  @include dark-section;
+  @include light-section;
 }

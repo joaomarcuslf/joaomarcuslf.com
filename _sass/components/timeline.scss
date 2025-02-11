@@ -80,7 +80,7 @@
         border: unset;
 
         .timeline-company-image {
-          background: $lightest-gray;
+          background: $white;
           height: 60px;
           width: 60px;
           border-width: 3px;
@@ -93,7 +93,7 @@
         &:hover,
         &.is-active {
           .timeline-company-image {
-            background: $lightest-gray;
+            background: $white;
             height: 75px;
             width: 75px;
             border-width: 5px;
@@ -110,7 +110,7 @@
           width: 50px;
 
           .timeline-company-image {
-            background: $lightest-gray;
+            background: $white;
             height: 40px;
             width: 40px;
             border-width: 2px;
@@ -120,7 +120,7 @@
           &:hover,
           &.is-active {
             .timeline-company-image {
-              background: $lightest-gray;
+              background: $white;
               height: 50px;
               width: 50px;
               border-width: 3px;
@@ -138,7 +138,7 @@
           width: 30px;
 
           .timeline-company-image {
-            background: $lightest-gray;
+            background: $white;
             height: 25px;
             width: 25px;
             border-width: 2px;
@@ -148,7 +148,7 @@
           &:hover,
           &.is-active {
             .timeline-company-image {
-              background: $lightest-gray;
+              background: $white;
               height: 30px;
               width: 30px;
               border-width: 3px;
@@ -163,7 +163,7 @@
   .timeline-event-description {
     padding-top: 0.5rem;
     .card {
-      background-color: $lightest-gray;
+      background-color: $tertiary;
 
       .title {
         margin-bottom: 0;
@@ -171,43 +171,45 @@
     }
   }
 
-  &.is-dark {
-    background-color: $darker-gray !important;
+  @include dark-section {
+    .timeline-title,
+    .timeline-subtitle,
+    .initial-date,
+    .final-date {
+      color: rgba($secondary, .75);
+    }
+
+    .timeline-bar {
+      background-color: rgba($secondary, .75);
+    }
+
+    .timeline-company-image {
+      background: $white;
+      border-color: rgba($secondary, .75);
+    }
+  };
+
+  @include light-section {
+    background-color: rgba($tertiary, .25) !important;
+
+    .hero-body .title {
+      color: $quinary;
+    }
 
     .timeline-title,
     .timeline-subtitle,
     .initial-date,
     .final-date {
-      color: $lighter-gray-75;
+      color: rgba($quinary, .75);
     }
 
     .timeline-bar {
-      background-color: $lighter-gray-75;
+      background-color: rgba($quinary, .75);
     }
 
     .timeline-company-image {
-      background: $lightest-gray;
-      border-color: $lighter-gray-75;
+      background: $white;
+      border-color: rgba($quinary, .75);
     }
-  }
-
-  &.is-light {
-    background-color: $lightest-gray-25 !important;
-
-    .timeline-title,
-    .timeline-subtitle,
-    .initial-date,
-    .final-date {
-      color: $darker-gray-75;
-    }
-
-    .timeline-bar {
-      background-color: $darker-gray-75;
-    }
-
-    .timeline-company-image {
-      background: $lightest-gray;
-      border-color: $darker-gray-75;
-    }
-  }
+  };
 }

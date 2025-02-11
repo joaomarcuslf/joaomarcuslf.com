@@ -1,11 +1,11 @@
 @import "../settings/settings";
 
 .footer {
-  background-color: $darkest-gray;
-  color: $lightest-gray;
+  background-color: $senary;
+  color: $tertiary;
   padding: 3rem 1.5rem;
 
   strong {
-    color: $light-gray !important;
+    color: $accent !important;
   }
 }
