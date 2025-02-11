@@ -1,7 +1,8 @@
 import site from "@/site";
 
 export default function CalendarButton() {
-  return (
+  return null;
+  /*return (
     <a
       className="calendar-link button has-icon has-text is-dark is-outlined"
       href={site.calendar}
@@ -12,5 +13,5 @@ export default function CalendarButton() {
       </span>
       <span className="ml-1">Let&apos;s Meet!</span>
     </a>
-  );
+  );*/
 }
