@@ -63,6 +63,13 @@ files = {
         'link': 'https://github.com/joaomarcuslf2/clojure-catalog-service',
         'date': '2017-02-19'
     },
+    'mtg-csv-generator': {
+        'title': 'This repo will show some of my data-science studies using MTG cardbase',
+        'repo': 'mtg-csv-generator',
+        'user': 'joaomarcuslf2',
+        'link': 'https://joaomarcuslf2.github.io/mtg-csv-generator/report',
+        'date': '2020-10-22'
+    }
 }
 
 
