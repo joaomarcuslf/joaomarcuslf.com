@@ -4,7 +4,11 @@
 
     <div class="tags">
       {% for tag in site.tags %}
-        <a href="#{{ tag[0] | slugify }}" class="tag is-light" onclick="filterPosts(getTagFromEvent(event))">{{ tag[0] }}</a>
+        {% assign filtered = tag[1] | where: 'draft', false %}
+
+        {% if filtered.size > 0 %}
+          <a id="tag-{{tag[0] | slugify}}" href="#{{ tag[0] | slugify }}" class="tag is-light" onclick="filterPosts(getTagFromEvent(event))">{{ tag[0] }}</a>
+        {% endif %}
       {% endfor %}
     </div>
 

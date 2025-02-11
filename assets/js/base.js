@@ -79,12 +79,25 @@ function checkURLForTag() {
   var tag = window.location.hash.substr(1);
 
   if (tag) {
-    filterPosts(tag);
+    var activerOne = document.getElementById("tag-" + tag);
+
+    if (activerOne) {
+      activerOne.classList.add('is-dark');
+      filterPosts(tag);
+    }
   }
 }
 
 function getTagFromEvent(event) {
   event.preventDefault();
+
+  var activerOne = document.querySelector(".tag.is-dark");
+
+  if (activerOne) {
+    activerOne.classList.remove('is-dark');
+  }
+
+  event.target.classList.toggle('is-dark');
 
   return event.target.href.split('#')[1];
 }
