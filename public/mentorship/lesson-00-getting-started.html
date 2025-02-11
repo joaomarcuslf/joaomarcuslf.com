@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Golang 00 - Primeiros passos – João Marcus de Lemos Fernandes</title>
+    <meta charset="utf-8" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=6.0"
+    />
+    <meta name="robot" content="all" />
+    <meta name="rating" content="general" />
+    <meta name="distribution" content="global" />
+    <meta name="language" content="en,pt" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="" />
+    <link rel="apple-touch-icon" href="/images/logo-hex.webp" />
+    <meta
+      property="og:image"
+      content="http://joaomarcuslf.com/images/logo-hex.webp"
+    />
+    <meta property="og:title" content="Golang 00 - Primeiros passos" />
+    <meta property="twitter:title" content="Golang 00 - Primeiros passos" />
+    <meta property="og:site_name" content="Golang 00 - Primeiros passos" />
+    <meta
+      name="description"
+      content="Essa sequência de aulas irá te ensinar o básico sobre como desenvolver com Golang. Para isso, nós vamos utilizar um repositório no github onde eu vou colocar todos os arquivos que serão utilizados para desenvolver o projeto, assim como as explicações. "
+    />
+    <meta
+      property="og:description"
+      content="Essa sequência de aulas irá te ensinar o básico sobre como desenvolver com Golang. Para isso, nós vamos utilizar um repositório no github onde eu vou colocar todos os arquivos que serão utilizados para desenvolver o projeto, assim como as explicações. "
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Golang 00 - Primeiros passos - Essa sequência de aulas irá te ensinar o básico sobre como desenvolver com Golang. Para isso, nós vamos utilizar um repositório no github onde eu vou colocar todos os arquivos que serão utilizados para desenvolver o projeto, assim como as explicações. "
+      href="/feed.xml"
+    />
+
+    <meta
+      name="keywords"
+      content="Developer, Software engineer, Front-end, Full-stack, React, Javascript, Flask, Python, Joaomarcuslf, Tech Mentor, Mentorship, Mentoria, Senior Developer, Web development"
+    />
+    <meta
+      name="abstract"
+      content="My presentation website as Software developer"
+    />
+    <meta name="author" content="João Marcus de Lemos Fernandes" />
+    <meta property="og:locale" content="en" />
+    <link rel="canonical" href="https://joaomarcuslf.com/" />
+    <meta property="og:url" content="https://joaomarcuslf.com/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@joaomarcuslf" />
+    <link rel="stylesheet" type="text/css" href="/css/vendors.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/mentorship.css" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="@joaomarcuslf.com - Full-stack Software engineer - I'm Software Engineer since 2015 with great expertise in Front-end development. I like to teach a lot, and write some posts, you can check more here."
+      href="/feed.xml"
+    />
+    <link rel="stylesheet" type="text/css" href="/css/hljs.css" />
+  </head>
+  <body>
+    <div id="main" role="main" class="main">
+      <section
+        class="hero is-link has-background is-mini bg-mentorship typewriter"
+      >
+        <div class="hero-body">
+          <h1
+            class="title"
+            aria-label="Golang 00 - Primeiros passos"
+            aria-hidden="true"
+          >
+            Golang 00 - Primeiros passos
+          </h1>
+          <h2 class="subtitle">Como começar, como buscar.</h2>
+        </div>
+      </section>
+      <br />
+      <div class="container">
+        <article class="media">
+          <div class="media-content">
+            <div class="content">
+              <p>
+                Essa sequência de aulas irá te ensinar o básico sobre como
+                desenvolver com Golang. Para isso, nós vamos utilizar um
+                repositório no github onde eu vou colocar todos os arquivos que
+                serão utilizados para desenvolver o projeto, assim como as
+                explicações.
+              </p>
+              <p>
+                Abra a aula Zero para entender como vai funcionar a navegação do
+                arquivo:
+              </p>
+              <div>
+                <article
+                  class="project-card"
+                  data-gh-project="joaomarcuslf/go-mentorship"
+                >
+                  <figure class="project-card-image">
+                    <p class="image">
+                      <img
+                        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg"
+                        alt="go logo"
+                        width="128"
+                        height="128"
+                      />
+                    </p>
+                  </figure>
+                  <div class="project-card-content">
+                    <header class="project-card-header">
+                      <p class="project-card-suptitle">
+                        On
+                        <a
+                          target="blank"
+                          href="https://github.com/joaomarcuslf/go-mentorship/tree/lesson-00"
+                          title="View on GitHub"
+                          >GitHub</a
+                        >
+                        <small>#/tree/lesson-00</small>
+                      </p>
+                      <a
+                        target="blank"
+                        href="https://github.com/joaomarcuslf/go-mentorship/tree/lesson-00"
+                        title="View on GitHub"
+                      >
+                        <h6 class="project-card-title">go-mentorship</h6>
+                      </a>
+                    </header>
+                    <div class="project-card-body">
+                      <dl class="project-card-details">
+                        <dt>Forked</dt>
+                        <dd class="fork">
+                          <a
+                            target="blank"
+                            href="https://github.com/joaomarcuslf/go-mentorship/fork"
+                            title="View fork details"
+                          >
+                          </a>
+                        </dd>
+                        <dt>Starred</dt>
+                        <dd class="star">
+                          <a
+                            target="blank"
+                            href="https://github.com/joaomarcuslf/go-mentorship/stargazers "
+                            title="View fork details"
+                          >
+                          </a>
+                        </dd>
+                      </dl>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <h2 id="o-que-é-o-golang">O que é o Golang?</h2>
+              <p>
+                Primeiramente, você já deve ter visto algumas pessoas falando
+                Go, outras falando Golang, mas você sabe a diferença?
+              </p>
+              <p>
+                Go é uma linguagem de programação, que foi criada para ser usada
+                em aplicações web, com foco em concorrência e simplicidade.
+                Quando vamos pesquisar no Google essa linguagem, por conta de
+                ser um termo muito genérico, é muito comum usarmos Golang ao
+                invés de Go.
+              </p>
+              <h2 id="o-que-você-deve-esperar-desse-tutorial">
+                O que você deve esperar desse tutorial?
+              </h2>
+              <p>
+                Esse projeto tem a premissa de ser algo simples, porém
+                explorando vários padrões da linguagem, e como aplicá-los em um
+                projeto. Assim como utilizaremos algumas bibliotecas bem
+                conhecidas da linguagem, e também tenho por objetivo atiçar sua
+                vontade de aprender a linguagem mais para frente.
+              </p>
+              <h2 id="o-que-é-esperado-de-você">O que é esperado de VOCÊ?</h2>
+              <p>
+                Bom, primeiro eu espero que você tenha interesse em acompanhar
+                esse tutorial. Segundo eu parto do princípio que você sabe pelo
+                menos o básico de programação, lógica de programação, e está
+                familiarizado com alguns termos. Muitas vezes eu irei linkar
+                outros posts, ou artigos para você se ambientar com os termos
+                que utilizo, então é esperado que você tenha interesse em
+                acompanhar outros tutoriais, para tirar proveito máximo da aula.
+              </p>
+              <p>
+                Esse guia também parte do princípio que você já fez o
+                <a href="https://go.dev/">download e instalou o Golang</a> em
+                sua máquina, e que você fez o
+                <a href="https://go.dev/tour/welcome/1"
+                  >tutorial da página do Go</a
+                >. Sendo assim, você deve estar minimamente ambientado com a
+                sintaxe, e com os princípios da linguagem.
+              </p>
+              <h2 id="como-começar">Como começar?</h2>
+              <p>
+                No início de cada aula, no topo da página você vai ter acesso a
+                como ficou o repositório depois da aula anterior, então você
+                começar de qualquer aula, caso tenha interesse somente em um
+                tópico. Também no início das aulas terá as expectativas da aula,
+                com isso podemos ficar alinhado o que você deve esperar de cada
+                aula.
+              </p>
+              <p>
+                Para começar, basta você criar uma pasta, eu sugiro você nomear
+                essa pasta de
+                <code class="language-plaintext highlighter-rouge"
+                  >qr-generator</code
+                >, em seguida inicie um novo pacote, não se esqueça de
+                substituir o
+                <code class="language-plaintext highlighter-rouge"
+                  >joaomarcuslf</code
+                >
+                pelo seu username, e o
+                <code class="language-plaintext highlighter-rouge"
+                  >github.com</code
+                >
+                pelo repositório em Git que você estiver utilizando.
+              </p>
+              <div class="language-bash highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="nb">mkdir </span>qr-generator
+go mod init github.com/joaomarcuslf/qr-generator
+</code>
+</pre>
+                </div>
+              </div>
+              <blockquote>
+                <p>
+                  Se você não está utilizando, seria muito bom você começar a
+                  usar Git, é uma ferramenta que já se tornou padrão na área, e
+                  pode te ajudar muito no futuro.
+                </p>
+              </blockquote>
+              <p>
+                A título de curiosidade, muitos projetos em Go estão no Github,
+                então você vai se beneficiar muito de aprender a navegar nele.
+              </p>
+              <p>
+                No mais, basta clicar em alguma aula que tenha interesse em
+                começar, espero te ver logo.
+              </p>
+              <h2 id="link-do-projeto">Link do projeto:</h2>
+              <div>
+                <article
+                  class="project-card"
+                  data-gh-project="joaomarcuslf/go-mentorship"
+                >
+                  <figure class="project-card-image">
+                    <p class="image">
+                      <img
+                        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg"
+                        alt="go logo"
+                        width="128"
+                        height="128"
+                      />
+                    </p>
+                  </figure>
+                  <div class="project-card-content">
+                    <header class="project-card-header">
+                      <p class="project-card-suptitle">
+                        On
+                        <a
+                          target="blank"
+                          href="https://github.com/joaomarcuslf/go-mentorship"
+                          title="View on GitHub"
+                          >GitHub</a
+                        >
+                      </p>
+                      <a
+                        target="blank"
+                        href="https://github.com/joaomarcuslf/go-mentorship"
+                        title="View on GitHub"
+                      >
+                        <h6 class="project-card-title">go-mentorship</h6>
+                      </a>
+                    </header>
+                    <div class="project-card-body">
+                      <dl class="project-card-details">
+                        <dt>Forked</dt>
+                        <dd class="fork">
+                          <a
+                            target="blank"
+                            href="https://github.com/joaomarcuslf/go-mentorship/fork"
+                            title="View fork details"
+                          >
+                          </a>
+                        </dd>
+                        <dt>Starred</dt>
+                        <dd class="star">
+                          <a
+                            target="blank"
+                            href="https://github.com/joaomarcuslf/go-mentorship/stargazers "
+                            title="View fork details"
+                          >
+                          </a>
+                        </dd>
+                      </dl>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <h2 id="lista-de-aulas">Lista de aulas:</h2>
+              <ul>
+                <li>
+                  <a href="/mentorship/lesson-00-getting-started"
+                    >Golang 00 - Primeiros passos</a
+                  >
+                </li>
+                <li>
+                  <a href="/mentorship/lesson-01-creating-app"
+                    >Golang 01- Criando nosso App</a
+                  >
+                </li>
+                <li>
+                  <a href="/mentorship/lesson-02-refactoring"
+                    >Golang 02 - Refatorando nossos serviços</a
+                  >
+                </li>
+                <li>
+                  <a href="/mentorship/lesson-03-web-server"
+                    >Golang 03 - Adicionando nosso servidor</a
+                  >
+                </li>
+                <li>
+                  <a href="/mentorship/lesson-04-generate-qr"
+                    >Golang 04 - Adicionando rota geradora</a
+                  >
+                </li>
+                <li>
+                  <a href="/mentorship/lesson-05-add-api"
+                    >Golang 05 - Adicionando nossa API</a
+                  >
+                </li>
+                <li>
+                  <a href="/mentorship/lesson-06-consuming-api"
+                    >Golang 06 - Consumindo API</a
+                  >
+                </li>
+                <li>
+                  <a href="/mentorship/lesson-07-expanding-the-front-end"
+                    >Golang 07 - Expandindo o Front-end</a
+                  >
+                </li>
+              </ul>
+              <script>
+                document.querySelector(
+                  '[href="' + location.pathname + '"]'
+                ).className = "is-underlined has-text-weight-bold";
+              </script>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <script src="/js/vendors/highlight.min.js"></script>
+    <script src="/js/base.js"></script>
+    <script src="/js/post-page.js"></script>
+    <script src="/js/hljs.js"></script>
+    <script src="/js/mentorship.js"></script>
+  </body>
+</html>

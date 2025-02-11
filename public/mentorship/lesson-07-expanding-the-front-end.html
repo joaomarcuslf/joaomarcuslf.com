@@ -1,0 +1,2254 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Golang 07 - Expandindo o Front-end – João Marcus de Lemos Fernandes
+    </title>
+    <meta charset="utf-8" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=6.0"
+    />
+    <meta name="robot" content="all" />
+    <meta name="rating" content="general" />
+    <meta name="distribution" content="global" />
+    <meta name="language" content="en,pt" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="" />
+    <link rel="apple-touch-icon" href="/images/logo-hex.webp" />
+    <meta
+      property="og:image"
+      content="http://joaomarcuslf.com/images/logo-hex.webp"
+    />
+    <meta property="og:title" content="Golang 07 - Expandindo o Front-end" />
+    <meta
+      property="twitter:title"
+      content="Golang 07 - Expandindo o Front-end"
+    />
+    <meta
+      property="og:site_name"
+      content="Golang 07 - Expandindo o Front-end"
+    />
+    <meta name="description" content="Expectativas " />
+    <meta property="og:description" content="Expectativas " />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Golang 07 - Expandindo o Front-end - Expectativas "
+      href="/feed.xml"
+    />
+    <meta
+      name="keywords"
+      content="Developer, Software engineer, Front-end, Full-stack, React, Javascript, Flask, Python, Joaomarcuslf, Tech Mentor, Mentorship, Mentoria, Senior Developer, Web development"
+    />
+    <meta
+      name="abstract"
+      content="My presentation website as Software developer"
+    />
+    <meta name="author" content="João Marcus de Lemos Fernandes" />
+    <meta property="og:locale" content="en" />
+    <link rel="canonical" href="https://joaomarcuslf.com/" />
+    <meta property="og:url" content="https://joaomarcuslf.com/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@joaomarcuslf" />
+    <link rel="stylesheet" type="text/css" href="/css/vendors.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/mentorship.css" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="@joaomarcuslf.com - Full-stack Software engineer - I'm Software Engineer since 2015 with great expertise in Front-end development. I like to teach a lot, and write some posts, you can check more here."
+      href="/feed.xml"
+    />
+    <link rel="stylesheet" type="text/css" href="/css/hljs.css" />
+  </head>
+  <body>
+    <div id="main" role="main" class="main">
+      <section
+        class="hero is-link has-background is-mini bg-mentorship typewriter"
+      >
+        <div class="hero-body">
+          <h1
+            class="title"
+            aria-label="Golang 07 - Expandindo o Front-end"
+            aria-hidden="true"
+          >
+            Golang 07 - Expandindo o Front-end
+          </h1>
+          <h2 class="subtitle">
+            Entendendo como consumimos cada método do back-end
+          </h2>
+        </div>
+      </section>
+      <br />
+      <div class="container">
+        <article class="media">
+          <div class="media-content">
+            <div class="content">
+              <h2 id="expectativas">Expectativas</h2>
+              <p>
+                Nessa aula vamos colocar vamos focar em consumir todos os
+                métodos da nossa API com nosso Front-end.
+              </p>
+              <hr />
+              <p>Ponto de partida desse post:</p>
+              <div>
+                <article
+                  class="project-card"
+                  data-gh-project="joaomarcuslf/go-mentorship"
+                >
+                  <figure class="project-card-image">
+                    <p class="image">
+                      <img
+                        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg"
+                        alt="go logo"
+                        width="128"
+                        height="128"
+                      />
+                    </p>
+                  </figure>
+                  <div class="project-card-content">
+                    <header class="project-card-header">
+                      <p class="project-card-suptitle">
+                        On
+                        <a
+                          target="blank"
+                          href="https://github.com/joaomarcuslf/go-mentorship/tree/lesson-07"
+                          title="View on GitHub"
+                          >GitHub</a
+                        >
+                        <small>#/tree/lesson-07</small>
+                      </p>
+                      <a
+                        target="blank"
+                        href="https://github.com/joaomarcuslf/go-mentorship/tree/lesson-07"
+                        title="View on GitHub"
+                      >
+                        <h6 class="project-card-title">go-mentorship</h6>
+                      </a>
+                    </header>
+                    <div class="project-card-body">
+                      <dl class="project-card-details">
+                        <dt>Forked</dt>
+                        <dd class="fork">
+                          <a
+                            target="blank"
+                            href="https://github.com/joaomarcuslf/go-mentorship/fork"
+                            title="View fork details"
+                          >
+                          </a>
+                        </dd>
+                        <dt>Starred</dt>
+                        <dd class="star">
+                          <a
+                            target="blank"
+                            href="https://github.com/joaomarcuslf/go-mentorship/stargazers "
+                            title="View fork details"
+                          >
+                          </a>
+                        </dd>
+                      </dl>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <h2 id="colocando-nosso-css">Colocando nosso CSS</h2>
+              <p>
+                Você talvez esteja cansado já da tela sem muitas belezas, porém
+                você já deve ter percebido que deixamos para trás alguns
+                arquivos quando usávamos o HTML, e não o React, vamos puxar
+                esses arquivos para nosso novo Front-end.
+              </p>
+              <p>Rode o seguinte comando no terminal:</p>
+              <div class="language-bash highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="nb">mv </span>static/main.css public/main.css
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Agora, abra o
+                <code class="language-plaintext highlighter-rouge"
+                  >public/index.html</code
+                >, e adicione dentro da tag
+                <code class="language-plaintext highlighter-rouge"
+                  >&lt;head&gt;</code
+                >
+                a importação do CSS:
+              </p>
+              <div class="language-html highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>    <span class="nt">&lt;link</span> <span class="na">rel=</span>
+  <span class="s">"stylesheet"</span> <span class="na">href=</span>
+  <span class="s">"%PUBLIC_URL%/main.css"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;title&gt;</span>QR Code Generator<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;/head&gt;</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Você pode aproveitar, e mudar o
+                <code class="language-plaintext highlighter-rouge"
+                  >&lt;title&gt;</code
+                >
+                para o title que usávamos antes na home.
+              </p>
+              <blockquote>
+                <p>
+                  Você sabe por quê estamos tirando o HTML de dentro da nossa
+                  API? No conteúdo adicional eu irei explicar um pouco melhor,
+                  porém a suma, um servidor ficar responsável tanto pelo HTML,
+                  quanto pelos dados pode tornar o servidor lento, o que é um
+                  problema.
+                </p>
+              </blockquote>
+              <p>
+                Agora vamos criar um componente que vai ser responsável pela
+                nossa casca da home.
+              </p>
+              <div class="language-bash highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="nb">mkdir </span>src/pages
+<span class="nb">touch </span>src/pages/home.jsx
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Abra o
+                <code class="language-plaintext highlighter-rouge"
+                  >pages/home.jsx</code
+                >, e por hora, nós vamos replicar o que tem dentro do
+                <code class="language-plaintext highlighter-rouge"
+                  >templates/index.html</code
+                >.
+              </p>
+              <div class="language-jsx highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span>
+  <span class="s2">react</span>
+  <span class="dl">"</span>
+
+<span class="kd">const</span> <span class="nx">HomePage</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span>
+  <span class="nt">section</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"hero is-purple is-light is-fullheight"</span>
+  <span class="p">&gt;</span>
+      <span class="p">&lt;</span>
+  <span class="nt">div</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"hero-body"</span>
+  <span class="p">&gt;</span>
+        <span class="p">&lt;</span>
+  <span class="nt">div</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"container"</span>
+  <span class="p">&gt;</span>
+          <span class="p">&lt;</span>
+  <span class="nt">div</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"columns is-centered"</span>
+  <span class="p">&gt;</span>
+            <span class="p">&lt;</span>
+  <span class="nt">div</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"column is-8-tablet is-7-desktop is-7-widescreen"</span>
+  <span class="p">&gt;</span>
+              <span class="p">&lt;</span>
+  <span class="nt">form</span> <span class="na">action</span>
+  <span class="p">=</span>
+  <span class="s">"/generator"</span> <span class="na">method</span>
+  <span class="p">=</span>
+  <span class="s">"post"</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"box"</span>
+  <span class="p">&gt;</span>
+                <span class="p">&lt;</span>
+  <span class="nt">div</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"field"</span>
+  <span class="p">&gt;</span>
+                  <span class="p">&lt;</span>
+  <span class="nt">label</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"label has-text-left"</span>
+  <span class="p">&gt;</span>
+                    Please enter the string you want to QRCode.
+                  <span class="p">&lt;/</span>
+  <span class="nt">label</span>
+  <span class="p">&gt;</span>
+
+                  <span class="p">&lt;</span>
+  <span class="nt">div</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"control"</span>
+  <span class="p">&gt;</span>
+                    <span class="p">&lt;</span>
+  <span class="nt">input</span>
+                      <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"input"</span>
+                      <span class="na">placeholder</span>
+  <span class="p">=</span>
+  <span class="s">"e.g. www.google.com"</span>
+                      <span class="na">name</span>
+  <span class="p">=</span>
+  <span class="s">"url"</span>
+                    <span class="p">/&gt;</span>
+                  <span class="p">&lt;/</span>
+  <span class="nt">div</span>
+  <span class="p">&gt;</span>
+                <span class="p">&lt;/</span>
+  <span class="nt">div</span>
+  <span class="p">&gt;</span>
+
+                <span class="p">&lt;</span>
+  <span class="nt">div</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"field has-text-right"</span>
+  <span class="p">&gt;</span>
+                  <span class="p">&lt;</span>
+  <span class="nt">button</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"button is-purple is-rounded is-medium is-fullwidth"</span>
+  <span class="p">&gt;</span>
+                    Submit
+                  <span class="p">&lt;/</span>
+  <span class="nt">button</span>
+  <span class="p">&gt;</span>
+                <span class="p">&lt;/</span>
+  <span class="nt">div</span>
+  <span class="p">&gt;</span>
+              <span class="p">&lt;/</span>
+  <span class="nt">form</span>
+  <span class="p">&gt;</span>
+            <span class="p">&lt;/</span>
+  <span class="nt">div</span>
+  <span class="p">&gt;</span>
+          <span class="p">&lt;/</span>
+  <span class="nt">div</span>
+  <span class="p">&gt;</span>
+        <span class="p">&lt;/</span>
+  <span class="nt">div</span>
+  <span class="p">&gt;</span>
+      <span class="p">&lt;/</span>
+  <span class="nt">div</span>
+  <span class="p">&gt;</span>
+    <span class="p">&lt;/</span>
+  <span class="nt">section</span>
+  <span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">HomePage</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Por hora, eu só repliquei a HTML de dentro do
+                <code class="language-plaintext highlighter-rouge"
+                  >templates/index.html</code
+                >, mudando
+                <code class="language-plaintext highlighter-rouge">class</code>
+                para
+                <code class="language-plaintext highlighter-rouge"
+                  >className</code
+                >, que é o padrão do React, e mudando o
+                <code class="language-plaintext highlighter-rouge"
+                  >dataString</code
+                >
+                para
+                <code class="language-plaintext highlighter-rouge">url</code>
+                para ficar melhor descrito o campo, agora vamos abrir o
+                <code class="language-plaintext highlighter-rouge"
+                  >src/app.jsx</code
+                >, e importar o HomePage lá dentro:
+              </p>
+              <div class="language-jsx highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="k">import</span> <span class="nx">HomePage</span> <span class="k">from</span> <span class="dl">'</span>
+  <span class="s1">./pages/home</span>
+  <span class="dl">'</span>
+
+<span class="kd">function</span> <span class="nx">App</span>
+  <span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span>
+  <span class="nt">div</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"App"</span>
+  <span class="p">&gt;</span>
+      <span class="p">&lt;</span>
+  <span class="nc">HomePage</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span>
+  <span class="nt">div</span>
+  <span class="p">&gt;</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Relaxa que o Fetcher já já volta. Volte para o
+                <code class="language-plaintext highlighter-rouge"
+                  >pages/home.jsx</code
+                >, e vamos começar a criar nossa requisição.
+              </p>
+              <div class="language-jsx highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="k">import</span> <span class="nx">Fetcher</span> <span class="k">from</span> <span class="dl">'</span>
+  <span class="s1">../fetcher/fetcher</span>
+  <span class="dl">'</span>
+<span class="k">import</span> <span class="nx">SiteList</span> <span class="k">from</span> <span class="dl">'</span>
+  <span class="s1">../sites/list</span>
+  <span class="dl">'</span>
+
+<span class="kd">const</span> <span class="nx">postSite</span> <span class="o">=</span> <span class="p">(</span>
+  <span class="nx">body</span>
+  <span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">fetch</span>
+  <span class="p">(</span>
+  <span class="dl">"</span>
+  <span class="s2">http://localhost:8000/api/sites</span>
+  <span class="dl">"</span>
+  <span class="p">,</span> <span class="p">{</span>
+    <span class="na">method</span>
+  <span class="p">:</span> <span class="dl">"</span>
+  <span class="s2">POST</span>
+  <span class="dl">"</span>
+  <span class="p">,</span>
+    <span class="na">headers</span>
+  <span class="p">:</span> <span class="p">{</span>
+      <span class="dl">"</span>
+  <span class="s2">Content-Type</span>
+  <span class="dl">"</span>
+  <span class="p">:</span> <span class="dl">"</span>
+  <span class="s2">application/json</span>
+  <span class="dl">"</span>
+  <span class="p">,</span>
+    <span class="p">},</span>
+    <span class="na">body</span>
+  <span class="p">:</span> <span class="nx">JSON</span>
+  <span class="p">.</span>
+  <span class="nx">stringify</span>
+  <span class="p">(</span>
+  <span class="nx">body</span>
+  <span class="p">),</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">HomePage</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Perceba, que a gente está importando o Fetcher, e o SiteList,
+                agora dentro do componente, vamos declarar o
+                <code class="language-plaintext highlighter-rouge">url</code>
+                como um estado, e chamar nosso
+                <code class="language-plaintext highlighter-rouge"
+                  >handleSubmit</code
+                >.
+              </p>
+              <blockquote>
+                <p>
+                  Essa nomenclatura de handle<EventName>
+                    é uma padronização de escrita muito usual no
+                    Front-end.</EventName
+                  >
+                </p>
+              </blockquote>
+              <div class="language-jsx highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="kd">const</span> <span class="nx">HomePage</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span>
+  <span class="nx">url</span>
+  <span class="p">,</span> <span class="nx">setUrl</span>
+  <span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span>
+  <span class="p">(</span>
+  <span class="dl">""</span>
+  <span class="p">)</span>
+  <span class="kd">const</span> <span class="p">[</span>
+  <span class="nx">loading</span>
+  <span class="p">,</span> <span class="nx">setLoading</span>
+  <span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span>
+  <span class="p">(</span>
+  <span class="kc">false</span>
+  <span class="p">)</span>
+  <span class="kd">const</span> <span class="p">[</span>
+  <span class="nx">error</span>
+  <span class="p">,</span> <span class="nx">setError</span>
+  <span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span>
+  <span class="p">(</span>
+  <span class="kc">null</span>
+  <span class="p">)</span>
+  <span class="kd">const</span> <span class="p">[</span>
+  <span class="nx">showList</span>
+  <span class="p">,</span> <span class="nx">setShowList</span>
+  <span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span>
+  <span class="p">(</span>
+  <span class="kc">true</span>
+  <span class="p">)</span>
+
+  <span class="kd">const</span> <span class="nx">updateList</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setShowList</span>
+  <span class="p">(</span>
+  <span class="kc">false</span>
+  <span class="p">)</span>
+
+    <span class="nx">setTimeout</span>
+  <span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">setShowList</span>
+  <span class="p">(</span>
+  <span class="kc">true</span>
+  <span class="p">)</span>
+    <span class="p">},</span> <span class="mi">100</span>
+  <span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">handleSubmit</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span>
+  <span class="nx">e</span>
+  <span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">e</span>
+  <span class="p">.</span>
+  <span class="nx">preventDefault</span>
+  <span class="p">()</span>
+
+    <span class="nx">setLoading</span>
+  <span class="p">(</span>
+  <span class="kc">true</span>
+  <span class="p">)</span>
+    <span class="nx">setError</span>
+  <span class="p">(</span>
+  <span class="kc">null</span>
+  <span class="p">)</span>
+
+    <span class="k">try</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">postSite</span>
+  <span class="p">({</span> <span class="nx">url</span> <span class="p">})</span>
+      <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">response</span>
+  <span class="p">.</span>
+  <span class="nx">json</span>
+  <span class="p">()</span>
+
+      <span class="k">if</span> <span class="p">(</span>
+  <span class="nx">response</span>
+  <span class="p">.</span>
+  <span class="nx">status</span> <span class="o">&gt;=</span> <span class="mi">400</span>
+  <span class="p">)</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span>
+  <span class="p">(</span>
+  <span class="nx">data</span>
+  <span class="p">.</span>
+  <span class="nx">message</span>
+  <span class="p">)</span>
+      <span class="p">}</span>
+
+      <span class="nx">updateList</span>
+  <span class="p">()</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span>
+  <span class="nx">error</span>
+  <span class="p">)</span> <span class="p">{</span>
+      <span class="nx">setError</span>
+  <span class="p">(</span>
+  <span class="nx">error</span>
+  <span class="p">?.</span>
+  <span class="nx">message</span>
+  <span class="p">)</span>
+    <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+      <span class="nx">setLoading</span>
+  <span class="p">(</span>
+  <span class="kc">false</span>
+  <span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Muitas coisas estão acontecendo no nesse trecho, porém
+                basicamente estamos enviando uma requisição no submit do
+                formulário, e vamos atualizar a lista quando a requisição
+                terminar. Vamos juntos pelo JSX.
+              </p>
+              <div class="language-jsx highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>              <span class="p">&lt;</span>
+  <span class="nt">form</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"box"</span> <span class="na">onSubmit</span>
+  <span class="p">=</span>
+  <span class="si">{</span>
+  <span class="nx">handleSubmit</span>
+  <span class="si">}</span>
+  <span class="p">&gt;</span>
+                <span class="p">&lt;</span>
+  <span class="nt">div</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"field"</span>
+  <span class="p">&gt;</span>
+                  <span class="p">&lt;</span>
+  <span class="nt">label</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"label has-text-left"</span>
+  <span class="p">&gt;</span>
+                    Please enter the string you want to QRCode.
+                  <span class="p">&lt;/</span>
+  <span class="nt">label</span>
+  <span class="p">&gt;</span>
+
+                  <span class="p">&lt;</span>
+  <span class="nt">div</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"control"</span>
+  <span class="p">&gt;</span>
+                    <span class="p">&lt;</span>
+  <span class="nt">input</span>
+                      <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="si">{</span>
+  <span class="nx">error</span> <span class="p">?</span> <span class="dl">"</span>
+  <span class="s2">input is-danger</span>
+  <span class="dl">"</span> <span class="p">:</span> <span class="dl">"</span>
+  <span class="s2">input</span>
+  <span class="dl">"</span>
+  <span class="si">}</span>
+                      <span class="na">placeholder</span>
+  <span class="p">=</span>
+  <span class="s">"e.g. www.google.com"</span>
+                      <span class="na">name</span>
+  <span class="p">=</span>
+  <span class="s">"url"</span>
+                      <span class="na">value</span>
+  <span class="p">=</span>
+  <span class="si">{</span>
+  <span class="nx">url</span>
+  <span class="si">}</span>
+                      <span class="na">onChange</span>
+  <span class="p">=</span>
+  <span class="si">{</span>
+  <span class="p">(</span>
+  <span class="nx">e</span>
+  <span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">setUrl</span>
+  <span class="p">(</span>
+  <span class="nx">e</span>
+  <span class="p">.</span>
+  <span class="nx">target</span>
+  <span class="p">.</span>
+  <span class="nx">value</span>
+  <span class="p">)</span>
+  <span class="si">}</span>
+                    <span class="p">/&gt;</span>
+                  <span class="p">&lt;/</span>
+  <span class="nt">div</span>
+  <span class="p">&gt;</span>
+
+                  <span class="si">{</span>
+  <span class="nx">error</span> <span class="o">&amp;&amp;</span> <span class="p">&lt;</span>
+  <span class="nt">p</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"help is-danger"</span>
+  <span class="p">&gt;</span>
+  <span class="si">{</span>
+  <span class="nx">error</span>
+  <span class="si">}</span>
+  <span class="p">&lt;/</span>
+  <span class="nt">p</span>
+  <span class="p">&gt;</span>
+  <span class="si">}</span>
+                <span class="p">&lt;/</span>
+  <span class="nt">div</span>
+  <span class="p">&gt;</span>
+
+                <span class="p">&lt;</span>
+  <span class="nt">div</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"field has-text-right"</span>
+  <span class="p">&gt;</span>
+                  <span class="p">&lt;</span>
+  <span class="nt">button</span>
+                    <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"button is-purple is-rounded is-medium is-fullwidth"</span>
+                    <span class="na">disabled</span>
+  <span class="p">=</span>
+  <span class="si">{</span>
+  <span class="nx">loading</span>
+  <span class="si">}</span>
+                  <span class="p">&gt;</span>
+                    Submit
+                  <span class="p">&lt;/</span>
+  <span class="nt">button</span>
+  <span class="p">&gt;</span>
+                <span class="p">&lt;/</span>
+  <span class="nt">div</span>
+  <span class="p">&gt;</span>
+              <span class="p">&lt;/</span>
+  <span class="nt">form</span>
+  <span class="p">&gt;</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Nosso form fica assim, perceba que agora nós verificamos erros,
+                e bloqueamos o botão de submit quando estiver carregando os
+                dados. Logo depois do form, vamos mostrar a lista de sites:
+              </p>
+              <div class="language-jsx highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>           <span class="p">&lt;</span>
+  <span class="err">/</span>
+  <span class="na">div</span>
+  <span class="p">&gt;</span>
+          <span class="p">&lt;/</span>
+  <span class="nt">div</span>
+  <span class="p">&gt;</span>
+
+          <span class="p">{</span>
+  <span class="nx">showList</span> <span class="o">&amp;&amp;</span> <span class="p">(</span>
+            <span class="p">&lt;</span>
+  <span class="nt">div</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"columns is-centered"</span>
+  <span class="p">&gt;</span>
+              <span class="p">&lt;</span>
+  <span class="nt">div</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"column is-8-tablet is-7-desktop is-7-widescreen"</span>
+  <span class="p">&gt;</span>
+                <span class="p">&lt;</span>
+  <span class="nt">div</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"box"</span>
+  <span class="p">&gt;</span>
+                  <span class="p">&lt;</span>
+  <span class="nc">Fetcher</span> <span class="na">action</span>
+  <span class="p">=</span>
+  <span class="si">{</span>
+  <span class="nx">SiteList</span>
+  <span class="p">.</span>
+  <span class="nx">action</span>
+  <span class="si">}</span>
+  <span class="p">&gt;</span>
+                    <span class="si">{</span>
+  <span class="p">(</span>
+  <span class="nx">data</span>
+  <span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                      <span class="k">return</span> <span class="p">&lt;</span>
+  <span class="nc">SiteList</span> <span class="na">data</span>
+  <span class="p">=</span>
+  <span class="si">{</span>
+  <span class="nx">data</span>
+  <span class="si">}</span> <span class="p">/&gt;</span>
+                    <span class="p">}</span>
+  <span class="si">}</span>
+                  <span class="p">&lt;/</span>
+  <span class="nc">Fetcher</span>
+  <span class="p">&gt;</span>
+                <span class="p">&lt;/</span>
+  <span class="nt">div</span>
+  <span class="p">&gt;</span>
+              <span class="p">&lt;/</span>
+  <span class="nt">div</span>
+  <span class="p">&gt;</span>
+            <span class="p">&lt;/</span>
+  <span class="nt">div</span>
+  <span class="p">&gt;</span>
+          <span class="p">)}</span>
+        <span class="p">&lt;</span>
+  <span class="err">/</span>
+  <span class="na">div</span>
+  <span class="p">&gt;</span>
+      <span class="p">&lt;/</span>
+  <span class="nt">div</span>
+  <span class="p">&gt;</span>
+    <span class="p">&lt;</span>
+  <span class="err">/</span>
+  <span class="na">section</span>
+  <span class="p">&gt;</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Se você olhar agora no seu navegador, você vai ver que quando
+                você clica no submit você está criando um novo site, porém nós
+                perdemos a validação de se enviarmos a URL vazia, vamos para o
+                <code class="language-plaintext highlighter-rouge"
+                  >handlers/api/sites.go</code
+                >, e vamos mexer no método
+                <code class="language-plaintext highlighter-rouge">Create</code
+                >.
+              </p>
+              <div class="language-go highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="k">func</span> <span class="p">(</span>
+  <span class="n">sc</span> <span class="o">*</span>
+  <span class="n">SiteController</span>
+  <span class="p">)</span> <span class="n">Create</span>
+  <span class="p">(</span>
+  <span class="n">c</span> <span class="o">*</span>
+  <span class="n">gin</span>
+  <span class="o">.</span>
+  <span class="n">Context</span>
+  <span class="p">)</span> <span class="p">{</span>
+   <span class="n">site</span> <span class="o">:=</span> <span class="o">&amp;</span>
+  <span class="n">database</span>
+  <span class="o">.</span>
+  <span class="n">Site</span>
+  <span class="p">{}</span>
+   <span class="n">c</span>
+  <span class="o">.</span>
+  <span class="n">BindJSON</span>
+  <span class="p">(</span>
+  <span class="n">site</span>
+  <span class="p">)</span>
+
+   <span class="k">if</span> <span class="n">site</span>
+  <span class="o">.</span>
+  <span class="n">URL</span> <span class="o">==</span> <span class="s">""</span> <span class="p">{</span>
+      <span class="n">c</span>
+  <span class="o">.</span>
+  <span class="n">JSON</span>
+  <span class="p">(</span>
+  <span class="m">400</span>
+  <span class="p">,</span> <span class="n">gin</span>
+  <span class="o">.</span>
+  <span class="n">H</span>
+  <span class="p">{</span>
+         <span class="s">"message"</span>
+  <span class="o">:</span> <span class="s">"Site URL is required"</span>
+  <span class="p">,</span>
+      <span class="p">})</span>
+      <span class="k">return</span>
+   <span class="p">}</span>
+
+   <span class="n">sc</span>
+  <span class="o">.</span>
+  <span class="n">db</span>
+  <span class="o">.</span>
+  <span class="n">Add</span>
+  <span class="p">(</span>
+  <span class="n">site</span>
+  <span class="o">.</span>
+  <span class="n">URL</span>
+  <span class="p">)</span>
+
+   <span class="n">c</span>
+  <span class="o">.</span>
+  <span class="n">JSON</span>
+  <span class="p">(</span>
+  <span class="m">201</span>
+  <span class="p">,</span> <span class="n">gin</span>
+  <span class="o">.</span>
+  <span class="n">H</span>
+  <span class="p">{})</span>
+<span class="p">}</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Aproveitando que estamos nesse arquivo, vamos também criar um
+                método que retorne o QR code:
+              </p>
+              <div class="language-go highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="k">func</span> <span class="p">(</span>
+  <span class="n">sc</span> <span class="o">*</span>
+  <span class="n">SiteController</span>
+  <span class="p">)</span> <span class="n">ShowQr</span>
+  <span class="p">(</span>
+  <span class="n">c</span> <span class="o">*</span>
+  <span class="n">gin</span>
+  <span class="o">.</span>
+  <span class="n">Context</span>
+  <span class="p">)</span> <span class="p">{</span>
+   <span class="n">id</span> <span class="o">:=</span> <span class="n">c</span>
+  <span class="o">.</span>
+  <span class="n">Param</span>
+  <span class="p">(</span>
+  <span class="s">"id"</span>
+  <span class="p">)</span>
+
+   <span class="n">site</span>
+  <span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">sc</span>
+  <span class="o">.</span>
+  <span class="n">db</span>
+  <span class="o">.</span>
+  <span class="n">Get</span>
+  <span class="p">(</span>
+  <span class="n">id</span>
+  <span class="p">)</span>
+
+   <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+      <span class="n">c</span>
+  <span class="o">.</span>
+  <span class="n">JSON</span>
+  <span class="p">(</span>
+  <span class="m">404</span>
+  <span class="p">,</span> <span class="n">gin</span>
+  <span class="o">.</span>
+  <span class="n">H</span>
+  <span class="p">{</span>
+         <span class="s">"error"</span>
+  <span class="o">:</span> <span class="n">err</span>
+  <span class="o">.</span>
+  <span class="n">Error</span>
+  <span class="p">(),</span>
+      <span class="p">})</span>
+      <span class="k">return</span>
+   <span class="p">}</span>
+
+   <span class="n">qr</span> <span class="o">:=</span> <span class="n">generator</span>
+  <span class="o">.</span>
+  <span class="n">NewQRCode</span>
+  <span class="p">()</span>
+
+   <span class="n">err</span> <span class="o">=</span> <span class="n">qr</span>
+  <span class="o">.</span>
+  <span class="n">SetBarcode</span>
+  <span class="p">(</span>
+  <span class="n">site</span>
+  <span class="o">.</span>
+  <span class="n">URL</span>
+  <span class="p">)</span>
+  <span class="o">.</span>
+  <span class="n">ToPNG</span>
+  <span class="p">(</span>
+  <span class="n">c</span>
+  <span class="o">.</span>
+  <span class="n">Writer</span>
+  <span class="p">)</span>
+
+   <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+      <span class="n">render</span>
+  <span class="o">.</span>
+  <span class="n">NewPage</span>
+  <span class="p">()</span>
+  <span class="o">.</span>
+  <span class="n">AsHome</span>
+  <span class="p">()</span>
+  <span class="o">.</span>
+  <span class="n">SetError</span>
+  <span class="p">(</span>
+  <span class="n">err</span>
+  <span class="p">,</span> <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">StatusBadRequest</span>
+  <span class="p">)</span>
+  <span class="o">.</span>
+  <span class="n">Write</span>
+  <span class="p">(</span>
+  <span class="n">c</span>
+  <span class="p">)</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <blockquote>
+                <p>
+                  Não se esqueça de atualizar os imports do arquivo
+                  <code class="language-plaintext highlighter-rouge"
+                    >handlers/api/sites.go</code
+                  >
+                  para o
+                  <code class="language-plaintext highlighter-rouge"
+                    >generator</code
+                  >
+                  e
+                  <code class="language-plaintext highlighter-rouge"
+                    >render</code
+                  >.
+                </p>
+              </blockquote>
+              <p>
+                E como declaramos um método novo, vamos no nosso
+                <code class="language-plaintext highlighter-rouge"
+                  >server/htttp.go</code
+                >
+                para colocar esse rota:
+              </p>
+              <div class="language-go highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>   <span class="n">router</span>
+  <span class="o">.</span>
+  <span class="n">GET</span>
+  <span class="p">(</span>
+  <span class="s">"/api/sites/:id"</span>
+  <span class="p">,</span> <span class="n">sc</span>
+  <span class="o">.</span>
+  <span class="n">Show</span>
+  <span class="p">)</span>
+   <span class="n">router</span>
+  <span class="o">.</span>
+  <span class="n">GET</span>
+  <span class="p">(</span>
+  <span class="s">"/api/sites/:id/qr"</span>
+  <span class="p">,</span> <span class="n">sc</span>
+  <span class="o">.</span>
+  <span class="n">ShowQr</span>
+  <span class="p">)</span>
+   <span class="n">router</span>
+  <span class="o">.</span>
+  <span class="n">PUT</span>
+  <span class="p">(</span>
+  <span class="s">"/api/sites/:id"</span>
+  <span class="p">,</span> <span class="n">sc</span>
+  <span class="o">.</span>
+  <span class="n">Update</span>
+  <span class="p">)</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Ainda aproveitando que estamos no Go, é uma boa prática
+                declararmos qual a chave queremos que nossos campos respeitem no
+                json, abra o
+                <code class="language-plaintext highlighter-rouge"
+                  >database/db.go</code
+                >, e na linha
+                <code class="language-plaintext highlighter-rouge"
+                  >type Site struct {</code
+                >
+                vamos adicionar quais as chaves do json:
+              </p>
+              <div class="language-go highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="k">type</span> <span class="n">Site</span> <span class="k">struct</span> <span class="p">{</span>
+   <span class="n">URL</span> <span class="kt">string</span> <span class="s">`json:"url"`</span>
+   <span class="n">Id</span>  <span class="kt">string</span> <span class="s">`json:"id"`</span>
+<span class="p">}</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Com isso o Go irá automaticamente converter
+                <code class="language-plaintext highlighter-rouge">URL</code>
+                para
+                <code class="language-plaintext highlighter-rouge">url</code>,
+                seguindo o padrão empregado no Front-end.
+              </p>
+              <p>
+                Nós vamos agora atualizar o
+                <code class="language-plaintext highlighter-rouge"
+                  >sites/list.jsx</code
+                >
+                para suportar o delete, e melhorar a listagem dele, com isso,
+                irei empregar o método TDD, vou primeiro mexer nos testes,
+                depois no arquivo de fato, abra o
+                <code class="language-plaintext highlighter-rouge"
+                  >sites/list.test.jsx</code
+                >, vamos começar atualizando o segundo teste:
+              </p>
+              <div class="language-jsx highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>  <span class="nx">test</span>
+  <span class="p">(</span>
+  <span class="dl">'</span>
+  <span class="s1">renders an list with multiple elements</span>
+  <span class="dl">'</span>
+  <span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">{</span> <span class="nx">container</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">render</span>
+  <span class="p">(&lt;</span>
+  <span class="nc">SitesList</span> <span class="na">data</span>
+  <span class="p">=</span>
+  <span class="si">{</span>
+  <span class="p">{</span>
+  <span class="na">sites</span>
+  <span class="p">:</span> <span class="p">[</span> <span class="p">{</span> <span class="na">url</span>
+  <span class="p">:</span> <span class="dl">"</span>
+  <span class="s2">test</span>
+  <span class="dl">"</span> <span class="p">},</span> <span class="p">{</span> <span class="na">url</span>
+  <span class="p">:</span> <span class="dl">"</span>
+  <span class="s2">test</span>
+  <span class="dl">"</span> <span class="p">}</span> <span class="p">,{</span> <span class="na">url</span>
+  <span class="p">:</span> <span class="dl">"</span>
+  <span class="s2">test</span>
+  <span class="dl">"</span> <span class="p">}</span> <span class="p">]}</span>
+  <span class="si">}</span> <span class="p">/&gt;)</span>
+
+    <span class="kd">const</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">container</span>
+  <span class="p">.</span>
+  <span class="nx">querySelectorAll</span>
+  <span class="p">(</span>
+  <span class="dl">'</span>
+  <span class="s1">.site-item</span>
+  <span class="dl">'</span>
+  <span class="p">)</span>
+
+    <span class="nx">expect</span>
+  <span class="p">(</span>
+  <span class="nx">element</span>
+  <span class="p">.</span>
+  <span class="nx">length</span>
+  <span class="p">).</span>
+  <span class="nx">toBe</span>
+  <span class="p">(</span>
+  <span class="mi">3</span>
+  <span class="p">)</span>
+  <span class="p">})</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Nosso objeto agora vai esperar
+                <code class="language-plaintext highlighter-rouge">url</code> ao
+                invés de
+                <code class="language-plaintext highlighter-rouge">URL</code>, e
+                os elementos vão ter uma classe específica para eles, agora
+                vamos para o
+                <code class="language-plaintext highlighter-rouge"
+                  >sites/list.jsx</code
+                >, e atualizar ele.
+              </p>
+              <div class="language-jsx highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span>
+  <span class="s2">react</span>
+  <span class="dl">"</span>
+  <span class="p">;</span>
+<span class="k">import</span> <span class="nx">ShowSite</span> <span class="k">from</span> <span class="dl">"</span>
+  <span class="s2">./show</span>
+  <span class="dl">"</span>
+  <span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">SitesList</span> <span class="o">=</span> <span class="p">(</span>
+  <span class="nx">props</span>
+  <span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">{</span> <span class="nx">sites</span> <span class="o">=</span> <span class="p">[]</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span>
+  <span class="p">?.</span>
+  <span class="nx">data</span> <span class="o">||</span> <span class="p">{};</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span>
+  <span class="nt">div</span>
+  <span class="p">&gt;</span>
+      <span class="p">&lt;</span>
+  <span class="nt">h2</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"is-title"</span>
+  <span class="p">&gt;</span>Sites:<span class="p">&lt;/</span>
+  <span class="nt">h2</span>
+  <span class="p">&gt;</span>
+
+      <span class="si">{</span>
+  <span class="nx">sites</span>
+  <span class="p">?.</span>
+  <span class="nx">length</span> <span class="o">===</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="p">&lt;</span>
+  <span class="nt">p</span>
+  <span class="p">&gt;</span>No sites<span class="p">&lt;/</span>
+  <span class="nt">p</span>
+  <span class="p">&gt;</span>
+  <span class="si">}</span>
+
+      <span class="p">&lt;</span>
+  <span class="nt">div</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"columns is-multiline"</span>
+  <span class="p">&gt;</span>
+        <span class="si">{</span>
+  <span class="nx">sites</span>
+  <span class="p">.</span>
+  <span class="nx">map</span>
+  <span class="p">((</span>
+  <span class="nx">site</span>
+  <span class="p">,</span> <span class="nx">index</span>
+  <span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="p">(</span>
+            <span class="p">&lt;</span>
+  <span class="nt">div</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"column is-6 site-item"</span> <span class="na">key</span>
+  <span class="p">=</span>
+  <span class="si">{</span>
+  <span class="s2">`</span>
+  <span class="p">${</span>
+  <span class="nx">site</span>
+  <span class="p">.</span>
+  <span class="nx">url</span>
+  <span class="p">}</span>
+  <span class="s2">-</span>
+  <span class="p">${</span>
+  <span class="nx">site</span>
+  <span class="p">.</span>
+  <span class="nx">id</span>
+  <span class="p">}</span>
+  <span class="s2">-</span>
+  <span class="p">${</span>
+  <span class="nx">index</span>
+  <span class="p">}</span>
+  <span class="s2">`</span>
+  <span class="si">}</span>
+  <span class="p">&gt;</span>
+              <span class="p">&lt;</span>
+  <span class="nc">ShowSite</span>
+                <span class="na">url</span>
+  <span class="p">=</span>
+  <span class="si">{</span>
+  <span class="nx">site</span>
+  <span class="p">?.</span>
+  <span class="nx">url</span>
+  <span class="si">}</span>
+                <span class="na">id</span>
+  <span class="p">=</span>
+  <span class="si">{</span>
+  <span class="nx">site</span>
+  <span class="p">?.</span>
+  <span class="nx">id</span>
+  <span class="si">}</span>
+                <span class="na">showContent</span>
+  <span class="p">=</span>
+  <span class="si">{</span>
+  <span class="nx">props</span>
+  <span class="p">.</span>
+  <span class="nx">showContent</span>
+  <span class="si">}</span>
+                <span class="na">handleDelete</span>
+  <span class="p">=</span>
+  <span class="si">{</span>
+  <span class="nx">props</span>
+  <span class="p">.</span>
+  <span class="nx">handleDelete</span>
+  <span class="si">}</span>
+                <span class="na">handleEdit</span>
+  <span class="p">=</span>
+  <span class="si">{</span>
+  <span class="nx">props</span>
+  <span class="p">.</span>
+  <span class="nx">handleEdit</span>
+  <span class="si">}</span>
+              <span class="p">/&gt;</span>
+            <span class="p">&lt;/</span>
+  <span class="nt">div</span>
+  <span class="p">&gt;</span>
+          <span class="p">);</span>
+        <span class="p">})</span>
+  <span class="si">}</span>
+      <span class="p">&lt;/</span>
+  <span class="nt">div</span>
+  <span class="p">&gt;</span>
+    <span class="p">&lt;/</span>
+  <span class="nt">div</span>
+  <span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Perceba, que agora nós estamos passando url, id e handleDelete,
+                porém esse componente ShowSite não existe, certo? Vamos criar
+                ele, rode os seguintes comandos no terminal:
+              </p>
+              <div class="language-bash highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="nb">touch </span>src/sites/show.jsx
+<span class="nb">touch </span>src/sites/show.test.jsx
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Abra o
+                <code class="language-plaintext highlighter-rouge"
+                  >sites/show.test.jsx</code
+                >, primeiro, nele nós vamos testar se o componente chama tries
+                métodos:
+              </p>
+              <ul>
+                <li>
+                  <code class="language-plaintext highlighter-rouge"
+                    >showContent</code
+                  >: Função responsável por mostrar nosso QR code.
+                </li>
+                <li>
+                  <code class="language-plaintext highlighter-rouge"
+                    >handleEdit</code
+                  >: Função responsável por editar o site.
+                </li>
+                <li>
+                  <code class="language-plaintext highlighter-rouge"
+                    >handleDelete</code
+                  >: Função responsável por deletar o site.
+                </li>
+              </ul>
+              <p>
+                Porém como esses cenários usam o Back-end, nós só iremos nos
+                preocupar se ele está chamando ou não essas funções.
+              </p>
+              <div class="language-jsx highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="cm">/* eslint-disable testing-library/no-node-access */</span>
+<span class="cm">/* eslint-disable testing-library/no-container */</span>
+<span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">'</span>
+  <span class="s1">react</span>
+  <span class="dl">'</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">render</span>
+  <span class="p">,</span> <span class="nx">screen</span>
+  <span class="p">,</span> <span class="nx">waitFor</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span>
+  <span class="s1">@testing-library/react</span>
+  <span class="dl">'</span>
+<span class="k">import</span> <span class="nx">ShowSite</span> <span class="k">from</span> <span class="dl">'</span>
+  <span class="s1">./show</span>
+  <span class="dl">'</span>
+
+<span class="nx">describe</span>
+  <span class="p">(</span>
+  <span class="dl">'</span>
+  <span class="s1">&lt;ShowSite /&gt;</span>
+  <span class="dl">'</span>
+  <span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>Até agora nada atípico, vamos criar o primeiro teste:</p>
+              <div class="language-jsx highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>  <span class="nx">test</span>
+  <span class="p">(</span>
+  <span class="dl">'</span>
+  <span class="s1">showContent: should be called on element click</span>
+  <span class="dl">'</span>
+  <span class="p">,</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">mockFn</span> <span class="o">=</span> <span class="nx">jest</span>
+  <span class="p">.</span>
+  <span class="nx">fn</span>
+  <span class="p">()</span>
+
+    <span class="nx">render</span>
+  <span class="p">(&lt;</span>
+  <span class="nc">ShowSite</span> <span class="na">url</span>
+  <span class="p">=</span>
+  <span class="s">"test"</span> <span class="na">id</span>
+  <span class="p">=</span>
+  <span class="s">"test"</span> <span class="na">showContent</span>
+  <span class="p">=</span>
+  <span class="si">{</span>
+  <span class="nx">mockFn</span>
+  <span class="si">}</span> <span class="p">/&gt;)</span>
+
+    <span class="kd">let</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">screen</span>
+  <span class="p">.</span>
+  <span class="nx">getByText</span>
+  <span class="p">(</span>
+  <span class="sr">/test/i</span>
+  <span class="p">)</span>
+
+    <span class="nx">expect</span>
+  <span class="p">(</span>
+  <span class="nx">element</span>
+  <span class="p">).</span>
+  <span class="nx">toBeInTheDocument</span>
+  <span class="p">()</span>
+    <span class="nx">element</span>
+  <span class="p">.</span>
+  <span class="nx">click</span>
+  <span class="p">()</span>
+
+    <span class="k">await</span> <span class="nx">waitFor</span>
+  <span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">expect</span>
+  <span class="p">(</span>
+  <span class="nx">mockFn</span>
+  <span class="p">).</span>
+  <span class="nx">toHaveBeenCalled</span>
+  <span class="p">())</span>
+    <span class="nx">expect</span>
+  <span class="p">(</span>
+  <span class="nx">mockFn</span>
+  <span class="p">).</span>
+  <span class="nx">toHaveBeenCalled</span>
+  <span class="p">()</span>
+  <span class="p">})</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Esse teste apenas está dizendo que quando eu clicar na URL que
+                será o título do nosso componente, agora vamos testar o edit que
+                seguirá mais ou menos o mesmo que o show.
+              </p>
+              <blockquote>
+                <p>Se você não conhece o waitFor, volte uma aula.</p>
+              </blockquote>
+              <div class="language-jsx highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>  <span class="nx">test</span>
+  <span class="p">(</span>
+  <span class="dl">'</span>
+  <span class="s1">handleEdit: should be callend on the Edit click</span>
+  <span class="dl">'</span>
+  <span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">mockFn</span> <span class="o">=</span> <span class="nx">jest</span>
+  <span class="p">.</span>
+  <span class="nx">fn</span>
+  <span class="p">()</span>
+
+    <span class="nx">render</span>
+  <span class="p">(&lt;</span>
+  <span class="nc">ShowSite</span> <span class="na">url</span>
+  <span class="p">=</span>
+  <span class="s">"test"</span> <span class="na">id</span>
+  <span class="p">=</span>
+  <span class="s">"test"</span> <span class="na">handleEdit</span>
+  <span class="p">=</span>
+  <span class="si">{</span>
+  <span class="nx">mockFn</span>
+  <span class="si">}</span> <span class="p">/&gt;)</span>
+
+    <span class="kd">let</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">screen</span>
+  <span class="p">.</span>
+  <span class="nx">getByText</span>
+  <span class="p">(</span>
+  <span class="sr">/Edit/i</span>
+  <span class="p">)</span>
+
+    <span class="nx">expect</span>
+  <span class="p">(</span>
+  <span class="nx">element</span>
+  <span class="p">).</span>
+  <span class="nx">toBeInTheDocument</span>
+  <span class="p">()</span>
+    <span class="nx">element</span>
+  <span class="p">.</span>
+  <span class="nx">click</span>
+  <span class="p">()</span>
+
+    <span class="nx">expect</span>
+  <span class="p">(</span>
+  <span class="nx">mockFn</span>
+  <span class="p">).</span>
+  <span class="nx">toHaveBeenCalled</span>
+  <span class="p">()</span>
+  <span class="p">})</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                A partir daqui é onde precisamos fazer algo a mais, o delete
+                chamará o
+                <code class="language-plaintext highlighter-rouge">confirm</code
+                >, para validar se o usuário tem certeza ou não que deve
+                deletar, para isso, nós vamos mocar o
+                <code class="language-plaintext highlighter-rouge"
+                  >global.confirm</code
+                >
+                no nosso teste.
+              </p>
+              <div class="language-jsx highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>  <span class="nx">test</span>
+  <span class="p">(</span>
+  <span class="dl">'</span>
+  <span class="s1">handleDelete: should call delete on confirmation</span>
+  <span class="dl">'</span>
+  <span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nb">global</span>
+  <span class="p">.</span>
+  <span class="nx">confirm</span> <span class="o">=</span> <span class="nx">jest</span>
+  <span class="p">.</span>
+  <span class="nx">fn</span>
+  <span class="p">(()</span> <span class="o">=&gt;</span> <span class="kc">true</span>
+  <span class="p">)</span>
+
+    <span class="kd">const</span> <span class="nx">mockFn</span> <span class="o">=</span> <span class="nx">jest</span>
+  <span class="p">.</span>
+  <span class="nx">fn</span>
+  <span class="p">()</span>
+
+    <span class="nx">render</span>
+  <span class="p">(&lt;</span>
+  <span class="nc">ShowSite</span> <span class="na">url</span>
+  <span class="p">=</span>
+  <span class="s">"test"</span> <span class="na">id</span>
+  <span class="p">=</span>
+  <span class="s">"test"</span> <span class="na">handleDelete</span>
+  <span class="p">=</span>
+  <span class="si">{</span>
+  <span class="nx">mockFn</span>
+  <span class="si">}</span> <span class="p">/&gt;)</span>
+
+    <span class="kd">let</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">screen</span>
+  <span class="p">.</span>
+  <span class="nx">getByText</span>
+  <span class="p">(</span>
+  <span class="sr">/Delete/i</span>
+  <span class="p">)</span>
+
+    <span class="nx">expect</span>
+  <span class="p">(</span>
+  <span class="nx">element</span>
+  <span class="p">).</span>
+  <span class="nx">toBeInTheDocument</span>
+  <span class="p">()</span>
+    <span class="nx">element</span>
+  <span class="p">.</span>
+  <span class="nx">click</span>
+  <span class="p">()</span>
+
+    <span class="nx">expect</span>
+  <span class="p">(</span>
+  <span class="nb">global</span>
+  <span class="p">.</span>
+  <span class="nx">confirm</span>
+  <span class="p">).</span>
+  <span class="nx">toHaveBeenCalled</span>
+  <span class="p">()</span>
+    <span class="nx">expect</span>
+  <span class="p">(</span>
+  <span class="nx">mockFn</span>
+  <span class="p">).</span>
+  <span class="nx">toHaveBeenCalled</span>
+  <span class="p">()</span>
+  <span class="p">})</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                E para desencargo de consciência, vamos testar também se o
+                usuário
+                <code class="language-plaintext highlighter-rouge">não</code>
+                quer deletar.
+              </p>
+              <div class="language-jsx highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>  <span class="nx">test</span>
+  <span class="p">(</span>
+  <span class="dl">'</span>
+  <span class="s1">handleDelete: should not call delete on confirmation</span>
+  <span class="dl">'</span>
+  <span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nb">global</span>
+  <span class="p">.</span>
+  <span class="nx">confirm</span> <span class="o">=</span> <span class="nx">jest</span>
+  <span class="p">.</span>
+  <span class="nx">fn</span>
+  <span class="p">(()</span> <span class="o">=&gt;</span> <span class="kc">false</span>
+  <span class="p">)</span>
+
+    <span class="kd">const</span> <span class="nx">mockFn</span> <span class="o">=</span> <span class="nx">jest</span>
+  <span class="p">.</span>
+  <span class="nx">fn</span>
+  <span class="p">()</span>
+
+    <span class="nx">render</span>
+  <span class="p">(&lt;</span>
+  <span class="nc">ShowSite</span> <span class="na">url</span>
+  <span class="p">=</span>
+  <span class="s">"test"</span> <span class="na">id</span>
+  <span class="p">=</span>
+  <span class="s">"test"</span> <span class="na">handleDelete</span>
+  <span class="p">=</span>
+  <span class="si">{</span>
+  <span class="nx">mockFn</span>
+  <span class="si">}</span> <span class="p">/&gt;)</span>
+
+    <span class="kd">let</span> <span class="nx">element</span> <span class="o">=</span> <span class="nx">screen</span>
+  <span class="p">.</span>
+  <span class="nx">getByText</span>
+  <span class="p">(</span>
+  <span class="sr">/Delete/i</span>
+  <span class="p">)</span>
+
+    <span class="nx">expect</span>
+  <span class="p">(</span>
+  <span class="nx">element</span>
+  <span class="p">).</span>
+  <span class="nx">toBeInTheDocument</span>
+  <span class="p">()</span>
+    <span class="nx">element</span>
+  <span class="p">.</span>
+  <span class="nx">click</span>
+  <span class="p">()</span>
+
+    <span class="nx">expect</span>
+  <span class="p">(</span>
+  <span class="nb">global</span>
+  <span class="p">.</span>
+  <span class="nx">confirm</span>
+  <span class="p">).</span>
+  <span class="nx">toHaveBeenCalled</span>
+  <span class="p">()</span>
+    <span class="nx">expect</span>
+  <span class="p">(</span>
+  <span class="nx">mockFn</span>
+  <span class="p">).</span>
+  <span class="nx">toHaveBeenCalledTimes</span>
+  <span class="p">(</span>
+  <span class="mi">0</span>
+  <span class="p">)</span>
+  <span class="p">})</span>
+<span class="p">})</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Com isso, vamos abrir o
+                <code class="language-plaintext highlighter-rouge"
+                  >sites/show.jsx</code
+                >, e adicionar lá nosso código:
+              </p>
+              <div class="language-jsx highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="cm">/* eslint-disable no-restricted-globals */</span>
+<span class="k">import</span> <span class="nx">React</span>
+  <span class="p">,</span> <span class="p">{</span> <span class="nx">useState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span>
+  <span class="s2">react</span>
+  <span class="dl">"</span>
+  <span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">ShowSite</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">url</span>
+  <span class="p">,</span> <span class="nx">id</span>
+  <span class="p">,</span> <span class="nx">showContent</span>
+  <span class="p">,</span> <span class="nx">handleDelete</span>
+  <span class="p">,</span> <span class="nx">handleEdit</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span>
+  <span class="nx">isOpen</span>
+  <span class="p">,</span> <span class="nx">setIsOpen</span>
+  <span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span>
+  <span class="p">(</span>
+  <span class="kc">false</span>
+  <span class="p">);</span>
+
+  <span class="kd">const</span> <span class="nx">handleDeleteClick</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">confirmDelete</span> <span class="o">=</span> <span class="nx">confirm</span>
+  <span class="p">(</span>
+  <span class="s2">`Are you sure you want to delete this site (</span>
+  <span class="p">${</span>
+  <span class="nx">url</span>
+  <span class="p">}</span>
+  <span class="s2">)?`</span>
+  <span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span>
+  <span class="nx">confirmDelete</span>
+  <span class="p">)</span> <span class="p">{</span>
+      <span class="nx">handleDelete</span>
+  <span class="p">(</span>
+  <span class="nx">id</span>
+  <span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">handleEditClick</span> <span class="o">=</span> <span class="k">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">handleEdit</span>
+  <span class="p">(</span>
+  <span class="nx">id</span>
+  <span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="p">&lt;</span>
+  <span class="nt">div</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"card mb-5"</span>
+  <span class="p">&gt;</span>
+      <span class="p">&lt;</span>
+  <span class="nt">header</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"card-header"</span>
+  <span class="p">&gt;</span>
+        <span class="p">&lt;</span>
+  <span class="nt">button</span>
+          <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"button is-medium is-fullwidth"</span>
+          <span class="na">aria</span>
+  <span class="err">-</span>
+  <span class="na">label</span>
+  <span class="p">=</span>
+  <span class="s">"more options"</span>
+          <span class="na">onClick</span>
+  <span class="p">=</span>
+  <span class="si">{</span>
+  <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">setIsOpen</span>
+  <span class="p">(</span>
+  <span class="o">!</span>
+  <span class="nx">isOpen</span>
+  <span class="p">)</span>
+  <span class="si">}</span>
+        <span class="p">&gt;</span>
+          <span class="si">{</span>
+  <span class="nx">url</span>
+  <span class="si">}</span>
+        <span class="p">&lt;/</span>
+  <span class="nt">button</span>
+  <span class="p">&gt;</span>
+      <span class="p">&lt;/</span>
+  <span class="nt">header</span>
+  <span class="p">&gt;</span>
+
+      <span class="si">{</span>
+  <span class="nx">isOpen</span> <span class="o">&amp;&amp;</span> <span class="nx">showContent</span>
+  <span class="p">(</span>
+  <span class="nx">id</span>
+  <span class="p">)</span>
+  <span class="si">}</span>
+
+      <span class="p">&lt;</span>
+  <span class="nt">footer</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"card-footer"</span>
+  <span class="p">&gt;</span>
+        <span class="p">&lt;</span>
+  <span class="nt">button</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"card-footer-item button is-link"</span> <span class="na">onClick</span>
+  <span class="p">=</span>
+  <span class="si">{</span>
+  <span class="nx">handleEditClick</span>
+  <span class="si">}</span>
+  <span class="p">&gt;</span>
+          Edit
+        <span class="p">&lt;/</span>
+  <span class="nt">button</span>
+  <span class="p">&gt;</span>
+        <span class="p">&lt;</span>
+  <span class="nt">button</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"card-footer-item button is-link"</span> <span class="na">onClick</span>
+  <span class="p">=</span>
+  <span class="si">{</span>
+  <span class="nx">handleDeleteClick</span>
+  <span class="si">}</span>
+  <span class="p">&gt;</span>
+          Delete
+        <span class="p">&lt;/</span>
+  <span class="nt">button</span>
+  <span class="p">&gt;</span>
+      <span class="p">&lt;/</span>
+  <span class="nt">footer</span>
+  <span class="p">&gt;</span>
+    <span class="p">&lt;/</span>
+  <span class="nt">div</span>
+  <span class="p">&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">ShowSite</span>
+  <span class="p">;</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Agora vamos abrir
+                <code class="language-plaintext highlighter-rouge"
+                  >pages/home.jsx</code
+                >, e vamos declarar nossas funções lá. Embaixo do
+                <code class="language-plaintext highlighter-rouge"
+                  >postSite</code
+                >
+                coloque o seguinte código:
+              </p>
+              <div class="language-jsx highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="kd">const</span> <span class="nx">getQrURL</span> <span class="o">=</span> <span class="p">(</span>
+  <span class="nx">id</span>
+  <span class="p">)</span> <span class="o">=&gt;</span> <span class="s2">`http://localhost:8000/api/sites/</span>
+  <span class="p">${</span>
+  <span class="nx">id</span>
+  <span class="p">}</span>
+  <span class="s2">/qr`</span>
+
+<span class="kd">const</span> <span class="nx">showContent</span> <span class="o">=</span> <span class="p">(</span>
+  <span class="nx">id</span>
+  <span class="p">)</span> <span class="o">=&gt;</span> <span class="p">(</span>
+  <span class="p">&lt;</span>
+  <span class="nt">div</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"card-content"</span>
+  <span class="p">&gt;</span>
+    <span class="p">&lt;</span>
+  <span class="nt">div</span> <span class="na">className</span>
+  <span class="p">=</span>
+  <span class="s">"content has-text-centered"</span>
+  <span class="p">&gt;</span>
+      <span class="p">&lt;</span>
+  <span class="nt">img</span> <span class="na">src</span>
+  <span class="p">=</span>
+  <span class="si">{</span>
+  <span class="nx">getQrURL</span>
+  <span class="p">(</span>
+  <span class="nx">id</span>
+  <span class="p">)</span>
+  <span class="si">}</span> <span class="na">alt</span>
+  <span class="p">=</span>
+  <span class="s">"favicon"</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;/</span>
+  <span class="nt">div</span>
+  <span class="p">&gt;</span>
+  <span class="p">&lt;/</span>
+  <span class="nt">div</span>
+  <span class="p">&gt;</span>
+<span class="p">)</span>
+
+<span class="kd">const</span> <span class="nx">updateSite</span> <span class="o">=</span> <span class="p">(</span>
+  <span class="nx">id</span>
+  <span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">fetch</span>
+  <span class="p">(</span>
+  <span class="s2">`http://localhost:8000/api/sites/</span>
+  <span class="p">${</span>
+  <span class="nx">id</span>
+  <span class="p">}</span>
+  <span class="s2">`</span>
+  <span class="p">,</span> <span class="p">{</span>
+    <span class="na">headers</span>
+  <span class="p">:</span> <span class="p">{</span>
+      <span class="dl">"</span>
+  <span class="s2">Content-Type</span>
+  <span class="dl">"</span>
+  <span class="p">:</span> <span class="dl">"</span>
+  <span class="s2">application/json</span>
+  <span class="dl">"</span>
+  <span class="p">,</span>
+    <span class="p">},</span>
+    <span class="na">method</span>
+  <span class="p">:</span> <span class="dl">"</span>
+  <span class="s2">PUT</span>
+  <span class="dl">"</span>
+  <span class="p">,</span>
+    <span class="na">mode</span>
+  <span class="p">:</span> <span class="dl">"</span>
+  <span class="s2">cors</span>
+  <span class="dl">"</span>
+  <span class="p">,</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">deleteSite</span> <span class="o">=</span> <span class="p">(</span>
+  <span class="nx">id</span>
+  <span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">fetch</span>
+  <span class="p">(</span>
+  <span class="s2">`http://localhost:8000/api/sites/</span>
+  <span class="p">${</span>
+  <span class="nx">id</span>
+  <span class="p">}</span>
+  <span class="s2">`</span>
+  <span class="p">,</span> <span class="p">{</span>
+    <span class="na">headers</span>
+  <span class="p">:</span> <span class="p">{</span>
+      <span class="dl">"</span>
+  <span class="s2">Content-Type</span>
+  <span class="dl">"</span>
+  <span class="p">:</span> <span class="dl">"</span>
+  <span class="s2">application/json</span>
+  <span class="dl">"</span>
+  <span class="p">,</span>
+    <span class="p">},</span>
+    <span class="na">method</span>
+  <span class="p">:</span> <span class="dl">"</span>
+  <span class="s2">DELETE</span>
+  <span class="dl">"</span>
+  <span class="p">,</span>
+    <span class="na">mode</span>
+  <span class="p">:</span> <span class="dl">"</span>
+  <span class="s2">cors</span>
+  <span class="dl">"</span>
+  <span class="p">,</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Esses métodos que interagem com o Back-end, nós vamos em breve
+                refatorar para nosso
+                <code class="language-plaintext highlighter-rouge"
+                  >home.jsx</code
+                >
+                não precisar declarar esses métodos.
+              </p>
+              <p>
+                Agora, dentro do
+                <code class="language-plaintext highlighter-rouge"
+                  >HomePage</code
+                >, vamos declarando os métodos individualmente.
+              </p>
+              <div class="language-jsx highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>  <span class="kd">const</span> <span class="nx">handleEdit</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span>
+  <span class="nx">id</span>
+  <span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">editSite</span>
+  <span class="p">(</span>
+  <span class="nx">id</span>
+  <span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span>
+  <span class="nx">response</span>
+  <span class="p">.</span>
+  <span class="nx">status</span> <span class="o">&gt;=</span> <span class="mi">400</span>
+  <span class="p">)</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span>
+  <span class="p">(</span>
+  <span class="nx">response</span>
+  <span class="p">.</span>
+  <span class="nx">message</span>
+  <span class="p">);</span>
+      <span class="p">}</span>
+
+      <span class="nx">updateList</span>
+  <span class="p">();</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span>
+  <span class="nx">error</span>
+  <span class="p">)</span> <span class="p">{</span>
+      <span class="nx">alert</span>
+  <span class="p">(</span>
+  <span class="nx">error</span>
+  <span class="p">.</span>
+  <span class="nx">message</span>
+  <span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">handleDelete</span> <span class="o">=</span> <span class="k">async</span> <span class="p">(</span>
+  <span class="nx">id</span>
+  <span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">deleteSite</span>
+  <span class="p">(</span>
+  <span class="nx">id</span>
+  <span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span>
+  <span class="nx">response</span>
+  <span class="p">.</span>
+  <span class="nx">status</span> <span class="o">&gt;=</span> <span class="mi">400</span>
+  <span class="p">)</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span>
+  <span class="p">(</span>
+  <span class="nx">response</span>
+  <span class="p">.</span>
+  <span class="nx">message</span>
+  <span class="p">);</span>
+      <span class="p">}</span>
+
+      <span class="nx">updateList</span>
+  <span class="p">();</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span>
+  <span class="nx">error</span>
+  <span class="p">)</span> <span class="p">{</span>
+      <span class="nx">alert</span>
+  <span class="p">(</span>
+  <span class="nx">error</span>
+  <span class="p">.</span>
+  <span class="nx">message</span>
+  <span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Está sentindo esse cheiro? Cheiro de repetição de código? Anote
+                isso, nós vamos refatorar tudo isso em breve. Atualize o
+                SiteList dentro desse arquivo.
+              </p>
+              <div class="language-jsx highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>  <span class="p">&lt;</span>
+  <span class="nc">SiteList</span>
+    <span class="na">data</span>
+  <span class="p">=</span>
+  <span class="si">{</span>
+  <span class="nx">data</span>
+  <span class="si">}</span>
+    <span class="na">showContent</span>
+  <span class="p">=</span>
+  <span class="si">{</span>
+  <span class="nx">showContent</span>
+  <span class="si">}</span>
+    <span class="na">handleEdit</span>
+  <span class="p">=</span>
+  <span class="si">{</span>
+  <span class="nx">handleEdit</span>
+  <span class="si">}</span>
+    <span class="na">handleDelete</span>
+  <span class="p">=</span>
+  <span class="si">{</span>
+  <span class="nx">handleDelete</span>
+  <span class="si">}</span>
+  <span class="p">/&gt;</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Até aqui você já deve ter funcionando
+                <code class="language-plaintext highlighter-rouge"
+                  >GET /sites</code
+                >,
+                <code class="language-plaintext highlighter-rouge"
+                  >POST /sites</code
+                >,
+                <code class="language-plaintext highlighter-rouge"
+                  >DELETE /sites/:id</code
+                >, e
+                <code class="language-plaintext highlighter-rouge"
+                  >GET /sites/:id/qr</code
+                >. Abra seu navegador, veja funcionando, e se orgulhe, pois já
+                foi um caminho longo.
+              </p>
+              <p>
+                Para o
+                <code class="language-plaintext highlighter-rouge"
+                  >PUT /sites/:id</code
+                >, vamos ver na próxima aula, assim como a refatoração do
+                <code class="language-plaintext highlighter-rouge"
+                  >home.jsx</code
+                >. Fique bem, até a próxima.
+              </p>
+              <h2 id="adicionais">Adicionais</h2>
+              <h3 id="quando-separar-um-sistema">Quando separar um sistema?</h3>
+              <p>
+                Você já deve ter ouvido falar sobre
+                <code class="language-plaintext highlighter-rouge"
+                  >Monolito</code
+                >,
+                <code class="language-plaintext highlighter-rouge"
+                  >Microsserviços</code
+                >, e outras palavras Hypadas. E você também já deve ter ouvido
+                uma ODE direcionada a odiar Monolitos, e eu espero desmistificar
+                esse ódio para você.
+              </p>
+              <p>
+                Monolito é uma arquitetura de sistemas ondem a mesma aplicação é
+                responsável por tanto entregar a camada de visualização(Ex.:
+                HTML), quanto a de dados(Ex.: JSON). Essa arquitetura
+                normalmente fica complexo a médio, longo prazo, e muitas vezes
+                tem uma característica de parecer suja, pois os códigos se
+                confundem, e se embolam.
+              </p>
+              <p>
+                Normalmente, é apresentado como solução Microsserviços, e na
+                maior parte das vezes, os microsserviços ficam complexos a
+                médio, longo prazo, muitas vezes sujos, os códigos se confundem,
+                e se embolam.
+              </p>
+              <p>Pera, você viu o que aconteceu? Não? Sim?</p>
+              <p>
+                Não importa a arquitetura que você escolher, se ela não for bem
+                planejada, e mantida, ela vai ficar complexa, não importa qual
+                você escolher, ambas as abordagens tem suas vantagens, e
+                desvantagens, em geral, a regra que eu aplico para escrever
+                sistemas é:
+              </p>
+              <blockquote>
+                <p>
+                  Quando eu preciso de que as regras de negócio sejam bem
+                  acopladas entre a camada de visualização, e camada de dados,
+                  Monolitos costumam ser uma arquitetura muito boa, pois ela me
+                  permite manter o código compartilhado, e nesses cenários eu
+                  aplico uma boa divisão dos código, mantendo eles agnósticos de
+                  onde estão rodando, algo muito parecido com os Use Cases
+                  descritos no
+                  <a
+                    href="https://dev.to/thiagosilva95/clean-architecture-o-que-e-vantagens-e-como-utilizar-em-aplicacoes-na-pratica-4ej8"
+                    >Clean Arch</a
+                  >.
+                </p>
+              </blockquote>
+              <blockquote>
+                <p>
+                  Quando eu preciso que meu sistema seja granular, e
+                  independentes entre si, eu costumo preferir Microsserviços,
+                  pois cada sistema pode ter seu deploy separado, e quando um
+                  cair, não necessariamente irá afetar o outro. Essa é uma
+                  arquitetura que costuma onerar o Front-end pois para o
+                  navegador abrir várias conexões HTTP com respostas pequenas é
+                  pior do que receber uma response única grandem então nesse
+                  cenário costumo aplicar uma camada de
+                  <a
+                    href="https://brasil.uxdesign.cc/quem-%C3%A9-o-bff-na-fila-do-p%C3%A3o-ef58d87bbab0"
+                    >BFF na frente</a
+                  >.
+                </p>
+              </blockquote>
+              <h2 id="link-do-projeto">Link do projeto:</h2>
+              <div>
+                <article
+                  class="project-card"
+                  data-gh-project="joaomarcuslf/go-mentorship"
+                >
+                  <figure class="project-card-image">
+                    <p class="image">
+                      <img
+                        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg"
+                        alt="go logo"
+                        width="128"
+                        height="128"
+                      />
+                    </p>
+                  </figure>
+                  <div class="project-card-content">
+                    <header class="project-card-header">
+                      <p class="project-card-suptitle">
+                        On
+                        <a
+                          target="blank"
+                          href="https://github.com/joaomarcuslf/go-mentorship"
+                          title="View on GitHub"
+                          >GitHub</a
+                        >
+                      </p>
+                      <a
+                        target="blank"
+                        href="https://github.com/joaomarcuslf/go-mentorship"
+                        title="View on GitHub"
+                      >
+                        <h6 class="project-card-title">go-mentorship</h6>
+                      </a>
+                    </header>
+                    <div class="project-card-body">
+                      <dl class="project-card-details">
+                        <dt>Forked</dt>
+                        <dd class="fork">
+                          <a
+                            target="blank"
+                            href="https://github.com/joaomarcuslf/go-mentorship/fork"
+                            title="View fork details"
+                          >
+                          </a>
+                        </dd>
+                        <dt>Starred</dt>
+                        <dd class="star">
+                          <a
+                            target="blank"
+                            href="https://github.com/joaomarcuslf/go-mentorship/stargazers "
+                            title="View fork details"
+                          >
+                          </a>
+                        </dd>
+                      </dl>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <h2 id="lista-de-aulas">Lista de aulas:</h2>
+              <ul>
+                <li>
+                  <a href="/mentorship/lesson-00-getting-started"
+                    >Golang 00 - Primeiros passos</a
+                  >
+                </li>
+                <li>
+                  <a href="/mentorship/lesson-01-creating-app"
+                    >Golang 01- Criando nosso App</a
+                  >
+                </li>
+                <li>
+                  <a href="/mentorship/lesson-02-refactoring"
+                    >Golang 02 - Refatorando nossos serviços</a
+                  >
+                </li>
+                <li>
+                  <a href="/mentorship/lesson-03-web-server"
+                    >Golang 03 - Adicionando nosso servidor</a
+                  >
+                </li>
+                <li>
+                  <a href="/mentorship/lesson-04-generate-qr"
+                    >Golang 04 - Adicionando rota geradora</a
+                  >
+                </li>
+                <li>
+                  <a href="/mentorship/lesson-05-add-api"
+                    >Golang 05 - Adicionando nossa API</a
+                  >
+                </li>
+                <li>
+                  <a href="/mentorship/lesson-06-consuming-api"
+                    >Golang 06 - Consumindo API</a
+                  >
+                </li>
+                <li>
+                  <a href="/mentorship/lesson-07-expanding-the-front-end"
+                    >Golang 07 - Expandindo o Front-end</a
+                  >
+                </li>
+              </ul>
+              <script>
+                document.querySelector(
+                  '[href="' + location.pathname + '"]'
+                ).className = "is-underlined has-text-weight-bold";
+              </script>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <script src="/js/vendors/highlight.min.js"></script>
+    <script src="/js/base.js"></script>
+    <script src="/js/post-page.js"></script>
+    <script src="/js/hljs.js"></script>
+    <script src="/js/mentorship.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Golang 04 - Adicionando rota geradora – João Marcus de Lemos Fernandes
+    </title>
+    <meta charset="utf-8" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=6.0"
+    />
+    <meta name="robot" content="all" />
+    <meta name="rating" content="general" />
+    <meta name="distribution" content="global" />
+    <meta name="language" content="en,pt" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="" />
+    <link rel="apple-touch-icon" href="/images/logo-hex.webp" />
+    <meta
+      property="og:image"
+      content="http://joaomarcuslf.com/images/logo-hex.webp"
+    />
+    <meta property="og:title" content="Golang 04 - Adicionando rota geradora" />
+    <meta
+      property="twitter:title"
+      content="Golang 04 - Adicionando rota geradora"
+    />
+    <meta
+      property="og:site_name"
+      content="Golang 04 - Adicionando rota geradora"
+    />
+    <meta name="description" content="Expectativas " />
+    <meta property="og:description" content="Expectativas " />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Golang 04 - Adicionando rota geradora - Expectativas "
+      href="/feed.xml"
+    />
+    <meta
+      name="keywords"
+      content="Developer, Software engineer, Front-end, Full-stack, React, Javascript, Flask, Python, Joaomarcuslf, Tech Mentor, Mentorship, Mentoria, Senior Developer, Web development"
+    />
+    <meta
+      name="abstract"
+      content="My presentation website as Software developer"
+    />
+    <meta name="author" content="João Marcus de Lemos Fernandes" />
+    <meta property="og:locale" content="en" />
+    <link rel="canonical" href="https://joaomarcuslf.com/" />
+    <meta property="og:url" content="https://joaomarcuslf.com/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@joaomarcuslf" />
+    <link rel="stylesheet" type="text/css" href="/css/vendors.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/mentorship.css" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="@joaomarcuslf.com - Full-stack Software engineer - I'm Software Engineer since 2015 with great expertise in Front-end development. I like to teach a lot, and write some posts, you can check more here."
+      href="/feed.xml"
+    />
+    <link rel="stylesheet" type="text/css" href="/css/hljs.css" />
+  </head>
+  <body>
+    <div id="main" role="main" class="main">
+      <section
+        class="hero is-link has-background is-mini bg-mentorship typewriter"
+      >
+        <div class="hero-body">
+          <h1
+            class="title"
+            aria-label="Golang 04 - Adicionando rota geradora"
+            aria-hidden="true"
+          >
+            Golang 04 - Adicionando rota geradora
+          </h1>
+          <h2 class="subtitle">Gerando QR code via web.</h2>
+        </div>
+      </section>
+      <br />
+      <div class="container">
+        <article class="media">
+          <div class="media-content">
+            <div class="content">
+              <h2 id="expectativas">Expectativas</h2>
+              <p>
+                Nessa aula vamos aprender a receber um valor enviado pelo
+                formulário do HTML, e como retornar o nosso PNG usando interface
+                de resposta HTTP.
+              </p>
+              <hr />
+              <p>Ponto de partida desse post:</p>
+              <div>
+                <article
+                  class="project-card"
+                  data-gh-project="joaomarcuslf/go-mentorship"
+                >
+                  <figure class="project-card-image">
+                    <p class="image">
+                      <img
+                        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg"
+                        alt="go logo"
+                        width="128"
+                        height="128"
+                      />
+                    </p>
+                  </figure>
+                  <div class="project-card-content">
+                    <header class="project-card-header">
+                      <p class="project-card-suptitle">
+                        On
+                        <a
+                          target="blank"
+                          href="https://github.com/joaomarcuslf/go-mentorship/tree/lesson-04"
+                          title="View on GitHub"
+                          >GitHub</a
+                        >
+                        <small>#/tree/lesson-04</small>
+                      </p>
+                      <a
+                        target="blank"
+                        href="https://github.com/joaomarcuslf/go-mentorship/tree/lesson-04"
+                        title="View on GitHub"
+                      >
+                        <h6 class="project-card-title">go-mentorship</h6>
+                      </a>
+                    </header>
+                    <div class="project-card-body">
+                      <dl class="project-card-details">
+                        <dt>Forked</dt>
+                        <dd class="fork">
+                          <a
+                            target="blank"
+                            href="https://github.com/joaomarcuslf/go-mentorship/fork"
+                            title="View fork details"
+                          >
+                          </a>
+                        </dd>
+                        <dt>Starred</dt>
+                        <dd class="star">
+                          <a
+                            target="blank"
+                            href="https://github.com/joaomarcuslf/go-mentorship/stargazers "
+                            title="View fork details"
+                          >
+                          </a>
+                        </dd>
+                      </dl>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <h2 id="adicionando-o-gerador">Adicionando o gerador</h2>
+              <p>
+                Vamos começar a adicionar nossa rota responsável por gerar os QR
+                codes. Primeira coisa que precisamos fazer é criar um novo
+                arquivo dentro de
+                <code class="language-plaintext highlighter-rouge"
+                  >handlers/web</code
+                >.
+              </p>
+              <div class="language-bash highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="nb">touch </span>handlers/web/generator.go
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Abra o
+                <code class="language-plaintext highlighter-rouge"
+                  >web/generator.go</code
+                >, e vamos começar a escrever nosso código. Você deve se lembrar
+                dessa assinatura, certo?
+              </p>
+              <div class="language-go highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="n">qr</span>
+  <span class="o">.</span>
+  <span class="n">SetBarcode</span>
+  <span class="p">(</span>
+  <span class="n">cli</span>
+  <span class="o">.</span>
+  <span class="n">Read</span>
+  <span class="p">())</span>
+  <span class="o">.</span>
+  <span class="n">ToPNG</span>
+  <span class="p">(</span>
+  <span class="n">file</span>
+  <span class="p">)</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Bom, nós vamos substituir o
+                <code class="language-plaintext highlighter-rouge"
+                  >cli.Read()</code
+                >
+                pelo valor provido pelo nosso form, e o file pelo nosso writer
+                de http.
+              </p>
+              <blockquote>
+                <p>
+                  Não sabe o que isso significa? Abra
+                  <a href="https://pkg.go.dev/net/http#ResponseWriter"
+                    >net/http#ResponseWriter</a
+                  >
+                  para ver como a documentação funciona. Em resumo, nossa lib
+                  HTTP provê uma assinatura de writer que respeita a interface
+                  <code class="language-plaintext highlighter-rouge"
+                    >io.Writer</code
+                  >
+                  que tanto falamos.
+                </p>
+              </blockquote>
+              <p>Vamos por parte, como vai funcionar:</p>
+              <div class="language-go highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="k">package</span> <span class="n">handlers</span>
+
+<span class="k">import</span> <span class="p">(</span>
+  <span class="s">"fmt"</span>
+  <span class="s">"net/http"</span>
+
+  <span class="n">generator</span> <span class="s">"github.com/joaomarcuslf/qr-generator/services/generators"</span>
+<span class="p">)</span>
+
+<span class="k">func</span> <span class="n">GenerateQr</span>
+  <span class="p">(</span>
+  <span class="n">w</span> <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">ResponseWriter</span>
+  <span class="p">,</span> <span class="n">r</span> <span class="o">*</span>
+  <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">Request</span>
+  <span class="p">)</span> <span class="p">{</span>
+  <span class="n">qr</span> <span class="o">:=</span> <span class="n">generator</span>
+  <span class="o">.</span>
+  <span class="n">NewQRCode</span>
+  <span class="p">()</span>
+
+  <span class="n">qr</span>
+  <span class="o">.</span>
+  <span class="n">SetBarcode</span>
+  <span class="p">(</span>
+  <span class="n">cli</span>
+  <span class="o">.</span>
+  <span class="n">Read</span>
+  <span class="p">())</span>
+  <span class="o">.</span>
+  <span class="n">ToPNG</span>
+  <span class="p">(</span>
+  <span class="n">file</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                No nosso caso
+                <code class="language-plaintext highlighter-rouge"
+                  >cli.Read()</code
+                >
+                será
+                <code class="language-plaintext highlighter-rouge"
+                  >r.FormValue("dataString")</code
+                >, e
+                <code class="language-plaintext highlighter-rouge">file</code>
+                será
+                <code class="language-plaintext highlighter-rouge">w</code>.
+                Ficando assim o resultado final:
+              </p>
+              <div class="language-go highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="k">package</span> <span class="n">handlers</span>
+
+<span class="k">import</span> <span class="p">(</span>
+  <span class="s">"fmt"</span>
+  <span class="s">"net/http"</span>
+
+  <span class="n">generator</span> <span class="s">"github.com/joaomarcuslf/qr-generator/services/generators"</span>
+<span class="p">)</span>
+
+<span class="k">func</span> <span class="n">GenerateQr</span>
+  <span class="p">(</span>
+  <span class="n">w</span> <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">ResponseWriter</span>
+  <span class="p">,</span> <span class="n">r</span> <span class="o">*</span>
+  <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">Request</span>
+  <span class="p">)</span> <span class="p">{</span>
+  <span class="n">qr</span> <span class="o">:=</span> <span class="n">generator</span>
+  <span class="o">.</span>
+  <span class="n">NewQRCode</span>
+  <span class="p">()</span>
+
+  <span class="n">qr</span>
+  <span class="o">.</span>
+  <span class="n">SetBarcode</span>
+  <span class="p">(</span>
+  <span class="n">r</span>
+  <span class="o">.</span>
+  <span class="n">FormValue</span>
+  <span class="p">(</span>
+  <span class="s">"dataString"</span>
+  <span class="p">))</span>
+  <span class="o">.</span>
+  <span class="n">ToPNG</span>
+  <span class="p">(</span>
+  <span class="n">w</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Esse valor do dataString nós declaramos no nosso HTML na aula
+                passada, dê uma olhada no HTML para ver como ele está sendo
+                passado. Agora, como estamos trabalhando com um servidor, e é
+                possível ter erros nos valores fornecidos pelo usuário, devemos
+                também tratar os erros.
+              </p>
+              <div class="language-go highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="k">package</span> <span class="n">handlers</span>
+
+<span class="k">import</span> <span class="p">(</span>
+  <span class="s">"fmt"</span>
+  <span class="s">"net/http"</span>
+
+  <span class="n">generator</span> <span class="s">"github.com/joaomarcuslf/qr-generator/services/generators"</span>
+<span class="p">)</span>
+
+<span class="k">func</span> <span class="n">GenerateQr</span>
+  <span class="p">(</span>
+  <span class="n">w</span> <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">ResponseWriter</span>
+  <span class="p">,</span> <span class="n">r</span> <span class="o">*</span>
+  <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">Request</span>
+  <span class="p">)</span> <span class="p">{</span>
+  <span class="n">qr</span> <span class="o">:=</span> <span class="n">generator</span>
+  <span class="o">.</span>
+  <span class="n">NewQRCode</span>
+  <span class="p">()</span>
+
+  <span class="n">err</span> <span class="o">:=</span> <span class="n">qr</span>
+  <span class="o">.</span>
+  <span class="n">SetBarcode</span>
+  <span class="p">(</span>
+  <span class="n">r</span>
+  <span class="o">.</span>
+  <span class="n">FormValue</span>
+  <span class="p">(</span>
+  <span class="s">"dataString"</span>
+  <span class="p">))</span>
+  <span class="o">.</span>
+  <span class="n">ToPNG</span>
+  <span class="p">(</span>
+  <span class="n">w</span>
+  <span class="p">)</span>
+
+  <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+    <span class="n">w</span>
+  <span class="o">.</span>
+  <span class="n">WriteHeader</span>
+  <span class="p">(</span>
+  <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">StatusBadRequest</span>
+  <span class="p">)</span>
+
+    <span class="n">w</span>
+  <span class="o">.</span>
+  <span class="n">Write</span>
+  <span class="p">([]</span>
+  <span class="kt">byte</span>
+  <span class="p">(</span>
+  <span class="n">fmt</span>
+  <span class="o">.</span>
+  <span class="n">Sprintf</span>
+  <span class="p">(</span>
+  <span class="s">"error: %s"</span>
+  <span class="p">,</span> <span class="n">err</span>
+  <span class="p">)))</span>
+
+    <span class="k">return</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Agora vá em
+                <code class="language-plaintext highlighter-rouge"
+                  >services/generators/qrcode.go</code
+                >, e atualize a função
+                <code class="language-plaintext highlighter-rouge"
+                  >SetBarcode</code
+                >
+                para que ela trate os erros.
+              </p>
+              <div class="language-go highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="k">func</span> <span class="p">(</span>
+  <span class="n">generator</span> <span class="o">*</span>
+  <span class="n">QRCode</span>
+  <span class="p">)</span> <span class="n">SetBarcode</span>
+  <span class="p">(</span>
+  <span class="n">input</span> <span class="kt">string</span>
+  <span class="p">)</span> <span class="o">*</span>
+  <span class="n">QRCode</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="n">input</span> <span class="o">==</span> <span class="s">""</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">generator</span>
+  <span class="p">}</span>
+
+  <span class="c">/* ... */</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="p">(</span>
+  <span class="n">generator</span> <span class="o">*</span>
+  <span class="n">QRCode</span>
+  <span class="p">)</span> <span class="n">ToPNG</span>
+  <span class="p">(</span>
+  <span class="n">w</span> <span class="n">io</span>
+  <span class="o">.</span>
+  <span class="n">Writer</span>
+  <span class="p">)</span> <span class="kt">error</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="n">generator</span>
+  <span class="o">.</span>
+  <span class="n">barcode</span> <span class="o">==</span> <span class="no">nil</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">fmt</span>
+  <span class="o">.</span>
+  <span class="n">Errorf</span>
+  <span class="p">(</span>
+  <span class="s">"invalid input provided"</span>
+  <span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="c">/* ... */</span>
+<span class="p">}</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Agora vamos para nosso
+                <code class="language-plaintext highlighter-rouge">http.go</code
+                >, e adicionar nosso mais novo handler:
+              </p>
+              <div class="language-go highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="k">func</span> <span class="p">(</span>
+  <span class="n">a</span> <span class="o">*</span>
+  <span class="n">Server</span>
+  <span class="p">)</span> <span class="n">Run</span>
+  <span class="p">()</span> <span class="p">{</span>
+  <span class="c">/* ... */</span>
+
+  <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">HandleFunc</span>
+  <span class="p">(</span>
+  <span class="s">"/"</span>
+  <span class="p">,</span> <span class="n">web</span>
+  <span class="o">.</span>
+  <span class="n">Home</span>
+  <span class="p">)</span>
+  <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">HandleFunc</span>
+  <span class="p">(</span>
+  <span class="s">"/generator"</span>
+  <span class="p">,</span> <span class="n">web</span>
+  <span class="o">.</span>
+  <span class="n">GenerateQr</span>
+  <span class="p">)</span>
+
+  <span class="c">/* ... */</span>
+<span class="p">}</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Se você testar nosso código você vai ver que quando você coloca
+                uma string válida, você será redirecionado para uma página com o
+                QR code, porém se você enviar uma string vazia você verá uma
+                página feia com um erro. Mas se você lembra, nós tinhamos um
+                tratamento de erro para o form, por quê isso não funcionou?
+              </p>
+              <p>Não funcionou por causa dessas linhas:</p>
+              <div class="language-go highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+  <span class="n">w</span>
+  <span class="o">.</span>
+  <span class="n">WriteHeader</span>
+  <span class="p">(</span>
+  <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">StatusBadRequest</span>
+  <span class="p">)</span>
+
+  <span class="n">w</span>
+  <span class="o">.</span>
+  <span class="n">Write</span>
+  <span class="p">([]</span>
+  <span class="kt">byte</span>
+  <span class="p">(</span>
+  <span class="n">fmt</span>
+  <span class="o">.</span>
+  <span class="n">Sprintf</span>
+  <span class="p">(</span>
+  <span class="s">"error: %s"</span>
+  <span class="p">,</span> <span class="n">err</span>
+  <span class="p">)))</span>
+
+  <span class="k">return</span>
+<span class="p">}</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Nela nós estamos simplesmente escrevendo no corpo da resposta.
+                Uma forma de corrigir isso seria:
+              </p>
+              <div class="language-go highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+  <span class="n">p</span> <span class="o">:=</span> <span class="n">Page</span>
+  <span class="p">{</span>
+    <span class="n">Title</span>
+  <span class="o">:</span>       <span class="s">"QR Code Generator"</span>
+  <span class="p">,</span>
+    <span class="n">Description</span>
+  <span class="o">:</span> <span class="s">"A page to generate QR"</span>
+  <span class="p">,</span>
+    <span class="n">Error</span>
+  <span class="o">:</span>       <span class="n">err</span>
+  <span class="o">.</span>
+  <span class="n">Error</span>
+  <span class="p">(),</span>
+  <span class="p">}</span>
+
+  <span class="n">t</span>
+  <span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">template</span>
+  <span class="o">.</span>
+  <span class="n">ParseFiles</span>
+  <span class="p">(</span>
+  <span class="s">"templates/index.html"</span>
+  <span class="p">)</span>
+
+  <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+    <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">Error</span>
+  <span class="p">(</span>
+  <span class="n">w</span>
+  <span class="p">,</span> <span class="n">err</span>
+  <span class="o">.</span>
+  <span class="n">Error</span>
+  <span class="p">(),</span> <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">StatusInternalServerError</span>
+  <span class="p">)</span>
+    <span class="k">return</span>
+  <span class="p">}</span>
+
+  <span class="n">w</span>
+  <span class="o">.</span>
+  <span class="n">WriteHeader</span>
+  <span class="p">(</span>
+  <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">StatusBadRequest</span>
+  <span class="p">)</span>
+  <span class="n">t</span>
+  <span class="o">.</span>
+  <span class="n">Execute</span>
+  <span class="p">(</span>
+  <span class="n">w</span>
+  <span class="p">,</span> <span class="n">p</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Porém um olhar mais atento percebe que estamos repetindo o
+                código de Render da Home, e isso pode ser um problema no futuro
+                caso precisemos mudar o template. Vamos então, refatorar ambos
+                os códigos para termos um código mais limpo.
+              </p>
+              <div class="language-bash highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="nb">mkdir </span>render
+<span class="nb">touch </span>render/page.go
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Abra o
+                <code class="language-plaintext highlighter-rouge"
+                  >render/page.go</code
+                >, o objetivo do nosso código será criar uma Struct que tenha
+                como propriedade informações pertinentes para ser renderizadas,
+                como
+                <code class="language-plaintext highlighter-rouge">Status</code
+                >,
+                <code class="language-plaintext highlighter-rouge">Error</code>,
+                <code class="language-plaintext highlighter-rouge">Title</code>,
+                <code class="language-plaintext highlighter-rouge"
+                  >Descriptions</code
+                >, e o mais importante, o
+                <code class="language-plaintext highlighter-rouge"
+                  >Template</code
+                >.
+              </p>
+              <div class="language-go highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="k">package</span> <span class="n">render</span>
+
+<span class="k">import</span> <span class="p">(</span>
+  <span class="s">"net/http"</span>
+  <span class="s">"text/template"</span>
+<span class="p">)</span>
+
+<span class="k">type</span> <span class="n">Page</span> <span class="k">struct</span> <span class="p">{</span>
+  <span class="n">Status</span>      <span class="kt">int</span>
+  <span class="n">Title</span>       <span class="kt">string</span>
+  <span class="n">Description</span> <span class="kt">string</span>
+  <span class="n">Error</span>       <span class="kt">string</span>
+  <span class="n">Template</span>    <span class="kt">string</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">NewPage</span>
+  <span class="p">()</span> <span class="o">*</span>
+  <span class="n">Page</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">&amp;</span>
+  <span class="n">Page</span>
+  <span class="p">{}</span>
+<span class="p">}</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Até aqui, você já deve estar habituado com o que escrevemos,
+                porém a partir daqui temos nossas principais novidade. O método
+                <code class="language-plaintext highlighter-rouge"
+                  >SetMeta</code
+                >
+                preencherá as informações de forma genérica na nossa Struct, e
+                com isso podemos criar páginas customizadas.
+              </p>
+              <div class="language-go highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="k">func</span> <span class="p">(</span>
+  <span class="n">page</span> <span class="o">*</span>
+  <span class="n">Page</span>
+  <span class="p">)</span> <span class="n">SetMeta</span>
+  <span class="p">(</span>
+  <span class="n">title</span>
+  <span class="p">,</span> <span class="n">description</span>
+  <span class="p">,</span> <span class="n">template</span> <span class="kt">string</span>
+  <span class="p">,</span> <span class="n">status</span> <span class="kt">int</span>
+  <span class="p">)</span> <span class="o">*</span>
+  <span class="n">Page</span> <span class="p">{</span>
+  <span class="n">page</span>
+  <span class="o">.</span>
+  <span class="n">Title</span> <span class="o">=</span> <span class="n">title</span>
+  <span class="n">page</span>
+  <span class="o">.</span>
+  <span class="n">Description</span> <span class="o">=</span> <span class="n">description</span>
+  <span class="n">page</span>
+  <span class="o">.</span>
+  <span class="n">Template</span> <span class="o">=</span> <span class="n">template</span>
+  <span class="n">page</span>
+  <span class="o">.</span>
+  <span class="n">Status</span> <span class="o">=</span> <span class="n">status</span>
+
+  <span class="k">return</span> <span class="n">page</span>
+<span class="p">}</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                E com esse método genérico, podemos criar implementações
+                específicas, por exemplo a página de Home, que vamos chamar de
+                <code class="language-plaintext highlighter-rouge">AsHome</code
+                >.
+              </p>
+              <div class="language-go highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="k">func</span> <span class="p">(</span>
+  <span class="n">page</span> <span class="o">*</span>
+  <span class="n">Page</span>
+  <span class="p">)</span> <span class="n">AsHome</span>
+  <span class="p">()</span> <span class="o">*</span>
+  <span class="n">Page</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">page</span>
+  <span class="o">.</span>
+  <span class="n">SetMeta</span>
+  <span class="p">(</span>
+    <span class="s">"QR Code Generator"</span>
+  <span class="p">,</span>
+    <span class="s">"A page to generate QR"</span>
+  <span class="p">,</span>
+    <span class="s">"templates/index.html"</span>
+  <span class="p">,</span>
+    <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">StatusOK</span>
+  <span class="p">,</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                A partir daqui vamos definir uma forma de definir situações de
+                erro:
+              </p>
+              <div class="language-go highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="k">func</span> <span class="p">(</span>
+  <span class="n">page</span> <span class="o">*</span>
+  <span class="n">Page</span>
+  <span class="p">)</span> <span class="n">SetError</span>
+  <span class="p">(</span>
+  <span class="n">err</span> <span class="kt">error</span>
+  <span class="p">,</span> <span class="n">status</span> <span class="kt">int</span>
+  <span class="p">)</span> <span class="o">*</span>
+  <span class="n">Page</span> <span class="p">{</span>
+  <span class="n">page</span>
+  <span class="o">.</span>
+  <span class="n">Error</span> <span class="o">=</span> <span class="n">err</span>
+  <span class="o">.</span>
+  <span class="n">Error</span>
+  <span class="p">()</span>
+  <span class="n">page</span>
+  <span class="o">.</span>
+  <span class="n">Status</span> <span class="o">=</span> <span class="n">status</span>
+
+  <span class="k">return</span> <span class="n">page</span>
+<span class="p">}</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                E nosso último método é o
+                <code class="language-plaintext highlighter-rouge">Write</code>,
+                que irá utilizar a interface de
+                <code class="language-plaintext highlighter-rouge"
+                  >http.ResponseWriter</code
+                >
+                para tentar ou renderizar o template, ou retornar um erro.
+              </p>
+              <div class="language-go highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="k">func</span> <span class="p">(</span>
+  <span class="n">page</span> <span class="o">*</span>
+  <span class="n">Page</span>
+  <span class="p">)</span> <span class="n">Write</span>
+  <span class="p">(</span>
+  <span class="n">w</span> <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">ResponseWriter</span>
+  <span class="p">)</span> <span class="o">*</span>
+  <span class="n">Page</span> <span class="p">{</span>
+  <span class="n">t</span>
+  <span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">template</span>
+  <span class="o">.</span>
+  <span class="n">ParseFiles</span>
+  <span class="p">(</span>
+  <span class="n">page</span>
+  <span class="o">.</span>
+  <span class="n">Template</span>
+  <span class="p">)</span>
+
+  <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+    <span class="n">page</span>
+  <span class="o">.</span>
+  <span class="n">Status</span> <span class="o">=</span> <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">StatusInternalServerError</span>
+    <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">Error</span>
+  <span class="p">(</span>
+  <span class="n">w</span>
+  <span class="p">,</span> <span class="n">err</span>
+  <span class="o">.</span>
+  <span class="n">Error</span>
+  <span class="p">(),</span> <span class="n">page</span>
+  <span class="o">.</span>
+  <span class="n">Status</span>
+  <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">page</span>
+  <span class="p">}</span>
+
+  <span class="n">w</span>
+  <span class="o">.</span>
+  <span class="n">WriteHeader</span>
+  <span class="p">(</span>
+  <span class="n">page</span>
+  <span class="o">.</span>
+  <span class="n">Status</span>
+  <span class="p">)</span>
+  <span class="n">t</span>
+  <span class="o">.</span>
+  <span class="n">Execute</span>
+  <span class="p">(</span>
+  <span class="n">w</span>
+  <span class="p">,</span> <span class="n">page</span>
+  <span class="p">)</span>
+
+  <span class="k">return</span> <span class="n">page</span>
+<span class="p">}</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Vamos atualizar os códigos antigos com esse novo, primeiro abra
+                o
+                <code class="language-plaintext highlighter-rouge"
+                  >web/html.go</code
+                >:
+              </p>
+              <div class="language-go highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="k">package</span> <span class="n">handlers</span>
+
+<span class="k">import</span> <span class="p">(</span>
+  <span class="s">"net/http"</span>
+
+  <span class="n">render</span> <span class="s">"github.com/joaomarcuslf/qr-generator/render"</span>
+<span class="p">)</span>
+
+<span class="k">func</span> <span class="n">Home</span>
+  <span class="p">(</span>
+  <span class="n">w</span> <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">ResponseWriter</span>
+  <span class="p">,</span> <span class="n">r</span> <span class="o">*</span>
+  <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">Request</span>
+  <span class="p">)</span> <span class="p">{</span>
+  <span class="n">render</span>
+  <span class="o">.</span>
+  <span class="n">NewPage</span>
+  <span class="p">()</span>
+  <span class="o">.</span>
+  <span class="n">AsHome</span>
+  <span class="p">()</span>
+  <span class="o">.</span>
+  <span class="n">Write</span>
+  <span class="p">(</span>
+  <span class="n">w</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Viu como ficou mais elegante? Agora no nosso
+                <code class="language-plaintext highlighter-rouge"
+                  >web/generate.go</code
+                >, lembre-se que nessa página nós ou retornamos o Barcode como
+                PNG, ou um HTML com o error gerado:
+              </p>
+              <div class="language-go highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+<span class="k">import</span> <span class="p">(</span>
+  <span class="s">"net/http"</span>
+
+  <span class="n">render</span> <span class="s">"github.com/joaomarcuslf/qr-generator/render"</span>
+  <span class="n">generator</span> <span class="s">"github.com/joaomarcuslf/qr-generator/services/generators"</span>
+<span class="p">)</span>
+
+<span class="k">func</span> <span class="n">GenerateQr</span>
+  <span class="p">(</span>
+  <span class="n">w</span> <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">ResponseWriter</span>
+  <span class="p">,</span> <span class="n">r</span> <span class="o">*</span>
+  <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">Request</span>
+  <span class="p">)</span> <span class="p">{</span>
+  <span class="n">qr</span> <span class="o">:=</span> <span class="n">generator</span>
+  <span class="o">.</span>
+  <span class="n">NewQRCode</span>
+  <span class="p">()</span>
+
+  <span class="n">err</span> <span class="o">:=</span> <span class="n">qr</span>
+  <span class="o">.</span>
+  <span class="n">SetBarcode</span>
+  <span class="p">(</span>
+  <span class="n">r</span>
+  <span class="o">.</span>
+  <span class="n">FormValue</span>
+  <span class="p">(</span>
+  <span class="s">"dataString"</span>
+  <span class="p">))</span>
+  <span class="o">.</span>
+  <span class="n">ToPNG</span>
+  <span class="p">(</span>
+  <span class="n">w</span>
+  <span class="p">)</span>
+
+  <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+    <span class="n">render</span>
+  <span class="o">.</span>
+  <span class="n">NewPage</span>
+  <span class="p">()</span>
+  <span class="o">.</span>
+  <span class="n">AsHome</span>
+  <span class="p">()</span>
+  <span class="o">.</span>
+  <span class="n">SetError</span>
+  <span class="p">(</span>
+  <span class="n">err</span>
+  <span class="p">,</span> <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">StatusBadRequest</span>
+  <span class="p">)</span>
+  <span class="o">.</span>
+  <span class="n">Write</span>
+  <span class="p">(</span>
+  <span class="n">w</span>
+  <span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <p>
+                Como o código ficou tão curto, ao invés de usarmos o
+                <code class="language-plaintext highlighter-rouge"
+                  >generator.go</code
+                >
+                como arquivo separado, podemos mover a função para o
+                <code class="language-plaintext highlighter-rouge">html.go</code
+                >, pois esse arquivo é responsável pelo render de nossos HTMLs:
+              </p>
+              <div class="language-go highlighter-rouge">
+                <div class="highlight">
+                  <pre class="highlight">
+  <code>
+  <span class="k">package</span> <span class="n">handlers</span>
+
+<span class="k">import</span> <span class="p">(</span>
+  <span class="s">"net/http"</span>
+
+  <span class="n">render</span> <span class="s">"github.com/joaomarcuslf/qr-generator/render"</span>
+  <span class="n">generator</span> <span class="s">"github.com/joaomarcuslf/qr-generator/services/generators"</span>
+<span class="p">)</span>
+
+<span class="k">func</span> <span class="n">Home</span>
+  <span class="p">(</span>
+  <span class="n">w</span> <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">ResponseWriter</span>
+  <span class="p">,</span> <span class="n">r</span> <span class="o">*</span>
+  <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">Request</span>
+  <span class="p">)</span> <span class="p">{</span>
+  <span class="n">render</span>
+  <span class="o">.</span>
+  <span class="n">NewPage</span>
+  <span class="p">()</span>
+  <span class="o">.</span>
+  <span class="n">AsHome</span>
+  <span class="p">()</span>
+  <span class="o">.</span>
+  <span class="n">Write</span>
+  <span class="p">(</span>
+  <span class="n">w</span>
+  <span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">GenerateQr</span>
+  <span class="p">(</span>
+  <span class="n">w</span> <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">ResponseWriter</span>
+  <span class="p">,</span> <span class="n">r</span> <span class="o">*</span>
+  <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">Request</span>
+  <span class="p">)</span> <span class="p">{</span>
+  <span class="n">qr</span> <span class="o">:=</span> <span class="n">generator</span>
+  <span class="o">.</span>
+  <span class="n">NewQRCode</span>
+  <span class="p">()</span>
+
+  <span class="n">err</span> <span class="o">:=</span> <span class="n">qr</span>
+  <span class="o">.</span>
+  <span class="n">SetBarcode</span>
+  <span class="p">(</span>
+  <span class="n">r</span>
+  <span class="o">.</span>
+  <span class="n">FormValue</span>
+  <span class="p">(</span>
+  <span class="s">"dataString"</span>
+  <span class="p">))</span>
+  <span class="o">.</span>
+  <span class="n">ToPNG</span>
+  <span class="p">(</span>
+  <span class="n">w</span>
+  <span class="p">)</span>
+
+  <span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+    <span class="n">render</span>
+  <span class="o">.</span>
+  <span class="n">NewPage</span>
+  <span class="p">()</span>
+  <span class="o">.</span>
+  <span class="n">AsHome</span>
+  <span class="p">()</span>
+  <span class="o">.</span>
+  <span class="n">SetError</span>
+  <span class="p">(</span>
+  <span class="n">err</span>
+  <span class="p">,</span> <span class="n">http</span>
+  <span class="o">.</span>
+  <span class="n">StatusBadRequest</span>
+  <span class="p">)</span>
+  <span class="o">.</span>
+  <span class="n">Write</span>
+  <span class="p">(</span>
+  <span class="n">w</span>
+  <span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code>
+  </pre>
+                </div>
+              </div>
+              <h2 id="concluindo">Concluindo</h2>
+              <p>
+                Pronto, agora seu código está bem mais conciso e simples. Com
+                isso nós concluimos essa nova parte. No próximo passo, vamos
+                adicionar a lib
+                <a href="https://github.com/gin-gonic/gin">gin-gonic/gin</a>, o
+                que irá facilitar transformar essa aplicação em uma API.
+              </p>
+              <h2 id="link-do-projeto">Link do projeto:</h2>
+              <div>
+                <article
+                  class="project-card"
+                  data-gh-project="joaomarcuslf/go-mentorship"
+                >
+                  <figure class="project-card-image">
+                    <p class="image">
+                      <img
+                        src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg"
+                        alt="go logo"
+                        width="128"
+                        height="128"
+                      />
+                    </p>
+                  </figure>
+                  <div class="project-card-content">
+                    <header class="project-card-header">
+                      <p class="project-card-suptitle">
+                        On
+                        <a
+                          target="blank"
+                          href="https://github.com/joaomarcuslf/go-mentorship"
+                          title="View on GitHub"
+                          >GitHub</a
+                        >
+                      </p>
+                      <a
+                        target="blank"
+                        href="https://github.com/joaomarcuslf/go-mentorship"
+                        title="View on GitHub"
+                      >
+                        <h6 class="project-card-title">go-mentorship</h6>
+                      </a>
+                    </header>
+                    <div class="project-card-body">
+                      <dl class="project-card-details">
+                        <dt>Forked</dt>
+                        <dd class="fork">
+                          <a
+                            target="blank"
+                            href="https://github.com/joaomarcuslf/go-mentorship/fork"
+                            title="View fork details"
+                          >
+                          </a>
+                        </dd>
+                        <dt>Starred</dt>
+                        <dd class="star">
+                          <a
+                            target="blank"
+                            href="https://github.com/joaomarcuslf/go-mentorship/stargazers "
+                            title="View fork details"
+                          >
+                          </a>
+                        </dd>
+                      </dl>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <h2 id="lista-de-aulas">Lista de aulas:</h2>
+              <ul>
+                <li>
+                  <a href="/mentorship/lesson-00-getting-started"
+                    >Golang 00 - Primeiros passos</a
+                  >
+                </li>
+                <li>
+                  <a href="/mentorship/lesson-01-creating-app"
+                    >Golang 01- Criando nosso App</a
+                  >
+                </li>
+                <li>
+                  <a href="/mentorship/lesson-02-refactoring"
+                    >Golang 02 - Refatorando nossos serviços</a
+                  >
+                </li>
+                <li>
+                  <a href="/mentorship/lesson-03-web-server"
+                    >Golang 03 - Adicionando nosso servidor</a
+                  >
+                </li>
+                <li>
+                  <a href="/mentorship/lesson-04-generate-qr"
+                    >Golang 04 - Adicionando rota geradora</a
+                  >
+                </li>
+                <li>
+                  <a href="/mentorship/lesson-05-add-api"
+                    >Golang 05 - Adicionando nossa API</a
+                  >
+                </li>
+                <li>
+                  <a href="/mentorship/lesson-06-consuming-api"
+                    >Golang 06 - Consumindo API</a
+                  >
+                </li>
+                <li>
+                  <a href="/mentorship/lesson-07-expanding-the-front-end"
+                    >Golang 07 - Expandindo o Front-end</a
+                  >
+                </li>
+              </ul>
+              <script>
+                document.querySelector(
+                  '[href="' + location.pathname + '"]'
+                ).className = "is-underlined has-text-weight-bold";
+              </script>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <script src="/js/vendors/highlight.min.js"></script>
+    <script src="/js/base.js"></script>
+    <script src="/js/post-page.js"></script>
+    <script src="/js/hljs.js"></script>
+    <script src="/js/mentorship.js"></script>
+  </body>
+</html>
