@@ -7,7 +7,7 @@ jobs:
     name: Issue comment
     runs-on: ubuntu-latest
     steps:
-      - name: Test
+      - name: Create file
         uses: actions/github-script@v4
         with:
           script: |
@@ -29,7 +29,11 @@ jobs:
 
               const name = title.replace(/[^\w\s]/gi, '').toLowerCase().split(" ").join("-")
 
-              // fs.writeFileSync( `_posts/${date}-${name}.md`, body )
-
-              console.log(fs.readdirSync('./'))
+              fs.writeFileSync( `${date}-${name}.md`, body )
             }
+
+      - name: Commit file
+        if: ${{ github.event.comment.author_association == 'OWNER'}}
+        uses: EndBug/add-and-commit@v7
+          with:
+            message: "Add Post from Issue"
