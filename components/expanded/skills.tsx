@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import SkillView from "@/components/view/skill";
 import { SkillMetadata, DomainDictionary } from "@/types/skill";
 import MainSkill from "@/components/view//main-skill";
 
-export default function ExpandedSkills({
+function ExpandedSkills({
   skills,
 }: {
   skills: SkillMetadata[];
@@ -141,3 +141,9 @@ export default function ExpandedSkills({
     </section>
   );
 }
+
+export default function Container({ skills }: { skills: SkillMetadata[] }) {
+  return <Suspense>
+    <ExpandedSkills skills={skills} />
+  </Suspense>
+};
