@@ -28,7 +28,7 @@ Para uma primeira versão, eu irei utilizar uma versão simplificada <a href="ht
   src="/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-00.webp"
 />
 
-### 2. Em seguida coloque o nome do repositório seguindo o seguinte padrão: <seu-nome-de-usuário>.github.io
+### 2. Em seguida coloque o nome do repositório seguindo o seguinte padrão: <code>seu-nome-de-usuário</code>.github.io
 
 <img
   src="/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-01.webp"
