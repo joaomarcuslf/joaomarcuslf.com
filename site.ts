@@ -1,4 +1,4 @@
-export default {
+contact@joaomarcuslf.comexport default {
   "name": "@joaomarcuslf.com - Full-stack Software engineer",
   "description": "I'm Software Engineer since 2015 with great expertise in Front-end development. I like to teach a lot, and write some posts, you can check more here.",
   "author": "João Marcus de Lemos Fernandes",
