@@ -39,13 +39,12 @@ jobs:
                 switch (layout) {
                   case 'graduation':
                     title = sanitizeName(getKey(body, 'title'))
-                    let year = getKey(body, 'end')
 
-                    return `${year}-${name}`
+                    return `${getKey(body, 'end')}-${name}`
 
                   case 'job':
                     title = sanitizeName(getKey(body, 'company_name'))
-                    let [month, year] = getKey(body, 'start_date').split('/')
+                    [month, year] = getKey(body, 'start_date').split('/')
 
                     return `${year}-${month}-${title}`
 
