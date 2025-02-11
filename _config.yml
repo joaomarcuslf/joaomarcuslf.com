@@ -64,6 +64,8 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+  - scripts
+  - tmp
 
 resume:
   name: João Marcus de Lemos Fernandes
