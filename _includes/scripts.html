@@ -51,10 +51,12 @@
 
       $highlights.classList.toggle('is-expanded');
 
-      if ($highlights.classList.contains('is-expanded')) {
-        smoothScroll("#" + target + " .button.has-icon");
-      } else {
-        smoothScroll("#" + target);
-      }
+      setTimeout(function() {
+        if ($highlights.classList.contains('is-expanded')) {
+          smoothScroll("#" + target + " .button.has-icon");
+        } else {
+          smoothScroll("#" + target);
+        }
+      }, 1000)
     }
 </script>
