@@ -35,5 +35,5 @@ jobs:
       - name: Commit file
         if: ${{ github.event.comment.author_association == 'OWNER'}}
         uses: EndBug/add-and-commit@v7
-          with:
-            message: "Add Post from Issue"
+        with:
+          message: "Add Post from Issue"
