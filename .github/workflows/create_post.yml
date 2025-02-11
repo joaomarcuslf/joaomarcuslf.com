@@ -56,12 +56,12 @@ jobs:
                   case 'project':
                     title = sanitizeName(getKey(body, 'repo'))
 
-                    return `${date}-${name}`
+                    return `${date}-${title}`
 
                   case 'skill':
                     title = sanitizeName(getKey(body, 'name'))
 
-                    return `${name}`
+                    return `${title}`
 
                   default:
                     return ''
