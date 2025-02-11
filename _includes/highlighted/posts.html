@@ -1,11 +1,11 @@
-<section class="hero images-section is-light">
+<section id="posts" class="hero images-section is-light">
   <div class="hero-body">
     <h2 class="images-section-title">Highlighted Posts</h2>
 
-    <div class="images-section-group">
+    <div class="images-section-group is-higlights">
       {% assign filtered = site.posts | where: 'draft', false %}
 
-      {% for post in filtered limit:3 %}
+      {% for post in filtered %}
       {%
         include components/post.html
           link=post.link
@@ -16,6 +16,13 @@
       %}
       {% endfor %}
     </div>
-    <div class="has-text-right"><a href="/posts">See more...</a></div>
+
+    <div class="has-text-centered">
+      <button class="button has-icon is-light is-rounded is-outlined" onclick="expandView('posts')">
+        <span class="icon is-large">
+          <i class="fas fa-chevron-down"></i>
+        </span>
+      </button>
+    </div>
   </div>
 </section>

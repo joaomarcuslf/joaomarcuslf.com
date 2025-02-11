@@ -1,0 +1,20 @@
+.is-higlights {
+  transition: max-height .5s;
+
+  height:auto;
+
+  max-height: 300px;
+  overflow: hidden;
+
+  .images-section-item, .skill-item {
+    height: 290px;
+  }
+
+  .skill-item {
+    flex: 1;
+  }
+
+  &.is-expanded {
+    max-height: 500vh;
+  }
+}

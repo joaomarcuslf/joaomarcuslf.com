@@ -1,20 +1,30 @@
-<section class="hero images-section is-dark">
+<section id="projects" class="hero projects-section is-dark">
   <div class="hero-body">
-    <h2 class="images-section-title">Highlighted Projects</h2>
+    <h2 class="projects-section-title">Highlighted Projects</h2>
 
-    <div class="images-section-group">
+    <div class="projects-section-group is-higlights">
       {% assign sorted = site.projects | sort: 'date' | reverse %}
 
-      {% for project in sorted limit:3 %}
+      {% for project in sorted %}
       {%
         include components/project.html
           link=project.link
+          title=project.title
           user=project.user
           repo=project.repo
           alt=project.alt
+          main=project.main
+          techs=project.techs
       %}
       {% endfor %}
     </div>
-    <div class="has-text-right"><a href="/projects">See more...</a></div>
+
+    <div class="has-text-centered">
+      <button class="button has-icon is-light is-rounded is-outlined" onclick="expandView('projects')">
+        <span class="icon is-large">
+          <i class="fas fa-chevron-down"></i>
+        </span>
+      </button>
+    </div>
   </div>
 </section>

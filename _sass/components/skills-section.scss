@@ -84,7 +84,7 @@
           padding: 0 1rem !important;
         }
 
-        .card-content {
+        .card-content, skill-item {
           padding: 1rem;
         }
 
@@ -150,7 +150,7 @@
         @include opacity-animate(0.1s, 0.8, 1);
       }
 
-      .card-content {
+      .card-content, .skill-item {
         width: 100%;
       }
     }

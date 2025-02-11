@@ -1,14 +1,36 @@
 <a
-    class="images-section-item"
-    href="{{include.link}}"
-    target="blank"
-    aria-label="This image is a link for the '{{include.alt}}' on Github."
+  class="projects-section-item"
+  href="{{include.link}}"
+  target="blank"
+  aria-label="This image is a link for the '{{include.alt}}' on Github."
 >
+  <article class="media project-card">
+    <figure class="media-left">
+      <p class="image is-64x64">
+        <img
+          src="https://raw.githubusercontent.com/devicons/devicon/master/icons/{{include.main}}/{{include.main}}-original.svg"
+        />
+      </p>
+    </figure>
 
-    <img
-    class="images-section-image"
-    src="https://github-readme-stats.vercel.app/api/pin/?username={{include.user}}&repo={{include.repo}}&theme=material-palenight"
-    alt="{{include.alt}}"
-    width="250px"
-    />
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <small>{{include.user}}</small>/<strong>{{include.repo}}</strong>
+          <br />
+          {{include.title}}
+        </p>
+      </div>
+
+      <nav class="projects-tags-level level is-mobile">
+        <div class="level-left">
+          <div class="tags">
+            {% for tech in include.techs %}
+              <span class="tag">{{tech}}</i></span>
+            {% endfor %}
+          </div>
+        </div>
+      </nav>
+    </div>
+  </article>
 </a>

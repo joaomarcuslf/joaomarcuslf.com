@@ -91,6 +91,12 @@ exclude:
   - CNAME
   - scripts
   - tmp
+  - _image_optim_cache.yml
+  - _image_optim_archive
+  - .github
+  - .jekyll-cache
+  - .sass-cache
+  - .vscode
 
 resume:
   name: João Marcus de Lemos Fernandes

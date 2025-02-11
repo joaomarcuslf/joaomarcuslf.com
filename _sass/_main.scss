@@ -7,10 +7,12 @@
   Settings Layer
 */
 
+@import "settings/preload";
+@import "settings/icons";
+@import "settings/fonts";
 @import "settings/settings";
 @import "vendors/bulma/bulma.sass";
 @import "settings/reset";
-@import "settings/preload";
 
 /*
   Tools Layer
@@ -47,6 +49,7 @@
 @import "elements/title";
 @import "elements/subtitle";
 @import "elements/footer";
+@import "elements/buttons";
 
 /*
   Objects Layer
@@ -64,7 +67,9 @@
 @import "components/images-section";
 @import "components/skills-section";
 @import "components/mentorship-lists-section";
-@import "components/post-section";
+@import "components/posts-section";
+@import "components/projects-section";
+@import "components/highlights";
 
 /*
   Trumps Layer
