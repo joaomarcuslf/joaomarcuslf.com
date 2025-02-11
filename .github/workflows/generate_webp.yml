@@ -16,7 +16,7 @@ jobs:
       - name: Generate WEBP files
         run: |
           npm install
-          npm run build
+          npm run webp
 
       - name: Commit Images
         uses: EndBug/add-and-commit@v7
