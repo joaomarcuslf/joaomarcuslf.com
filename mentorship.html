@@ -119,9 +119,11 @@ layout: default
     <h2 class="mentorship-lists-section-title main">{% t mentorship.examples.title %}:</h2>
 
     <ul class="mentorship-list">
-      <li>
-        <a href="/mentorship/logica-de-programaca-com-js"> Lógica de programação com JavaScript </a>
+      {% for mentorship in site.mentorship %}
+      <li class="mentorship-list-item">
+        <a href="{{ mentorship.url }}" target="_blank">{{ mentorship.title }}</a>
       </li>
+      {% endfor %}
     </ul>
   </div>
 </div>

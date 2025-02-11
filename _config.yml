@@ -19,6 +19,9 @@ collections:
   posts:
     output: true
     permalink: /:collection/:name
+  mentorship:
+    output: true
+    permalink: /:collection/:name
   skills:
     output: false
     permalink: /:collection/:name

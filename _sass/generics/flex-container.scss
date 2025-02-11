@@ -11,11 +11,16 @@
     flex-direction: column;
   }
 
-  .to-left {
+  &.to-left {
     justify-content: flex-start;
   }
-  .to-right {
+
+  &.to-right {
     justify-content: flex-end;
+  }
+
+  &.to-center {
+    justify-content: center;
   }
 
   &.has-space-between {
