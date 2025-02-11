@@ -120,3 +120,38 @@ document.querySelectorAll(".has-popup-label").forEach(function (elem) {
     text.classList.remove("is-shown");
   });
 });
+
+function createResetButton(parentId, target, content) {
+  var $target = document.querySelector(target);
+
+  var $button = document.createElement("button");
+
+  $button.innerHTML = "Resetar";
+  $button.classList.add("button");
+  $button.classList.add("is-danger");
+
+  $target.appendChild($button);
+
+
+  $button.addEventListener("click", function (evt) {
+    evt.preventDefault();
+
+    $button.remove();
+
+    var parent = document.getElementById(parentId);
+
+    parent.innerHTML = content;
+
+    createResetButton(parentId, target, content);
+  });
+}
+
+document.querySelectorAll(".topic-section ").forEach(function (elem) {
+  var content = elem.innerHTML;
+
+  createResetButton(
+    elem.id,
+    "#" + elem.id + " .field.is-pulled-right .control",
+    content
+  );
+});
