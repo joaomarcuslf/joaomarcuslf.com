@@ -7,7 +7,7 @@
     jekyll serve
 ```
 
-## Before publishing:
+## Scripts:
 
 ```sh
     python3 scripts/create-skills.py
