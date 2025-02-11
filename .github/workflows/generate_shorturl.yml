@@ -1,6 +1,7 @@
 name: Generate short_link
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - "_posts/*.md"
