@@ -14,17 +14,17 @@ layout: default
 
     <div class="tags mb-0">
       {% for tag in page.tags %}
-        <a id="tag-{{tag}}" href="/posts#{{ tag | slugify }}" class="tag is-light" >{{ tag }}</a>
+      <a id="tag-{{tag}}" href="/posts#{{ tag | slugify }}" class="tag is-light">{{ tag }}</a>
       {% endfor %}
     </div>
 
     <small>
       {% capture words %}
-        {{ page.content | number_of_words | minus: 250 }}
+      {{ page.content | number_of_words | minus: 250 }}
       {% endcapture %}
       {% unless words contains "-" %}
-        {{ words | plus: 250 | divided_by: 180 }}
-        {% t post.minutes_to_read %}
+      {{ words | plus: 250 | divided_by: 180 }}
+      {% t post.minutes_to_read %}
       {% endunless %}
     </small>
   </div>
@@ -48,18 +48,18 @@ layout: default
       {% assign filtered = site.posts | where: 'draft', false %}
 
       {% for post in filtered %}
-        {% assign sameTagCount = 0 %}
+      {% assign sameTagCount = 0 %}
 
-        {% for tag in post.tags %}
-          {% if post.url != page.url %}
-            {% if page.tags contains tag %}
-              {% assign sameTagCount = sameTagCount | plus: 1 %}
-            {% endif %}
-          {% endif %}
-        {% endfor %}
+      {% for tag in post.tags %}
+      {% if post.url != page.url %}
+      {% if page.tags contains tag %}
+      {% assign sameTagCount = sameTagCount | plus: 1 %}
+      {% endif %}
+      {% endif %}
+      {% endfor %}
 
-        {% if sameTagCount >= minCommonTags %}
-          {%
+      {% if sameTagCount >= minCommonTags %}
+      {%
             include components/post.html
               link=post.link
               img=post.img
@@ -68,13 +68,20 @@ layout: default
               internal=post.internal
           %}
 
-          {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
+      {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
 
-          {% if maxRelatedCounter >= maxRelated %}
-            {% break %}
-          {% endif %}
-        {% endif %}
+      {% if maxRelatedCounter >= maxRelated %}
+      {% break %}
+      {% endif %}
+      {% endif %}
       {% endfor %}
     </div>
   </div>
 </section>
+
+<script src="{{ "/assets/js/post-page.js" | prepend: site.baseurl_root }}"></script>
+<script src="{{ "/assets/js/vendors/highlight.min.js" | prepend: site.baseurl_root }}"></script>
+<script>
+  hljs.highlightAll();
+
+</script>

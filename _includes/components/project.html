@@ -1,18 +1,11 @@
-<a
-  class="projects-section-item"
-  href="{{include.link}}"
-  target="blank"
-  aria-label="This image is a link for the '{{include.alt}}' on Github."
->
+<a class="projects-section-item" href="{{include.link}}" target="blank"
+  aria-label="This image is a link for the '{{include.alt}}' on Github.">
   <article class="media project-card">
     <figure class="media-left">
       <p class="image is-64x64">
         <img
           src="https://raw.githubusercontent.com/devicons/devicon/master/icons/{{include.main}}/{{include.main}}-original.svg"
-          alt="{{include.main}} logo"
-          width="64"
-          height="64"
-        />
+          alt="{{include.main}} logo" width="64" height="64" />
       </p>
     </figure>
 
@@ -29,11 +22,14 @@
         <div class="level-left">
           <div class="tags">
             {% if include.collaborator %}
-              <span class="tag is-highlight">Collaborating</i></span>
+            <span class="tag is-highlight">Collaborating</i></span>
             {% endif %}
+
+            {% if include.techs %}
             {% for tech in include.techs %}
-              <span class="tag">{{tech}}</i></span>
+            <span class="tag">{{tech}}</i></span>
             {% endfor %}
+            {% endif %}
           </div>
         </div>
       </nav>

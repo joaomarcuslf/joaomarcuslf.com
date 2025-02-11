@@ -1,56 +1,92 @@
 $fa-font-path: "/assets/fonts/font-awesome/";
 $fa-font-display: block;
 
-$family-primary: Montserrat, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-$family-secondary: FiraCode, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-$family-code: FiraCode, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$family-primary: Montserrat,
+-apple-system,
+"Segoe UI",
+"Roboto",
+"Oxygen",
+"Ubuntu",
+"Cantarell",
+"Fira Sans",
+"Droid Sans",
+"Helvetica Neue",
+"Helvetica",
+"Arial",
+sans-serif;
+$family-secondary: FiraCode,
+-apple-system,
+"Segoe UI",
+"Roboto",
+"Oxygen",
+"Ubuntu",
+"Cantarell",
+"Fira Sans",
+"Droid Sans",
+"Helvetica Neue",
+"Helvetica",
+"Arial",
+sans-serif;
+$family-code: FiraCode,
+-apple-system,
+"Segoe UI",
+"Roboto",
+"Oxygen",
+"Ubuntu",
+"Cantarell",
+"Fira Sans",
+"Droid Sans",
+"Helvetica Neue",
+"Helvetica",
+"Arial",
+sans-serif;
 
-$primary:    #741b47;
-$accent:     #d5a6bd;
-$secondary:  #ead1dc;
-$tertiary:   #f7e8f0;
+$primary: #741b47;
+$accent: #d5a6bd;
+$secondary: #ead1dc;
+$tertiary: #f7e8f0;
 $quaternary: #553657;
-$quinary:    #551637;
-$senary:     #450617;
+$quinary: #551637;
+$senary: #450617;
 
 $white: #fff;
 
-$info:                 rgba($senary, .50);
-$success:              rgba($secondary, .50);
-$warning:              rgba($quinary, .75);
-$danger:               rgba($quaternary, .75);
+$info: rgba($senary, .50);
+$success: rgba($secondary, .50);
+$warning: rgba($quinary, .75);
+$danger: rgba($quaternary, .75);
 
-$light:                $accent;
-$dark:                 $senary;
+$light: $accent;
+$dark: $senary;
 
-$scheme-main:          rgba($tertiary, .25);
-$scheme-main-bis:      rgba($tertiary, .50);
-$scheme-main-ter:      rgba($tertiary, .75);
+$scheme-main: rgba($tertiary, .25);
+$scheme-main-bis: rgba($tertiary, .50);
+$scheme-main-ter: rgba($tertiary, .75);
 
-$background:           rgba($tertiary, .25);
+$background: rgba($tertiary, .25);
 
-$border:               rgba($quinary, .50);
-$border-hover:         rgba($quinary, .75);
-$border-light:         rgba($senary, .50);
-$border-light-hover:   rgba($senary, .75);
+$border: rgba($quinary, .50);
+$border-hover: rgba($quinary, .75);
+$border-light: rgba($senary, .50);
+$border-light-hover: rgba($senary, .75);
 
-$text:                 $quinary;
-$text-light:           $senary;
-$text-strong:          $senary;
+$text: $quinary;
+$text-light: $senary;
+$text-strong: $senary;
 
-$code:                 #98C379;
-$code-background:      #4B5263;
-$pre:                  #E06C75;
-$pre-background:       #282C34;
+$code: $secondary;
+$code-background: $quaternary;
+$pre: $accent;
+$pre-background: $senary;
 
-$link:                 $accent;
-$link-visited:         $quaternary;
-$link-hover:           $tertiary;
-$link-hover-border:    rgba($tertiary, .50);
-$link-focus:           rgba($quaternary, .50);
-$link-focus-border:    $tertiary;
-$link-active:          rgba($quinary, .50);
-$link-active-border:   $tertiary;
+$link: $accent;
+$link-visited: $quaternary;
+$link-hover: $tertiary;
+$link-hover-border: rgba($tertiary, .50);
+$link-focus: rgba($quaternary, .50);
+$link-focus-border: $tertiary;
+$link-active: rgba($quinary, .50);
+$link-active-border: $tertiary;
 
 $size-small: 0.75rem;
 $size-normal: 1rem;

@@ -1,0 +1,91 @@
+@import "../settings/settings";
+
+.project-card {
+  font-family: sans-serif;
+  border-radius: 4px;
+  border: 2px solid rgba($quaternary, .8);
+  background-color: rgba($accent, .1);
+  width: 300px;
+  color: #333;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  .project-card-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border-left: 2px solid rgba($quaternary, .8);
+  }
+
+  .project-card-image {
+    margin: 0 !important;
+    padding: 1rem;
+  }
+
+  a {
+    color: $primary;
+    text-decoration: none;
+  }
+
+  .project-card-header {
+    padding: 24px 16px 5px;
+  }
+
+  .project-card-header+.project-card-body {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .project-card-suptitle {
+    color: $quinary;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+    position: relative;
+    text-transform: uppercase;
+
+    a {
+      color: $primary;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  .project-card-title {
+    font-size: 20px;
+    line-height: 28px;
+    margin: 0;
+    padding-left: 1rem;
+    padding-top: 4rem !important;
+
+    a,
+    a:visited {
+      color: inherit;
+    }
+  }
+
+  .project-card-details {
+    border-top: 1px solid $quinary;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 1rem 2rem 2rem;
+    margin: 10px 0;
+
+    dt,
+    dd {
+      float: left;
+    }
+
+    dt {
+      padding-right: 8px;
+    }
+
+    dd {
+      margin: 0;
+      padding-right: 16px;
+    }
+  }
+}
