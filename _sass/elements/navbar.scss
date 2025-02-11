@@ -20,6 +20,8 @@
   .navbar-menu {
     &.is-active {
       @include for-phone-only {
+        background-color: rgb(223,237,248);
+
         position: inherit;
         height: 100vh;
         width: 100vw;
@@ -42,7 +44,7 @@
     .navbar-item {
       &.is-active {
         @include for-phone-only {
-          background-color: rgba(223,237,248,.1);
+          background-color: rgba(223,237,248, .1);
         }
       }
     }

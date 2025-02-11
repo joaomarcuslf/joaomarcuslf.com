@@ -29,17 +29,17 @@
 
         <div id="navbarMenuTarget" class="navbar-menu">
             <div class="navbar-start is-hidden-mobile is-hidden-tablet-only">
-                <a class="navbar-item" href="/">Home</a>
-                <a class="navbar-item" href="/posts">Posts</a>
-                <a class="navbar-item" href="/projects">Projects</a>
-                <a class="navbar-item" href="/about-me">About Me</a>
+                <a class="navbar-item home-navitem" href="/">Home</a>
+                <a class="navbar-item posts-navitem" href="/posts">Posts</a>
+                <a class="navbar-item projects-navitem" href="/projects">Projects</a>
+                <a class="navbar-item about-me-navitem" href="/about-me">About Me</a>
             </div>
 
             <div class="navbar-start is-hidden-desktop">
-                <a class="navbar-item" href="/">Home</a>
-                <a class="navbar-item" href="/posts">Posts</a>
-                <a class="navbar-item" href="/projects">Projects</a>
-                <a class="navbar-item" href="/about-me">About Me</a>
+                <a class="navbar-item home-navitem" href="/">Home</a>
+                <a class="navbar-item posts-navitem" href="/posts">Posts</a>
+                <a class="navbar-item projects-navitem" href="/projects">Projects</a>
+                <a class="navbar-item about-me-navitem" href="/about-me">About Me</a>
             </div>
         </div>
     </nav>
@@ -51,5 +51,7 @@
     {% include footer.html %}
 
     {% include analytics.html %}
+
+    {% include scripts.html %}
   </body>
 </html>
