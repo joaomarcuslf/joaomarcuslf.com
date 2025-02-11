@@ -59,7 +59,7 @@ function expandView(target) {
     } else {
       smoothScroll("#" + target);
     }
-  }, 1000)
+  }, 250)
 }
 
 function showDescription(id) {
