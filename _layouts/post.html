@@ -11,7 +11,14 @@ layout: default
     <h2 class="subtitle has-text-left">
       {{page.subtitle}}
     </h2>
+
+    <div class="tags">
+      {% for tag in page.tags %}
+        <a href="/posts#{{ tag | slugify }}" class="tag is-light" >{{ tag }}</a>
+      {% endfor %}
+    </div>
   </div>
+
 
   <img class="is-fullwidth post-cover-image" src="{{page.img}}" alt="{{page.alt}}" />
 

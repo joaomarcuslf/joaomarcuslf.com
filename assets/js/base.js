@@ -74,3 +74,33 @@ function showDescription(id) {
   // Scroll to the element
   smoothScroll(".timeline");
 }
+
+function checkURLForTag() {
+  var tag = window.location.hash.substr(1);
+
+  if (tag) {
+    filterPosts(tag);
+  }
+}
+
+function getTagFromEvent(event) {
+  event.preventDefault();
+
+  return event.target.href.split('#')[1];
+}
+
+function filterPosts(tag) {
+  var $posts = document.querySelectorAll(".images-section-item");
+
+  for (var i = 0; i < $posts.length; i++) {
+    var $post = $posts[i];
+
+    var tags = $post.dataset.tags.toLowerCase().replace(/\ /g, "-").split(',');
+
+    if (tags.indexOf(tag) < 0) {
+      $post.classList.add('is-hidden');
+    } else {
+      $post.classList.remove('is-hidden');
+    }
+  }
+}

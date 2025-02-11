@@ -2,12 +2,14 @@
 <a
     class="images-section-item"
     href="{{include.link}}"
+    data-tags="{{ include.tags  | join: "," }}"
 >
 {% else %}
 <a
     class="images-section-item"
     href="{{include.link}}"
     target="blank"
+    data-tags="{{ include.tags  | join: "," }}"
 >
 {% endif %}
     <img

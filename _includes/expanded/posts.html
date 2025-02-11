@@ -2,6 +2,12 @@
   <div class="hero-body">
     <h2 class="images-section-title">Posts</h2>
 
+    <div class="tags">
+      {% for tag in site.tags %}
+        <a href="#{{ tag[0] | slugify }}" class="tag is-light" onclick="filterPosts(getTagFromEvent(event))">{{ tag[0] }}</a>
+      {% endfor %}
+    </div>
+
     <div class="images-section-group">
       {% assign filtered = site.posts | where: 'draft', false %}
 
@@ -13,8 +19,11 @@
           alt=post.alt
           title=post.title
           internal=post.internal
+          tags=post.tags
       %}
       {% endfor %}
     </div>
   </div>
 </section>
+
+<script src="{{ site.baseurl }}/assets/js/posts.js"></script>

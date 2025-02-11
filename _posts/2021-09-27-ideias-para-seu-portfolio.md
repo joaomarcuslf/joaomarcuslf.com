@@ -118,9 +118,9 @@ No exemplo acima é a Newsletter do <a href="https://filipedeschamps.com.br/news
 <nav class="level is-mobile">
   <div class="level-left">
     <div class="tags">
-      <a class="tag is-dark" href="https://getbootstrap.com/" target="blank">JavaScript</a>
-      <a class="tag is-dark" href="https://sass-lang.com/" target="blank">SCSS</a>
-      <a class="tag is-dark" href="https://vuejs.org/" target="blank">HTML5</a>
+      <a class="tag is-dark" href="#" target="blank">JavaScript</a>
+      <a class="tag is-dark" href="#" target="blank">CSS3</a>
+      <a class="tag is-dark" href="#" target="blank">HTML5</a>
     </div>
   </div>
 </nav>
