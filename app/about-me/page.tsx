@@ -1,5 +1,3 @@
-import Head from "next/head";
-
 import Introduction from "@/components/theme/introduction";
 import JobTimeline from "@/components/job-timeline";
 import ExpandedSkills from "@/components/expanded/skills";
@@ -16,6 +14,10 @@ import { getContent, getContentMetadataList } from "@/utils/metadata";
 import { sortMetadataByRules, flatten } from "@/utils/helpers";
 import CalendarButton from "@/components/theme/calendar-button";
 import Description from "@/components/theme/description";
+
+export let metadata = {
+  title: `About Me - ${site.name}`,
+};
 
 export default function Projects() {
   const techMetadata = getContentMetadataList<SkillMetadata>(
@@ -60,10 +62,6 @@ export default function Projects() {
 
   return (
     <main>
-      <Head>
-        <title>{copy.title} | {site.name}</title>
-      </Head>
-
       <Introduction
         theme="danger"
         title={copy.title}

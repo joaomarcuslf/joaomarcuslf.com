@@ -14,6 +14,10 @@ import { CopyMetadata, copyMetadataSerializer } from "@/types/copy";
 import TOC from "@/components/theme/table-of-contents";
 import CalendarButton from "@/components/theme/calendar-button";
 
+export let metadata = {
+  title: `Home - ${site.name}`,
+};
+
 export default function Home() {
   const techMetadata = getContentMetadataList<SkillMetadata>(
     "skills/techs",
