@@ -39,14 +39,16 @@
   Elements Layer
 */
 
-@import "elements/root";
-@import "elements/hero";
-@import "elements/container";
-@import "elements/navbar";
-@import "elements/title";
-@import "elements/subtitle";
-@import "elements/footer";
 @import "elements/buttons";
+@import "elements/code";
+@import "elements/container";
+@import "elements/footer";
+@import "elements/hero";
+@import "elements/menu";
+@import "elements/navbar";
+@import "elements/root";
+@import "elements/subtitle";
+@import "elements/title";
 
 /*
   Objects Layer
@@ -61,13 +63,13 @@
   Components Layer
 */
 
+@import "components/highlights";
 @import "components/images-section";
-@import "components/skills-section";
 @import "components/mentorship-lists-section";
 @import "components/posts-section";
 @import "components/projects-section";
-@import "components/highlights";
 @import "components/recommendations";
+@import "components/skills-section";
 @import "components/tooltips";
 
 /*

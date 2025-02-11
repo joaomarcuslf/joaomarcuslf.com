@@ -9,8 +9,10 @@ internal: true
 draft: false
 tags:
   - Beginner
+  - Internal
   - Front-end
   - Career
+  - Portuguese
 ---
 
 Uma das minhas experiências favoritas foi a de trabalhar no meu próprio site, como alguém particularmente crítico eu nunca consegui encontrar um template que me agradasse, então resolvi fazer um eu mesmo, seguindo exemplos que eu via na internet e desenhando no papel e tudo mais. Bom, nesse post nós não vamos entrar profundamente nesse processo, eu irei abrir as portas para onde sua imaginação possa te levar
@@ -123,7 +125,7 @@ Vejo você no próximo!! Byeeee~
 <div class="has-text-centered">
   <img
     width="390"
-    src="/assets/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-10.gif"
+    src="/assets/images/posts/assets/octo-dancing.gif"
     alt="Image from the post"
   />
 </div>

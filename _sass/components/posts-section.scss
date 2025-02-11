@@ -21,7 +21,20 @@
 
     @include for-tablet-landscape-up {
       font-weight: 500;
+
+      h2, h3, h4, h5, h6 {
+        padding-top: 6.5rem;
+        margin-top: -4.5rem;
+      }
+
+      h2, h3 {
+        padding-top: 5.5rem;
+      }
     }
+  }
+
+  .level {
+    padding-bottom: .5rem;
   }
 
   .post-header,
@@ -66,5 +79,9 @@
     @include for-tablet-portrait-and-down {
       padding: 0;
     }
+  }
+
+  blockquote {
+    font-size: medium !important;
   }
 }

@@ -7,4 +7,5 @@ link: https://code.likeagirl.io/refletindo-sobre-mulheres-na-computa%C3%A7%C3%A3
 tags:
   - Reflections
   - Beginner
+  - Portuguese
 ---

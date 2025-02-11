@@ -107,8 +107,8 @@ export const move = (path, target) => function _move() {
 
 export const buildWebp = series(
   clean,
-  webp,
   thumbnails,
+  webp,
   move('./dist/images/**/*.webp', 'assets/images'),
 )
 
