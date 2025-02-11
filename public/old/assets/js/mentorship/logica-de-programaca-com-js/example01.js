@@ -1,0 +1,1 @@
+function submitExample01(e,r){$textarea=document.querySelector("#"+r+" .textarea"),$scenario=document.querySelector("#"+r+" .scenario"),submitCode(e,r,$scenario,$textarea,[['var $girl01 = pegarElemento("example01_Girl01")','var $girl02 = pegarElemento("example01_Girl02")',"encontrar($girl01, $girl02)"]])}

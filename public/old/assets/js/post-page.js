@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll("[data-gh-project]").forEach(function(e){var t=e.getAttribute("data-gh-project");fetch("https://api.github.com/repos/"+t).then(function(t){return t.json()}).then(function(t){e.querySelector(".fork a").innerText=t.forks_count,e.querySelector(".star a").innerText=t.stargazers_count})})});
