@@ -23,7 +23,7 @@ jobs:
               const date = created_at.split("T")[0]
 
               function getKey(body, key) {
-                  return const title = body.split("\r\n").reduce(function (acc, elm) {
+                  return body.split("\r\n").reduce(function (acc, elm) {
                   if (elm.includes(`${key}: `)) {
                     return elm.replace(`${key}: `, '').split('"').join('')
                   }
