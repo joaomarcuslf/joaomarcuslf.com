@@ -11,15 +11,10 @@ jobs:
         uses: actions/github-script@v4
         with:
           script: |
-            console.log(context.issue);
-            const { author_association, body } = context.payload.comment
-  create_file:
-    runs-on: ubuntu-latest
-    if: ${{ github.event.comment.author_association == 'OWNER' }}
-    steps:
-      - name: Teste
-        uses: "finnp/create-file-action@master"
-        env:
-          FILE_NAME: "_posts/fileName.md"
-          FILE_DATA: context.comment.body
+            const fs = require('fs');
 
+            const { author_association, body } = context.payload.comment
+
+            if (author_association == 'OWNER') {
+              console.log(context.payload.comment)
+            }
