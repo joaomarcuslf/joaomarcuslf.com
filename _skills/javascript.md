@@ -1,7 +1,7 @@
 ---
 layout: skill
 name: "JavaScript"
-progress: 90
+progress: 92
 categories:
   - NodeJS
   - React

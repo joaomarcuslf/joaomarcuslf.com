@@ -1,7 +1,7 @@
 ---
 layout: skill
 name: "Software Engineer"
-progress: 68
+progress: 78
 categories:
   - Clean Code
   - Code Quality

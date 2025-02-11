@@ -1,5 +1,5 @@
 ---
 layout: skill
 name: "PostgreSQL"
-progress: 55
+progress: 74
 ---
