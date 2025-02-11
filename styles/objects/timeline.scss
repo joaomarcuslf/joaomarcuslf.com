@@ -64,6 +64,7 @@
     .timeline-bar,
     .events {
       width: 90%;
+
       @include for-tablet-landscape-and-down {
         width: 85%;
       }
@@ -105,6 +106,7 @@
             background: $white;
             border-width: 5px;
             border-style: solid;
+
             @include for-desktop-up {
               height: 75px;
               width: 75px;
@@ -172,16 +174,172 @@
 
   .timeline-event-description {
     padding-top: 0.5rem;
+
     .card {
       background-color: $tertiary;
 
       .title {
         margin-bottom: 0;
+        font-size: 1.7rem;
+      }
+
+      .subtitle {
+        font-size: 1.2rem;
+      }
+    }
+
+    &:not(.is-selected) {
+      display: none;
+    }
+  }
+
+  .expand-description {
+    visibility: hidden;
+  }
+
+  .dropdown {
+    display: none;
+  }
+
+  @include for-phone-only {
+    .timeline-event-description {
+      .title {
+        margin-bottom: 0;
+        font-size: 1rem !important;
+      }
+
+      .subtitle {
+        font-size: .8rem !important;
+      }
+    }
+
+    .expand-description {
+      visibility: visible;
+    }
+
+    .timeline-content {
+      display: none;
+    }
+
+    .dropdown {
+      width: 100%;
+      display: block;
+      position: relative;
+
+      &.is-active {
+        .dropdown-menu {
+          max-height: 100vh;
+
+          .dropdown-content {
+            max-height: 100vh;
+          }
+        }
+      }
+
+      .dropdown-trigger .button, .dropdown-item {
+        display: flex;
+        width: 100%;
+        cursor: pointer;
+        background: $tertiary;
+
+        transition: background .5s;
+
+        &:hover {
+          background: $secondary;
+        }
+
+        span {
+          width: 100%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .icon {
+          max-width: 1.5em;
+          max-height: 1.5em;
+
+          figure {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+          }
+        }
+      }
+
+      .dropdown-item {
+        border-radius: 0;
+        border: unset;
+        border-bottom: 1px solid $quinary;
+        padding: .5rem 1rem;
+
+        .icon {
+          margin-right: .5rem;
+        }
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        background: aliceblue;
+
+        height: auto;
+        max-height: 0vh;
+        transition: max-height 0.5s;
+        overflow: hidden;
+
+        .dropdown-content {
+          height: auto;
+          max-height: 0vh;
+          transition: max-height 0.5s;
+        }
+      }
+
+      .dropdown-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+    }
+
+    .timeline-event-description {
+      display: flex !important;
+
+      .card-content {
+        height: auto;
+        max-height: 500vh;
+        min-height: 380px;
+        transition: max-height 0.5s;
+
+        .content {
+          transition: max-height 0.5s;
+          max-height: 500vh;
+        }
+      }
+
+      &:not(.is-expanded) {
+        .card-content {
+          max-height: 40vh;
+
+          .content {
+            overflow: hidden;
+            height: auto;
+            max-height: 15vh;
+          }
+        }
       }
     }
   }
 
   @include dark-section {
+
     .timeline-title,
     .timeline-subtitle,
     .initial-date,

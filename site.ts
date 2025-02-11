@@ -34,9 +34,19 @@ export default {
       "icon": "fab fa-twitter"
     },
     {
+      "name": "Leetcode",
+      "url": "https://leetcode.com/u/joaomarcuslf/",
+      "icon": "fa fa-terminal"
+    },
+    {
       "name": "Codewars",
       "url": "https://www.codewars.com/users/joaomarcuslf",
       "icon": "fa fa-code"
+    },
+    {
+      "name": "Calendly",
+      "url": "https://calendly.com/joaomarcuslf",
+      "icon": "fa fa-calendar"
     }
   ],
   "skillOrder": ["go", "javascript", "mongodb"],

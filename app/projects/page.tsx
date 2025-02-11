@@ -1,4 +1,5 @@
 import ExpandedProjects from "@/components/expanded/projects";
+import CalendarButton from "@/components/theme/calendar-button";
 import Introduction from "@/components/theme/introduction";
 import TOC from "@/components/theme/table-of-contents";
 import { CopyMetadata, copyMetadataSerializer } from "@/types/copy";
@@ -30,6 +31,8 @@ export default function Projects() {
       />
 
       <ExpandedProjects projects={projectsMetadata} />
+
+      <CalendarButton />
 
       <TOC />
     </main>

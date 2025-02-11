@@ -12,6 +12,7 @@ import { ProjectMetadata, projectMetadataSerializer } from "@/types/project";
 import { TopicMetadata, topicMetadataSerializer } from "@/types/topic";
 import { getContent, getContentMetadataList } from "@/utils/metadata";
 import { sortMetadataByRules, flatten } from "@/utils/helpers";
+import CalendarButton from "@/components/theme/calendar-button";
 
 export default function Projects() {
   const techMetadata = getContentMetadataList<SkillMetadata>(
@@ -70,7 +71,14 @@ export default function Projects() {
         )}
       />
       <ExpandedProjects projects={projectsMetadata} />
-      <ExpandedTopics topics={sortMetadataByRules<TopicMetadata>(topicsMetadata, site.topicOrder)} />
+      <ExpandedTopics
+        topics={sortMetadataByRules<TopicMetadata>(
+          topicsMetadata,
+          site.topicOrder
+        )}
+      />
+
+      <CalendarButton />
 
       <TOC />
     </main>

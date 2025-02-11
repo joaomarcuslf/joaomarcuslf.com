@@ -13,6 +13,7 @@ import { PostMetadata, postMetadataSerializer } from "@/types/post";
 import { getContentMetadataList, getContent } from "@/utils/metadata";
 import { calcRT } from "@/utils/text";
 import "@/public/css/hljs.scss";
+import CalendarButton from "@/components/theme/calendar-button";
 
 const postsMetadata = getContentMetadataList<PostMetadata>(
   "posts",
@@ -104,10 +105,14 @@ export default function PostPage({ params }: { params: { slug: string } }) {
           </h4>
 
           <div className="images-section-group is-recommendation">
-            {relatedPosts.map((item) => <PostView key={item.slug} post={item} />)}
+            {relatedPosts.map((item) => (
+              <PostView key={item.slug} post={item} />
+            ))}
           </div>
         </div>
       </section>
+
+      <CalendarButton />
 
       <Hljs />
     </>

@@ -1,4 +1,5 @@
 import ExpandedPosts from "@/components/expanded/posts";
+import CalendarButton from "@/components/theme/calendar-button";
 import Introduction from "@/components/theme/introduction";
 import TOC from "@/components/theme/table-of-contents";
 import { CopyMetadata, copyMetadataSerializer } from "@/types/copy";
@@ -29,6 +30,8 @@ export default function Posts() {
       />
 
       <ExpandedPosts posts={postsMetadata.filter((p) => !p.draft)} />
+
+      <CalendarButton />
 
       <TOC />
     </main>
