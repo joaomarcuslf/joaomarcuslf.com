@@ -24,6 +24,7 @@ Ponto de partida desse post:
   %}
 </div>
 
+{% raw %}
 ## O que você precisa?
 
 Você vai precisar ter NodeJS instalado, eu estou utilizando a versão `v17.0.1`, porém consulte a página dos módulos que utilizarmos para verificar compatibilidade. E também estou utilizando o `yarn` para rodar os comandos.
@@ -43,7 +44,7 @@ O comando irá demorar um pouco para rodar, enquanto isso vamos preparar outros 
 Se você seguiu o tutorial inteiro, você deve estar rodando o projeto pelo VSCode, e agora nós podemos rodar em paralelo tanto o Front-end quando o Back-end. Abra o `.vscode/launch.json`, e modifique ela para ficar assim.
 
 ```json
-{% raw %}{
+{
     "version": "0.2.0",
     "compounds": [
       {
@@ -66,7 +67,7 @@ Se você seguiu o tutorial inteiro, você deve estar rodando o projeto pelo VSCo
         "type": "node-terminal"
       }
     ]
-}{% endraw %}
+}
 ```
 
 Com isso na aba `Run and Debug`, você verá a opção de rodar com `Launch Full Application`, isso conclui essa etapa.
@@ -126,18 +127,18 @@ touch src/fetcher/fetcher.jsx
 Abra `src/fetcher/fetcher.jsx` e vamos preenchendo juntos.
 
 ```jsx
-{% raw %}import { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 
 const Fetcher = ({ children, action }) => {
   const [loading, setLoading] = useState(true)
   const [data, setData] = useState(null)
-  const [error, setError] = useState(null){% endraw %}
+  const [error, setError] = useState(null)
 ```
 
 Até aqui, estamos apenas declarando as props do nosso Fetcher, e seus estados iniciais. Nós vamos fazer uso do `useEffect` para fazer a requisição HTTP assim que o componente renderizar.
 
 ```jsx
-  {% raw %}useEffect(() => {
+  useEffect(() => {
     const loadData = async () => {
       setLoading(true)
       try {
@@ -153,13 +154,13 @@ Até aqui, estamos apenas declarando as props do nosso Fetcher, e seus estados i
     }
 
     loadData()
-  }, [action]){% endraw %}
+  }, [action])
 ```
 
 Esse `useEffect` nos diz que ele tentará carregar os dados, e fará o controle do `result`, `error`, e `loading` conforme temos atualizações desses estados. E daqui para frente iremos só retornar com base em cada estado.
 
 ```jsx
-{% raw %}if (loading) {
+if (loading) {
     return <div>Loading...</div>
   }
 
@@ -170,7 +171,7 @@ Esse `useEffect` nos diz que ele tentará carregar os dados, e fará o controle 
   return children(data)
 }
 
-export default Fetcher{% endraw %}
+export default Fetcher
 ```
 
 Espero que não tenha ficado muito abstrato por hora, vai ficar mais claro quando implementarmos o resto do nosso código. Abra o terminal, nós vamos trabalhar aqui em fazer o componente que vai receber a listagem de sites.
@@ -183,16 +184,16 @@ touch src/sites/list.jsx
 Abra o `sites/list.jsx`, e vamos preencher eles juntos.
 
 ```jsx
-{% raw %}import React from "react"
+import React from "react"
 
 const SitesList = (props) => {
-  const { sites = [] } = props?.data || {}{% endraw %}
+  const { sites = [] } = props?.data || {}
 ```
 
 Até aqui, coisa simples, nós esperamos um array de sites, e vamos ou retornar uma lista, ou uma mensagem dizendo que não temos sites.
 
 ```jsx
-  {% raw %}return (
+  return (
     <div>
       <h2>Sites:</h2>
 
@@ -204,28 +205,27 @@ Até aqui, coisa simples, nós esperamos um array de sites, e vamos ou retornar 
       </ul>
     </div>
   )
-}{% endraw %}
+}
 ```
 
 Agora, vamos trabalhar a `action` que o `Fetcher` vai receber.
 
 ```jsx
-{% raw %}SitesList.action = () => {
+SitesList.action = () => {
   return fetch("http://localhost:8000/api/sites", {
-    credentials: "omit",
     headers: {
       "Content-Type": "application/json",
     },
     method: "GET",
     mode: "cors",
   })
-}{% endraw %}
+}
 ```
 
 Estaremos utilizando [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch), pois é o padrão recomendado para requisições HTTP. E por fim, vamos exportar o componente.
 
 ```jsx
-{% raw %}export default SitesList{% endraw %}
+export default SitesList
 ```
 
 > A partir daqui, você já deve ter percebido que eu estou utilizando os nomes em minúsculo, e o CRA usa o padrão PascalCase. Eu prefiro a convenção de arquivos em minúsculo, mas você pode mudar isso se quiser.
@@ -240,13 +240,13 @@ touch src/sites/list.test.jsx
 Abra o `src/sites/list.test.jsx`, e preencha comigo:
 
 ```jsx
-{% raw %}/* eslint-disable testing-library/no-node-access */
+/* eslint-disable testing-library/no-node-access */
 /* eslint-disable testing-library/no-container */
 import React from 'react'
 import { render, screen } from '@testing-library/react'
 import SitesList from './list'
 
-describe('<SitesList />', () => {{% endraw %}
+describe('<SitesList />', () => {
 ```
 
 Sim, eu adicionei algumas regras que ignoram warnings do Eslint, você pode colocar num arquivo separado, eu deixei aqui mais para simplicidade.
@@ -254,26 +254,26 @@ Sim, eu adicionei algumas regras que ignoram warnings do Eslint, você pode colo
 O `describe` agrupa nossos testes, pense como se estivéssemos descrevendo determinado componente. E vamos começar com cada situação, a primeira é o componente não tendo uma lista para renderizar.
 
 ```jsx
-  {% raw %}test('renders an empty list', () => {
+  test('renders an empty list', () => {
     render(<SitesList />)
 
     const element = screen.getByText(/No sites/i)
 
     expect(element).toBeInTheDocument()
-  }){% endraw %}
+  })
 ```
 
 Próxima condição seria tendo múltiplos elemento, e vamos testar isso.
 
 ```jsx
-  {% raw %}test('renders an list with multiple elements', () => {
+  test('renders an list with multiple elements', () => {
     const { container } = render(<SitesList data={{sites: [ { URL: "test" }, { URL: "test" } ,{ URL: "test" } ]}} />)
 
     const element = container.querySelectorAll('li')
 
     expect(element.length).toBe(3)
   })
-}){% endraw %}
+})
 ```
 
 Sei que pode parecer bobo, porém esses testes são cruciais para quando formos adicionar opção de editar, e remover sites. E aproveitando a vibe, vamos testar o `fetcher`?
@@ -291,19 +291,19 @@ No arquivo `fetcher/fetcher.test.jsx` vamos lidar com testes assíncronos, você
 Vamos ver na prática:
 
 ```jsx
-{% raw %}/* eslint-disable testing-library/prefer-query-by-disappearance */
+/* eslint-disable testing-library/prefer-query-by-disappearance */
 /* eslint-disable testing-library/no-unnecessary-act */
 import React from 'react'
 import { render, screen, waitFor, waitForElementToBeRemoved, act } from '@testing-library/react'
 import Fetcher from './fetcher'
 
-describe('<Fetcher />', () => {{% endraw %}
+describe('<Fetcher />', () => {
 ```
 
 Até agora nada atípico, certo? Primeiro teste será o de loading:
 
 ```jsx
-  {% raw %}test('> loading: should call action function', async () => {
+  test('> loading: should call action function', async () => {
     const action = jest.fn(() => Promise.resolve({ json: () => Promise.resolve({ info: "test loading" }) }))
 
     render(
@@ -315,7 +315,7 @@ Até agora nada atípico, certo? Primeiro teste será o de loading:
     await waitFor(() => expect(action).toBeCalled())
 
     expect(action).toBeCalled()
-  }){% endraw %}
+  })
 ```
 
 Perceba que utilizamos os `jest` para mockar uma response, chamamos o render normal, e utilizamos o `await waitFor` para esperar que a função `action` seja chamada, pelo menos uma vez, e em seguida fazemos o teste de que a função `action` foi chamada.
@@ -323,7 +323,7 @@ Perceba que utilizamos os `jest` para mockar uma response, chamamos o render nor
 Para o Error, e Success, eles seguem uma estrutura muito parecida:
 
 ```jsx
-{% raw %}test('> error: should show error', async () => {
+test('> error: should show error', async () => {
     const action = jest.fn(() => Promise.resolve({ json: () => Promise.reject({ message: "test error" }) }))
 
     act(() => {
@@ -337,13 +337,13 @@ Para o Error, e Success, eles seguem uma estrutura muito parecida:
     await waitForElementToBeRemoved(() => screen.getByText(/Loading/i))
 
     await screen.findByText(/test error/i)
-  }){% endraw %}
+  })
 ```
 
 Porém, para esse cenário, não basta apenas a action ser chamada, o Loading tem que sair da tela, então nós esperamos pelo elemento ser removido. O success seria a mesma coisa, porém trocando `reject` por `resolve`.
 
 ```jsx
-{% raw %}test('> success: should show the content', async () => {
+test('> success: should show the content', async () => {
     const action = jest.fn(() => Promise.resolve({ json: () => Promise.resolve({ info: "test success" }) }))
 
     act(() => {
@@ -359,7 +359,7 @@ Porém, para esse cenário, não basta apenas a action ser chamada, o Loading te
 
     await screen.findByText(/test success/i)
   })
-}){% endraw %}
+})
 ```
 
 Com isso, você já entendeu como vai funcionar testes assíncronos, teste síncronos, e de quebra, você também viu como é a assinatura do nosso componente. Vamos agora fazer tudo renderizar.
@@ -372,7 +372,7 @@ touch src/index.jsx
 Abra o `src/app.jsx`, e vamos importar ambos o Fetcher e o SitesList, e renderizar:
 
 ```jsx
-{% raw %}import Fetcher from './fetcher/fetcher'
+import Fetcher from './fetcher/fetcher'
 import SiteList from './sites/list'
 
 function App() {
@@ -389,13 +389,13 @@ function App() {
   )
 }
 
-export default App{% endraw %}
+export default App
 ```
 
 Depois, abra o `src/index.jsx` para chamarmos o nosso App na DOM:
 
 ```jsx
-{% raw %}import React from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './app';
 
@@ -404,7 +404,7 @@ root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
-);{% endraw %}
+);
 ```
 
 Se você seguiu o tutorial até aqui, você pode abrir o [http://localhost:3000](http://localhost:3000) e ver o resultado.
@@ -445,5 +445,6 @@ Prontinho, com isso seu Front-end já deve estar funcionando, e mostrando pelo m
 Nas próximas aulas, nós vamos fazer o Front-end enviar POST, DELETE, e PUT para o Back-end, nesse meio tempo, que tal você entender o que fizemos no Front-end de forma mais profunda?
 
 Aguardo na próxima aula.
+{% endraw %}
 
 {% include components/golang-mentorship-footer.md %}

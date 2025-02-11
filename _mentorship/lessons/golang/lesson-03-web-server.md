@@ -24,6 +24,7 @@ Ponto de partida desse post:
   %}
 </div>
 
+{% raw %}
 ## Executando servidor
 
 Para criar nosso servidor, nós vamos utilizar a [Design Pattern Command](https://refactoring.guru/pt-br/design-patterns/command), uma design pattern comportamental que vai ser muito útil para quando nós quisermos rodar o servidor em Go routines.
@@ -179,7 +180,7 @@ touch templates/index.html
 Abra o `index.html` e preencha com o seguinte HTML:
 
 ```html
-{% raw %}<html>
+<html>
 <head>
   <title>{{.Title}}</title>
   <meta charset="utf-8" />
@@ -230,13 +231,13 @@ Abra o `index.html` e preencha com o seguinte HTML:
     </div>
   </section>
 </body>
-</html>{% endraw %}
+</html>
 ```
 
 Quero chamar atenção para alguns trechos do HTML:
 
 ```html
-{% raw %}<title>{{.Title}}</title>
+<title>{{.Title}}</title>
 
 <meta name="description" content="{{.Description}}">
 <meta property="og:description_safe" content="{{.Description}}" />
@@ -249,7 +250,7 @@ Quero chamar atenção para alguns trechos do HTML:
 
 {{if .Error}}
   <p class="help is-danger">{{.Error}}</p>
-{{end}}{% endraw %}
+{{end}}
 ```
 
 Nesses trechos nós estamos utilizando três variáveis, `.Title`, `.Description` e `.Error`. Essas variáveis são enviadas pelo Go para o template, como se fossem lacunas. Vamos atualizar nosso `web/html.go`.
@@ -350,5 +351,6 @@ Abra `.vscode/launch.json`:
 ```
 
 Agora é só abrir a Tab `Run and Debug` e clique em `Live Reload Server`. Prontinho, agora você não precisará rodar tantos comandos para atualizar seu servidor. A outra opção(`Launch Package`), é para quando precisarmos debugar o servidor sem correr risco de ficar atualizando por qualquer mudança.
+{% endraw %}
 
 {% include components/golang-mentorship-footer.md %}
