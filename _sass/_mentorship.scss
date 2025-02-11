@@ -1,17 +1,19 @@
 @charset "UTF-8";
 
+@import "settings/settings";
+
 .is-mirrored {
   transform: scaleX(-1);
 }
 
 .is-shake-error-animated {
-  border-color: #E06C75 !important;
+  border-color: $pre !important;
   border-width: 2px !important;
   animation: shake-error-animation 0.5s ease-in;
 }
 
 .is-success {
-  border-color: #98C379 !important;
+  border-color: $code !important;
   border-width: 2px !important;
 }
 

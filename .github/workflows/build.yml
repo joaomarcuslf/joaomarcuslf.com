@@ -2,7 +2,7 @@ name: Build and Deploy
 on:
   push:
   workflow_run:
-    workflows: ["Auto feed creator"]
+    workflows: ["Auto feed creator", "Generate webp"]
     types:
       - completed
 
