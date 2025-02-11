@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 import Introduction from "@/components/theme/introduction";
 import JobTimeline from "@/components/job-timeline";
 import ExpandedSkills from "@/components/expanded/skills";
@@ -58,6 +60,10 @@ export default function Projects() {
 
   return (
     <main>
+      <Head>
+        <title>{copy.title} | {site.name}</title>
+      </Head>
+
       <Introduction
         theme="danger"
         title={copy.title}
@@ -66,7 +72,11 @@ export default function Projects() {
         className="has-background bg-about-me typewriter"
       />
       <JobTimeline jobs={jobsMetadata} />
-      <Description title={description.title} content={description.content} className={""} />
+      <Description
+        title={description.title}
+        content={description.content}
+        className={""}
+      />
       <ExpandedSkills
         skills={sortMetadataByRules<SkillMetadata>(
           flatten<SkillMetadata>([

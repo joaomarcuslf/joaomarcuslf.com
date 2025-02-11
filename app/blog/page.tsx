@@ -1,7 +1,10 @@
+import Head from "next/head";
+
 import ExpandedPosts from "@/components/expanded/posts";
 import CalendarButton from "@/components/theme/calendar-button";
 import Introduction from "@/components/theme/introduction";
 import TOC from "@/components/theme/table-of-contents";
+import site from "@/site";
 import { CopyMetadata, copyMetadataSerializer } from "@/types/copy";
 import { PostMetadata, postMetadataSerializer } from "@/types/post";
 import { getContent, getContentMetadataList } from "@/utils/metadata";
@@ -21,6 +24,12 @@ export default function Posts() {
 
   return (
     <main>
+      <Head>
+        <title>
+          {copy.title} | {site.name}
+        </title>
+      </Head>
+
       <Introduction
         theme="danger"
         title={copy.title}

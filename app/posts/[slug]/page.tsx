@@ -5,6 +5,7 @@ import Markdown from "markdown-to-jsx";
 import matter from "gray-matter";
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 
 import site from "@/site"
 import PostView from "@/components/view/post";
@@ -14,6 +15,7 @@ import { getContentMetadataList, getContent } from "@/utils/metadata";
 import { calcRT } from "@/utils/text";
 import "@/public/css/hljs.scss";
 import CalendarButton from "@/components/theme/calendar-button";
+import Description from "@/components/theme/description";
 
 const postsMetadata = getContentMetadataList<PostMetadata>(
   "posts",
@@ -41,6 +43,7 @@ export const generateMetadata = async ({
 
   return {
     title: `${post?.title} | ${site.name}`,
+    description: post?.subtitle,
   };
 };
 
@@ -58,6 +61,14 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 
   return (
     <>
+      <Head>
+        <title>
+          {post.title} | {site.name}
+        </title>
+
+        <meta property="og:title" content={`${post.title} | ${site.name}`} />
+      </Head>
+
       <div className="post">
         <div className="post-header">
           <h1 className="title has-text-left">{post?.title}</h1>
