@@ -10,7 +10,7 @@ import site from "@/site"
 import PostView from "@/components/view/post";
 import Hljs from "@/components/hljs";
 import { PostMetadata, postMetadataSerializer } from "@/types/post";
-import { getContentMetadataList, getPostContent } from "@/utils/metadata";
+import { getContentMetadataList, getContent } from "@/utils/metadata";
 import { calcRT } from "@/utils/text";
 import "@/public/css/hljs.scss";
 
@@ -32,31 +32,39 @@ export const generateMetadata = async ({
 }: {
   params: { slug: string };
 }) => {
-  const post = getPostContent(params.slug);
+  const post = getContent<PostMetadata>(
+    "posts",
+    postMetadataSerializer,
+    params.slug
+  );
 
   return {
-    title: `${post?.data?.title} | ${site.name}`,
+    title: `${post?.title} | ${site.name}`,
   };
 };
 
-export default function PostPage(props: { params: { slug: string } }) {
-  const post = getPostContent(props.params.slug);
+export default function PostPage({ params }: { params: { slug: string } }) {
+  const post = getContent<PostMetadata>(
+    "posts",
+    postMetadataSerializer,
+    params.slug
+  );
   const readingTime = calcRT(post.content);
 
   const relatedPosts = postsMetadata
-    .filter((p) => p.tags.some((t) => post.data.tags.includes(t)))
+    .filter((p) => p.tags.some((t) => post.tags.includes(t)))
     .slice(0, 3);
 
   return (
     <>
       <div className="post">
         <div className="post-header">
-          <h1 className="title has-text-left">{post?.data?.title}</h1>
+          <h1 className="title has-text-left">{post?.title}</h1>
 
-          <h2 className="subtitle has-text-left">{post?.data?.subtitle}</h2>
+          <h2 className="subtitle has-text-left">{post?.subtitle}</h2>
 
           <div className="tags mb-0">
-            {post?.data?.tags.map((tag: string) => (
+            {post?.tags.map((tag: string) => (
               <Link
                 id={`tag-${tag}`}
                 key={`tag-${tag}`}
@@ -78,8 +86,8 @@ export default function PostPage(props: { params: { slug: string } }) {
 
         <Image
           className="is-fullwidth post-cover-image"
-          src={post?.data?.img}
-          alt={post?.data?.alt}
+          src={post?.img}
+          alt={post?.alt}
           height="800"
           width="1600"
         />

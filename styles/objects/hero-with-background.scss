@@ -15,14 +15,34 @@
       display: flex;
       justify-content: center;
       flex-direction: column;
+      align-items: center;
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 800px;
+
+        > * {
+          background-color: rgba($tertiary, .1);
+          font-weight: 500;
+          border-radius: 5px;
+
+          width: fit-content;
+          line-height: 1.1rem;
+          padding: 5px;
+        }
+      }
     }
+
+    $opacity-value: 0.85;
 
     &.bg-home {
       background: url("/images/background-home.webp") no-repeat center center;
       background-size: cover;
 
       .hero-body {
-        background-color: rgba($senary, 0.7);
+        background-color: rgba($senary, $opacity-value);
       }
     }
 
@@ -31,7 +51,7 @@
       background-size: cover;
 
       .hero-body {
-        background-color: rgba($quinary, 0.7);
+        background-color: rgba($quinary, $opacity-value);
       }
     }
 
@@ -40,7 +60,7 @@
       background-size: cover;
 
       .hero-body {
-        background-color: rgba($accent, 0.7);
+        background-color: rgba($accent, $opacity-value);
       }
     }
 
@@ -49,7 +69,7 @@
       background-size: cover;
 
       .hero-body {
-        background-color: rgba($quaternary, 0.7);
+        background-color: rgba($quaternary, $opacity-value);
       }
     }
 
@@ -58,7 +78,7 @@
       background-size: cover;
 
       .hero-body {
-        background-color: rgba($accent, 0.7);
+        background-color: rgba($accent, $opacity-value);
       }
     }
   }

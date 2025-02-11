@@ -2,12 +2,13 @@ import ExpandedSkills from "@/components/expanded/skills";
 import ExpandedProjects from "@/components/expanded/projects";
 import Introduction from "@/components/theme/introduction";
 import JobTimeline from "@/components/job-timeline";
-import { JobMetadata, jobMetadataSerializer } from "@/types/job";
-import { getContentMetadataList } from "@/utils/metadata";
+import { JobMetadata, JobMetadataWithContent, jobMetadataSerializer } from "@/types/job";
+import { getContent, getContentMetadataList } from "@/utils/metadata";
 import { ProjectMetadata, projectMetadataSerializer } from "@/types/project";
 import { SkillMetadata, skillMetadataSerializer } from "@/types/skill";
 import site from "@/site";
 import { sortMetadataByRules, flatten } from "@/utils/helpers";
+import { CopyMetadata, copyMetadataSerializer } from "@/types/copy";
 
 export default function Projects() {
   const techMetadata = getContentMetadataList<SkillMetadata>(
@@ -27,24 +28,33 @@ export default function Projects() {
   );
   const jobsMetadata = getContentMetadataList<JobMetadata>(
     "jobs",
-    jobMetadataSerializer
-  );
+    jobMetadataSerializer,
+    { withContent: true }
+  ) as JobMetadataWithContent[];
   const projectsMetadata = getContentMetadataList<ProjectMetadata>(
     "projects",
     projectMetadataSerializer,
     { reverse: true }
   );
+  const copy = getContent<CopyMetadata>(
+    "copies",
+    copyMetadataSerializer,
+    "introduction-about-me"
+  );
+
 
   return (
     <main>
       <Introduction
         theme="danger"
-        title="About Me"
-        subtitle="Hey you again! Hope you have liked what you saw up to here. <br /><br /> I'm a Full-stack developer, I work with a lot of things, you can check more about <a href='/skill-tree' aria-label='Link for the skill-tree page'>my skills</a>, I love to learn, and teach, so I value a lot either soft-skills and hard-skills, if you want to reach me, you can <a href='/mail-me' aria-label='Link for e-mail me page'>also e-mail me</a>."
+        title={copy.title}
+        subtitle={copy.subtitle}
+        content={copy.content}
         className="has-background bg-about-me typewriter"
       />
 
       <JobTimeline jobs={jobsMetadata} />
+
       <ExpandedSkills
         skills={sortMetadataByRules(
           flatten<SkillMetadata>([

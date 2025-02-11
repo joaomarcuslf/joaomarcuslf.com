@@ -1,11 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import Markdown from "markdown-to-jsx";
 
 import useShowDescription from "@/hooks/useShowDescription";
-import { JobMetadata } from "@/types/job";
+import { JobMetadataWithContent } from "@/types/job";
 
-export default function JobTimeline({ jobs }: { jobs: JobMetadata[] }) {
+export default function JobTimeline({ jobs }: { jobs: JobMetadataWithContent[] }) {
   const { activeJob, showDescription } = useShowDescription(jobs);
 
   return (
@@ -13,7 +14,7 @@ export default function JobTimeline({ jobs }: { jobs: JobMetadata[] }) {
       <div className="hero-body">
         <h2 className="title">Work Timeline</h2>
         <div className="timeline-content">
-          <div className="initial-date">Aug 2015</div>
+          <div className="initial-date">June 2014</div>
           <div className="timeline-bar"></div>
           <div className="final-date">Present</div>
           <div className="events">
@@ -68,11 +69,9 @@ export default function JobTimeline({ jobs }: { jobs: JobMetadata[] }) {
                     </div>
                   </div>
                   <div className="content">
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: activeJob.description,
-                      }}
-                    />
+                    <Markdown className="content is-normal">
+                      {activeJob.content}
+                    </Markdown>
                     <br />
                     <time>{`${activeJob.startDate} - ${
                       activeJob.endDate === "~" ? "Present" : activeJob.endDate

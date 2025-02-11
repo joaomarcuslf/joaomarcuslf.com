@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 import Image from "next/image";
 
 import NavItem from "./nav-item";
@@ -23,12 +24,14 @@ export default function Navbar() {
     >
       <div className="navbar-brand">
         <div className="navbar-item">
-          <Image
-            src="/images/logo-typo.webp"
-            alt="Logo which is written { @ } JOAOMARCUSLF"
-            height="28"
-            width="177"
-          />
+          <Link href="/">
+            <Image
+              src="/images/logo-typo.webp"
+              alt="Logo which is written { @ } JOAOMARCUSLF"
+              height="28"
+              width="177"
+            />
+          </Link>
         </div>
 
         <button

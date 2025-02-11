@@ -5,6 +5,10 @@ export type Metadata = {
   domain: string;
 }
 
+export type Contentdata = {
+  content: string;
+}
+
 export function fileNameToKey(fileName: string): string {
   return fileName.replace(/\.md$/, "").toLowerCase();
 }

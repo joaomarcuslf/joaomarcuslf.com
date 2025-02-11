@@ -1,4 +1,4 @@
-import { Metadata, Serializer, fileNameToKey } from "./metadata";
+import { Contentdata, Metadata, Serializer, fileNameToKey } from "./metadata";
 
 export type PostMetadata = Metadata &{
   title: string;

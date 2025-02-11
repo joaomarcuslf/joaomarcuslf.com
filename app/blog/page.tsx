@@ -1,7 +1,8 @@
 import ExpandedPosts from "@/components/expanded/posts";
 import Introduction from "@/components/theme/introduction";
+import { CopyMetadata, copyMetadataSerializer } from "@/types/copy";
 import { PostMetadata, postMetadataSerializer } from "@/types/post";
-import { getContentMetadataList } from "@/utils/metadata";
+import { getContent, getContentMetadataList } from "@/utils/metadata";
 
 export default function Posts() {
   const postsMetadata = getContentMetadataList<PostMetadata>(
@@ -10,16 +11,23 @@ export default function Posts() {
     { reverse: true }
   );
 
+    const copy = getContent<CopyMetadata>(
+      "copies",
+      copyMetadataSerializer,
+      "introduction-blog"
+    );
+
   return (
     <main>
       <Introduction
         theme="danger"
-        title="Blog"
-        subtitle="Hey you! I've written and gave some presentations, here you can check out then."
+        title={copy.title}
+        subtitle={copy.subtitle}
+        content={copy.content}
         className="has-background bg-posts typewriter"
       />
 
-      <ExpandedPosts posts={postsMetadata.filter(p => !p.draft)} />
+      <ExpandedPosts posts={postsMetadata.filter((p) => !p.draft)} />
     </main>
   );
 }

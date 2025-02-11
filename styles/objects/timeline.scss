@@ -94,12 +94,15 @@
         &.is-active {
           .timeline-company-image {
             background: $white;
-            height: 75px;
-            width: 75px;
             border-width: 5px;
             border-style: solid;
+            @include for-desktop-up {
+              height: 75px;
+              width: 75px;
+            }
           }
         }
+
       }
 
       @include for-tablet-portrait-and-down {
@@ -121,8 +124,6 @@
           &.is-active {
             .timeline-company-image {
               background: $white;
-              height: 50px;
-              width: 50px;
               border-width: 3px;
               border-style: solid;
             }

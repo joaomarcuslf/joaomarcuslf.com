@@ -1,13 +1,18 @@
-import { Serializer } from '@/types/metadata';
+import { Contentdata, Serializer } from '@/types/metadata';
 import fs from 'fs';
 import matter from 'gray-matter';
 
-export function getContentMetadataList<T>(content: string, serializer: Serializer<T>, options?: {
+const parseContentResult = (result: matter.GrayMatterFile<string>) => {
+  return result?.content?.replaceAll("class=", "className=")
+}
+
+export function getContentMetadataList<T>(domain: string, serializer: Serializer<T>, options?: {
   reverse?: boolean;
   top?: boolean;
   domain?: string;
+  withContent?: boolean;
 }): T[] {
-  const folder = `contents/${content}/`;
+  const folder = `contents/${domain}/`;
   const files = fs.readdirSync(folder);
 
   const markdownContent = files.filter((file) => file.endsWith('.md'));
@@ -15,6 +20,13 @@ export function getContentMetadataList<T>(content: string, serializer: Serialize
   let contentData = markdownContent.map((fileName) => {
     const contents = fs.readFileSync(`${folder}/${fileName}`, 'utf8');
     const result = matter(contents);
+
+    if (options?.withContent) {
+      return {
+        ...serializer(result.data, fileName, folder),
+        content: parseContentResult(result),
+      } as T & Contentdata;
+    }
 
     return serializer(result.data, fileName, folder);
   });
@@ -36,16 +48,20 @@ export function getContentMetadataList<T>(content: string, serializer: Serialize
   return contentData;
 }
 
-export function getPostContent(slug: string) {
-  const folder = 'contents/posts';
-  const files = folder + `/${slug}.md`;
+export function getContent<T>(domain: string, serializer: Serializer<T>, slug: string, options?: {
+  reverse?: boolean;
+  top?: boolean;
+  domain?: string;
+}): T & Contentdata {
+  const folder = `contents/${domain}`;
+  const fileName = folder + `/${slug}.md`;
 
-  const content = fs.readFileSync(files, 'utf8');
+  const content = fs.readFileSync(fileName, 'utf8');
 
   const result = matter(content);
 
   return {
-    ...result,
-    content: result?.content?.replaceAll("class=", "className="),
+    ...serializer(result.data, fileName, options?.domain || folder),
+    content: parseContentResult(result),
   };
 }

@@ -108,6 +108,10 @@
     flex-direction: column;
     justify-content: flex-start;
 
+    @include for-tablet-landscape-and-down {
+      flex-direction: row;
+    }
+
     &.main-skill {
       width: 100%;
       max-width: unset;
@@ -126,9 +130,17 @@
         display: flex;
         padding: 0.5rem 1rem;
 
+        @include for-tablet-landscape-and-down {
+          flex-direction: column;
+        }
+
         .media {
           flex: 1;
           margin-bottom: 0;
+
+          @include for-tablet-landscape-and-down {
+            margin-bottom: 1rem;
+          }
         }
 
         .content {
@@ -147,6 +159,11 @@
 
         .button {
           margin: 0 0.25rem;
+
+          @include for-tablet-landscape-and-down {
+            position: absolute;
+            right: 0;
+          }
         }
       }
     }
