@@ -8,6 +8,9 @@ global:
     projects: Projetos
     mentorship: Mentoria
     about_me: Sobre mim
+  languages:
+    portuguese: Português
+    english: Inglês
 
 index:
   title: Olá, eu sou João&nbsp;Marcus&nbsp;Fernandes
@@ -41,8 +44,6 @@ mentorship:
   subtitle: Ei você! Estou feliz que você esteja aqui comigo.<br /> Eu trabalho desde 2015, e desde então, trabalhei com muitas pessoas, e elas me ensinaram muitas coisas para mim, e agora é a minha hora de dar de volta à comunidade.
   languages:
     title: Línguas que falo
-    portuguese: Português
-    english: Inglês
   techs:
     title: Tecnologias que posso ensinar
   stacks:
