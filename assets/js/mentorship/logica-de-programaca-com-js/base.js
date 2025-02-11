@@ -1,14 +1,4 @@
-function validarCodigo(codigo, linhas) {
-  var valido = true
-
-  for (var i = 0; i < linhas.length; i++) {
-    var linha = linhas[i]
-
-    valido = valido && codigo.includes(linha)
-  }
-
-  return valido
-}
+/* Helper Functions */
 
 function pegarElemento(id) {
   return document.getElementById(id)
@@ -53,7 +43,21 @@ function removerDoCarnaval(elemento) {
   document.getElementById(elemento.id).remove()
 }
 
-function submitCode(event, targetId, $scenario, $textarea, ...lines) {
+/* Validation Functions */
+
+function validateCodeLines(code, lines) {
+  var valido = true
+
+  for (var i = 0; i < lines.length; i++) {
+    var linha = lines[i]
+
+    valido = valido && code.includes(linha)
+  }
+
+  return valido
+}
+
+function submitCodeGeneric(event, $textarea, validation, callback) {
   event.preventDefault();
 
   $textarea.parentElement.classList.toggle("is-loading");
@@ -63,8 +67,29 @@ function submitCode(event, targetId, $scenario, $textarea, ...lines) {
     $textarea.classList.remove("is-success");
 
     if (
-      lines.some(line => validarCodigo($textarea.value, line))
+      validation()
     ) {
+      callback()
+
+      $textarea.classList.add("is-success");
+    } else {
+      $textarea.classList.add("is-shake-error-animated");
+    }
+
+    $textarea.parentElement.classList.toggle("is-loading");
+  }, 1000);
+}
+
+function submitCode(event, targetId, $scenario, $textarea, ...lines) {
+  return submitCodeGeneric(
+    event,
+    $textarea,
+    function () {
+      return lines.some(function (line) {
+        return validateCodeLines($textarea.value, line);
+      });
+    },
+    function () {
       var newScript = document.createElement('script');
       newScript.classList.add("target-script")
       newScript.innerHTML = $textarea.value
@@ -76,14 +101,8 @@ function submitCode(event, targetId, $scenario, $textarea, ...lines) {
       }
 
       $scenario.appendChild(newScript);
-
-      $textarea.classList.add("is-success");
-    } else {
-      $textarea.classList.add("is-shake-error-animated");
     }
-
-    $textarea.parentElement.classList.toggle("is-loading");
-  }, 1000);
+  )
 }
 
 document.querySelectorAll(".has-popup-label").forEach(function (elem) {

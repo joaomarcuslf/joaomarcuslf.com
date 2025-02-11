@@ -482,7 +482,7 @@ layout: mentorship
             objeto.keys() // [ "dormindo", "feliz" ]</pre>
 
           E para pegarmos os valores multiníveis nós precisaríamos percorrer o objeto utilizando funções mais complexas.
-          Objetos são ótimos para armazenar valores de forma compreensível para humanos por podemos utilizar palavras.
+          Objetos são ótimos para armazenar valores de forma compreensível para humanos por podermos utilizar palavras para identificar cada item.
         </p>
       </div>
     </div>
@@ -510,14 +510,71 @@ layout: mentorship
             }</pre>
 
           <pre>
-            function soma(a, b) {
-              return a + b;
+            function multiplicar(a, b) {
+              return a * b;
             }</pre>
         </p>
       </div>
     </div>
   </article>
 </div>
+
+<br /><br />
+<hr />
+<br />
+
+<h3 class="title is-3"> Revisão de <code>Funções</code> e <code>Estrutura de dados</code> </h3>
+
+<section id="example06" class="topic-section container">
+  <br />
+
+  <form class="form" onsubmit="submitExample06(event, 'example06')">
+    <p>
+      Outra forma de acessarmos objetos é utilizando <code>[nomeDaPropriedade]</code> como por exemplo: <code>meuObjeto["chave de acesso"]</code>.<br />
+
+      Com isso em mente nós precisamos criar uma função que traduza uma palavra, no exemplo abaixo nós temos já no nosso dicionário <code>Hello</code>, e <code>How are you</code>. Se essa função fosse chamada assim:
+
+      <br />
+      <code>traduzir("en", "ola")</code>
+      <br />
+
+      O retorno deveria ser: <code>Hello</code>.
+
+      <br />
+
+      Para completar esse desafio, você precisará adicionar no objeto <code>dicionario</code> a tradução para o idioma português com  <code>Olá</code> e <code>Como você está</code>.
+
+      <br />
+
+      E completar a função para acessar no nosso dicionário de acordo com o idioma e a palavra passada para a função.
+
+    </p>
+
+    <br />
+
+    <div class="field">
+      <div class="control">
+        <textarea class="textarea is-link is-fullwidth" rows="11">
+        var dicionario = {
+          "en": {
+            "ola": "Hello",
+            "tudo bem": "How are you",
+          }
+        }
+
+        function traduzir(idioma, palavra) {
+          return ""
+        }</textarea>
+      </div>
+    </div>
+
+    <div class="field is-pulled-right">
+      <div class="control">
+        <button class="button" type="submit">Enviar</button>
+      </div>
+    </div>
+  </form>
+</section>
 
 
 <script src="{{ site.baseurl }}/assets/js/mentorship/logica-de-programaca-com-js/base.js"></script>
@@ -527,5 +584,3 @@ layout: mentorship
 <script src="{{ site.baseurl }}/assets/js/mentorship/logica-de-programaca-com-js/example04.js"></script>
 <script src="{{ site.baseurl }}/assets/js/mentorship/logica-de-programaca-com-js/example05.js"></script>
 <script src="{{ site.baseurl }}/assets/js/mentorship/logica-de-programaca-com-js/example06.js"></script>
-<script src="{{ site.baseurl }}/assets/js/mentorship/logica-de-programaca-com-js/example07.js"></script>
-<script src="{{ site.baseurl }}/assets/js/mentorship/logica-de-programaca-com-js/example08.js"></script>
