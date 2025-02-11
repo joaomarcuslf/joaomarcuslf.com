@@ -1,11 +1,12 @@
 const compress_images = require('compress-images');
 const fs = require('fs');
 
-fs.rmdirSync("_site/images/", { recursive: true });
+
+fs.renameSync("images", "tmp/images", {recursive: true});
 
 compress_images(
-  "images/**/*.{jpg,JPG,jpeg,JPEG}",
-  "_site/images/",
+  "tmp/images/**/*",
+  "images/",
   { compress_force: false, statistic: true, autoupdate: true },
   false,
   { jpg: { engine: "mozjpeg", command: ["-quality", "60"] } },
