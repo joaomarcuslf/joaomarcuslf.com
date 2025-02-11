@@ -18,7 +18,7 @@ jobs:
             if (author_association == 'OWNER') {
               console.log(context.payload.comment)
 
-              const date = created.split("T")[0]
+              const date = created_at.split("T")[0]
 
               const name = title.replace(/[^\w\s]/gi, '').toLowerCase().split(" ").join("-")
 
