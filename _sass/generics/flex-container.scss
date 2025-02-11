@@ -1,4 +1,19 @@
-.flex-container {
+.flex-container, .is-flex-container {
   display: flex;
   width: 100%;
+
+  &.is-row {
+    flex-direction: row;
+  }
+
+  &.is-column {
+    flex-direction: column;
+  }
+
+  .to-left {
+    justify-content: flex-start;
+  }
+  .to-right {
+    justify-content: flex-end;
+  }
 }

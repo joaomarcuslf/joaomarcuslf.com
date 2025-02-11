@@ -1,0 +1,590 @@
+---
+layout: mentorship
+---
+
+<script>
+  function validarCodigo(codigo, linhas) {
+    var valido = true
+
+    for (var i = 0; i < linhas.length; i++) {
+      var linha = linhas[i]
+
+      valido = valido && codigo.includes(linha)
+    }
+
+    return valido
+  }
+
+  function pegarElemento(id) {
+    return document.getElementById(id)
+  }
+
+  function encontrar(elemento1, elemento2) {
+    elemento1.classList.remove("to-left")
+    elemento1.classList.add("to-right")
+    elemento2.classList.remove("to-right")
+    elemento2.classList.add("to-left")
+  }
+
+  function disfarcar(elemento1) {
+    document.querySelector("#" + elemento1.id + " figure").classList.toggle("is-mirrored")
+    document.querySelector("#" + elemento1.id + " img").src = "/images/mentorship/disfarce-01.png"
+  }
+
+  function pegarCodigo(elemento1, codigo) {
+    $codigo = document.querySelector("#" + elemento1.id + " .codigo")
+    return $codigo.innerHTML
+  }
+
+  function fantasia(elemento1, fantasia) {
+    elemento1.fantasia = fantasia;
+
+    return elemento1;
+  }
+
+  function removerDaFila(elemento) {
+    elemento.remove()
+  }
+
+  function removerDoCarnaval(elemento) {
+    console.log(elemento.id)
+
+    document.getElementById(elemento.id).remove()
+  }
+
+  function submitCode(event, targetId, $scenario, $textarea, lines) {
+    event.preventDefault();
+
+    $textarea.parentElement.classList.toggle("is-loading");
+
+    setTimeout(function () {
+      $textarea.classList.remove("is-shake-error-animated");
+      $textarea.classList.remove("is-success");
+
+      if (
+        validarCodigo($textarea.value, lines)
+      ) {
+        var newScript = document.createElement('script');
+        newScript.classList.add("target-script")
+        newScript.innerHTML = $textarea.value
+
+        var $script = document.querySelector("#" + targetId + " .target-script")
+
+        if ($script) {
+          $script.remove()
+        }
+
+        $scenario.appendChild(newScript);
+
+        $textarea.classList.add("is-success");
+      } else {
+        $textarea.classList.add("is-shake-error-animated");
+      }
+
+      $textarea.parentElement.classList.toggle("is-loading");
+    }, 1000);
+  }
+
+</script>
+
+{% include introduction.html
+    theme="link"
+    title="Lógica de programação com JavaScript"
+    subtitle="Vamos aprender alguns conceitos base da programação utilizando javascript"
+    class="has-background is-mini bg-mentorship typewriter"
+%}
+
+<br />
+
+<h3 class="title is-3"> 01 - Declarando variáveis </h3>
+
+<div class="container">
+  <article class="media">
+    <div class="media-content">
+      <div class="content">
+        <p>
+          Variáveis são valores que utilizamos para armazenar dados. Elas podem ser coisas simples como palavras até
+          elementos da tela.
+
+          <br />
+
+          Em JavaScript nós temos três formas de declarar variáveis:
+          <ul>
+            <li><b>var</b> - São variáveis globais, ou seja, que podem ser acessadas de qualquer lugar do código.</li>
+            <li><b>const</b> - São que seus valores não podem ser alterados diretamente.</li>
+            <li><b>let</b> - São que seus valores podem ser alterados diretamente.</li>
+          </ul>
+
+          Para as variáveis de <code>const</code> e <code>let</code> elas ficam disponíveis apenas dentro da função que
+          elas foram declaradas. Já as <code>var</code> são disponíveis em qualquer lugar do código, até por isso
+          evitamos usá-las.
+          <br />
+          Dito isso, nos exemplos abaixo usaremos <code>var</code> pois nossos elementos estão disponíveis no HTML de
+          forma global.
+        </p>
+      </div>
+    </div>
+  </article>
+</div>
+
+<br />
+
+<section id="example01" class="topic-section container">
+  <div class="scenario container">
+    <div class="is-flex-container is-row">
+      <div id="example01_Girl01" class="is-flex-container to-left">
+        <figure class="image is-48x48 is-mirrored">
+          <img src="/images/mentorship/person-female-01.png" />
+        </figure>
+      </div>
+
+      <div id="example01_Girl02" class="is-flex-container to-right">
+        <figure class="image is-48x48">
+          <img src="/images/mentorship/person-female-03.png" />
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <br />
+
+  <form class="form" onsubmit="submitExample01(event, 'example01')">
+    <div class="field">
+      <div class="control">
+        <textarea class="textarea is-link is-fullwidth" rows="5">
+          var $girl01 = pegarElemento("example01_Girl01")
+
+          /* Falta algo aqui */
+
+          encontrar($girl01, $girl02)</textarea>
+      </div>
+    </div>
+
+    <div class="field is-pulled-right">
+      <div class="control">
+        <button class="button" type="submit">Enviar</button>
+      </div>
+    </div>
+  </form>
+
+  <script>
+    function submitExample01(event, targetId) {
+      $textarea = document.querySelector("#" + targetId + " .textarea")
+      $scenario = document.querySelector("#" + targetId + " .scenario")
+
+      submitCode(event, targetId, $scenario, $textarea, [
+        'var $girl01 = pegarElemento("example01_Girl01")',
+        'var $girl02 = pegarElemento("example01_Girl02")',
+        'encontrar($girl01, $girl02)',
+      ]);
+    }
+
+  </script>
+</section>
+
+<br />
+
+<section id="example02" class="topic-section container">
+  <div class="scenario container">
+    <div class="is-flex-container is-row">
+      <div id="example02_Boy01" class="is-flex-container to-left">
+        <figure class="image is-48x48 is-mirrored">
+          <img src="/images/mentorship/person-male-01.png" />
+        </figure>
+      </div>
+
+      <div class="is-flex-container to-left">
+        <figure class="image is-48x48">
+          <img src="/images/mentorship/disfarce-01.png" />
+        </figure>
+      </div>
+
+      <div class="is-flex-container to-left">
+        <figure class="image is-48x48">
+          <img src="/images/mentorship/disfarce-01.png" />
+        </figure>
+      </div>
+
+      <div class="is-flex-container to-left">
+        <figure class="image is-48x48">
+          <img src="/images/mentorship/disfarce-01.png" />
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <br />
+
+  <form class="form" onsubmit="submitExample02(event, 'example02')">
+    <div class="field">
+      <div class="control">
+        <textarea class="textarea is-link is-fullwidth" rows="3">
+          /* Falta algo aqui */
+
+          disfarcar($boy)</textarea>
+      </div>
+    </div>
+
+    <div class="field is-pulled-right">
+      <div class="control">
+        <button class="button" type="submit">Enviar</button>
+      </div>
+    </div>
+  </form>
+
+  <script>
+    function submitExample02(event, targetId) {
+      $textarea = document.querySelector("#" + targetId + " .textarea")
+      $scenario = document.querySelector("#" + targetId + " .scenario")
+
+      submitCode(event, targetId, $scenario, $textarea, [
+        'var $boy = pegarElemento("example02_Boy01")',
+        'disfarcar($boy)',
+      ]);
+    }
+
+  </script>
+</section>
+
+<br /><br />
+<hr />
+<br />
+
+<h3 class="title is-3"> 02 - Condições </h3>
+
+<div class="container">
+  <article class="media">
+    <div class="media-content">
+      <div class="content">
+        <p>
+          Condições são usadas para fazer uma comparação entre dois ou mais valores.
+
+          <br />
+
+          As condições possuem normalmente a seguinte estrutura:
+
+          <pre>
+            if (condicao) {
+              // Se a condição for verdadeira, então...
+            } else {
+              // Se a condição for falsa, então...
+            }</pre>
+
+          <br />
+
+          Para fazermos comparações entre valores nós utilizamos os operadores <code>==</code>, ou <code>===</code>,
+          quando queremos dizer que os valores são iguais, e <code>!=</code>, ou <code>!==</code>, quando queremos dizer
+          que os valores são diferentes.
+
+          <br />
+
+          E podemos ter condições complexas utilizando os operadores de <code>&&</code>, que representa o
+          <code>AND</code> e <code>||</code>, que representa o <code>OR</code>.
+          <br />
+          Para condições do tipo <code>AND</code> serem consideradas verdadeiras, todas as condições devem ser
+          verdadeiras. Já para condições do tipo <code>OR</code>, apenas uma precisa ser verdadeira.
+        </p>
+      </div>
+    </div>
+  </article>
+</div>
+
+<section id="example03" class="topic-section container">
+  <div class="scenario container">
+    <div class="is-flex-container is-row">
+      <div id="example03_Boy01" class="is-flex-container to-left">
+        <figure class="image is-48x48">
+          <img src="/images/mentorship/person-male-02.png" />
+        </figure>
+
+        <pre class="codigo">0001</pre>
+      </div>
+
+      <div class="is-flex-container to-left">
+        <figure class="image is-48x48">
+          <img src="/images/mentorship/person-female-02.png" />
+        </figure>
+
+        <pre class="codigo">0002</pre>
+      </div>
+
+      <div class="is-flex-container to-left">
+        <figure class="image is-48x48">
+          <img src="/images/mentorship/person-female-04.png" />
+        </figure>
+
+        <pre class="codigo">0003</pre>
+      </div>
+    </div>
+  </div>
+
+  <br />
+
+  <form class="form" onsubmit="submitExample03(event, 'example03')">
+    <div class="field">
+      <div class="control">
+        <textarea class="textarea is-link is-fullwidth" rows="8">
+          var $boy01 = pegarElemento("example03_Boy01")
+          var codigoBoy01 = pegarCodigo($boy01)
+
+          var codigoAtual = "0001"
+
+          if (/* Falta algo aqui */) {
+            removerDaFila($boy01)
+          }</textarea>
+      </div>
+    </div>
+
+    <div class="field is-pulled-right">
+      <div class="control">
+        <button class="button" type="submit">Enviar</button>
+      </div>
+    </div>
+  </form>
+
+  <script>
+    function submitExample03(event, targetId) {
+      $textarea = document.querySelector("#" + targetId + " .textarea")
+      $scenario = document.querySelector("#" + targetId + " .scenario")
+
+      submitCode(event, targetId, $scenario, $textarea, [
+        'var $boy01 = pegarElemento("example03_Boy01")',
+        'var codigoBoy01 = pegarCodigo($boy01)',
+        'var codigoAtual = "0001"',
+        'if (codigoBoy01 == codigoAtual) {',
+        'removerDaFila($boy01)',
+        '}',
+      ]);
+    }
+
+  </script>
+</section>
+
+<br />
+
+<section id="example04" class="topic-section container">
+  <div class="scenario container">
+    <div class="is-flex-container is-row">
+      <div id="example04_Boy01" class="is-flex-container to-left">
+        <figure class="image is-48x48">
+          <img src="/images/mentorship/person-male-03.png" />
+        </figure>
+      </div>
+
+      <div id="example04_Boy02" class="is-flex-container to-left">
+        <figure class="image is-48x48">
+          <img src="/images/mentorship/person-male-04.png" />
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <br />
+
+  <form class="form" onsubmit="submitExample04(event, 'example04')">
+    <div class="field">
+      <div class="control">
+        <textarea class="textarea is-link is-fullwidth" rows="13">
+        var $boy01 = fantasia(pegarElemento("example04_Boy01"), "indio");
+        var $boy02 = fantasia(pegarElemento("example04_Boy02"), "enfermeiro");
+
+        function fantasiasBloqueadas(usuario) {
+          // Você consegue saber a fantasia utilizando usuario.fantasia
+          // Faça uma condição para caso o usuário esteja fantasiado de indio você tire ele do carnaval
+          removerDoCarnaval(usuario)
+        }
+
+        fantasiasBloqueadas($boy01)
+        fantasiasBloqueadas($boy02)</textarea>
+      </div>
+    </div>
+
+    <div class="field is-pulled-right">
+      <div class="control">
+        <button class="button" type="submit">Enviar</button>
+      </div>
+    </div>
+  </form>
+
+  <script>
+    function submitExample04(event, targetId) {
+      $textarea = document.querySelector("#" + targetId + " .textarea")
+      $scenario = document.querySelector("#" + targetId + " .scenario")
+
+      submitCode(event, targetId, $scenario, $textarea, [
+        'var $boy01 = fantasia(pegarElemento("example04_Boy01"), "indio");',
+        'var $boy02 = fantasia(pegarElemento("example04_Boy02"), "enfermeiro");',
+        'function fantasiasBloqueadas(usuario) {',
+        'if (usuario.fantasia == "indio") {',
+        'removerDoCarnaval(usuario)',
+        '}',
+        '}',
+        'fantasiasBloqueadas($boy01)',
+        'fantasiasBloqueadas($boy02)',
+      ]);
+    }
+
+  </script>
+</section>
+
+<br /><br />
+<hr />
+<br />
+
+<h3 class="title is-3"> 03 - Estruturas de Repetições </h3>
+
+<div class="container">
+  <article class="media">
+    <div class="media-content">
+      <div class="content">
+        <p>
+          É muito comum enquanto estamos programando utilizarmos estruturas que ao invés de armazenar apenas um
+          elemento, elas armazenem um conjunto de elementos. Essas estruturas são comumente chamadas de listas, ou
+          vetores. Para interagir com listas nós precisamos utilizar um recurso de linguagens de programações que são os
+          laços/loops, esses recursos trabalham com um contador que nos dá a possibilidade de iterar sobre cada um
+          conjunto de elementos.
+
+          <br />
+
+          Nessa parte nós veremos principalmente o <strong>for</strong>, pois ele é uma das estruturas mais utilizadas
+          para interagir com listas. E está disponível em todas as linguagens de programação.
+
+          <br />
+
+          O <code>for</code> segue a seguinte estrutura:
+
+          <pre>
+            for (var contador = 0; contador < quantidade_de_elementos; contador++) {
+              // Executa algo aqui
+            }</pre>
+
+          Esse contador começa com o valor 0 pois as listas começam a contar do 0 para frente. A segunda parte do
+          <code>for</code> se refere à condição que deve ser verdadeira para que o loop seja executado. A terceira parte
+          do <code>for</code> é a ação que será executada a cada loop, nesse caso, nós iremos rodar o for enquanto o
+          contador for menor que o tamanho da nossa lista. A última parte será para garantir que a cada vez que rodarmos
+          o for o contador será incrementado, sendo assim, ele irá na primeira vez rodar como 0, depois 1, 2 e assim
+          sucessivamente.
+        </p>
+      </div>
+    </div>
+  </article>
+</div>
+
+<br /><br />
+<hr />
+<br />
+
+<h3 class="title is-3"> 04 - Estruturas de dados </h3>
+
+<div class="container">
+  <article class="media">
+    <div class="media-content">
+      <div class="content">
+        <p>
+          No tópico anterior falamos de Listas, porém nós em nenhum momento exploramos como podemos declarar as listas.
+          Nesse tópico nós veremos as duas estruturas principais do JavaScript, os Objetos, e as Listas.
+
+          <br />
+
+          <h4 class="subtitle is-4 is-flex-container is-left"> Listas </h4>
+
+          São declaradas utilizando <code>[ /* ... */ ]</code>, e elas são acessadas utilizando indices de valores
+          numericos, veja esse exemplo:
+
+          <pre>
+            var lista = ["😴", "😄", "😃" ];
+
+            lista[0] // 😴
+            lista[1] // 😄
+            lista[2] // 😃</pre>
+
+          É comum listas armazenarem apenas valores dos mesmos tipos, porém, não é uma regra isso. Nós podemos declarar
+          listas contendo qualquer tipo de dados.
+
+          Com listas nós podemos ordenar, filtrar, remover e adicionar elementos.
+
+          <pre>
+            var lista = ["🥚","🐔"];
+
+            lista.pop()      // Removendo o último elemento da lista
+            lista            // [ "🥚" ]
+
+            lista.push("🥚") // Adicionando um elemento no fim da lista
+            lista            // [ "🥚", "🐔", "🥚" ]
+
+            lista.sort()     // Ordenando a lista
+            lista            // ["🐔", "🥚"]
+            lista[0]         // 🐔</pre>
+
+          <h4 class="subtitle is-4 is-flex-container is-left"> Objetos </h4>
+
+          São declarados utilizando <code>{ /* ... */ }</code>, e elas são acessadas utilizando indices com valores ou
+          de strings, ou números, veja esse exemplo:
+
+          <pre>
+            var objeto = {
+              dormindo: "😴",
+              feliz: {
+                muito: "😄",
+                pouco: "😃"
+              }
+            };
+
+            objeto.dormindo // 😴
+            objeto.feliz.muito // 😄
+            objeto.feliz.pouco // 😃</pre>
+
+          Como você pode ver no exemplo anterior, objetos podem conter outros objetos, e listas. Nós chamamos esse tipo
+          de estrutura de estrutura multidimensional.
+
+          Por conta de termos índices variáveis, para sabermos as chaves de um objeto, podemos utilizar a função
+          <code>Object.keys</code>, veja esse exemplo:
+
+          <pre>
+            var objeto = {
+              dormindo: "😴",
+              feliz: {
+                muito: "😄",
+                pouco: "😃"
+              }
+            };
+
+            objeto.keys() // [ "dormindo", "feliz" ]</pre>
+
+          E para pegarmos os valores multiníveis nós precisaríamos percorrer o objeto utilizando funções mais complexas.
+          Objetos são ótimos para armazenar valores de forma compreensível para humanos por podemos utilizar palavras.
+        </p>
+      </div>
+    </div>
+  </article>
+</div>
+
+<br /><br />
+<hr />
+<br />
+
+<h3 class="title is-3"> 05 - Funções </h3>
+
+<div class="container">
+  <article class="media">
+    <div class="media-content">
+      <div class="content">
+        <p>
+          Até o momento nós já utilizamos várias funções sem perceber, o JavaScript já nos fornece várias funções
+          nativas para realizarmos várias operações, como o <code>.keys()</code> dos objetos, porém nós também podemos
+          declarar nossas próprias funções. Veja abaixo alguns exemplos:
+
+          <pre>
+            function soma(a, b) {
+              return a + b;
+            }</pre>
+
+          <pre>
+            function soma(a, b) {
+              return a + b;
+            }</pre>
+        </p>
+      </div>
+    </div>
+  </article>
+</div>

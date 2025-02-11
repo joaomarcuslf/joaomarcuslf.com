@@ -27,9 +27,11 @@ var walk = function(dir, done) {
 walk(
   "./images",
   function(err, results) {
+    let resultsToMap = results.filter(l => !l.includes("mentorship/") && !l.includes("posts/") && !l.includes(".DS_Store"))
+
     fs.writeFile(
       '_includes/preload.html',
-      results.map(filePath => {
+      resultsToMap.map(filePath => {
         const filename = filePath.split("images/")[1]
         return `<link rel="prefetch" as="image"  href="images/${filename}">`
       }).join("\n"),
@@ -40,7 +42,7 @@ walk(
 
     fs.writeFile(
       '_sass/settings/preload.scss',
-      results.map((filePath, index) => {
+      resultsToMap.map((filePath, index) => {
         const filename = filePath.split("images/")[1]
         return `#preload-${index} { background: url(images/${filename}); display: none; }`
       }).join("\n"),
