@@ -35,46 +35,42 @@ jobs:
                 return name.replace(/[^\w\s]/gi, '').toLowerCase().split(" ").join("-")
               }
 
-              let filename = ''
-              let title = ''
+              function getFileName(body, layout) {
+                switch (layout) {
+                  case 'graduation':
+                    title = sanitizeName(getKey(body, 'title'))
+                    let year = getKey(body, 'end')
 
-              let layout = getKey(body, 'layout')
+                    return `${year}-${name}`
 
-              switch (layout) {
-                case 'graduation':
-                  title = sanitizeName(getKey(body, 'title'))
-                  let year = getKey(body, 'end')
+                  case 'job':
+                    title = sanitizeName(getKey(body, 'company_name'))
+                    let [month, year] = getKey(body, 'start_date').split('/')
 
-                  filename = `${year}-${name}`
-                  break;
+                    return `${year}-${month}-${title}`
 
-                case 'job':
-                  title = sanitizeName(getKey(body, 'company_name'))
-                  let [month, year] = getKey(body, 'start_date').split('/')
+                  case 'post':
+                    title = sanitizeName(getKey(body, 'title'))
 
-                  filename = `${year}-${month}-${title}`
-                  break;
+                    return `${date}-${title}`
 
-                case 'post':
-                  title = sanitizeName(getKey(body, 'title'))
+                  case 'project':
+                    title = sanitizeName(getKey(body, 'repo'))
 
-                  filename = `${date}-${title}`
-                  break;
+                    return `${date}-${name}`
 
-                case 'project':
-                  title = sanitizeName(getKey(body, 'repo'))
+                  case 'skill':
+                    title = sanitizeName(getKey(body, 'name'))
 
-                  filename = `${date}-${name}`
-                  break;
+                    return `${name}`
 
-                case 'skill':
-                  title = sanitizeName(getKey(body, 'name'))
-
-                  filename = `${name}`
-                  break;
+                  default:
+                    return ''
+                }
               }
 
-              fs.writeFileSync( `_${layout}s/${filename}.md`, body )
+              let layout = getKey(body, 'layout')
+              fs.writeFileSync( `_${layout}s/${getFileName(body, layout)}.md`, body )
             }
 
       - name: Commit file
