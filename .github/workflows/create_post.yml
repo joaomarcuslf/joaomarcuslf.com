@@ -20,6 +20,13 @@ jobs:
 
               const date = created_at.split("T")[0]
 
+              const title = body.split("\r\n").reduce(function (acc, elm) {
+                if (elm.includes('title: ')) {
+                  return elm.replace('title: ', '').split('"').join('')
+                }
+                return acc;
+              }, "")
+
               const name = title.replace(/[^\w\s]/gi, '').toLowerCase().split(" ").join("-")
 
               fs.writeFileSync( `_posts/${date}-${name}`, body )
