@@ -4,7 +4,6 @@ title: "Teaser - Front-end in TDC - The Developer’s Conference"
 img: /images/posts/tdc-teaser.webp
 alt: Os 2 cenários problemáticos mais comuns no desenvolvimento de softwares. Será que você já passou por algum deles?
 link: https://joaomarcuslf.medium.com/os-2-cen%C3%A1rios-problem%C3%A1ticos-mais-comuns-no-desenvolvimento-de-softwares-2040a5bcf3b2
-short_url: http://go-go-url-go.com/MdYqNp8p
 lang: pt
 tags:
   - Front-end

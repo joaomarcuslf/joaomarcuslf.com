@@ -7,9 +7,6 @@ alt: Image with a Laptop and a Notebook
 link: /posts/2021-09-27-ideias-para-seu-portfolio
 internal: true
 draft: false
-redirect_from:
-  - /s/ideias-portfolio-dev
-short_url: http://go-go-url-go.com/SGdLWGDU
 lang: pt
 tags:
   - Beginner
