@@ -12,4 +12,14 @@ jobs:
         with:
           script: |
             console.log(context.issue);
-            console.log(context);
+            const { author_association, body } = context.payload.comment
+  create_file:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.comment.author_association == 'OWNER' }}
+    steps:
+      - name: Teste
+        uses: "finnp/create-file-action@master"
+        env:
+          FILE_NAME: "_posts/fileName.md"
+          FILE_DATA: context.comment.body
+
