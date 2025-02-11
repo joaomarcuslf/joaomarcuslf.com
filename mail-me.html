@@ -1,0 +1,22 @@
+---
+layout: email
+---
+
+{%
+  include introduction.html
+    theme="link"
+    title="E-mail me page"
+    subtitle="This page will open an popup for my e-mail."
+%}
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      If this didn't work, send e-mail to: <strong>{{site.email}}</strong>
+    </p>
+  </div>
+</footer>
+
+<script>
+    window.location.href = "mailto:{{site.email}}?subject=Hi, saw your profile at your site"
+</script>
