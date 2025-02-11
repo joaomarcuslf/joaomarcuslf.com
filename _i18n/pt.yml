@@ -5,7 +5,7 @@ global:
   navigation:
     home: Principal
     posts: Posts
-    projects: Projectos
+    projects: Projetos
     mentorship: Mentoria
     about_me: Sobre mim
 

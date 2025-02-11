@@ -8,6 +8,9 @@ global:
     projects: Projects
     mentorship: Mentorship
     about_me: About Me
+  languages:
+    portuguese: Portuguese
+    english: English
 
 index:
   title: Hi, I'm João&nbsp;Marcus&nbsp;Fernandes
@@ -41,8 +44,6 @@ mentorship:
   subtitle: Hey you! I'm glad you are here with me.<br /> I work since 2015, and since them, I've worked with many people, and a bunch of them thought great thing to me, and now it's my time to give it back to the community.
   languages:
     title: Spoken languages
-    portuguese: Portuguese
-    english: English
   techs:
     title: Techs I can teach
   stacks:
