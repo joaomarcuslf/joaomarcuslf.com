@@ -5,9 +5,8 @@ import Markdown from "markdown-to-jsx";
 import matter from "gray-matter";
 import Image from "next/image";
 import Link from "next/link";
-import Head from "next/head";
 
-import site from "@/site"
+import site from "@/site";
 import PostView from "@/components/view/post";
 import Hljs from "@/components/hljs";
 import { PostMetadata, postMetadataSerializer } from "@/types/post";
@@ -25,10 +24,9 @@ const postsMetadata = getContentMetadataList<PostMetadata>(
 
 export async function generateStaticParams() {
   return postsMetadata.map((post) => ({
-    slug: post.key
+    slug: post.key,
   }));
 }
-
 
 export const generateMetadata = async ({
   params,
@@ -42,8 +40,26 @@ export const generateMetadata = async ({
   );
 
   return {
-    title: `${post?.title} | ${site.name}`,
-    description: post?.subtitle,
+    title: `${post.title} | ${site.name}`,
+    description: post.subtitle,
+    openGraph: {
+      title: `${post.title} | ${site.name}`,
+      description: post.subtitle,
+      url: `${site.url}/posts/${params.slug}`,
+      type: "article",
+      images: [
+        {
+          url: post.img,
+          alt: post.alt,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} | ${site.name}`,
+      description: post.subtitle,
+      image: post.img,
+    },
   };
 };
 
@@ -61,14 +77,6 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      <Head>
-        <title>
-          {post.title} | {site.name}
-        </title>
-
-        <meta property="og:title" content={`${post.title} | ${site.name}`} />
-      </Head>
-
       <div className="post">
         <div className="post-header">
           <h1 className="title has-text-left">{post?.title}</h1>
@@ -129,4 +137,3 @@ export default function PostPage({ params }: { params: { slug: string } }) {
     </>
   );
 }
-
