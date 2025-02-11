@@ -112,23 +112,23 @@ O Fetch possui uma estrutura muito padrãozinha, o que para mim é uma grande va
 
 <pre class="is-hljs">
   <code class="javascript">
-    fetch(
-      'http://localhost:3000/users',
-      {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        }
+  fetch(
+    'http://localhost:3000/users',
+    {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
       }
-    )
-      .then(response => {
-        if (response.status >= 300)
-          throw new Error(response.statusText);
+    }
+  )
+    .then(response => {
+      if (response.status >= 300)
+        throw new Error(response.statusText);
 
-        return response.json();
-      })
-      .then(data => console.log(data))
-      .catch(error => console.error(error));
+      return response.json();
+    })
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
   </code>
 </pre>
 
@@ -323,7 +323,7 @@ Vejo você no próximo!! Byeeee~
 
 <div class="has-text-centered">
   <img
-    width="390"
+    width="200"
     src="/assets/includes/octo-dancing.gif"
     alt="Image from the post"
   />

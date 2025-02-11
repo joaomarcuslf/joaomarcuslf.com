@@ -128,7 +128,7 @@ Vejo você no próximo!! Byeeee~
 
 <div class="has-text-centered">
   <img
-    width="390"
+    width="200"
     src="/assets/includes/octo-dancing.gif"
     alt="Image from the post"
   />

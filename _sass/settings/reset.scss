@@ -16,3 +16,24 @@
 pre.is-hljs {
   background-color: unset;
 }
+
+.content {
+  p:not(:last-child),
+  dl:not(:last-child),
+  ol:not(:last-child),
+  ul:not(:last-child),
+  blockquote:not(:last-child),
+  pre:not(:last-child),
+  table:not(:last-child) {
+    margin-bottom: .5em !important;
+
+    &.is-hljs {
+      padding: 0 !important;
+      margin: -25px 0 -5px !important;
+
+      code.hljs {
+        padding: 0em;
+      }
+    }
+  }
+}

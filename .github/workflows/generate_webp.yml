@@ -20,7 +20,6 @@ jobs:
         run: |
           sudo apt-get install imagemagick graphicsmagick libpng-dev
           npm install
-          npm install
           npm run webp
 
       - name: Commit Images 🚀
