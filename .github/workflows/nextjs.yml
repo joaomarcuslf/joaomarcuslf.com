@@ -25,6 +25,22 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  generate_webp:
+    name: calibreapp/image-actions
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+
+      - name: Generate Webp 🖼️
+        run: |
+          python scripts/create_webp.py
+          python scripts/create_thumbnails.py
+
+      - name: Commit Images 🚀
+        uses: EndBug/add-and-commit@v7
+        with:
+          message: "Auto Generated webp"
   # Build job
   build:
     runs-on: ubuntu-latest

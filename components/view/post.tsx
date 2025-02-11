@@ -20,7 +20,7 @@ export default function PostView({ post }: { post: PostMetadata }) {
     <WrapperComponent>
       <Image
         className="images-section-image"
-        src={post?.img?.replace("/images", "/images/thumbnails/small")}
+        src={post?.img?.replace("/images", "/images/thumbnails")}
         alt={post.alt}
         width="466"
         height="240"
