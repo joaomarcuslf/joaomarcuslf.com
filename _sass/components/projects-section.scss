@@ -8,8 +8,8 @@
 
 @import "../generics/vertical-center-container";
 @import "../generics/horizontal-center-container";
-
 .projects-section {
+
   .hero-body > * {
     padding: .5rem 0;
 
@@ -111,7 +111,8 @@
         .media-content {
           display: flex;
           flex-direction: column;
-          height: 100%;
+          height: max-content;
+          overflow-y: hidden;
 
           .content {
             height: 100%;

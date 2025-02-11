@@ -8,7 +8,7 @@
       <div class="events">
         {% for job in site.jobs %}
         <button id="{{job.key}}" type="button" class="event" onclick="showDescription('{{job.key}}')">
-          <img class="timeline-company-image" src="/images/companies/{{job.company_img}}" alt="{{job.name}}" />
+          <img class="timeline-company-image" src="/images/companies/{{job.company_img}}" alt="{{job.name}}" width="100%" height="auto" />
 
           <div class="description-hidden" aria-hidden="true">
             <div class="card">
