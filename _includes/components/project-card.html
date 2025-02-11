@@ -23,9 +23,9 @@
           title="View on GitHub"
           >GitHub</a
         >
-        {{if include.extra | size > 0}}
+        {% if include.extra.size > 0 %}
         <small>#{{include.extra}}</small>
-        {{/if}}
+        {% endif %}
       </p>
       <a
         target="blank"
