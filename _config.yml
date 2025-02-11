@@ -14,8 +14,6 @@ codewars: https://www.codewars.com/users/joaomarcuslf/following
 sourcerer: https://sourcerer.io/joaomarcuslf2
 twitter: https://twitter.com/joaomarcuslf
 
-
-
 collections:
   posts:
     output: true
@@ -27,6 +25,12 @@ collections:
     output: false
     permalink: /:collection/:name
   jobs:
+    output: false
+    permalink: /:collection/:name
+  graduations:
+    output: false
+    permalink: /:collection/:name
+  qualifications:
     output: false
     permalink: /:collection/:name
 
@@ -60,3 +64,33 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+
+resume:
+  name: João Marcus de Lemos Fernandes
+  age: 24
+  email: jmarcusfernandes@gmail.com
+  mobile: (21) 98843-2606
+  site: http://joaomarcuslf.com/
+  pt:
+    from: Rio de Janeiro, Brasil
+  en:
+    from: Rio de Janeiro, Brazil
+  skype: joao_marcus_l
+  github: https://github.com/joaomarcuslf2
+  linkedin: linkedin.com/in/joaomarcuslf
+  skills:
+    front:
+      - Javascript
+      - React.js
+      - Vue.js
+      - SCSS
+    back:
+      - Node.js
+      - Ruby on Rails
+      - Django
+      - PostgreSQL
+    data:
+      - Python
+      - R
+      - Pandas
+      - SQL
