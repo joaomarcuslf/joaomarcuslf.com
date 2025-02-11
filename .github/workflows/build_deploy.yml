@@ -31,7 +31,6 @@ jobs:
           message: "Auto Generated webp"
 
   add_short_url:
-    name: calibreapp/image-actions
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
