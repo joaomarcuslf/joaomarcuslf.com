@@ -6,7 +6,7 @@ img: /assets/images/posts/dicas-para-seu-primeiro-emprego.webp
 alt: Image with a Laptop and a Notebook
 link: /posts/2021-10-04-dicas-para-seu-primeiro-emprego
 internal: true
-draft: false
+draft: true
 redirect_from:
   - /s/dicas-1-job
 tags:
