@@ -1,8 +1,17 @@
 const compress_images = require('compress-images');
 const fs = require('fs');
 
+console.log("OPTMIZE_IMAGE: Starting process");
+
+fs.mkdirSync("tmp")
+
+console.log("OPTMIZE_IMAGE: Created tmp");
 
 fs.renameSync("images", "tmp/images", {recursive: true});
+
+console.log("OPTMIZE_IMAGE: Moved images to tmp");
+
+console.log("OPTMIZE_IMAGE: Starting compress");
 
 compress_images(
   "tmp/images/**/*",
