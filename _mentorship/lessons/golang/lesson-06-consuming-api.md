@@ -1,6 +1,6 @@
 ---
 layout: mentorship
-title: Golang 06 - Consumingo API
+title: Golang 06 - Consumindo API
 subtitle: Adicionando nosso Front-end, e consumingo a API.
 type: lesson
 ---
