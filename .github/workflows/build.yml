@@ -27,6 +27,7 @@ jobs:
 
       - name: Optimize CSS 🪚
         run: |
+          chmod -R 777 _site
           npm run purgeCss
 
       - name: Deploy 🚀
