@@ -139,5 +139,4 @@ export default series(
   move('./dist/images/**/*', 'assets/images'),
   move('./dist/js/**/*', 'assets/js'),
   addTags,
-  shortUrl,
 )

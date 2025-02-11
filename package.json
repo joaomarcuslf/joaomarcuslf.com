@@ -3,7 +3,8 @@
     "build": "gulp",
     "webp": "gulp buildWebp",
     "purgeCss": "gulp purgecss",
-    "add-preload-files": "node run/add-preload-files"
+    "add-preload-files": "node run/add-preload-files",
+    "generate-url-shortener": "node run/generate-url-shortener"
   },
   "dependencies": {
     "@babel/core": "^7.15.5",
