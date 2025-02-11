@@ -7,14 +7,13 @@ link: https://joaomarcuslf.medium.com/data-structure-101-part-02-d26cb18defa6
 short_url: http://go-go-url-go.com/gTux2yDt
 lang: en
 tags:
-  en:
-    - Advanced
-    - Data Structures
-    - Computer Science
-    - Software Development
-    - Data Structures
-    - Software Engineering
-    - Algorithms
-    - Programming
-    - English
+  - Advanced
+  - Data Structures
+  - Computer Science
+  - Software Development
+  - Data Structures
+  - Software Engineering
+  - Algorithms
+  - Programming
+  - English
 ---
