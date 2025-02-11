@@ -35,7 +35,7 @@ function ExpandedSkills({ skills }: { skills: SkillMetadata[] }) {
         element.scrollIntoView({ behavior: "smooth" });
       }
     }, 200);
-  }, []);
+  }, [domain, searchSkill, skill]);
 
   const selectSkill = useCallback(
     (searchSkill: string | null) => {
