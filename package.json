@@ -1,7 +1,7 @@
 {
   "scripts": {
     "build": "gulp",
-    "webp": "gulp webp",
+    "webp": "gulp buildWebp",
     "add-preload-files": "node run/add-preload-files"
   },
   "dependencies": {

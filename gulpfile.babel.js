@@ -73,6 +73,11 @@ export const move = (path, target) => function _move() {
     .pipe(gulp.dest(target))
 }
 
+export const buildWebp = series(
+  webp,
+  move('./dist/images/**/*.webp', 'images'),
+)
+
 export default series(
   parallel(
     webp,
