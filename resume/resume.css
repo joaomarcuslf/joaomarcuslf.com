@@ -127,10 +127,6 @@ section {
   font-size: 12px;
 }
 
-.indent-5 {
-  text-indent: 25px;
-}
-
 .chip.is-soft {
   background: #5a758c;
   padding: 10px 15px;
@@ -154,14 +150,19 @@ section {
 }
 
 @page {
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin: 5px 30px;
 }
 
 @media print {
+  body {
+    overflow: visible
+  }
+
   .experience-section {
     page-break-before: always;
+  }
+
+  .short-description {
+    max-width: 92%;
   }
 }

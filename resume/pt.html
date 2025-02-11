@@ -27,13 +27,13 @@ title: "Currículo"
     Descrição Pessoal:
   </h2>
 
-  <p class="description-line">
+  <p class="description-line indent-5">
     Sou desenvolvedor de software com foco em sistemas Web, trabalho com web desde 2014 quando comecei a fazer pequenos trabalhos com sites, e portais digitais, após isso fui me aprofundando em desenvolvimento seguindo uma trilha Full-stack, tendo experiência com o uso de Ruby e Node.js no back-end, e para o front-end já trabalhei com React/React Native, AngularJS(1.x), Angular 4 e Vue.js. Também possuo experiência em desenvovler api e geração de relatórios de gráficos com Python e R para as áreas BI e Data Science. <br />
   </p>
-  <p class="description-line">
+  <p class="description-line indent-5">
     Tenho também experiência em utilizar Linux e MacOS como sistemas operacionais, Git para versionamento e já trabalhei com as metodologias ágeis: Scrum, Kanban, e XP. <br />
   </p>
-  <p class="description-line">
+  <p class="description-line indent-5">
     Sou empenhado em aprender, e gosto de me manter sempre atualizado com as melhores práticas, e com tecnologias futuras.
   </p>
 </section>
@@ -130,7 +130,7 @@ title: "Currículo"
 
             <br />
 
-            <p class="pl-1 indent-5">
+            <p class="short-description pl-05 indent-5">
               {% if job.short_description %}
               {{ job.short_description.pt }}
               {% else %}
@@ -140,7 +140,7 @@ title: "Currículo"
 
             <br />
 
-            <small class="pl-1">
+            <small class="pl-05">
               <strong>De:</strong> {{ job.start_date }} -
               <strong>Até:</strong>
               {% if job.end_date != '~' %}

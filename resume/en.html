@@ -27,13 +27,13 @@ title: "Resume"
     Personal Description:
   </h2>
 
-  <p class="description-line">
+  <p class="description-line indent-5">
     I am a software developer with a focus on Web systems, I have been working with the web since 2014 when I started doing small jobs with websites, and digital portals, after that I went deeper into development following a Full-stack trail, having experience using Ruby and Node.js on the back-end, and for the front-end I've worked with React / React Native, AngularJS (1.x), Angular 4 and Vue.js. I also have experience in developing api and generating graph reports with Python and R for BI and Data Science areas. <br />
   </p>
-  <p class="description-line">
+  <p class="description-line indent-5">
     I also have experience in using Linux and MacOS as operating systems, Git for versioning and have worked with agile methodologies: Scrum, Kanban, and XP. <br />
   </p>
-  <p class="description-line">
+  <p class="description-line indent-5">
     I am committed to learning, and I like to keep myself updated with the best practices, and with future technologies.
   </p>
 </section>
@@ -124,13 +124,13 @@ title: "Resume"
         {% for job in sorted %}
           <td class="job-column column ph-5 is-half">
             <h4>
-              {{job.name_en}} <br />
+              {{job.name}} <br />
               <a class="pl-1" href="{{job.company_ref}}">{{job.company_name}}</a>
             </h4>
 
             <br />
 
-            <p class="pl-1 indent-5">
+            <p class="short-description pl-05 indent-5">
               {% if job.short_description %}
               {{ job.short_description.en }}
               {% else %}
@@ -140,7 +140,7 @@ title: "Resume"
 
             <br />
 
-            <small class="pl-1">
+            <small class="pl-05">
               <strong>From:</strong> {{ job.start_date }} -
               <strong>To:</strong>
               {% if job.end_date != '~' %}
