@@ -75,7 +75,12 @@ files = {
     },
     'Algorithms': {
         'progress': 80,
-        'categories': []
+        'categories': [
+            'Sort/Search Algorithms',
+            'Clean Code',
+            'Functional Programming',
+            'Object Oriented Programming'
+        ]
     },
     'Software Engineer': {
         'progress': 68,
@@ -102,7 +107,10 @@ files = {
     'Math': {
         'progress': 65,
         'categories': [
+            'Discrete Math',
             'Statistics',
+            'Linear Algebra',
+            'Calculus',
         ]
     },
 }
