@@ -79,18 +79,92 @@ resume:
   github: https://github.com/joaomarcuslf2
   linkedin: linkedin.com/in/joaomarcuslf
   skills:
-    front:
-      - Javascript
-      - React.js
-      - Vue.js
-      - SCSS
-    back:
-      - Node.js
-      - Ruby on Rails
-      - Django
-      - PostgreSQL
-    data:
-      - Python
-      - R
-      - Pandas
-      - SQL
+    hard:
+      pt:
+        - Javascript
+        - 'React.js'
+        - 'Vue.js'
+        - 'Node.js'
+        - 'ExpressJS'
+        - 'Mocha + Chai.js'
+        - Jest
+        - SCSS
+        - SQL
+        - PostgreSQL
+        - MongoDB
+        - Ruby
+        - 'Ruby on Rails'
+        - Python
+        - Django
+        - Flask
+        - Pandas
+        - R
+        - Git
+        - Agile
+        - Webpack
+        - Docker
+        - Linux
+        - Rest
+        - AWS
+        - Clean Code
+        - Estatística
+        - Matemática Discreta
+        - Visualização de dados
+      en:
+        - Javascript
+        - 'React.js'
+        - 'Vue.js'
+        - 'Node.js'
+        - 'ExpressJS'
+        - 'Mocha + Chai.js'
+        - Jest
+        - SCSS
+        - SQL
+        - PostgreSQL
+        - MongoDB
+        - Ruby
+        - 'Ruby on Rails'
+        - Python
+        - Django
+        - Flask
+        - Pandas
+        - R
+        - Git
+        - Agile
+        - Webpack
+        - Docker
+        - Linux
+        - Rest
+        - AWS
+        - Clean Code
+        - Statistics
+        - Math
+        - Data Visualization
+
+    soft:
+      pt:
+        - Resolução de Conflitos
+        - Trabalho em Equipe
+        - Mentoria
+        - Autodidata
+        - Troca de Feedback
+        - Comunicação não violenta
+        - Ownership
+        - Proativo
+        - Pensamento Crítico
+        - Storytelling
+        - Detalhista
+        - Visão de Negócio
+      en:
+        - Conflict resolution
+        - Team work
+        - Mentoring
+        - Self-taught
+        - Feedback exchange
+        - Non-violent communication
+        - Ownership
+        - Proactive
+        - Critical Thinking
+        - Storytelling
+        - Detail
+        - Business Acumen

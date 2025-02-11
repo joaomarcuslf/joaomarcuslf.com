@@ -48,7 +48,7 @@ title: "Resume"
   {% for graduation in sorted %}
   <p class="capitalized pl-2">
     <strong>{{ graduation.title_en }}</strong>.
-    {% if graduation.institution %}<span class="undelined">{{ graduation.institution }}</span>, {% endif %} ended at {{ graduation.end }}
+    {% if graduation.institution %}<span class="underlined">{{ graduation.institution }}</span>, {% endif %} ended at {{ graduation.end }}
   </p>
   {% endfor %}
 </section>
@@ -60,73 +60,98 @@ title: "Resume"
 
   {% assign sorted = site.qualifications | reverse %}
 
+  <div class="columns pl-5">
   {% for qualification in sorted %}
-  <p class="capitalized pl-2">
-    <strong>{{ qualification.title_en }}</strong>.
-    {% if qualification.institution %}<span class="undelined">{{ qualification.institution }}</span>, {% endif %} ended at {{ qualification.end }}
-  </p>
+    <div class="column">
+      <p class="capitalized pl-2 card">
+        <strong>{{ qualification.title_en }}</strong>. <br />
+        {% if qualification.institution %}
+          <span class="underlined small pl-2">{{ qualification.institution }}</span><br />
+        {% endif %}
+        <span class="underlined small pl-2">Ended at {{ qualification.end }}</span>
+
+      </p>
+    </div>
   {% endfor %}
+  </div>
 </section>
 
 <section>
   <h2 class="underlined">
-    Main skills:
+    Hard Skills:
   </h2>
 
   <div class="columns pl-5">
-    <div class="column is-half">
-      <h4>Front-end:</h4>
-      {% for skill in site.resume.skills.front %}
-      <p class="capitalized pl-1">
-        - <strong>{{ skill }}</strong>
-      </p>
-      {% endfor %}
-    </div>
-
-    <div class="column is-half">
-      <h4>Back-end:</h4>
-      {% for skill in site.resume.skills.back %}
-      <p class="capitalized pl-1">
-        - <strong>{{ skill }}</strong>
+    <div class="column is-fullwidth is-row">
+      {% for skill in site.resume.skills.hard.en %}
+      <p class="capitalized pl-1 chip is-hard">
+        <strong>{{ skill }}</strong>
       </p>
       {% endfor %}
     </div>
   </div>
 
   <br />
-
-  <a class="flex-right" href="{{site.url}}/skill-tree/">
-    See more here...
-  </a>
 </section>
 
 <section>
   <h2 class="underlined">
-    Work experience:
+    Soft Skills:
   </h2>
 
   <div class="columns pl-5">
-    {% assign sorted = site.jobs | reverse %}
-
-    {% for job in sorted %}
-    <div class="job-column column ph-5 is-half">
-      <h4>{{job.name}} @ <a href="{{job.company_ref}}">{{job.company_name}}</a></h4>
-
-      <p class="pl-1">
-        {% if job.short_description %}
-        {{ job.short_description.en }}
-        {% else %}
-        {{ job.description }}
-        {% endif %}
+    <div class="column is-fullwidth is-row">
+      {% for skill in site.resume.skills.soft.en %}
+      <p class="capitalized pl-1 chip is-soft">
+        <strong>{{ skill }}</strong>
       </p>
-
-      <br />
-
-      <small class="pl-1">
-        <strong>From:</strong> {{ job.start_date }} -
-        <strong>To:</strong> {{ job.end_date }}
-      </small>
+      {% endfor %}
     </div>
-    {% endfor %}
+  </div>
+
+  <br />
+</section>
+
+<section class="experience-section">
+  <h2 class="underlined">
+    Work experience:
+  </h2>
+
+  <div>
+    {% assign sorted = site.jobs | reverse %}
+    <table>
+      <tr class="columns pl-5">
+        {% for job in sorted %}
+          <td class="job-column column ph-5 is-half">
+            <h4>
+              {{job.name_en}} <br />
+              <a class="pl-1" href="{{job.company_ref}}">{{job.company_name}}</a>
+            </h4>
+
+            <br />
+
+            <p class="pl-1 indent-5">
+              {% if job.short_description %}
+              {{ job.short_description.en }}
+              {% else %}
+              {{ job.description }}
+              {% endif %}
+            </p>
+
+            <br />
+
+            <small class="pl-1">
+              <strong>From:</strong> {{ job.start_date }} -
+              <strong>To:</strong>
+              {% if job.end_date != '~' %}
+              {{ job.end_date }}
+              {% else %}
+              Present
+              {% endif %}
+              </small>
+          </td>
+        {% endfor %}
+      </tr>
+    </table>
   </div>
 </section>
