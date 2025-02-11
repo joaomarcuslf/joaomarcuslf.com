@@ -1,11 +1,17 @@
-import gulp, { series, parallel } from 'gulp';
+import gulp, {
+  series,
+  parallel
+} from 'gulp';
 import gulpImagemin from 'gulp-imagemin';
 import gulpWebp from 'gulp-webp';
 import gulpUglify from 'gulp-uglify';
+import gulpImageResize from 'gulp-image-resize';
 
 import del from 'del';
 
-import {exec} from 'child_process';
+import {
+  exec
+} from 'child_process';
 
 const IMAGES_PATH = "./assets/images"
 const JAVASCRIPT_PATH = "./assets/js"
@@ -17,7 +23,9 @@ export const clean = () => {
 
 export const webp = () => {
   return gulp.src(`${IMAGES_PATH}/**/*.{png,jpg,jpeg}`)
-    .pipe(gulpWebp({quality: 90}))
+    .pipe(gulpWebp({
+      quality: 90
+    }))
     .pipe(gulp.dest(`${DIST_PATH}/images`));
 }
 
@@ -47,6 +55,26 @@ export const images = () => {
     .pipe(gulp.dest(`${DIST_PATH}/images`))
 }
 
+export const thumbnails = parallel(
+  function smallThumb() {
+    return (gulp.src(`${IMAGES_PATH}/posts/**/*.webp`)
+      .pipe(gulpImageResize({
+        width: 538,
+        cover: true
+      }))
+      .pipe(gulp.dest('assets/images/thumbnails/small/posts')))
+  },
+
+  function mediumThumb() {
+    return (gulp.src(`${IMAGES_PATH}/posts/**/*.webp`)
+      .pipe(gulpImageResize({
+        width: 1076,
+        cover: true
+      }))
+      .pipe(gulp.dest('assets/images/thumbnails/medium/posts')))
+  },
+)
+
 export const js = () => {
   return gulp.src(`${JAVASCRIPT_PATH}/**/*`)
     .pipe(gulpUglify())
@@ -68,6 +96,7 @@ export const move = (path, target) => function _move() {
 
 export const buildWebp = series(
   webp,
+  thumbnails,
   move('./dist/images/**/*.webp', 'assets/images'),
 )
 
@@ -78,8 +107,8 @@ export default series(
     images,
     js,
   ),
+  thumbnails,
   move('./dist/images/**/*', 'assets/images'),
   move('./dist/js/**/*', 'assets/js'),
-  move('./dist/css/**/*', 'assets/css'),
   addTags,
 )

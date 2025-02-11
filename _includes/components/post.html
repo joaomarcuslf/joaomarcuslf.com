@@ -12,7 +12,7 @@
 {% endif %}
     <img
         class="images-section-image"
-        src="{{include.img}}"
+        src="{{include.img | replace: "/assets/images", "/assets/images/thumbnails/small"}}"
         alt="{{include.alt}}"
         width="100%" height="auto"
     >

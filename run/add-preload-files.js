@@ -33,7 +33,7 @@ walk(
       '_includes/preload.html',
       resultsToMap.map(filePath => {
         const filename = filePath.split("images/")[1]
-        return `<link rel="prefetch" as="image"  href="images/${filename}">`
+        return `<link rel="prefetch" as="image"  href="/assets/images/${filename}">`
       }).join("\n"),
       function (err) {
         if (err) return console.log(err);
@@ -44,7 +44,7 @@ walk(
       '_sass/settings/preload.scss',
       resultsToMap.map((filePath, index) => {
         const filename = filePath.split("images/")[1]
-        return `#preload-${index} { background: url(images/${filename}); display: none; }`
+        return `#preload-${index} { background: url("/assets/images/${filename}"); display: none; }`
       }).join("\n"),
       function (err) {
         if (err) return console.log(err);
