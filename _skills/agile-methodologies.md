@@ -1,5 +1,9 @@
 ---
 layout: skill
-name: Agile Methodologies
+name: "Agile Methodologies"
 progress: 65
+categories:
+  - Scrum
+  - XP
+  - Kanban
 ---

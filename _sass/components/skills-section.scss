@@ -10,6 +10,11 @@
 @import "../generics/horizontal-center-container";
 
 .skills-section {
+
+  .skill-tree {
+    padding: 3rem 0 0 0;
+  }
+
   .hero-body > * {
     padding: .5rem 0;
 
@@ -49,6 +54,44 @@
 
     @include for-tablet-landscape-and-down {
       flex-direction: row;
+    }
+
+    &.skill-tree-element {
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 2rem 0;
+
+
+      @include is-odd {
+        background-color: $dark-gray;
+      }
+
+      .skills-tree-categories {
+        opacity: .7;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        @include for-tablet-landscape-and-down {
+          flex-wrap: wrap;
+        }
+
+        .is-mini {
+          padding: 0 1rem !important;
+        }
+
+        .card-content {
+          padding: 1rem;
+        }
+
+        .skills-section-title {
+          font-size: 1rem;
+        }
+      }
     }
 
     .skills-section-item {

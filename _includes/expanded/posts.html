@@ -4,21 +4,13 @@
 
     <div class="images-section-group">
       {% for post in site.posts %}
-      <a
-          class="images-section-item"
-          href="{{post.link}}"
-          target="blank"
-      >
-          <img
-              class="images-section-image"
-              src="{{post.img}}"
-              alt="{{post.alt}}"
-          >
-
-          <h2 class="images-section-subtitle">
-              {{post.title}}
-          </h2>
-      </a>
+      {%
+        include components/post.html
+          link=post.link
+          img=post.img
+          alt=post.alt
+          title=post.title
+      %}
       {% endfor %}
     </div>
   </div>

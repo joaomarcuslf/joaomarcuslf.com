@@ -1,17 +1,90 @@
 
 files = {
-    'JavaScript': 90,
-    'CSS': 80,
-    'HTML': 75,
-    'Ruby': 71,
-    'Git': 75,
-    'MongoDB': 55,
-    'PostgreSQL': 55,
-    'Team Work': 78,
-    'Conflict Resolution': 70,
-    'Agile Methodologies': 65,
-    'Algorithms': 70,
-    'Software Engineer': 68
+    'JavaScript': {
+        'progress': 90,
+        'categories': [
+            'NodeJS',
+            'React',
+            'React Native',
+            'VueJS',
+            'Express',
+            'Jest',
+            'Mocha'
+        ]
+    },
+    'CSS': {
+        'progress': 80,
+        'categories': [
+            'SCSS',
+            'Less',
+            'OOCSS',
+            'BEM',
+            'ITCSS'
+        ]
+    },
+    'HTML': {
+        'progress': 75,
+        'categories': [
+            'HTML5',
+            'Semantic HTML',
+            'Accessibility'
+        ]
+    },
+    'Ruby': {
+        'progress': 71,
+        'categories': [
+            'Ruby on Rails',
+            'Sinatra',
+            'Rspec'
+        ]
+    },
+    'Git': {
+        'progress': 75,
+        'categories': [
+            'Git Flow',
+            'Multi-repository',
+            'Versioning Packages'
+        ]
+    },
+    'MongoDB': {
+        'progress': 65,
+        'categories': []
+    },
+    'PostgreSQL': {
+        'progress': 55,
+        'categories': []
+    },
+    'Team Work': {
+        'progress': 78,
+        'categories': [
+            'Multi disciplinary teams',
+            'OKR and Sprint focused teams'
+        ]
+    },
+    'Conflict Resolution': {
+        'progress': 70,
+        'categories': []
+    },
+    'Agile Methodologies': {
+        'progress': 65,
+        'categories': [
+            'Scrum',
+            'XP',
+            'Kanban'
+        ]
+    },
+    'Algorithms': {
+        'progress': 75,
+        'categories': []
+    },
+    'Software Engineer': {
+        'progress': 68,
+        'categories': [
+            'Clean Code',
+            'Code Quality',
+            'TDD'
+        ]
+    },
 }
 
 for skill_name in files:
@@ -20,6 +93,12 @@ for skill_name in files:
     file = open("_skills/%s.md" % file_name, 'w')
     file.write("---\n")
     file.write("layout: skill\n")
-    file.write("name: %s\n" % skill_name)
-    file.write("progress: %s\n" % files[skill_name])
+    file.write("name: \"%s\"\n" % skill_name)
+    file.write("progress: %s\n" % files[skill_name]['progress'])
+
+    if len(files[skill_name]['categories']):
+        file.write("categories:\n")
+        for category in files[skill_name]['categories']:
+            file.write("  - %s\n" % category)
+
     file.write("---\n")

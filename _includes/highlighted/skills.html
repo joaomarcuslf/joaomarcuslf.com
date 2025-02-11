@@ -6,20 +6,12 @@
       {% assign sorted = site.skills | sort: 'progress' | reverse %}
 
       {% for skill in sorted limit:3 %}
-
-      <div class="skills-section-item card">
-        <div class="card-content">
-          <div class="media">
-            <div class="media-content">
-              <p class="skills-section-title is-4">
-                {{skill.name}}
-              </p>
-            </div>
-          </div>
-          <div class="content"><progress class="progress is-success" value="{{skill.progress}}" max="100">90%</progress></div>
-        </div>
-      </div>
-
+      {%
+        include components/skill.html
+          name=skill.name
+          progress=skill.progress
+          categories=skill.categories
+      %}
       {% endfor %}
 
     </div>

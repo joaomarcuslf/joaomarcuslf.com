@@ -1,25 +1,20 @@
 <section class="hero skills-section is-dark">
   <div class="hero-body">
     <h1 class="skills-section-title">Skills</h1>
+
+    <div class="has-text-right"><a href="/skill-tree">Expand Skills</a></div>
+
     <div class="skills-section-group">
 
       {% assign sorted = site.skills | sort: 'progress' | reverse %}
 
       {% for skill in sorted %}
-
-      <div class="skills-section-item card">
-        <div class="card-content">
-          <div class="media">
-            <div class="media-content">
-              <p class="skills-section-title is-4">
-                {{skill.name}}
-              </p>
-            </div>
-          </div>
-          <div class="content"><progress class="progress is-success" value="{{skill.progress}}" max="100">90%</progress></div>
-        </div>
-      </div>
-
+      {%
+        include components/skill.html
+          name=skill.name
+          progress=skill.progress
+          categories=skill.categories
+      %}
       {% endfor %}
 
     </div>

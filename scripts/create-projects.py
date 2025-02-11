@@ -5,7 +5,7 @@ files = {
         'repo': 'react-express-ssr',
         'user': 'joaomarcuslf2',
         'link': 'https://github.com/joaomarcuslf2/react-express-ssr',
-        'date': '2020-10-08'
+        'date': '2020-07-01'
     },
     'pbl-tcc-bucket': {
         'title': 'This is the AWS Bucket API for the PBL project',

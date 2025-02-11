@@ -1,5 +1,11 @@
 ---
 layout: skill
-name: CSS
+name: "CSS"
 progress: 80
+categories:
+  - SCSS
+  - Less
+  - OOCSS
+  - BEM
+  - ITCSS
 ---

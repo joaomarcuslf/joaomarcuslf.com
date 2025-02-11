@@ -6,19 +6,13 @@
       {% assign sorted = site.projects | sort: 'date' | reverse %}
 
       {% for project in sorted %}
-      <a
-          class="images-section-item"
-          href="{{project.link}}"
-          target="blank"
-      >
-
-          <img
-            class="images-section-image"
-            src="https://github-readme-stats.vercel.app/api/pin/?username={{project.user}}&repo={{project.repo}}&theme=prussian"
-            alt="{{project.alt}}"
-            width="250px"
-          />
-      </a>
+      {%
+        include components/project.html
+          link=project.link
+          user=project.user
+          repo=project.repo
+          alt=project.alt
+      %}
       {% endfor %}
     </div>
   </div>
