@@ -95,6 +95,14 @@ files = {
         'categories': [
             'Django',
             'Pandas',
+            'NumPy',
+            'Seaborn',
+            'Flask'
+        ]
+    },
+    'Data Science': {
+        'progress': 55,
+        'categories': [
             'Data Visualization',
             'Data Mining',
             'Exploratory Data Analysis'
