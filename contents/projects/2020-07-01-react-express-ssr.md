@@ -1,5 +1,4 @@
 ---
-layout: project
 title: SSR example using React and ExpressJS
 repo: react-express-ssr
 user: joaomarcuslf

@@ -1,7 +1,6 @@
 import { Metadata, Serializer, fileNameToKey } from "./metadata";
 
 export type JobMetadata = Metadata & {
-  layout: string;
   tags: string[];
   startDate: string;
   endDate: string;
@@ -16,7 +15,6 @@ export const jobMetadataSerializer: Serializer<JobMetadata> = (data, fileName, f
   return {
     key: fileNameToKey(fileName),
     domain: folder,
-    layout: data.layout,
     tags: data.tags,
     startDate: data.start_date,
     endDate: data.end_date,
@@ -24,6 +22,6 @@ export const jobMetadataSerializer: Serializer<JobMetadata> = (data, fileName, f
     companyImg: data.company_img,
     companyRef: data.company_ref,
     name: data.name,
-    description: data.description.replaceAll("\n", "<br/><br/>")
+    description: data?.description?.replaceAll("\n", "<br/><br/>")
   };
 };

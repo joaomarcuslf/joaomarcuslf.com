@@ -1,5 +1,4 @@
 ---
-layout: project
 title: POC using gRPC to learn
 repo: grpc-golang-example
 user: joaomarcuslf

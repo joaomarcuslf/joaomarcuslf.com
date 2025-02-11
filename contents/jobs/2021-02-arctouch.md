@@ -1,6 +1,4 @@
 ---
-layout: job
-tags: JavaScript,React,Node.js,Python,Flask,Golang
 start_date: "02/2021"
 end_date: "04/2022"
 company_name: Arctouch
@@ -16,4 +14,10 @@ Another project I worked on was related to providing HTML5 Banners following acc
 I also worked on developing a React Native Mobile App, which used Event-driven communication to integrate a web app inside.
 
 I've dealt with multiple clients from different parts of the world with different time zones and languages, which helped me improve my English speaking and problem-solving skills."
+tags:
+  - Go
+  - React.js
+  - Mentorship
+  - Cloud Computing
+  - Git
 ---

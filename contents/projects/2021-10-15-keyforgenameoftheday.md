@@ -1,5 +1,4 @@
 ---
-layout: project
 title: This is my take on Twitter bot with Go.
 repo: keyforge-name-of-the-day
 user: joaomarcuslf

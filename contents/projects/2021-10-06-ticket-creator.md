@@ -1,5 +1,4 @@
 ---
-layout: project
 title: This is a service that creates Tickets to be shared for others.
 repo: ticket-creator
 user: joaomarcuslf

@@ -38,16 +38,6 @@
         @include for-tablet-landscape-and-down {
         }
       }
-
-      .navbar-end {
-        @include for-tablet-landscape-and-down {
-          align-self: flex-end;
-          justify-content: flex-end;
-          display: flex;
-          height: 100%;
-          align-items: flex-end;
-        }
-      }
     }
 
     .navbar-item {
@@ -55,6 +45,10 @@
         @include for-tablet-landscape-and-down {
           background-color: rgba(223, 237, 248, 0.1);
         }
+      }
+
+      &.is-blog {
+        background-color: rgba($tertiary, 0.1);
       }
     }
   }

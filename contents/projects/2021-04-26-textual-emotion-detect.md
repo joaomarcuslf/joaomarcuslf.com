@@ -1,5 +1,4 @@
 ---
-layout: project
 title: POC of how to detect text emotions.
 repo: textual-emotion-detect
 user: joaomarcuslf

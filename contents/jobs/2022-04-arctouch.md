@@ -1,6 +1,4 @@
 ---
-layout: job
-tags: JavaScript,React,Node.js,Python,Flask,Golang
 start_date: "04/2022"
 end_date: "~"
 company_name: Arctouch
@@ -14,4 +12,10 @@ In addition to my technical expertise, I have taken on Tech Lead roles and contr
 Mentorship has been a significant focus of my work. Through regular one-on-one sessions and group mentorship programs, I am helping them navigate challenges and equipping them with the tools they need to succeed.
 
 I had to adapt to this role while still coding a lot, and I have been able to balance both roles. Most of the time, I worked in this role with Golang, React.js, and AWS. I have also worked closely with the DevOps team to improve our CI/CD pipelines and our code quality and security."
+tags:
+  - Go
+  - Javascript
+  - Communication
+  - Leadership
+  - MongoDB
 ---

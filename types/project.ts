@@ -1,7 +1,7 @@
 import { Metadata, Serializer, fileNameToKey } from "./metadata";
 
 export type ProjectMetadata = Metadata &{
-  layout: string;
+
   title: string;
   repo: string;
   user: string;
@@ -15,7 +15,6 @@ export const projectMetadataSerializer: Serializer<ProjectMetadata> = (data, fil
   return {
     key: fileNameToKey(fileName),
     domain: folder,
-    layout: data.layout,
     title: data.title,
     repo: data.repo,
     user: data.user,

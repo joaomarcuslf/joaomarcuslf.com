@@ -1,6 +1,4 @@
 ---
-layout: job
-tags: JavaScript,Node.js,Angular.js,jQuery
 start_date: "05/2016"
 end_date: "01/2017"
 company_name: Minds At Work Sistemas e Projetos Ltda
@@ -14,4 +12,10 @@ One that I worked on longer was a facial recognition application using AngularJS
 Another that I worked on used Java/Spring for the back, and Vanilla Javascript for the Front-end; this application displayed a Tree visualization of Machines connected to the network, so an Admin could manage them remotely.
 
 I also worked with agile Scrum practices using Kanban; I used Jenkins for Continuous integration, using Gulp.js for Front-end processes and Mercurial / HG for versioning, in multidisciplinary teams for projects in different areas."
+tags:
+  - Angular.js
+  - Spring
+  - DotNet
+  - SLQ Server
+  - Jenkins
 ---

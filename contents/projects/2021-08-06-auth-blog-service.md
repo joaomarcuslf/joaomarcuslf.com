@@ -1,5 +1,4 @@
 ---
-layout: project
 title: RestAPI, using JWT and Auth by Role
 repo: auth-blog-service
 user: joaomarcuslf

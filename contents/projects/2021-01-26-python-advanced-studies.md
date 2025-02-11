@@ -1,5 +1,4 @@
 ---
-layout: project
 title: An repository for my studies in Python.
 repo: python-advanced-studies
 user: joaomarcuslf

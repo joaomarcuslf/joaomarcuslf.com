@@ -1,5 +1,4 @@
 ---
-layout: project
 title: This is the Front-end built in VueJS for the PBL project
 repo: pbl-tcc-front
 user: joaomarcuslf

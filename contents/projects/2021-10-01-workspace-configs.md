@@ -1,5 +1,4 @@
 ---
-layout: project
 title: My default settings for most of my projects
 repo: workspace-configs
 user: joaomarcuslf

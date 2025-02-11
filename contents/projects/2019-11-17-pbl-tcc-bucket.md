@@ -1,5 +1,4 @@
 ---
-layout: project
 title: This is the AWS Bucket API for the PBL project
 repo: pbl-tcc-bucket
 user: joaomarcuslf

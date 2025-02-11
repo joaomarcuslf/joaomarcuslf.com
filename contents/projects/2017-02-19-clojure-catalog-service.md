@@ -1,5 +1,4 @@
 ---
-layout: project
 title: Example of a catalog api built in Clojure
 repo: clojure-catalog-service
 user: joaomarcuslf

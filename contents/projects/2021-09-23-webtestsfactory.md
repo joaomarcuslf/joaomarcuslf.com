@@ -1,5 +1,4 @@
 ---
-layout: project
 title: Tests Factory for most of the Web Frameworks
 repo: web-tests-factory
 user: arctouch
