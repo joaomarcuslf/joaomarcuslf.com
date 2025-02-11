@@ -1,0 +1,12 @@
+name: Create Post
+on:
+  issue_comment:
+    types: [created]
+jobs:
+  issue_reated:
+    # This job only runs for pull request comments
+    name: PR comment
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Comment on PR #${{ github.event.issue }}"
