@@ -82,27 +82,29 @@ jekyll-minifier:
   compress_js_templates: false      # Default: false
 
 exclude:
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - README.md
-  - CNAME
-  - run
-  - tmp
-  - dist
-  - _image_optim_cache.yml
   - _image_optim_archive
+  - _image_optim_cache.yml
+  - .babelrc
+  - .editorconfig
   - .github
   - .jekyll-cache
   - .sass-cache
   - .vscode
+  - CNAME
+  - dist
+  - docker-compose.yml
+  - Gemfile
+  - Gemfile.lock
   - gulpfile.babel.js
+  - LICENSE
   - node_modules
-  - package.json
   - package-lock.json
+  - package.json
+  - README.md
+  - run
+  - tmp
+  - yarn-error.log
   - yarn.lock
-  - .babelrc
-  - .editorconfig
 
 resume:
   name: João Marcus de Lemos Fernandes

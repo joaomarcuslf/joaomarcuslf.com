@@ -2,8 +2,8 @@
 layout: post
 title: Criando seu primeiro site com github pages
 subtitle: Criando sites de forma simples com Github pages
-img: /images/posts/criando-seu-primeiro-site-com-github-pages.webp
-alt: Image with Git and Github, this is a image showcase to the post.
+img: /assets/images/posts/criando-seu-primeiro-site-com-github-pages.webp
+alt: Image with a Laptop and a Notebook
 link: /posts/2021-09-21-criando-seu-primeiro-site-com-github-pages
 internal: true
 draft: false
@@ -25,13 +25,15 @@ Para uma primeira versão, eu irei utilizar uma versão simplificada <a href="ht
 ### 1. Vá na sua página inicial do Github e procure por esse botão de "Criar repositório"
 
 <img
-  src="/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-00.webp"
+  src="/assets/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-00.webp"
+  alt="Image from the post"
 />
 
 ### 2. Em seguida coloque o nome do repositório seguindo o seguinte padrão: <code>seu-nome-de-usuário</code>.github.io
 
 <img
-  src="/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-01.webp"
+  src="/assets/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-01.webp"
+  alt="Image from the post"
 />
 
 Também marque a opção de criar um arquivo README.
@@ -41,7 +43,8 @@ Quando você cria um repositório com esse nome você está criando um repositó
 ### 3. Agora com o repositório criado pegue a url dele
 
 <img
-  src="/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-02.webp"
+  src="/assets/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-02.webp"
+  alt="Image from the post"
 />
 
 Não se esqueça de clicar na aba SSH, caso esse aviso em amarelo apareça, você precisará criar uma chave, clique no link que o Github te indicará e siga o tutorial.
@@ -49,19 +52,22 @@ Não se esqueça de clicar na aba SSH, caso esse aviso em amarelo apareça, voc�
 ### 4. No VSCode digite <code>ctrl+shift+p</code> para abrir a palheta de comandos e digite <code>Git: Clone</code>
 
 <img
-  src="/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-03.webp"
+  src="/assets/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-03.webp"
+  alt="Image from the post"
 />
 
 Dê <code>enter</code> e cole a URL que você copiou no passo anterior.
 
 <img
-  src="/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-04.webp"
+  src="/assets/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-04.webp"
+  alt="Image from the post"
 />
 
 Quando o VSCode terminar de clonar seu repositório, abra-o em uma nova janela, e você deve ver algo desse gênero.
 
 <img
-  src="/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-05.webp"
+  src="/assets/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-05.webp"
+  alt="Image from the post"
 />
 
 ## Preenchendo seu site
@@ -69,7 +75,8 @@ Quando o VSCode terminar de clonar seu repositório, abra-o em uma nova janela, 
 ### 1. Crie um arquivo <code>index.html</code>, depois crie uma pasta chamada <code>assets</code> contendo esses outras pastas
 
 <img
-  src="/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-06.webp"
+  src="/assets/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-06.webp"
+  alt="Image from the post"
 />
 
 Essas pastas não são obrigatórias, porém são uma boa prática.
@@ -81,13 +88,15 @@ Caso você não tenha nada ainda nessas pastas, crie um arquivo chamado <code>.g
 ### 3. Adicione suas modificações no git (eu particularmente uso o próprio vscode para isso)
 
 <img
-  src="/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-07.webp"
+  src="/assets/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-07.webp"
+  alt="Image from the post"
 />
 
 ### 4. Chame a palheta de comandos novamente com ctrl+shift+p e digite Git: Push
 
 <img
-  src="/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-08.webp"
+  src="/assets/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-08.webp"
+  alt="Image from the post"
 />
 
 Dê enter e todas suas modificações devem agora estar no Github
@@ -95,7 +104,8 @@ Dê enter e todas suas modificações devem agora estar no Github
 ### 5. Pronto!
 
 <img
-  src="/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-09.webp"
+  src="/assets/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-09.webp"
+  alt="Image from the post"
 />
 
 Agora é só acessar no seu navegador a url que você nomeou o repositório, no meu caso: <a href="https://teste-joaomarcuslf.github.io/">https://teste-joaomarcuslf.github.io/</a>.
@@ -109,6 +119,7 @@ Vejo você no próximo!! Byeeee~
 <div class="has-text-centered">
   <img
     width="390"
-    src="/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-10.gif"
+    src="/assets/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-10.gif"
+    alt="Image from the post"
   />
 </div>

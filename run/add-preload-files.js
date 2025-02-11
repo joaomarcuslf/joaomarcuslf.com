@@ -25,7 +25,7 @@ var walk = function(dir, done) {
 };
 
 walk(
-  "./images",
+  "./assets/images",
   function(err, results) {
     let resultsToMap = results.filter(l => !l.includes("mentorship/") && !l.includes("posts/") && !l.includes(".DS_Store") && l.includes(".webp"))
 

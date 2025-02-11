@@ -1,17 +1,19 @@
 import gulp, { series, parallel } from 'gulp';
 import gulpImagemin from 'gulp-imagemin';
 import gulpWebp from 'gulp-webp';
-import gulpUglifycss from 'gulp-uglifycss';
 import gulpUglify from 'gulp-uglify';
-import gulpRun from 'gulp-run';
 
+import del from 'del';
 
 import {exec} from 'child_process';
 
-const IMAGES_PATH = "./images"
-const JAVASCRIPT_PATH = "./js"
-const CSS_PATH = "./css"
+const IMAGES_PATH = "./assets/images"
+const JAVASCRIPT_PATH = "./assets/js"
 const DIST_PATH = "dist"
+
+export const clean = () => {
+  return del([DIST_PATH]);
+}
 
 export const webp = () => {
   return gulp.src(`${IMAGES_PATH}/**/*.{png,jpg,jpeg}`)
@@ -51,15 +53,6 @@ export const js = () => {
     .pipe(gulp.dest(`${DIST_PATH}/js`));
 }
 
-export const css = () => {
-  return gulp.src(`${CSS_PATH}/**/*`)
-    .pipe(gulpUglifycss({
-      "maxLineLen": 80,
-      "uglyComments": true
-    }))
-    .pipe(gulp.dest(`${DIST_PATH}/css`));
-}
-
 export const addTags = (cb) => {
   return exec('node run/add-preload-files', function (err, stdout, stderr) {
     console.log(stdout);
@@ -75,18 +68,18 @@ export const move = (path, target) => function _move() {
 
 export const buildWebp = series(
   webp,
-  move('./dist/images/**/*.webp', 'images'),
+  move('./dist/images/**/*.webp', 'assets/images'),
 )
 
 export default series(
+  clean,
   parallel(
     webp,
     images,
     js,
-    css,
   ),
-  move('./dist/images/**/*', 'images'),
-  move('./dist/js/**/*', 'js'),
-  move('./dist/css/**/*', 'css'),
+  move('./dist/images/**/*', 'assets/images'),
+  move('./dist/js/**/*', 'assets/js'),
+  move('./dist/css/**/*', 'assets/css'),
   addTags,
 )

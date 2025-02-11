@@ -2,7 +2,7 @@
 layout: post
 title: Github mudou nome da branch principal, o que eu isso significa?
 subtitle: Github mudou nome da branch principal, o que eu isso significa?
-img: /images/posts/git-and-github.webp
+img: /assets/images/posts/git-and-github.webp
 alt: Image with Git and Github, this is a image showcase to the post.
 link: /posts/2020-10-16-mudanca-de-postura-git
 internal: true
