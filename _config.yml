@@ -40,6 +40,8 @@ baseurl: ""
 
 permalink: /:title/
 
+theme_color: #741b47
+
 version: v2.5.0
 
 kramdown:
