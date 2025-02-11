@@ -8,5 +8,8 @@ tags:
   - Beginner
   - Middle
   - Arctouch
+  - Functional Programming
+  - Algorithms
+  - Programming
   - English
 ---
