@@ -105,7 +105,7 @@ function submitCode(event, targetId, $scenario, $textarea, lines) {
   )
 }
 
-document.querySelectorAll(".has-popup-label").forEach(function (elem) {
+function addTooltip(elem) {
   var text = document.createElement("span");
   text.innerHTML = elem.id;
   text.classList.add("tooltip");
@@ -119,6 +119,10 @@ document.querySelectorAll(".has-popup-label").forEach(function (elem) {
   elem.addEventListener("mouseout", function () {
     text.classList.remove("is-shown");
   });
+}
+
+document.querySelectorAll(".has-popup-label").forEach(function (elem) {
+  addTooltip(elem);
 });
 
 function createResetButton(parentId, target, content) {
@@ -141,6 +145,10 @@ function createResetButton(parentId, target, content) {
     var parent = document.getElementById(parentId);
 
     parent.innerHTML = content;
+
+    document.querySelectorAll("#" + parentId + " .has-popup-label").forEach(function (elem) {
+      addTooltip(elem);
+    });
 
     createResetButton(parentId, target, content);
   });
