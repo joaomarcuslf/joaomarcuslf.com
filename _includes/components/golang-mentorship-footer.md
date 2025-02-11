@@ -19,5 +19,5 @@
 - [Golang 04 - Adicionando rota geradora](/mentorship/lesson-04-generate-qr)
 
 <script>
-  document.querySelector(`[href="${location.pathname}"]`).className = "is-underlined has-text-weight-bold";
+  document.querySelector('[href="'+location.pathname+'"]').className = "is-underlined has-text-weight-bold";
 </script>
