@@ -1,16 +1,18 @@
 name: Auto feed creator
+
 on:
   issue_comment:
     types: [created]
+
 jobs:
   issue_commented:
     name: On Issue comment
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
+      - name: Checkout 🛎️
         uses: actions/checkout@v2
 
-      - name: Create file from issue payload
+      - name: Create file from issue payload 🔧
         uses: actions/github-script@v4
         with:
           script: |
@@ -72,7 +74,7 @@ jobs:
               fs.writeFileSync( `_${layout}s/${getFileName(body, layout)}.md`, body )
             }
 
-      - name: Commit file
+      - name: Commit file 🚀
         if: ${{ github.event.comment.author_association == 'OWNER'}}
         uses: EndBug/add-and-commit@v7
         with:

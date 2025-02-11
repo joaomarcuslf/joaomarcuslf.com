@@ -1,26 +1,28 @@
 name: Generate webp
+
 on:
   push:
     paths:
       - "**.jpg"
       - "**.jpeg"
       - "**.png"
+
 jobs:
-  build:
+  add_webp:
     name: calibreapp/image-actions
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
+      - name: Checkout 🛎️
         uses: actions/checkout@v2
 
-      - name: Generate WEBP files
+      - name: Generate WEBP files 🖼️
         run: |
           sudo apt-get install imagemagick graphicsmagick libpng-dev
           npm install
           npm install
           npm run webp
 
-      - name: Commit Images
+      - name: Commit Images 🚀
         uses: EndBug/add-and-commit@v7
         with:
           message: "Auto add images"
