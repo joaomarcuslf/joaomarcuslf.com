@@ -1,6 +1,6 @@
 ---
 layout: skill
 name: "Go"
-progress: 71
+progress: 81
 categories:
 ---
