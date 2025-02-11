@@ -68,6 +68,12 @@ export default function Navbar() {
         </div>
 
         <div className="navbar-end">
+          {/* <NavItem
+            href="/resume"
+            text="Resume"
+            isResume
+            isActive={activeLink?.includes("/resume")}
+          /> */}
           <NavItem
             href="/blog"
             text="Blog"

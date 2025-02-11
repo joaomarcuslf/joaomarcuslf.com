@@ -8,6 +8,7 @@ export type JobMetadata = Metadata & {
   companyImg: string;
   companyRef: string;
   name: string;
+  shortDescription: string;
 }
 
 export const jobMetadataSerializer: Serializer<JobMetadata> = (data, fileName, folder) => {
@@ -21,6 +22,7 @@ export const jobMetadataSerializer: Serializer<JobMetadata> = (data, fileName, f
     companyImg: data.company_img,
     companyRef: data.company_ref,
     name: data.name,
+    shortDescription: data.short_description,
   };
 };
 

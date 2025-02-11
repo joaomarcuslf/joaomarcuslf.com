@@ -5,6 +5,7 @@ company_name: Working Minds
 company_img: working-minds.webp
 company_ref: https://www.linkedin.com/company/working-minds/
 name: Full-stack Developer - Intermediate
+short_description: "At Working Minds, I adapted to various roles across projects, including developing a Full Stack E-commerce platform (Ruby on Rails, React.js) with an Admin portal and serving as Tech Lead for an Ionic/Angular healthcare app, managing API integrations and legacy code."
 tags:
   - Ruby on Rails
   - React.js

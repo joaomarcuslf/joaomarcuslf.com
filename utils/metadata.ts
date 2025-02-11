@@ -1,6 +1,8 @@
-import { Contentdata, Serializer } from '@/types/metadata';
 import fs from 'fs';
+
 import matter from 'gray-matter';
+
+import { Contentdata, Serializer } from '@/types/metadata';
 
 const parseContentResult = (result: matter.GrayMatterFile<string>) => {
   return result?.content?.replaceAll("class=", "className=")
@@ -11,6 +13,8 @@ export function getContentMetadataList<T>(domain: string, serializer: Serializer
   top?: boolean;
   domain?: string;
   withContent?: boolean;
+  size?: number;
+  skip?: number;
 }): T[] {
   const folder = `contents/${domain}/`;
   const files = fs.readdirSync(folder);
@@ -43,6 +47,14 @@ export function getContentMetadataList<T>(domain: string, serializer: Serializer
 
   if (options?.reverse) {
     contentData = contentData.reverse();
+  }
+
+  if (options?.size) {
+    contentData = contentData.slice(0, options.size);
+  }
+
+  if (options?.skip) {
+    contentData = contentData.slice(options.skip);
   }
 
   return contentData;

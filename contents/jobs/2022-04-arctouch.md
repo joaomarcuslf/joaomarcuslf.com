@@ -5,6 +5,7 @@ company_name: Arctouch
 company_img: arctouch.webp
 company_ref: https://www.linkedin.com/company/arctouch/
 name: Software Engineer - Staff
+short_description: "Promoted to Master Software Engineer, I took on Tech Lead responsibilities, combining coding expertise (Golang, React.js, AWS) with strategic planning and team mentorship. I collaborated with management on growth initiatives, supported the DevOps team to enhance CI/CD pipelines, and focused on improving code quality and security."
 tags:
   - Go
   - Javascript

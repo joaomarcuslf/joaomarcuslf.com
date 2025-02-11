@@ -5,6 +5,7 @@ company_name: B2W Digital
 company_img: b2w-digital.webp
 company_ref: https://www.linkedin.com/company/b2w---companhia-global-do-varejo/
 name: Full-stack Developer - Junior
+short_description: "At B2W, the largest E-commerce company in Latin America, I contributed to various stages of their white-label E-commerce platform, developing universal and responsive applications with React, React Native, Node.js, and MongoDB. I also utilized AWS services (Elastic Beanstalk, EC2, S3), Git, CI/CD pipelines (GitLab, Bamboo), and agile practices like Scrum to deliver scalable solutions."
 tags:
   - React.js
   - React Native

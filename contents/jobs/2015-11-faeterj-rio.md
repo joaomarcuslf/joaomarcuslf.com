@@ -5,6 +5,7 @@ company_name: FAETERJ-Rio
 company_img: faeterj-rio.webp
 company_ref: https://www.linkedin.com/school/faeterj-rio/
 name: Front-end Developer - Technological Research Project(PICT)
+short_description: "I developed academic applications to enhance computer science education using HTML, CSS, and JavaScript. I applied Agile practices like Kanban, daily meetings, XP, and Scrum, while using GitHub for version control and maintaining Open Source projects."
 tags:
   - HTML
   - CSS

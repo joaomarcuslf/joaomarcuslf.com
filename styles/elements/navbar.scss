@@ -53,6 +53,10 @@
       &.is-blog {
         background-color: rgba($tertiary, 0.1);
       }
+
+      &.is-resume {
+        background-color: rgba($tertiary, 0.2);
+      }
     }
   }
 }

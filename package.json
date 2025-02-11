@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "npx serve@latest out",
     "lint": "next lint",
     "prepare": "husky"
   },
@@ -16,7 +16,8 @@
     "marked": "^12.0.2",
     "next": "14.2.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-to-pdf": "^1.0.1"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -5,6 +5,7 @@ company_name: FAETERJ-Rio
 company_img: faeterj-rio.webp
 company_ref: https://www.linkedin.com/school/faeterj-rio/
 name: Social Media - Internship
+short_description: "As part of the WebCom Team, I managed FAETERJ's social media platforms (Facebook, WordPress), focusing on user engagement through marketing strategies and agile practices."
 tags:
   - Social Media
   - Marketing

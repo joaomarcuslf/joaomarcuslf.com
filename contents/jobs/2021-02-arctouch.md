@@ -5,6 +5,7 @@ company_name: Arctouch
 company_img: arctouch.webp
 company_ref: https://www.linkedin.com/company/arctouch/
 name: Software Engineer - Senior
+short_description: "At ArcTouch, I contributed to projects including a Cloud Computing Application (Golang, MongoDB, RabbitMQ, gRPC) integrating real-time asset data and a React.js Front-end, as well as tools for Data Science teams. I also worked on HTML5 Banners, React Native Mobile Apps, and multi-language applications, while collaborating with global clients across time zones, enhancing my English and problem-solving skills."
 tags:
   - Go
   - React.js

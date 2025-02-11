@@ -5,6 +5,7 @@ company_name: Minds At Work Sistemas e Projetos Ltda
 company_img: minds-at-work.webp
 company_ref: https://www.linkedin.com/company/minds-at-work-sistemas-e-projetos-ltda/
 name: Front-end Developer - Internship
+short_description: "At Minds at Work, I worked on diverse projects, including a facial recognition app (AngularJS, Kendo, C#/DotNet) and a Java/Spring-based application with Vanilla JavaScript for visualizing and managing networked machines. I utilized Jenkins for CI, Gulp.js for Front-end processes, and Mercurial for versioning, collaborating in multidisciplinary teams with agile Scrum and Kanban practices."
 tags:
   - Angular.js
   - Spring
