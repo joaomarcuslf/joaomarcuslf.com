@@ -2,11 +2,6 @@ name: Generate webp
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - "**.jpg"
-      - "**.jpeg"
-      - "**.png"
 
 jobs:
   add_webp:
