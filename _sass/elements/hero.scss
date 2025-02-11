@@ -3,22 +3,6 @@
 @import "../tools/medias-queries/all";
 
 .hero {
-  &.computer-bg {
-    min-height: 55vh;
-
-    background: url(images/background-computer.jpg) no-repeat center center;
-    background-size: cover;
-    display: flex;
-
-    .hero-body {
-      background-color: rgba($quinary, 0.7);
-
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-    }
-  }
-
   .hero-body {
     padding: 3rem;
 

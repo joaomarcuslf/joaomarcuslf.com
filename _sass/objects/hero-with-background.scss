@@ -1,0 +1,61 @@
+@import "../settings/settings";
+
+@import "../tools/medias-queries/all";
+
+.hero {
+  &.has-background {
+    min-height: 55vh;
+    display: flex;
+
+    .hero-body {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    &.bg-home {
+      background: url(images/background-home.jpg) no-repeat center center;
+      background-size: cover;
+
+      .hero-body {
+        background-color: rgba($senary, 0.7);
+      }
+    }
+
+    &.bg-about-me {
+      background: url(images/background-about-me.jpg) no-repeat center center;
+      background-size: cover;
+
+      .hero-body {
+        background-color: rgba($secondary, 0.7);
+      }
+    }
+
+    &.bg-mentorship {
+      background: url(images/background-mentorship.jpg) no-repeat center center;
+      background-size: cover;
+
+      .hero-body {
+        background-color: rgba($accent, 0.7);
+      }
+    }
+
+    &.bg-posts {
+      background: url(images/background-posts.jpg) no-repeat center center;
+      background-size: cover;
+
+      .hero-body {
+        background-color: rgba($accent, 0.7);
+      }
+    }
+
+    &.bg-projects {
+      background: url(images/background-projects.jpg) no-repeat center center;
+      background-size: cover;
+
+      .hero-body {
+        background-color: rgba($quinary, 0.7);
+      }
+    }
+  }
+}
