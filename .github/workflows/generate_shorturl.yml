@@ -6,7 +6,7 @@ on:
       - "_posts/*.md"
 
 jobs:
-  add_webp:
+  add_short_url:
     name: calibreapp/image-actions
     runs-on: ubuntu-latest
     steps:
@@ -18,7 +18,7 @@ jobs:
           npm install
           npm run generate-url-shortener
 
-      - name: Commit Images 🚀
+      - name: Commit Posts 🚀
         uses: EndBug/add-and-commit@v7
         with:
           message: "Auto add short_url"
