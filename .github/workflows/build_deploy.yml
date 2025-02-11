@@ -30,21 +30,21 @@ jobs:
         with:
           message: "Auto Generated webp"
 
-  add_short_url:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2
+  # add_short_url:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout 🛎️
+  #       uses: actions/checkout@v2
 
-      - name: Generate Shortlinks files 🖼️
-        run: |
-          npm install
-          npm run generate-url-shortener
+  #     - name: Generate Shortlinks files 🖼️
+  #       run: |
+  #         npm install
+  #         npm run generate-url-shortener
 
-      - name: Commit Posts 🚀
-        uses: EndBug/add-and-commit@v7
-        with:
-          message: "Auto add short_url"
+  #     - name: Commit Posts 🚀
+  #       uses: EndBug/add-and-commit@v7
+  #       with:
+  #         message: "Auto add short_url"
 
   build_and_deploy:
     runs-on: ubuntu-latest
