@@ -1,76 +1,32 @@
 name: Build and Deploy
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
-      - master
-  workflow_run:
-    workflows: ["Auto feed creator"]
-    types:
-      - completed
 
 jobs:
-  generate_webp:
-    name: calibreapp/image-actions
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - name: Generate Webp 🖼️
-        run: |
-          sudo apt-get install imagemagick graphicsmagick libpng-dev
-          npm install
-          npm run webp
-
-      - name: Commit Images 🚀
-        uses: EndBug/add-and-commit@v7
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          message: "Auto Generated webp"
+          node-version: '20'
 
-  # add_short_url:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout 🛎️
-  #       uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
 
-  #     - name: Generate Shortlinks files 🖼️
-  #       run: |
-  #         npm install
-  #         npm run generate-url-shortener
+      - name: Build static site
+        run: npm run build && npm run export
 
-  #     - name: Commit Posts 🚀
-  #       uses: EndBug/add-and-commit@v7
-  #       with:
-  #         message: "Auto add short_url"
-
-  build_and_deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.1
-
-      - name: Build Assets files 🔧
-        run: |
-          sudo apt-get install imagemagick graphicsmagick libpng-dev
-          npm install
-          npm run build
-
-      - name: Build Jekyll files 🔧
-        run: |
-          docker run \
-          -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-          jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && JEKYLL_ENV='production' jekyll build --future"
-
-      - name: Optimize CSS 🪚
-        run: |
-          sudo chmod -R 777 _site
-          npm run purgeCss
-
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.5
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: gh-pages
-          folder: _site
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
+          publish_branch: gh-pages
