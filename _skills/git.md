@@ -1,7 +1,7 @@
 ---
 layout: skill
 name: "Git"
-progress: 92
+progress: 89
 categories:
   - Git Flow
   - Multi-repository

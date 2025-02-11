@@ -92,12 +92,11 @@ resume:
         - SQL
         - PostgreSQL
         - MongoDB
+        - Go
+        - Python
+        - Flask
         - Ruby
         - 'Ruby on Rails'
-        - Python
-        - Django
-        - Flask
-        - Pandas
         - R
         - Git
         - Agile
@@ -110,6 +109,7 @@ resume:
         - Estatística
         - Matemática Discreta
         - Visualização de dados
+        - Desenvolvimento Cloud
       en:
         - Javascript
         - 'React.js'
@@ -122,12 +122,11 @@ resume:
         - SQL
         - PostgreSQL
         - MongoDB
+        - Golang
+        - Python
+        - Flask
         - Ruby
         - 'Ruby on Rails'
-        - Python
-        - Django
-        - Flask
-        - Pandas
         - R
         - Git
         - Agile
@@ -140,6 +139,7 @@ resume:
         - Statistics
         - Math
         - Data Visualization
+        - Cloud Engineering
 
     soft:
       pt:

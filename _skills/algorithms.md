@@ -1,7 +1,7 @@
 ---
 layout: skill
 name: "Algorithms"
-progress: 96
+progress: 92
 categories:
   - Sort/Search Algorithms
   - Clean Code

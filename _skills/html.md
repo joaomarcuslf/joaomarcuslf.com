@@ -1,7 +1,7 @@
 ---
 layout: skill
 name: "HTML"
-progress: 91
+progress: 87
 categories:
   - HTML5
   - Semantic HTML

@@ -5,7 +5,5 @@ _site
 .bundle
 .sass-cache
 .jekyll-cache
-Gemfile
-Gemfile.lock
 node_modules
 package.json

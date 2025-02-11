@@ -1,7 +1,7 @@
 ---
 layout: skill
 name: "CSS"
-progress: 87
+progress: 84
 categories:
   - SCSS
   - Less
