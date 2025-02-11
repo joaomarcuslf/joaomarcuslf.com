@@ -23,7 +23,7 @@ function encontrar(elemento1, elemento2) {
 
 function disfarcar(elemento1) {
   document.querySelector("#" + elemento1.id + " figure").classList.toggle("is-mirrored")
-  document.querySelector("#" + elemento1.id + " img").src = "/images/mentorship/disfarce-01.webp"
+  document.querySelector("#" + elemento1.id + " img").src = "/assets/images/mentorship/disfarce-01.webp"
 }
 
 function pegarCodigo(elemento1, codigo) {
@@ -37,8 +37,14 @@ function fantasia(elemento1, fantasia) {
   return elemento1;
 }
 
-function removerDaFila(elemento) {
-  elemento.remove()
+function removerDaFila(elemento, time) {
+  if (!time) {
+    elemento.remove()
+  } else {
+    setTimeout(function () {
+      elemento.remove()
+    }, time);
+  }
 }
 
 function removerDoCarnaval(elemento) {
@@ -47,7 +53,7 @@ function removerDoCarnaval(elemento) {
   document.getElementById(elemento.id).remove()
 }
 
-function submitCode(event, targetId, $scenario, $textarea, lines) {
+function submitCode(event, targetId, $scenario, $textarea, ...lines) {
   event.preventDefault();
 
   $textarea.parentElement.classList.toggle("is-loading");
@@ -57,7 +63,7 @@ function submitCode(event, targetId, $scenario, $textarea, lines) {
     $textarea.classList.remove("is-success");
 
     if (
-      validarCodigo($textarea.value, lines)
+      lines.some(line => validarCodigo($textarea.value, line))
     ) {
       var newScript = document.createElement('script');
       newScript.classList.add("target-script")
@@ -79,3 +85,19 @@ function submitCode(event, targetId, $scenario, $textarea, lines) {
     $textarea.parentElement.classList.toggle("is-loading");
   }, 1000);
 }
+
+document.querySelectorAll(".has-popup-label").forEach(function (elem) {
+  var text = document.createElement("span");
+  text.innerHTML = elem.id;
+  text.classList.add("tooltip");
+
+  elem.appendChild(text);
+
+  elem.addEventListener("mouseover", function () {
+    text.classList.add("is-shown");
+  });
+
+  elem.addEventListener("mouseout", function () {
+    text.classList.remove("is-shown");
+  });
+});

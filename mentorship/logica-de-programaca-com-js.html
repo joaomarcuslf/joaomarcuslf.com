@@ -18,7 +18,7 @@ layout: mentorship
     <div class="media-content">
       <div class="content">
         <p>
-          Variáveis são valores que utilizamos para armazenar dados. Elas podem ser coisas simples como palavras até
+          Variáveis são valores que utilizamos para armazenar dados. Elas podem ser coisas simples como palavras ou até
           elementos da tela.
 
           <br />
@@ -26,11 +26,12 @@ layout: mentorship
           Em JavaScript nós temos três formas de declarar variáveis:
           <ul>
             <li><b>var</b> - São variáveis globais, ou seja, que podem ser acessadas de qualquer lugar do código.</li>
-            <li><b>const</b> - São que seus valores não podem ser alterados diretamente.</li>
-            <li><b>let</b> - São que seus valores podem ser alterados diretamente.</li>
+            <li><b>const</b> - São variáveis que seus valores não podem ser alterados diretamente.</li>
+            <li><b>let</b> - São variáveis que seus valores podem ser alterados diretamente.</li>
           </ul>
 
-          Para as variáveis de <code>const</code> e <code>let</code> elas ficam disponíveis apenas dentro da função que
+          Para as variáveis do tipo <code>const</code> e <code>let</code> ficam disponíveis apenas dentro da função em
+          que
           elas foram declaradas. Já as <code>var</code> são disponíveis em qualquer lugar do código, até por isso
           evitamos usá-las.
           <br />
@@ -47,13 +48,13 @@ layout: mentorship
 <section id="example01" class="topic-section container">
   <div class="scenario container">
     <div class="is-flex-container is-row">
-      <div id="example01_Girl01" class="is-flex-container to-left">
+      <div id="example01_Girl01" class="has-popup-label is-flex-container to-left">
         <figure class="image is-48x48 is-mirrored">
           <img src="/assets/images/mentorship/person-female-01.webp" />
         </figure>
       </div>
 
-      <div id="example01_Girl02" class="is-flex-container to-right">
+      <div id="example01_Girl02" class="has-popup-label is-flex-container to-right">
         <figure class="image is-48x48">
           <img src="/assets/images/mentorship/person-female-03.webp" />
         </figure>
@@ -88,7 +89,7 @@ layout: mentorship
 <section id="example02" class="topic-section container">
   <div class="scenario container">
     <div class="is-flex-container is-row">
-      <div id="example02_Boy01" class="is-flex-container to-left">
+      <div id="example02_Boy01" class="has-popup-label is-flex-container to-left">
         <figure class="image is-48x48 is-mirrored">
           <img src="/assets/images/mentorship/person-male-01.webp" />
         </figure>
@@ -180,7 +181,7 @@ layout: mentorship
 <section id="example03" class="topic-section container">
   <div class="scenario container">
     <div class="is-flex-container is-row">
-      <div id="example03_Boy01" class="is-flex-container to-left">
+      <div id="example03_Boy01" class="has-popup-label is-flex-container to-left">
         <figure class="image is-48x48">
           <img src="/assets/images/mentorship/person-male-02.webp" />
         </figure>
@@ -209,6 +210,13 @@ layout: mentorship
   <br />
 
   <form class="form" onsubmit="submitExample03(event, 'example03')">
+    <p>
+      Adicione na condição uma comparação entre os valores do <code>codigoBoy01</code> e <code>codigoAtual</code>. Você
+      pode utilizar tanto o <code>==</code>, quanto o <code>===</code>.
+    </p>
+
+    <br />
+
     <div class="field">
       <div class="control">
         <textarea class="textarea is-link is-fullwidth" rows="8">
@@ -236,13 +244,13 @@ layout: mentorship
 <section id="example04" class="topic-section container">
   <div class="scenario container">
     <div class="is-flex-container is-row">
-      <div id="example04_Boy01" class="is-flex-container to-left">
+      <div id="example04_Boy01" class="has-popup-label is-flex-container to-left">
         <figure class="image is-48x48">
           <img src="/assets/images/mentorship/person-male-03.webp" />
         </figure>
       </div>
 
-      <div id="example04_Boy02" class="is-flex-container to-left">
+      <div id="example04_Boy02" class="has-popup-label is-flex-container to-left">
         <figure class="image is-48x48">
           <img src="/assets/images/mentorship/person-male-04.webp" />
         </figure>
@@ -253,15 +261,25 @@ layout: mentorship
   <br />
 
   <form class="form" onsubmit="submitExample04(event, 'example04')">
+    <p>
+      Nesse caso temos uma pessoa fantasiada com uma fantasia não muito legal para o carnaval.
+
+      <br />
+
+      Você consegue saber a fantasia utilizando <code>usuario.fantasia</code>.
+      <br />
+      Faça uma condição para caso o usuário esteja fantasiado de <code>indio</code> você tire ele do carnaval
+    </p>
+
+    <br />
+
     <div class="field">
       <div class="control">
-        <textarea class="textarea is-link is-fullwidth" rows="13">
+        <textarea class="textarea is-link is-fullwidth" rows="11">
         var $boy01 = fantasia(pegarElemento("example04_Boy01"), "indio");
         var $boy02 = fantasia(pegarElemento("example04_Boy02"), "enfermeiro");
 
         function fantasiasBloqueadas(usuario) {
-          // Você consegue saber a fantasia utilizando usuario.fantasia
-          // Faça uma condição para caso o usuário esteja fantasiado de indio você tire ele do carnaval
           removerDoCarnaval(usuario)
         }
 
@@ -320,6 +338,67 @@ layout: mentorship
     </div>
   </article>
 </div>
+
+<section id="example05" class="topic-section container">
+  <div class="scenario container">
+    <div class="is-flex-container is-row">
+      <div id="example05_Boy01" class="has-popup-label is-flex-container to-left">
+        <figure class="image is-48x48">
+          <img src="/assets/images/mentorship/person-male-04.webp" />
+        </figure>
+      </div>
+
+      <div id="example05_Girl01" class="has-popup-label is-flex-container to-left">
+        <figure class="image is-48x48">
+          <img src="/assets/images/mentorship/person-female-03.webp" />
+        </figure>
+      </div>
+
+      <div id="example05_Girl02" class="has-popup-label is-flex-container to-left">
+        <figure class="image is-48x48">
+          <img src="/assets/images/mentorship/person-female-01.webp" />
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <br />
+
+  <form class="form" onsubmit="submitExample05(event, 'example05')">
+    <p>
+      Temos agora vários usuários no nosso sistema, mas precisamos proteger as informações deles. Adicione a condição para o <code>for</code> rodar e disfarçar cada um dos usuários.
+
+      <br />
+
+      Você pode saber o tamanho da lista utilizando <code>$lista.length</code>.
+    </p>
+
+    <br />
+
+    <div class="field">
+      <div class="control">
+        <textarea class="textarea is-link is-fullwidth" rows="11">
+        var $lista = [
+          pegarElemento("example05_Boy01"),
+          pegarElemento("example05_Girl01"),
+          pegarElemento("example05_Girl02"),
+        ]
+
+        for (var contador = 0; /* Coloque aqui */; contador++) {
+          var $elemento = $lista[contador];
+
+          disfarcar($elemento);
+        }</textarea>
+      </div>
+    </div>
+
+    <div class="field is-pulled-right">
+      <div class="control">
+        <button class="button" type="submit">Enviar</button>
+      </div>
+    </div>
+  </form>
+</section>
 
 <br /><br />
 <hr />
@@ -446,3 +525,7 @@ layout: mentorship
 <script src="{{ site.baseurl }}/assets/js/mentorship/logica-de-programaca-com-js/example02.js"></script>
 <script src="{{ site.baseurl }}/assets/js/mentorship/logica-de-programaca-com-js/example03.js"></script>
 <script src="{{ site.baseurl }}/assets/js/mentorship/logica-de-programaca-com-js/example04.js"></script>
+<script src="{{ site.baseurl }}/assets/js/mentorship/logica-de-programaca-com-js/example05.js"></script>
+<script src="{{ site.baseurl }}/assets/js/mentorship/logica-de-programaca-com-js/example06.js"></script>
+<script src="{{ site.baseurl }}/assets/js/mentorship/logica-de-programaca-com-js/example07.js"></script>
+<script src="{{ site.baseurl }}/assets/js/mentorship/logica-de-programaca-com-js/example08.js"></script>
