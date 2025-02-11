@@ -13,8 +13,14 @@ jobs:
           script: |
             const fs = require('fs');
 
-            const { author_association, body } = context.payload.comment
+            const { author_association, body, created_at, title } = context.payload.comment
 
             if (author_association == 'OWNER') {
               console.log(context.payload.comment)
+
+              const date = created.split("T")[0]
+
+              const name = title.replace(/[^\w\s]/gi, '').toLowerCase().split(" ").join("-")
+
+              fs.writeFileSync( `_posts/${date}-${name}`, body )
             }
