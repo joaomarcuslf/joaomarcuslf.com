@@ -5,30 +5,28 @@ layout: compress
 <!DOCTYPE html>
 <html lang="{% t global.lang %}">
 
-<head>
-  <title>
-    {% if page.title %} {{ page.title }} | {% endif %} {{ site.name }}
-  </title>
+  <head>
+    <title>
+      {% if page.title %} {{ page.title }} | {% endif %} {{ site.name }}
+    </title>
 
-  {% include meta.html %}
+    {% include meta.html %}
 
-  <!--[if lt IE 9]>
+    <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" />
     <![endif]-->
 
-  <link rel="stylesheet" type="text/css" href="{{ "/assets/css/vendors.css" | prepend: site.baseurl_root }}">
-  </script>
-  <link rel="stylesheet" type="text/css" href="{{ "/assets/css/style.css"| prepend: site.baseurl_root }}">
-  </script>
-</head>
+    <link rel="stylesheet" type="text/css" href="{{ "/assets/css/vendors.css" | prepend: site.baseurl_root }}" />
+    <link rel="stylesheet" type="text/css" href="{{ "/assets/css/style.css"| prepend: site.baseurl_root }}" />
+  </head>
 
-<body class="vsc-initialized has-navbar-fixed-top">
-  {% include navbar.html %}
+  <body class="vsc-initialized has-navbar-fixed-top">
+    {% include navbar.html %}
 
-  <div id="main" role="main" class="main">{{ content }}</div>
+    <div id="main" role="main" class="main">{{ content }}</div>
 
-  {% include footer.html %} {% include analytics.html %} <script
-    src="{{"/assets/js/base.js"| prepend: site.baseurl_root }}"></script>
-</body>
+    {% include footer.html %} {% include analytics.html %} <script
+      src="{{"/assets/js/base.js"| prepend: site.baseurl_root }}"></script>
+  </body>
 
 </html>

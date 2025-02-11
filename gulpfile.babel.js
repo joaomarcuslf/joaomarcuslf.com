@@ -138,7 +138,7 @@ export const buildWebp = series(
 
 export const purgecss = () => {
   return gulp
-    .src("_site/**/*.css")
+    .src(["_site/**/*.css", '!_site/**/hljs.css'])
     .pipe(
       gulpPurgecss({
         content: ["_site/**/*.html", "_site/**/*.js"],
