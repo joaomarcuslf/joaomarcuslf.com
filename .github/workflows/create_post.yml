@@ -17,23 +17,26 @@ jobs:
             const fs = require('fs');
 
             const { author_association, body, created_at } = context.payload.comment
+            const { labels } = context.issue
 
-            if (author_association == 'OWNER') {
-              console.log(context.payload.comment)
+            console.log(labels)
 
-              const date = created_at.split("T")[0]
-
-              const title = body.split("\r\n").reduce(function (acc, elm) {
-                if (elm.includes('title: ')) {
-                  return elm.replace('title: ', '').split('"').join('')
-                }
-                return acc;
-              }, "")
-
-              const name = title.replace(/[^\w\s]/gi, '').toLowerCase().split(" ").join("-")
-
-              fs.writeFileSync( `_posts/${date}-${name}.md`, body )
-            }
+            //if (author_association == 'OWNER') {
+            //  console.log(context.payload.comment)
+            //
+            //  const date = created_at.split("T")[0]
+            //
+            //  const title = body.split("\r\n").reduce(function (acc, elm) {
+            //    if (elm.includes('title: ')) {
+            //      return elm.replace('title: ', '').split('"').join('')
+            //    }
+            //    return acc;
+            //  }, "")
+            //
+            //  const name = title.replace(/[^\w\s]/gi, '').toLowerCase().split(" ").join("-")
+            //
+            //  fs.writeFileSync( `_posts/${date}-${name}.md`, body )
+            //}
 
       - name: Commit file
         if: ${{ github.event.comment.author_association == 'OWNER'}}
