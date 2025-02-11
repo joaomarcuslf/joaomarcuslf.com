@@ -240,12 +240,12 @@
         display: flex;
         width: 100%;
         cursor: pointer;
-        background: $tertiary;
+        background: $secondary;
 
         transition: background .5s;
 
         &:hover {
-          background: $secondary;
+          background: $accent;
         }
 
         span {
@@ -273,8 +273,8 @@
 
       .dropdown-item {
         border-radius: 0;
-        border: unset;
-        border-bottom: 1px solid $quinary;
+        border: 1px solid rgba($quinary, .2);
+        border-top: unset;
         padding: .5rem 1rem;
 
         .icon {
@@ -298,6 +298,7 @@
           max-height: 0vh;
           transition: max-height 0.5s;
         }
+        box-shadow: 0 0 10px rgba($quinary, .5);
       }
 
       .dropdown-content {
