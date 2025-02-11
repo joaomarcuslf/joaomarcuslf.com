@@ -26,6 +26,30 @@ function ExpandedSkills({
 
   const searchSkill = searchParams.get("skill");
 
+  const selectSkill = (searchSkill: string | null) => {
+    const foundSkill = skills.find((skill) => skill.key === searchSkill);
+
+    if (foundSkill) {
+      setSkill(foundSkill);
+    } else {
+      setSkill(null);
+    }
+
+    scrollToSection();
+  };
+
+  const scrollToSection = () => {
+    if (!domain && !searchSkill && !skill) return;
+
+    setTimeout(() => {
+      const element = document.querySelector(`.skills-section`);
+
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 200);
+  };
+
   useEffect(() => {
     if (domain) {
       setShownSkills(skills.filter((skill) => skill.domain === domain));
@@ -40,7 +64,7 @@ function ExpandedSkills({
 
       router.replace(window.location.pathname, {});
     }
-  }, [searchSkill, skills, router]);
+  }, [searchSkill, skills, router, selectSkill]);
 
   useEffect(() => {
     const domainList = skills.reduce((acc, skill) => {
@@ -73,30 +97,6 @@ function ExpandedSkills({
     }
 
     scrollToSection();
-  }
-
-  const selectSkill = (searchSkill: string | null) => {
-    const foundSkill = skills.find((skill) => skill.key === searchSkill);
-
-    if (foundSkill) {
-      setSkill(foundSkill);
-    } else {
-      setSkill(null);
-    }
-
-    scrollToSection();
-  };
-
-  const scrollToSection = () => {
-    if (!domain && !searchSkill && !skill) return;
-
-     setTimeout(() => {
-       const element = document.querySelector(`.skills-section`);
-
-       if (element) {
-         element.scrollIntoView({ behavior: "smooth" });
-       }
-     }, 200);
   }
 
   return (
