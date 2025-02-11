@@ -1,0 +1,117 @@
+---
+layout: default
+---
+
+{% include introduction.html theme="link" title="Mentorship"
+    subtitle="Hey you! I'm glad you are here with me.<br /> I work since 2015, and since them, I've worked with many people, and a bunch of them thought great thing to me, and now it's my time to give it back to the community."
+%}
+
+<section class="hero mentorship-lists-section is-dark">
+  <div class="hero-body mentorship-tree">
+    <h2 class="mentorship-lists-section-title main">Spoken language:</h1>
+
+    <div class="mentorship-lists-section-group mentorship-tree-element">
+      <div class="mentorship-lists-tree-categories">
+        {% include components/mentorship-item.html item="Portuguese" %}
+
+        {% include components/mentorship-item.html item="English" %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero mentorship-lists-section is-light">
+  <div class="hero-body mentorship-tree">
+    <h2 class="mentorship-lists-section-title main">Techs I can teach:</h1>
+
+    <div class="mentorship-lists-section-group mentorship-tree-element">
+      <div class="mentorship-lists-tree-categories">
+        {% include components/mentorship-item.html item="Python" %}
+        {% include components/mentorship-item.html item="Javascript" %}
+        {% include components/mentorship-item.html item="Ruby" %}
+      </div>
+
+      <div class="mentorship-lists-tree-categories">
+        {% include components/mentorship-item.html item="CSS3" %}
+        {% include components/mentorship-item.html item="React" %}
+        {% include components/mentorship-item.html item="Vue.js" %}
+        {% include components/mentorship-item.html item="Express.js" %}
+        {% include components/mentorship-item.html item="Ruby on Rails" %}
+        {% include components/mentorship-item.html item="Flask" %}
+        {% include components/mentorship-item.html item="Next.js" %}
+        {% include components/mentorship-item.html item="Node.js" %}
+        {% include components/mentorship-item.html item="Cloud Development" %}
+        {% include components/mentorship-item.html item="Git" %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero mentorship-lists-section is-dark">
+  <div class="hero-body mentorship-tree">
+    <h2 class="mentorship-lists-section-title main">Stacks you can choose:</h1>
+
+    <div class="mentorship-lists-section-group mentorship-tree-element">
+      <div class="mentorship-lists-tree-categories">
+        {% include components/mentorship-item.html item="Front-end" %}
+        {% include components/mentorship-item.html item="Full-stack" %}
+        {% include components/mentorship-item.html item="Back-End" %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero mentorship-lists-section is-light">
+  <div class="hero-body mentorship-tree">
+    <h2 class="mentorship-lists-section-title main">Objectives:</h1>
+
+    <div class="mentorship-lists-section-group mentorship-tree-element">
+      <div class="mentorship-lists-tree-categories">
+        {% include components/mentorship-item.html item="Depth techs introduction" %}
+        {% include components/mentorship-item.html item="Professional improvement" %}
+        {% include components/mentorship-item.html item="Emulate real life situations" %}
+        {% include components/mentorship-item.html item="Learn good practices and patterns" %}
+        {% include components/mentorship-item.html item="Share know-how" %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero mentorship-lists-section is-dark">
+  <div class="hero-body mentorship-tree">
+    <h2 class="mentorship-lists-section-title main">Services:</h1>
+
+    <div class="mentorship-lists-section-group mentorship-tree-element">
+      <div class="mentorship-lists-tree-categories">
+        {% include components/mentorship-item.html item="Hands-on challenges" %}
+        {% include components/mentorship-item.html item="Code review" %}
+        {% include components/mentorship-item.html item="Dojos" %}
+        {% include components/mentorship-item.html item="Lessons" %}
+        {% include components/mentorship-item.html item="Pair programming" %}
+        {% include components/mentorship-item.html item="Post/Content generation" %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-info">
+  <div class="hero-body">
+    <h2 class="title">
+      Hey, If I got you until here, I think you liked.
+    </h2>
+
+    <h2 class="subtitle">
+      So, let's talk about your needs, and learn together? <br />
+    </h2>
+
+    <button class="button is-primary is-outlined is-medium is-fullwidth" onclick="mailMe()">
+      Send me a E-mail!
+    </button>
+  </div>
+</section>
+
+<script>
+  function mailMe() {
+    window.location.href = "mailto:{{site.email}}?subject=Mentorship, your name&body=Hey, I want to talk about the mentorship."
+  }
+</script>

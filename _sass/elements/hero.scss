@@ -6,17 +6,21 @@
   .hero-body {
     padding: 3rem;
 
+    .subtitle a {
+      text-decoration: underline;
+    }
+
     @include for-tablet-landscape-and-down {
       padding: 3rem 1.5rem;
     }
   }
 
   &:not(.is-success) * {
-    color: $tertiary !important;
+    color: $tertiary
   }
 
   &.is-success *, &.is-light * {
-    color: $quinary !important;
+    color: $quinary
   }
 
   &.is-dark {

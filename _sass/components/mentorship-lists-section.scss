@@ -9,9 +9,9 @@
 @import "../generics/vertical-center-container";
 @import "../generics/horizontal-center-container";
 
-.skills-section {
+.mentorship-lists-section {
 
-  .skill-tree {
+  .mentorship-tree {
     padding: 3rem 0 0 0;
   }
 
@@ -31,7 +31,7 @@
     background-color: rgba($accent, .25);
   }
 
-  .skills-section-group > .skills-section-item {
+  .mentorship-lists-section-group > .mentorship-lists-section-item {
     @include is-even {
       &.card {
         background-color: rgba($tertiary, .25);
@@ -39,14 +39,19 @@
     }
   }
 
-  .skills-section-title {
+  .mentorship-lists-section-title {
     @extend .title;
 
     font-size: 2rem;
     margin-bottom: 0 !important;
+
+    &.main {
+      text-align: left;
+      padding: 0 2rem;
+    }
   }
 
-  .skills-section-group {
+  .mentorship-lists-section-group {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -56,7 +61,7 @@
       flex-direction: row;
     }
 
-    &.skill-tree-element {
+    &.mentorship-tree-element {
       justify-content: center;
       flex-direction: row;
       flex-wrap: wrap;
@@ -67,7 +72,7 @@
         background-color: $quaternary;
       }
 
-      .skills-tree-categories {
+      .mentorship-lists-tree-categories {
         opacity: .7;
         width: 100%;
 
@@ -88,13 +93,13 @@
           padding: 1rem;
         }
 
-        .skills-section-title {
+        .mentorship-lists-section-title {
           font-size: 1rem;
         }
       }
     }
 
-    .skills-section-item {
+    .mentorship-lists-section-item {
       @extend .horizontal-center-container;
 
       @include for-tablet-landscape-up {
