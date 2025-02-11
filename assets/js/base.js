@@ -54,11 +54,7 @@ function expandView(target) {
   $highlights.classList.toggle('is-expanded');
 
   setTimeout(function () {
-    if ($highlights.classList.contains('is-expanded')) {
-      smoothScroll("#" + target + " .button.has-icon");
-    } else {
-      smoothScroll("#" + target);
-    }
+    smoothScroll("#" + target);
   }, 250)
 }
 
