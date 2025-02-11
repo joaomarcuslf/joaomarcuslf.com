@@ -1,12 +1,18 @@
 ---
 layout: skill
 name: "Software Engineer"
-progress: 87
+progress: 92
 categories:
   - Clean Code
+  - Clean Arch
   - Code Quality
   - TDD
   - BDD
+  - Algorithms
+  - Algorithms Classification
+  - Sort/Search Algorithms
   - Functional Programming
-  - Object Oriented
+  - Object Oriented Programming
+  - Imperative Programming
+  - Concurrent Programming
 ---

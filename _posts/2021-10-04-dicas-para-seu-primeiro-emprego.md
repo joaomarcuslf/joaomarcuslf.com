@@ -10,6 +10,7 @@ draft: false
 redirect_from:
   - /s/dicas-1-job
 short_url: http://go-go-url-go.com/5dZxxkKX
+lang: pt
 tags:
   - Beginner
   - Internal

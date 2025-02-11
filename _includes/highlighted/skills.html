@@ -16,6 +16,10 @@
       {% endfor %}
 
     </div>
+    {% if site.lang == "en" %}
     <div class="has-text-right"><a href="/about-me">{% t highlighted_skills.see_more %}</a></div>
+    {% else %}
+    <div class="has-text-right"><a href="/pt/about-me">{% t highlighted_skills.see_more %}</a></div>
+    {% endif %}
   </div>
 </section>

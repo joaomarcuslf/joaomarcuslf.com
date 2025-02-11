@@ -10,6 +10,7 @@ draft: false
 redirect_from:
   - /s/ideias-portfolio-dev
 short_url: http://go-go-url-go.com/SGdLWGDU
+lang: pt
 tags:
   - Beginner
   - Internal

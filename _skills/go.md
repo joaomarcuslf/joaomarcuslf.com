@@ -7,5 +7,7 @@ categories:
   - Concurrent Go
   - RestAPIs
   - CLI
-  - Workers
+  - Channels
+  - Gin
+  - Mux
 ---
