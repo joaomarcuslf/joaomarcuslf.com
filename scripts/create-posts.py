@@ -4,14 +4,14 @@ files = {
         'title': 'How moving from Design to Back-end made me a better Front-end',
         'img': '/images/posts/how-moving-from-design.jpeg',
         'alt': 'Devices on a table, this is a image showcase to the post.',
-        'link': 'https://medium.com/@joaomarcuslf/back-to-2011-my-mother-said-d87dee1847e6',
+        'link': 'https://joaomarcuslf.medium.com/back-to-2011-my-mother-said-d87dee1847e6',
         'date': '2016-07-29'
     },
     'testing-javascript': {
         'title': 'Testando JavaScript corretamente com Mocha + ES6 + Gulp',
         'img': '/images/posts/mocha-es6-gulp.jpeg',
         'alt': 'Notebook in table, this is a image showcase to the post.',
-        'link': 'https://medium.com/@joaomarcuslf/testando-javascript-corretamente-com-mocha-es6-gulp-a29e9e4f25c1',
+        'link': 'https://joaomarcuslf.medium.com/testando-javascript-corretamente-com-mocha-es6-gulp-a29e9e4f25c1',
         'date': '2016-09-25'
     },
     'comunidades-toxicas': {
@@ -25,7 +25,7 @@ files = {
         'title': 'Front-end in 2020 - Presentation',
         'img': '/images/presentations/front-end-2020.png',
         'alt': 'Front page of the slide, this is a image showcase to the post.',
-        'link': 'https://github.com/joaomarcuslf2/front-end-2020/blob/master/Front-end%20em%202020.pdf',
+        'link': 'https://github.com/joaomarcuslf/front-end-2020/blob/master/Front-end%20em%202020.pdf',
         'date': '2020-07-14'
     }
 }
