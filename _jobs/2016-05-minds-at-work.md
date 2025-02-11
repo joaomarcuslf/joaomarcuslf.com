@@ -1,6 +1,7 @@
 ---
 layout: job
 name: Front-end Developer - Internship
+name_pt: Front-end Developer - Estágio
 tags: JavaScript,Node.js,Angular.js,jQuery
 description: "Minds At Work is an enterprise software developer, the I've worked in different Projects from facial recognition to network simulation, we used AngularJS, jQuery, Mocha, Chai, Sinon, Istanbul, SCSS, Gulp, Websockets and others technologies."
 start_date: "05/2016"

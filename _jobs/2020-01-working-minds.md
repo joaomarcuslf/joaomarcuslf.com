@@ -1,6 +1,7 @@
 ---
 layout: job
 name: Full-stack Developer - Middle
+name_pt: Full-stack Developer - Pleno
 tags: JavaScript,React,Node.js,Ruby on Rails,Angular,Ionic
 description: "Working Minds is a software consulting company, therefore, it has in its repertoires several projects with many technologies, so it is necessary a multidisciplinary team focused on quality deliveries."
 start_date: "01/2020"

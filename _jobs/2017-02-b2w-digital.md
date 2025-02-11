@@ -1,6 +1,7 @@
 ---
 layout: job
 name: Full-stack Developer - Junior
+name_pt: Full-stack Developer - Junior
 tags: JavaScript,React,Node.js
 description: "B2W digital is the greatest E-commerce in Latina America. There we used React/Redux stack React Native for universal apps with RESTful APIs, and a lot of technologies like RestQL, a GraphQL-like implementation, and NodeJS for most of the Front-end APIs. Metric focused work, testing new feature with A/B, A/B/C tests, and it has scrum teams OKRs focused. And teams divided as Squads."
 start_date: "02/2017"

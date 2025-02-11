@@ -110,7 +110,7 @@ title: "Currículo"
 
     {% for job in sorted %}
     <div class="job-column column ph-5 is-half">
-      <h4>{{job.name}} @ <a href="{{job.company_ref}}">{{job.company_name}}</a></h4>
+      <h4>{{job.name_pt}} @ <a href="{{job.company_ref}}">{{job.company_name}}</a></h4>
 
       <p class="pl-1">
         {% if job.short_description %}
@@ -124,7 +124,7 @@ title: "Currículo"
 
       <small class="pl-1">
         <strong>De:</strong> {{ job.start_date }} -
-        <strong>Até:</strong> {{ job.end_date }}.
+        <strong>Até:</strong> {{ job.end_date }}
       </small>
     </div>
     {% endfor %}

@@ -1,6 +1,7 @@
 ---
 layout: job
 name: Social Media - Internship
+name_pt: Social Media - Estágio
 tags:
 description: "I worked in WebCom Team, which is an team that mantains the FAETERJ Social Medias(Facebook, Wordpress) and focus a lot on User interactions using a lot of marketing techniques, and agile praticles."
 start_date: "08/2015"
