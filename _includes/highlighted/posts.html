@@ -2,13 +2,16 @@
   <div class="hero-body">
     <h1 class="images-section-title">Highlighted Posts</h1>
     <div class="images-section-group">
-      {% for post in site.posts limit:3 %}
+      {% assign filtered = site.posts | where: 'draft', false %}
+
+      {% for post in filtered limit:3 %}
       {%
         include components/post.html
           link=post.link
           img=post.img
           alt=post.alt
           title=post.title
+          internal=post.internal
       %}
       {% endfor %}
     </div>

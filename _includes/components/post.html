@@ -1,8 +1,15 @@
+{% if include.internal %}
+<a
+    class="images-section-item"
+    href="{{include.link}}"
+>
+{% else %}
 <a
     class="images-section-item"
     href="{{include.link}}"
     target="blank"
 >
+{% endif %}
     <img
         class="images-section-image"
         src="{{include.img}}"

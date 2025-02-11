@@ -3,13 +3,16 @@
     <h1 class="images-section-title">Posts</h1>
 
     <div class="images-section-group">
-      {% for post in site.posts %}
+      {% assign filtered = site.posts | where: 'draft', false %}
+
+      {% for post in filtered %}
       {%
         include components/post.html
           link=post.link
           img=post.img
           alt=post.alt
           title=post.title
+          internal=post.internal
       %}
       {% endfor %}
     </div>

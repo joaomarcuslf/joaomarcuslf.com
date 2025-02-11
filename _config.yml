@@ -38,7 +38,7 @@ baseurl: ""
 
 permalink: /:title/
 
-version: v1.2.0
+version: v2.5.0
 
 kramdown:
   input: GFM
