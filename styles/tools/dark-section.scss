@@ -1,0 +1,12 @@
+@mixin dark-section {
+  &.is-dark {
+    background-color: $quinary;
+    color: $tertiary;
+
+    * {
+      color: $tertiary;
+    }
+
+    @content;
+  }
+}

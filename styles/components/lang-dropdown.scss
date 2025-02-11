@@ -1,0 +1,35 @@
+@import "../settings/settings";
+
+@import "../tools/medias-queries/all";
+
+.lang-dropdown {
+  .navbar-dropdown {
+    width: 180px;
+
+    @include for-tablet-landscape-and-down {
+      width: 100vw;
+    }
+
+    background-color: rgba($quaternary, 0.8);
+
+    .navbar-item {
+      display: flex;
+      align-items: center;
+
+      color: $accent;
+
+      img {
+        display: block;
+        height: 26px;
+        width: 26px;
+        min-width: 26px;
+        border-radius: 50%;
+      }
+
+      span {
+        display: block;
+        margin-left: 10px;
+      }
+    }
+  }
+}

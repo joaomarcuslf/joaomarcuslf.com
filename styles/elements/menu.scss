@@ -1,0 +1,19 @@
+@import "../settings/settings";
+
+@import "../tools/not-last";
+
+.menu {
+  padding: 5px;
+
+  a {
+    @include not-last {
+      padding-bottom: 0;
+    }
+  }
+
+  li {
+    ul {
+      margin: 0 0.75rem;
+    }
+  }
+}

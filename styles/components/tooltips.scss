@@ -1,0 +1,25 @@
+@import "../settings/settings";
+
+@import "../tools/opacity-animate";
+
+.has-popup-label {
+  position: relative;
+}
+
+.tooltip {
+  display: none;
+
+  position: absolute;
+  top: 43px;
+  border: 1px solid $quaternary;
+  border-radius: 10px;
+  background: $tertiary;
+  color: $quaternary;
+  padding: 5px;
+
+  &.is-shown {
+    display: block;
+
+    @include opacity-animate(0.2s, 0, 1);
+  }
+}

@@ -1,0 +1,12 @@
+@mixin light-section {
+  &.is-light {
+    background-color: $tertiary;
+    color: $quinary;
+
+    * {
+      color: $quinary;
+    }
+
+    @content;
+  }
+}

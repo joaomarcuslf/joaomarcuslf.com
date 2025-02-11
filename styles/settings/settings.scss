@@ -1,0 +1,84 @@
+$fa-font-path: "/fonts/font-awesome/";
+$fa-font-display: block;
+
+$family-primary: Montserrat, -apple-system, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  "Helvetica", "Arial", sans-serif;
+$family-secondary: FiraCode, -apple-system, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  "Helvetica", "Arial", sans-serif;
+$family-code: FiraCode, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+  "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial",
+  sans-serif;
+
+$primary: #741b47;
+$accent: #d5a6bd;
+$secondary: #ead1dc;
+$tertiary: #f7e8f0;
+$quaternary: #553657;
+$quinary: #551637;
+$senary: #450617;
+
+$white: #fff;
+
+$info: rgba($senary, 0.5);
+$success: rgba($secondary, 0.5);
+$warning: rgba($quinary, 0.75);
+$danger: rgba($quaternary, 0.75);
+
+$light: $accent;
+$dark: $senary;
+
+$scheme-main: rgba($tertiary, 0.25);
+$scheme-main-bis: rgba($tertiary, 0.5);
+$scheme-main-ter: rgba($tertiary, 0.75);
+
+$background: rgba($tertiary, 0.25);
+
+$border: rgba($quinary, 0.5);
+$border-hover: rgba($quinary, 0.75);
+$border-light: rgba($senary, 0.5);
+$border-light-hover: rgba($senary, 0.75);
+
+$text: $quinary;
+$text-light: $senary;
+$text-strong: $senary;
+
+$code: $secondary;
+$code-background: $quaternary;
+$pre: $accent;
+$pre-background: $senary;
+
+$link: $accent;
+$link-visited: $quaternary;
+$link-hover: $tertiary;
+$link-hover-border: rgba($tertiary, 0.5);
+$link-focus: rgba($quaternary, 0.5);
+$link-focus-border: $tertiary;
+$link-active: rgba($quinary, 0.5);
+$link-active-border: $tertiary;
+
+$size-small: 0.75rem;
+$size-normal: 1rem;
+$size-medium: 1.25rem;
+$size-large: 1.5rem;
+
+$size-big-screen: 1800px;
+$size-desktop: 1200px;
+$size-landscape-tablet: 900px;
+$size-portrait-tablet: 600px;
+$size-phone: 480px;
+
+// Generic Pallete from $primary
+
+$gp-red: #a43a4c;
+$gp-orange-dark: #cc624c;
+$gp-orange-mid: #e9904d;
+$gp-orange-light: #f8c355;
+$gp-yellow: #f9f871;
+
+// Highlight Palette from $primary
+
+$hp-pink: #ff6ebb;
+$hp-olive: #efefdc;
+$hp-violet: #ae6dab;

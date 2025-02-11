@@ -1,0 +1,7 @@
+@import "../../../settings/settings";
+
+@mixin for-phone-only {
+  @media (max-width: $size-phone) {
+    @content;
+  }
+}

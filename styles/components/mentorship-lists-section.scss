@@ -1,0 +1,187 @@
+@import "../settings/settings";
+
+@import "../tools/truncate";
+@import "../tools/opacity-animate";
+@import "../tools/medias-queries/all";
+@import "../tools/is-even";
+@import "../tools/not-last";
+
+@import "../generics/vertical-center-container";
+@import "../generics/horizontal-center-container";
+
+.mentorship-lists-section {
+  .mentorship-tree {
+    padding: 3rem 0 0 0;
+  }
+
+  .hero-body>* {
+    padding: 0.5rem 0;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  .mentorship-list {
+    padding: .5rem 1rem 2rem !important;
+    padding-left: 4rem !important;
+
+    li {
+      display: flex;
+
+      a {
+        text-decoration: underline;
+      }
+
+      &::before {
+        content: "-";
+        display: flex;
+        color: $primary;
+        font-weight: bold;
+        width: 1rem;
+      }
+    }
+  }
+
+  .card {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    background-color: rgba($accent, 0.25);
+  }
+
+  .mentorship-lists-section-group>.mentorship-lists-section-item {
+    @include is-even {
+      &.card {
+        background-color: rgba($tertiary, 0.25);
+      }
+    }
+  }
+
+  .mentorship-lists-section-title {
+    @extend .title;
+
+    font-size: 2rem;
+    margin-bottom: 0 !important;
+
+    &.main {
+      text-align: left;
+      padding: 0 2rem;
+    }
+  }
+
+  .mentorship-lists-section-group {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+
+    @include for-tablet-landscape-and-down {
+      flex-direction: row;
+    }
+
+    &.mentorship-tree-element {
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 2rem 0;
+
+      @include is-odd {
+        background-color: $quaternary;
+      }
+
+      .mentorship-lists-tree-categories {
+        opacity: 0.7;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        @include for-tablet-landscape-and-down {
+          flex-wrap: wrap;
+        }
+
+        .is-mini {
+          padding: 0 1rem !important;
+        }
+
+        .card-content {
+          padding: 1rem;
+        }
+
+        .mentorship-lists-section-title {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .mentorship-lists-section-item {
+      @extend .horizontal-center-container;
+
+      @include for-tablet-landscape-up {
+        max-width: 30%;
+        width: 32%;
+        padding: 0.5rem;
+      }
+
+      opacity: 0.8;
+
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+      justify-content: flex-end;
+      margin: 0.5rem;
+
+      @include for-desktop-up {
+        width: 32%;
+
+        padding: 0.5rem;
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+
+      @include for-tablet-landscape-and-down {
+        opacity: 1;
+        width: 50%;
+
+        @include not-last {
+          padding-bottom: 1.5rem;
+
+          @include is-even {
+            padding-left: 0.5rem;
+          }
+
+          @include is-odd {
+            padding-right: 0.5rem;
+          }
+        }
+      }
+
+      @include for-tablet-portrait-and-down {
+        width: 100%;
+      }
+
+      &:hover {
+        @include opacity-animate(0.1s, 0.8, 1);
+      }
+
+      .card-content {
+        width: 100%;
+      }
+    }
+  }
+
+  @include dark-section;
+  @include light-section;
+}

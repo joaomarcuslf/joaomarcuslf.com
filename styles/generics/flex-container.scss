@@ -1,0 +1,37 @@
+.flex-container,
+.is-flex-container {
+  display: flex;
+  width: 100%;
+
+  &.is-row {
+    flex-direction: row;
+  }
+
+  &.is-column {
+    flex-direction: column;
+  }
+
+  &.to-left {
+    justify-content: flex-start;
+  }
+
+  &.to-right {
+    justify-content: flex-end;
+  }
+
+  &.to-center {
+    justify-content: center;
+  }
+
+  &.has-space-between {
+    justify-content: space-between;
+  }
+
+  &.has-space-around {
+    justify-content: space-around;
+  }
+
+  &.has-space-evenly {
+    justify-content: space-evenly;
+  }
+}

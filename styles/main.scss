@@ -1,0 +1,81 @@
+/*
+  Theme: Purple Luxury
+  Author: João Marcus de Lemos Fernandes <jmarcuslfernandes@gmail.com>
+*/
+
+/*
+  Settings Layer
+*/
+
+@import "settings/fonts";
+@import "settings/settings";
+@import "settings/reset";
+
+/*
+  Tools Layer
+*/
+
+@import "tools/truncate";
+@import "tools/square-box";
+@import "tools/opacity-animate";
+@import "tools/input-placeholder";
+@import "tools/is-even";
+@import "tools/is-odd";
+@import "tools/not-last";
+@import "tools/not-first";
+@import "tools/medias-queries/all";
+@import "tools/dark-section";
+@import "tools/light-section";
+
+/*
+  Generics Layer
+*/
+
+@import "generics/flex-container";
+@import "generics/horizontal-center-container";
+@import "generics/vertical-center-container";
+
+/*
+  Elements Layer
+*/
+
+@import "elements/buttons";
+@import "elements/code";
+@import "elements/container";
+@import "elements/footer";
+@import "elements/hero";
+@import "elements/menu";
+@import "elements/navbar";
+@import "elements/root";
+@import "elements/subtitle";
+@import "elements/title";
+@import "elements/project-card";
+
+/*
+  Objects Layer
+*/
+
+@import "objects/flag-toggle";
+@import "objects/hero-with-background";
+@import "objects/timeline";
+@import "objects/typewriter";
+
+/*
+  Components Layer
+*/
+
+@import "components/highlights";
+@import "components/images-section";
+@import "components/mentorship-lists-section";
+@import "components/posts-section";
+@import "components/projects-section";
+@import "components/recommendations";
+@import "components/skills-section";
+@import "components/tooltips";
+@import "components/lang-dropdown";
+
+/*
+  Trumps Layer
+*/
+
+@import "trumps/trumps";

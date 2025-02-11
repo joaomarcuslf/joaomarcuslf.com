@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+@import "vendors/highlight/highlight.scss";
+@import "vendors/highlight/purple-luxury.scss";
+
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em
+}
+
+code.hljs {
+  padding: 3px 5px
+}

@@ -1,0 +1,11 @@
+@import "../settings/settings";
+
+.footer {
+  background-color: $senary;
+  color: $tertiary;
+  padding: 3rem 1.5rem;
+
+  strong {
+    color: $accent !important;
+  }
+}

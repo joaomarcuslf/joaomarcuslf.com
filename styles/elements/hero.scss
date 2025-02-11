@@ -1,0 +1,38 @@
+@import "../settings/settings";
+
+@import "../tools/medias-queries/all";
+
+.hero {
+  .hero-body {
+    padding: 3rem;
+
+    .subtitle a {
+      text-decoration: underline;
+    }
+
+    @include for-tablet-landscape-and-down {
+      padding: 3rem 1.5rem;
+    }
+  }
+
+  &:not(.is-success) * {
+    color: $tertiary;
+
+    &.progress {
+      background-color: $quinary;
+    }
+  }
+
+  &.is-success *,
+  &.is-light * {
+    color: $quinary;
+
+    &.progress {
+      background-color: $tertiary;
+    }
+  }
+
+  &.is-dark {
+    background-color: rgba($quinary, 0.85) !important;
+  }
+}
