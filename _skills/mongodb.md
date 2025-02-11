@@ -1,5 +1,5 @@
 ---
 layout: skill
 name: "MongoDB"
-progress: 85
+progress: 84
 ---

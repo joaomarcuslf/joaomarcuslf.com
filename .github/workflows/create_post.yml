@@ -22,24 +22,59 @@ jobs:
             if (author_association == 'OWNER') {
               const date = created_at.split("T")[0]
 
-              const title = body.split("\r\n").reduce(function (acc, elm) {
-                if (elm.includes('title: ')) {
-                  return elm.replace('title: ', '').split('"').join('')
-                }
-                return acc;
-              }, "")
+              function getKey(body, key) {
+                  return const title = body.split("\r\n").reduce(function (acc, elm) {
+                  if (elm.includes(`${key}: `)) {
+                    return elm.replace(`${key}: `, '').split('"').join('')
+                  }
+                  return acc;
+                }, "")
+              }
 
-              const layout = body.split("\r\n").reduce(function (acc, elm) {
-                if (elm.includes('layout: ')) {
-                  return elm.replace('layout: ', '').split('"').join('')
-                }
-                return acc;
-              }, "")
+              function sanitizeName(name) {
+                return name.replace(/[^\w\s]/gi, '').toLowerCase().split(" ").join("-")
+              }
+
+              let filename = ''
 
 
-              const name = title.replace(/[^\w\s]/gi, '').toLowerCase().split(" ").join("-")
+              const layout = getKey(body, 'layout')
 
-              fs.writeFileSync( `_${layout}/${date}-${name}.md`, body )
+              switch (layout) {
+                case 'graduation':
+                  const title = sanitizeName(getKey(body, 'title'))
+                  const year = getKey(body, 'end')
+
+                  filename = `${year}-${name}`
+                  break;
+
+                case 'job':
+                  const title = sanitizeName(getKey(body, 'company_name'))
+                  const [month, year] = getKey(body, 'start_date').split('/')
+
+                  filename = `${year}-${month}-${name}`
+                  break;
+
+                case 'post':
+                  const title = sanitizeName(getKey(body, 'title'))
+
+                  filename = `${date}-${name}`
+                  break;
+
+                case 'project':
+                  const title = sanitizeName(getKey(body, 'repo'))
+
+                  filename = `${date}-${name}`
+                  break;
+
+                case 'skill':
+                  const title = sanitizeName(getKey(body, 'name'))
+
+                  filename = `${name}`
+                  break;
+              }
+
+              fs.writeFileSync( `_${layout}s/${filename}.md`, body )
             }
 
       - name: Commit file
