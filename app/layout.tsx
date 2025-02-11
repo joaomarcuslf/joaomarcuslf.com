@@ -16,22 +16,6 @@ export const metadata: Metadata = {
     site: `@${site.username}`,
     creator: `@${site.username}`,
   },
-  openGraph: {
-    title: site.name,
-    description: site.description,
-    url: site.url,
-    siteName: site.name,
-    images: [
-      {
-        url: "/images/logo-hex.webp",
-        width: 500,
-        height: 372,
-        alt: site.name,
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
   keywords: site.keywords,
   abstract: site.abstract,
   authors: {
