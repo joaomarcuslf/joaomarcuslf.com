@@ -7,6 +7,8 @@ alt: Image with a Laptop and a Notebook
 link: /posts/2021-09-21-criando-seu-primeiro-site-com-github-pages
 internal: true
 draft: false
+redirect_from:
+  - /s/primeiro-site-gh-pages
 tags:
   - Beginner
   - Internal

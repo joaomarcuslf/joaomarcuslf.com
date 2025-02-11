@@ -59,6 +59,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-minifier
   - jekyll-image-optim
+  - jekyll-redirect-from
 
 jekyll-minifier:
   preserve_php: true                # Default: false
