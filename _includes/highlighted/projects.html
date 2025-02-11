@@ -1,0 +1,24 @@
+<section class="hero images-section is-dark">
+  <div class="hero-body">
+    <h1 class="images-section-title">Highlighted Projects</h1>
+    <div class="images-section-group">
+      {% assign sorted = site.projects | sort: 'date' | reverse %}
+
+      {% for project in sorted limit:3 %}
+      <a
+          class="images-section-item"
+          href="{{project.link}}"
+          target="blank"
+      >
+
+          <img
+            class="images-section-image"
+            src="https://github-readme-stats.vercel.app/api/pin/?username={{project.user}}&repo={{project.repo}}&theme=prussian"
+            alt="{{project.alt}}"
+          />
+      </a>
+      {% endfor %}
+    </div>
+    <div class="has-text-right"><a href="/projects">See more...</a></div>
+  </div>
+</section>

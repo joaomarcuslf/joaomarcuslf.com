@@ -1,0 +1,69 @@
+<script>
+  function showDescription(id) {
+    var cleanUpElm = document.getElementsByClassName('event is-active');
+
+    if (cleanUpElm.length) {
+      cleanUpElm[0].classList.toggle('is-active');
+    }
+
+    var elm = document.getElementById(id);
+    elm.classList.toggle('is-active');
+
+    var description = document.getElementById("timelineDescription");
+    description.innerHTML = elm.children[1].innerHTML;
+  }
+</script>
+
+<section class="timeline hero is-light">
+  <div class="hero-body">
+    <h1 class="title">Work Timeline</h1>
+    <div class="timeline-content">
+      <div class="initial-date">Aug 2015</div>
+      <div class="timeline-bar"></div>
+      <div class="final-date">Present</div>
+      <div class="events">
+        {% for job in site.jobs %}
+        <button id="{{job.key}}" type="button" class="event" onclick="showDescription('{{job.key}}')">
+          <img class="timeline-company-image" src="/images/companies/{{job.company_img}}" alt="{{job.name}}" />
+
+          <div class="description-hidden" aria-hidden="true">
+            <div class="card">
+              <div class="card">
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-left">
+                      <figure class="image is-48x48">
+                        <img src="/images/companies/{{job.company_img}}" alt="{{job.company_name}} - {{job.name}}" />
+                      </figure>
+                    </div>
+
+                    <div class="media-content">
+                      <p class="title is-4 has-text-left">
+                        {{job.name}}
+                      </p>
+                      <a href="{{job.company_ref}}" taget="blank" class="subtitle is-6 has-text-left">
+                        {{job.company_name}}
+                      </a>
+                    </div>
+                  </div>
+                  <div class="content">
+                    {{job.description}}
+
+                    <br />
+
+                    <time>{{job.start_date}}</time> - <time>{{job.end_date}}</time>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            {% endfor %}
+          </div>
+        </button>
+      </div>
+    </div>
+
+    <div id="timelineDescription" class="timeline-event-description"></div>
+  </div>
+</section>

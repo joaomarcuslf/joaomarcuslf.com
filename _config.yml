@@ -1,1 +1,51 @@
-theme: jekyll-theme-slate
+name: "@joaomarcuslf.io - Full-stack Web developer"
+description: I'm Software developer since 2015 with great expertise in Front-end development. Here you can learn more about my skills and experience.
+author: João Marcus de Lemos Fernandes
+canonical: http://joaomarcuslf.com/
+keywords: Developer, Front-end, Full-stack, React, Javascript, Joaomarcuslf
+abstract: My presentation website as SOftware developer
+avatar: https://avatars0.githubusercontent.com/u/53450523?s=400&u=ba2eb6e6c63bc38c54e7db04e5132c833a83169c&v=4
+
+footer-links:
+  linktr: https://linktr.ee/joaomarcuslf
+  github: https://github.com/joaomarcuslf2
+  linkedin: https://www.linkedin.com/in/jo%C3%A3o-marcus-fernandes-4b8814ba
+  medium: https://medium.com/@joaomarcuslf
+  codewars: https://www.codewars.com/users/joaomarcuslf/following
+  sourcerer: https://sourcerer.io/joaomarcuslf2
+  twitter: https://twitter.com/joaomarcuslf
+
+collections:
+  - skills
+  - projects
+  - jobs
+
+google_analytics:
+
+url: http://joaomarcuslf.com/
+
+baseurl: ""
+
+permalink: /:title/
+
+version: v1.2.0
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+
+sass:
+  style: :expanded
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CNAME

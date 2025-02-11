@@ -1,0 +1,25 @@
+<section class="hero images-section is-light">
+  <div class="hero-body">
+    <h1 class="images-section-title">Highlighted Posts</h1>
+    <div class="images-section-group">
+      {% for post in site.posts limit:3 %}
+      <a
+          class="images-section-item"
+          href="{{post.link}}"
+          target="blank"
+      >
+          <img
+              class="images-section-image"
+              src="{{post.img}}"
+              alt="{{post.alt}}"
+          >
+
+          <h2 class="images-section-subtitle">
+              {{post.title}}
+          </h2>
+      </a>
+      {% endfor %}
+    </div>
+    <div class="has-text-right"><a href="/posts">See more...</a></div>
+  </div>
+</section>
