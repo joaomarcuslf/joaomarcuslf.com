@@ -1,7 +1,7 @@
 ---
 layout: skill
 name: "Python"
-progress: 85
+progress: 94
 categories:
   - Django
   - Pandas

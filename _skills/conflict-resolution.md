@@ -1,5 +1,5 @@
 ---
 layout: skill
 name: "Conflict Resolution"
-progress: 70
+progress: 78
 ---

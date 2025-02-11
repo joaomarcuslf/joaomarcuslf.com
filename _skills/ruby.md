@@ -1,7 +1,7 @@
 ---
 layout: skill
 name: "Ruby"
-progress: 71
+progress: 76
 categories:
   - Ruby on Rails
   - Sinatra

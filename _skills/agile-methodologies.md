@@ -1,7 +1,7 @@
 ---
 layout: skill
 name: "Agile Methodologies"
-progress: 78
+progress: 85
 categories:
   - Scrum
   - XP

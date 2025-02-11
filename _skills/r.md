@@ -1,5 +1,5 @@
 ---
 layout: skill
 name: "R"
-progress: 65
+progress: 42
 ---

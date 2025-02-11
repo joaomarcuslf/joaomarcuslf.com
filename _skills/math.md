@@ -1,7 +1,7 @@
 ---
 layout: skill
 name: "Math"
-progress: 65
+progress: 46
 categories:
   - Discrete Math
   - Statistics
