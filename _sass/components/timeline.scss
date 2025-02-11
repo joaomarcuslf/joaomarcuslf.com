@@ -11,14 +11,14 @@
 
 .timeline {
   .timeline-content {
-
     position: relative;
     height: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    .initial-date, .final-date {
+    .initial-date,
+    .final-date {
       font-weight: bold;
     }
 
@@ -52,7 +52,8 @@
       }
     }
 
-    .timeline-bar, .events {
+    .timeline-bar,
+    .events {
       width: 90%;
       @include for-tablet-landscape-and-down {
         width: 85%;
@@ -66,8 +67,8 @@
       justify-content: space-around;
 
       .description-hidden {
-          display: none;
-        }
+        display: none;
+      }
 
       .event {
         flex: 1;
@@ -79,6 +80,7 @@
         border: unset;
 
         .timeline-company-image {
+          background: white;
           height: 60px;
           width: 60px;
           border-width: 3px;
@@ -88,8 +90,10 @@
           transition: border 0.2s linear, width 0.2s linear, height 0.2s linear;
         }
 
-        &:hover, &.is-active {
+        &:hover,
+        &.is-active {
           .timeline-company-image {
+            background: white;
             height: 75px;
             width: 75px;
             border-width: 5px;
@@ -106,14 +110,17 @@
           width: 50px;
 
           .timeline-company-image {
+            background: white;
             height: 40px;
             width: 40px;
             border-width: 2px;
             border-style: solid;
           }
 
-          &:hover, &.is-active {
+          &:hover,
+          &.is-active {
             .timeline-company-image {
+              background: white;
               height: 50px;
               width: 50px;
               border-width: 3px;
@@ -131,14 +138,17 @@
           width: 30px;
 
           .timeline-company-image {
+            background: white;
             height: 25px;
             width: 25px;
             border-width: 2px;
             border-style: solid;
           }
 
-          &:hover, &.is-active {
+          &:hover,
+          &.is-active {
             .timeline-company-image {
+              background: white;
               height: 30px;
               width: 30px;
               border-width: 3px;
@@ -151,7 +161,7 @@
   }
 
   .timeline-event-description {
-    padding-top: .5rem;
+    padding-top: 0.5rem;
     .card {
       background-color: $lightest-gray;
 
@@ -176,6 +186,7 @@
     }
 
     .timeline-company-image {
+      background: white;
       border-color: $lighter-gray-75;
     }
   }
@@ -195,6 +206,7 @@
     }
 
     .timeline-company-image {
+      background: white;
       border-color: $darker-gray-75;
     }
   }
