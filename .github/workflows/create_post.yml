@@ -32,7 +32,7 @@ jobs:
 
               const name = title.replace(/[^\w\s]/gi, '').toLowerCase().split(" ").join("-")
 
-              fs.writeFileSync( `${date}-${name}.md`, body )
+              fs.writeFileSync( `_posts/${date}-${name}.md`, body )
             }
 
       - name: Commit file
