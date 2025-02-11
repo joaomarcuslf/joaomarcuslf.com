@@ -2,7 +2,7 @@ function submitExample04(event, targetId) {
   $textarea = document.querySelector("#" + targetId + " .textarea")
   $scenario = document.querySelector("#" + targetId + " .scenario")
 
-  submitCode(event, targetId, $scenario, $textarea, [
+  submitCode(event, targetId, $scenario, $textarea, [[
     'var $boy01 = fantasia(pegarElemento("example04_Boy01"), "indio");',
     'var $boy02 = fantasia(pegarElemento("example04_Boy02"), "enfermeiro");',
     'function fantasiasBloqueadas(usuario) {',
@@ -42,5 +42,5 @@ function submitExample04(event, targetId) {
     '}',
     'fantasiasBloqueadas($boy01)',
     'fantasiasBloqueadas($boy02)',
-  ]);
+  ]]);
 }
