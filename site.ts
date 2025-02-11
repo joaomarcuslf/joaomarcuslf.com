@@ -38,5 +38,6 @@ export default {
       "icon": "fa fa-code"
     }
   ],
-  "skillOrder": ["go", "javascript", "mongodb"]
+  "skillOrder": ["go", "javascript", "mongodb"],
+  "topicOrder": ["baduk", "coffee"]
 }

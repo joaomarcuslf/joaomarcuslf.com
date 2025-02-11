@@ -1,5 +1,6 @@
 import ExpandedProjects from "@/components/expanded/projects";
 import Introduction from "@/components/theme/introduction";
+import TOC from "@/components/theme/table-of-contents";
 import { CopyMetadata, copyMetadataSerializer } from "@/types/copy";
 import { ProjectMetadata, projectMetadataSerializer } from "@/types/project";
 import { getContent, getContentMetadataList } from "@/utils/metadata";
@@ -29,6 +30,8 @@ export default function Projects() {
       />
 
       <ExpandedProjects projects={projectsMetadata} />
+
+      <TOC />
     </main>
   );
 }

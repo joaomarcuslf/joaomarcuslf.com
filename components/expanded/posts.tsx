@@ -43,7 +43,7 @@ export default function ExpandedPosts({ posts }: { posts: PostMetadata[] }) {
   return (
     <section className="hero images-section is-light">
       <div className="hero-body">
-        <h2 className="images-section-title">Posts</h2>
+        <h3 className="images-section-title">Posts</h3>
 
         <div className="tags">
           <a

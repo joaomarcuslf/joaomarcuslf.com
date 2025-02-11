@@ -1,0 +1,225 @@
+@import "../settings/settings";
+
+@import "../tools/truncate";
+@import "../tools/opacity-animate";
+@import "../tools/medias-queries/all";
+@import "../tools/is-even";
+@import "../tools/not-last";
+
+@import "../generics/vertical-center-container";
+@import "../generics/horizontal-center-container";
+
+.topics-section {
+  .topic-tree {
+    padding: 3rem 0 0 0;
+  }
+
+  .hero-body > * {
+    padding: 0.5rem 0;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  .card {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    background-color: rgba($accent, 0.25);
+  }
+
+  .topics-section-group > .topics-section-item {
+    @include is-even {
+      &.card {
+        background-color: rgba($tertiary, 0.25);
+      }
+    }
+  }
+
+  .topics-section-title {
+    @extend .title;
+
+    font-size: 1.7rem;
+    margin-bottom: 0 !important;
+  }
+
+  .topics-section-group {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+
+    @include for-tablet-landscape-and-down {
+      flex-direction: row;
+    }
+
+    &.topic-tree-element {
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 2rem 0;
+
+      @include is-odd {
+        background-color: $quaternary;
+      }
+
+      .topics-tree-categories {
+        opacity: 0.7;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        @include for-tablet-landscape-and-down {
+          flex-wrap: wrap;
+        }
+
+        .is-mini {
+          padding: 0 1rem !important;
+        }
+
+        .card-content,
+        topic-item {
+          padding: 1rem;
+        }
+
+        .topics-section-title {
+          font-size: 1rem;
+        }
+      }
+
+      &.is-closed {
+        .topics-tree-categories.is-highlight {
+          max-height: 0;
+        }
+      }
+    }
+  }
+
+  .topics-tags {
+    .tags {
+      margin-bottom: 0;
+    }
+  }
+
+  .topics-section-item {
+    @extend .horizontal-center-container;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    @include for-tablet-landscape-and-down {
+      flex-direction: row;
+    }
+
+    .tags {
+      display: flex;
+      justify-content: center;
+    }
+
+    .card-content {
+      padding: 1rem;
+    }
+
+    .media-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .topics-section-title {
+        width: 100%;
+        margin-left: -1.5rem;
+      }
+
+      .icon {
+        .fa-lg {
+          font-size: 1.3rem;
+        }
+      }
+
+      @include for-tablet-only {
+        flex-wrap: wrap;
+
+        .icon {
+          .fa-lg {
+            font-size: 1.5rem;
+          }
+        }
+      }
+
+      @include for-phone-only {
+        flex-wrap: nowrap;
+        .icon {
+          .fa-lg {
+            font-size: 1.7rem;
+          }
+        }
+      }
+    }
+
+    @include for-tablet-landscape-up {
+      max-width: 30%;
+      width: 32%;
+      padding: 0.5rem;
+    }
+
+    opacity: 0.8;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0.5rem;
+
+    @include for-desktop-up {
+      width: 32%;
+
+      padding: 0.5rem;
+
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+
+    @include for-tablet-landscape-and-down {
+      opacity: 1;
+      width: 50%;
+
+      @include not-last {
+        @include is-even {
+          padding-left: 0.5rem;
+        }
+
+        @include is-odd {
+          padding-right: 0.5rem;
+        }
+      }
+    }
+
+    @include for-tablet-portrait-and-down {
+      width: 100%;
+    }
+
+    &:hover {
+      @include opacity-animate(0.1s, 0.8, 1);
+    }
+
+    .card-content,
+    .topic-item {
+      width: 100%;
+    }
+  }
+
+  @include dark-section;
+  @include light-section;
+}

@@ -14,10 +14,10 @@ export default function Introduction({
   content: string;
 }) {
   return (
-    <section className={`hero is-${theme} ${className}`}>
+    <section className={`introduction hero is-${theme} ${className}`}>
       <div className="hero-body">
         <h1 className="title">{title}</h1>
-        <h2 className="subtitle">{subtitle}</h2>
+        <h3 className="subtitle">{subtitle}</h3>
         <Markdown className="content is-normal has-text-centered">{content}</Markdown>
       </div>
     </section>

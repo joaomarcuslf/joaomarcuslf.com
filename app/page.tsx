@@ -11,6 +11,7 @@ import { SkillMetadata, skillMetadataSerializer } from "@/types/skill";
 import { flatten, sortMetadataByRules } from "@/utils/helpers";
 import { getContent, getContentMetadataList } from "@/utils/metadata";
 import { CopyMetadata, copyMetadataSerializer } from "@/types/copy";
+import TOC from "@/components/theme/table-of-contents";
 
 export default function Home() {
   const techMetadata = getContentMetadataList<SkillMetadata>(
@@ -71,6 +72,8 @@ export default function Home() {
       />
       <HighlightedPosts posts={postsMetadata} />
       <HighlightedProjects projects={projectsMetadata} />
+
+      <TOC />
     </main>
   );
 }

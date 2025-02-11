@@ -5,7 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 import SkillView from "@/components/view/skill";
 import { SkillMetadata, DomainDictionary } from "@/types/skill";
-import MainSkill from "@/components/view//main-skill";
+import MainSkill from "@/components/view/main-skill";
 
 function ExpandedSkills({
   skills,

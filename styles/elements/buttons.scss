@@ -7,17 +7,24 @@
 
     border-width: 2px;
 
-    transform: rotateX(0deg);
-
-    transition-property: transform;
-    transition-duration: 1s;
+    .icon {
+      transition-property: transform;
+      transition-duration: 1s;
+      transform: rotateX(0deg);
+    }
 
     &.is-flipped {
-      transform: rotateX(180deg);
+      .icon {
+        transform: rotateX(180deg);
+      }
     }
 
     &.has-text {
       width: unset;
+    }
+
+    &.no-border {
+      border: none;
     }
 
     &:hover,

@@ -1,14 +1,17 @@
-import ExpandedSkills from "@/components/expanded/skills";
-import ExpandedProjects from "@/components/expanded/projects";
 import Introduction from "@/components/theme/introduction";
 import JobTimeline from "@/components/job-timeline";
-import { JobMetadata, JobMetadataWithContent, jobMetadataSerializer } from "@/types/job";
-import { getContent, getContentMetadataList } from "@/utils/metadata";
-import { ProjectMetadata, projectMetadataSerializer } from "@/types/project";
-import { SkillMetadata, skillMetadataSerializer } from "@/types/skill";
+import ExpandedSkills from "@/components/expanded/skills";
+import ExpandedProjects from "@/components/expanded/projects";
+import ExpandedTopics from "@/components/expanded/topics";
+import TOC from "@/components/theme/table-of-contents";
 import site from "@/site";
-import { sortMetadataByRules, flatten } from "@/utils/helpers";
 import { CopyMetadata, copyMetadataSerializer } from "@/types/copy";
+import { JobMetadata, JobMetadataWithContent, jobMetadataSerializer } from "@/types/job";
+import { SkillMetadata, skillMetadataSerializer } from "@/types/skill";
+import { ProjectMetadata, projectMetadataSerializer } from "@/types/project";
+import { TopicMetadata, topicMetadataSerializer } from "@/types/topic";
+import { getContent, getContentMetadataList } from "@/utils/metadata";
+import { sortMetadataByRules, flatten } from "@/utils/helpers";
 
 export default function Projects() {
   const techMetadata = getContentMetadataList<SkillMetadata>(
@@ -41,7 +44,10 @@ export default function Projects() {
     copyMetadataSerializer,
     "introduction-about-me"
   );
-
+  const topicsMetadata = getContentMetadataList<TopicMetadata>(
+    "topics",
+    topicMetadataSerializer
+  );
 
   return (
     <main>
@@ -52,11 +58,9 @@ export default function Projects() {
         content={copy.content}
         className="has-background bg-about-me typewriter"
       />
-
       <JobTimeline jobs={jobsMetadata} />
-
       <ExpandedSkills
-        skills={sortMetadataByRules(
+        skills={sortMetadataByRules<SkillMetadata>(
           flatten<SkillMetadata>([
             techMetadata,
             softSkillsMetadata,
@@ -65,8 +69,10 @@ export default function Projects() {
           site.skillOrder
         )}
       />
-
       <ExpandedProjects projects={projectsMetadata} />
+      <ExpandedTopics topics={sortMetadataByRules<TopicMetadata>(topicsMetadata, site.topicOrder)} />
+
+      <TOC />
     </main>
   );
 }

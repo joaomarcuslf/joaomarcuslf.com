@@ -1,5 +1,6 @@
 import ExpandedPosts from "@/components/expanded/posts";
 import Introduction from "@/components/theme/introduction";
+import TOC from "@/components/theme/table-of-contents";
 import { CopyMetadata, copyMetadataSerializer } from "@/types/copy";
 import { PostMetadata, postMetadataSerializer } from "@/types/post";
 import { getContent, getContentMetadataList } from "@/utils/metadata";
@@ -28,6 +29,8 @@ export default function Posts() {
       />
 
       <ExpandedPosts posts={postsMetadata.filter((p) => !p.draft)} />
+
+      <TOC />
     </main>
   );
 }
