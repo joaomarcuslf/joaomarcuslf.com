@@ -94,3 +94,14 @@
 .border-1-light {
   border: 1rem $secondary solid !important;
 }
+
+.highlighter-rouge {
+  padding-bottom: 0.5em;
+
+  pre,
+  div.highlight {
+    padding: 0 !important;
+    background-color: none !important;
+    color: none !important;
+  }
+}

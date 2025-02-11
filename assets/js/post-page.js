@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  hljs.highlightAll();
-
   document.querySelectorAll("[data-gh-project]").forEach(function ($proj) {
     var repo = $proj.getAttribute("data-gh-project");
 

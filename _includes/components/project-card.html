@@ -3,7 +3,7 @@
   data-gh-project="{{include.user}}/{{include.repo}}"
 >
   <figure class="project-card-image">
-    <p class="image is-128x128">
+    <p class="image">
       <img
         src="https://raw.githubusercontent.com/devicons/devicon/master/icons/{{include.main}}/{{include.main}}-original.svg"
         alt="{{include.main}} logo"
@@ -19,12 +19,21 @@
         On
         <a
           target="blank"
-          href="https://github.com/{{include.user}}/{{include.repo}}"
+          href="https://github.com/{{include.user}}/{{include.repo}}{{include.extra}}"
           title="View on GitHub"
           >GitHub</a
         >
+        {{if include.extra}}
+        <small>#{{include.extra}}</small>
+        {{/if}}
       </p>
-      <h6 class="project-card-title">{{include.name}}</h6>
+      <a
+        target="blank"
+        href="https://github.com/{{include.user}}/{{include.repo}}{{include.extra}}"
+        title="View on GitHub"
+      >
+        <h6 class="project-card-title">{{include.name}}</h6>
+      </a>
     </header>
 
     <div class="project-card-body">
