@@ -7,38 +7,25 @@ import SkillView from "@/components/view/skill";
 import { SkillMetadata, DomainDictionary } from "@/types/skill";
 import MainSkill from "@/components/view/main-skill";
 
-function ExpandedSkills({
-  skills,
-}: {
-  skills: SkillMetadata[];
-}) {
+function ExpandedSkills({ skills }: { skills: SkillMetadata[] }) {
   const [shownSkills, setShownSkills] = useState<SkillMetadata[]>(skills);
   const [skill, setSkill] = useState<SkillMetadata | null>(null);
 
   const [domain, setDomain] = useState<string | null>(null);
-  const [domainList, setDomainList] = useState<{
-    name: string;
-    count: number;
-  }[] | null>(null);
+  const [domainList, setDomainList] = useState<
+    | {
+        name: string;
+        count: number;
+      }[]
+    | null
+  >(null);
 
   const searchParams = useSearchParams();
   const router = useRouter();
 
   const searchSkill = searchParams.get("skill");
 
-  const selectSkill = useCallback((searchSkill: string | null) => {
-    const foundSkill = skills.find((skill) => skill.key === searchSkill);
-
-    if (foundSkill) {
-      setSkill(foundSkill);
-    } else {
-      setSkill(null);
-    }
-
-    scrollToSection();
-  }, []);
-
-  const scrollToSection = () => {
+  const scrollToSection = useCallback(() => {
     if (!domain && !searchSkill && !skill) return;
 
     setTimeout(() => {
@@ -48,7 +35,22 @@ function ExpandedSkills({
         element.scrollIntoView({ behavior: "smooth" });
       }
     }, 200);
-  };
+  }, []);
+
+  const selectSkill = useCallback(
+    (searchSkill: string | null) => {
+      const foundSkill = skills.find((skill) => skill.key === searchSkill);
+
+      if (foundSkill) {
+        setSkill(foundSkill);
+      } else {
+        setSkill(null);
+      }
+
+      scrollToSection();
+    },
+    [scrollToSection, skills, setSkill]
+  );
 
   useEffect(() => {
     if (domain) {
@@ -97,7 +99,7 @@ function ExpandedSkills({
     }
 
     scrollToSection();
-  }
+  };
 
   return (
     <section className={`hero skills-section is-dark`}>
@@ -143,7 +145,9 @@ function ExpandedSkills({
 }
 
 export default function Container({ skills }: { skills: SkillMetadata[] }) {
-  return <Suspense>
-    <ExpandedSkills skills={skills} />
-  </Suspense>
-};
+  return (
+    <Suspense>
+      <ExpandedSkills skills={skills} />
+    </Suspense>
+  );
+}
