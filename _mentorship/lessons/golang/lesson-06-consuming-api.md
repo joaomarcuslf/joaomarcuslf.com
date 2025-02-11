@@ -425,18 +425,18 @@ Em seguida, abra o `server/http.go`, e adicione o módulo de CORS:
 
 ```go
 import (
-	"github.com/gin-contrib/cors"
-	/* ... */
+  "github.com/gin-contrib/cors"
+  /* ... */
 )
 
 /* ... */
 
 func (a *Server) Run() {
-	database.NewDB()
-	defer database.Close()
+  database.NewDB()
+  defer database.Close()
 
-	router := gin.Default()
-	router.Use(cors.Default())
+  router := gin.Default()
+  router.Use(cors.Default())
   /* ... */
 ```
 
