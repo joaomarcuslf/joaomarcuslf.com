@@ -1,0 +1,7 @@
+@import "../../../settings/settings";
+
+@mixin for-tablet-only {
+  @media (max-width: $size-desktop - 1px) and (min-width: $size-phone + 1) {
+    @content;
+  }
+}

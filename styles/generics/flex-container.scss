@@ -34,4 +34,36 @@
   &.has-space-evenly {
     justify-content: space-evenly;
   }
+
+  &.is-align-top {
+    align-items: flex-start;
+  }
+
+  &.is-align-bottom {
+    align-items: flex-end;
+  }
+
+  &.is-align-center {
+    align-items: center;
+  }
+
+  &.is-align-stretch {
+    align-items: stretch;
+  }
+
+  &.is-align-baseline {
+    align-items: baseline;
+  }
+
+  &.is-reverse {
+    flex-direction: row-reverse;
+  }
+
+  &.is-wrap {
+    flex-wrap: wrap;
+  }
+
+  &.is-nowrap {
+    flex-wrap: nowrap;
+  }
 }

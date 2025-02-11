@@ -6,9 +6,20 @@
   .hero-body {
     padding: 3rem;
 
-    .subtitle a {
-      text-decoration: underline;
+    .title {
+      font-size: 2.5rem;
+      font-weight: 500;
     }
+
+    .subtitle {
+      font-size: 2rem;
+      font-weight: 300;
+
+      a {
+        text-decoration: underline;
+      }
+    }
+
 
     @include for-tablet-landscape-and-down {
       padding: 3rem 1.5rem;

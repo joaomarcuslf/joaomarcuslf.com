@@ -1,7 +1,3 @@
-"use client";
-
-import Link from "next/link";
-
 import { getIcon } from "@/utils/icon";
 import { SkillMetadata } from "@/types/skill";
 

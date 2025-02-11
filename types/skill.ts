@@ -16,3 +16,9 @@ export const skillMetadataSerializer: Serializer<SkillMetadata> = (data, fileNam
     subSkills: data.sub_skills,
   };
 };
+
+export const DomainDictionary: { [key: string]: string } = {
+  "tech": "Technologies",
+  "soft-skill": "Soft Skills",
+  "hard-skill": "Hard Skills",
+}

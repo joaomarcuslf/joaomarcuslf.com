@@ -21,7 +21,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        max-width: 800px;
+        max-width: 760px;
 
         > * {
           background-color: rgba($tertiary, .1);
@@ -29,8 +29,10 @@
           border-radius: 5px;
 
           width: fit-content;
-          line-height: 1.1rem;
+          line-height: 1.3rem;
           padding: 5px;
+
+          font-size: 1.2rem;
         }
       }
     }
@@ -41,6 +43,8 @@
       background: url("/images/background-home.webp") no-repeat center center;
       background-size: cover;
 
+      min-height: 75vh;
+
       .hero-body {
         background-color: rgba($senary, $opacity-value);
       }
@@ -49,6 +53,8 @@
     &.bg-about-me {
       background: url("/images/background-projects.webp") no-repeat center center;
       background-size: cover;
+
+      min-height: 75vh;
 
       .hero-body {
         background-color: rgba($quinary, $opacity-value);
@@ -59,6 +65,8 @@
       background: url("/images/background-mentorship.webp") no-repeat center center;
       background-size: cover;
 
+      min-height: 75vh;
+
       .hero-body {
         background-color: rgba($accent, $opacity-value);
       }
@@ -67,6 +75,8 @@
     &.bg-posts {
       background: url("/images/background-posts.webp") no-repeat center center;
       background-size: cover;
+
+      min-height: 75vh;
 
       .hero-body {
         background-color: rgba($quaternary, $opacity-value);
@@ -77,8 +87,10 @@
       background: url("/images/background-mentorship.webp") no-repeat center center;
       background-size: cover;
 
+      min-height: 75vh;
+
       .hero-body {
-        background-color: rgba($accent, $opacity-value);
+        background-color: rgba($primary, $opacity-value);
       }
     }
   }
