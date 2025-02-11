@@ -100,6 +100,14 @@ export const addTags = (cb) => {
   });
 }
 
+export const shortUrl = (cb) => {
+  return exec('node run/generate-url-shortener', function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    cb(err);
+  });
+}
+
 export const move = (path, target) => function _move() {
   return gulp.src(path)
     .pipe(gulp.dest(target))
@@ -131,4 +139,5 @@ export default series(
   move('./dist/images/**/*', 'assets/images'),
   move('./dist/js/**/*', 'assets/js'),
   addTags,
+  shortUrl,
 )

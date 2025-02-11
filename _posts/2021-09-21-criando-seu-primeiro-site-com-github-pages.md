@@ -9,6 +9,7 @@ internal: true
 draft: false
 redirect_from:
   - /s/primeiro-site-gh-pages
+short_url: http://go-go-url-go.com/KouKjLyQ
 tags:
   - Beginner
   - Internal
