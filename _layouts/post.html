@@ -23,7 +23,8 @@ layout: default
         {{ page.content | number_of_words | minus: 250 }}
       {% endcapture %}
       {% unless words contains "-" %}
-        {{ words | plus: 250 | divided_by: 180 | append: " minutes to read" }}
+        {{ words | plus: 250 | divided_by: 180 }}
+        {% t post.minutes_to_read %}
       {% endunless %}
     </small>
   </div>
@@ -38,7 +39,7 @@ layout: default
 
 <section id="posts" class="hero images-section is-dark">
   <div class="hero-body">
-    <h4 class="images-section-subtitle has-text-left">You may also enjoy:</h4>
+    <h4 class="images-section-subtitle has-text-left">{% t post.you_may_also_like %}:</h4>
 
     <div class="images-section-group is-recommendation">
       {% assign maxRelated = 3 %}

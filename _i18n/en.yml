@@ -166,3 +166,7 @@ resume:
       storytelling: Storytelling
       detail: Detail
       business_acumen: Business Acumen
+
+post:
+  minutes_to_read: minutes to read
+  you_may_also_like: You may also enjoy
