@@ -3,6 +3,8 @@ name: Deploy Next.js site to Pages
 on:
   push:
     branches: ["main"]
+    paths:
+      - "public/images/**"
   workflow_dispatch:
 
 permissions:
@@ -15,9 +17,54 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  generate_webp:
+    name: Generate WebP and Thumbnails
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository 🛎️
+        uses: actions/checkout@v4
+
+      - name: Check for changes in images folder 🔍
+        id: changes
+        uses: dorny/paths-filter@v2
+        with:
+          filters: |
+            images:
+              - "public/images/**"
+
+      - name: Exit if no changes in images folder 🚫
+        if: steps.changes.outputs.images == 'false'
+        run: exit 0
+
+      - name: Set up Python 🐍
+        if: steps.changes.outputs.images == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install Pillow 📦
+        if: steps.changes.outputs.images == 'true'
+        run: |
+          python -m pip install --upgrade pip
+          pip install pillow
+
+      - name: Generate WebP Images 🖼️
+        if: steps.changes.outputs.images == 'true'
+        run: |
+          python scripts/create_webp.py
+          python scripts/create_thumbnails.py
+
+      - name: Commit Generated Images 🚀
+        if: steps.changes.outputs.images == 'true'
+        uses: EndBug/add-and-commit@v7
+        with:
+          message: "Auto-generated WebP and thumbnails"
+          add: "./public/images"
+
   build:
     name: Build Next.js Site
     runs-on: ubuntu-latest
+    needs: generate_webp
     steps:
       - name: Checkout Repository 🛎️
         uses: actions/checkout@v4
