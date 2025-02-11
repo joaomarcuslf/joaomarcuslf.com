@@ -1,7 +1,7 @@
 ---
 layout: mentorship
-title: Golang 04 - Adicionando rota geradora
-subtitle: Gerando QR code via web.
+title: Golang 05 - Adicionando nossa API
+subtitle: Adicionando DB, e nossa API.
 type: lesson
 ---
 
