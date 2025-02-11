@@ -7,6 +7,10 @@ alt: Image with a Laptop and a Notebook
 link: /posts/2021-09-21-criando-seu-primeiro-site-com-github-pages
 internal: true
 draft: false
+tags:
+  - Beginner
+  - Front-end
+  - Career
 ---
 
 Uma das minhas experiências favoritas foi a de trabalhar no meu próprio site, como alguém particularmente crítico eu nunca consegui encontrar um template que me agradasse, então resolvi fazer um eu mesmo, seguindo exemplos que eu via na internet e desenhando no papel e tudo mais. Bom, nesse post nós não vamos entrar profundamente nesse processo, eu irei abrir as portas para onde sua imaginação possa te levar

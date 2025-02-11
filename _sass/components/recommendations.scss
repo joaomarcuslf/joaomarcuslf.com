@@ -1,6 +1,4 @@
-.is-highlight {
-  transition: max-height .5s;
-
+.is-recommendation {
   height:auto;
 
   max-height: 300px;
@@ -14,7 +12,7 @@
     flex: 1;
   }
 
-  &.is-expanded {
-    max-height: 500vh;
+  h2.images-section-subtitle {
+    font-size: 1rem;
   }
 }

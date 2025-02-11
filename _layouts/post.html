@@ -3,23 +3,63 @@ layout: default
 ---
 
 <div class="post">
-    <div class="post-header">
-        <h1 class="title has-text-left">
-            {{page.title}}
-        </h1>
+  <div class="post-header">
+    <h1 class="title has-text-left">
+      {{page.title}}
+    </h1>
 
-        <h2 class="subtitle has-text-left">
-            {{page.subtitle}}
-        </h2>
-    </div>
+    <h2 class="subtitle has-text-left">
+      {{page.subtitle}}
+    </h2>
+  </div>
 
-    <img
-        class="is-fullwidth post-cover-image"
-        src="{{page.img}}"
-        alt="{{page.alt}}"
-    />
+  <img class="is-fullwidth post-cover-image" src="{{page.img}}" alt="{{page.alt}}" />
 
-    <div class="post-content content is-medium">
-        {{content}}
-    </div>
+  <div class="post-content content is-medium">
+    {{content}}
+  </div>
 </div>
+
+<section id="posts" class="hero images-section is-dark">
+  <div class="hero-body">
+    <h4 class="images-section-subtitle has-text-left">You may also enjoy:</h4>
+
+    <div class="images-section-group is-recommendation">
+      {% assign maxRelated = 3 %}
+      {% assign minCommonTags =  2 %}
+      {% assign maxRelatedCounter = 0 %}
+
+      {% for post in site.posts %}
+
+      {% assign sameTagCount = 0 %}
+
+      {% for tag in post.tags %}
+      {% if post.url != page.url %}
+      {% if page.tags contains tag %}
+      {% assign sameTagCount = sameTagCount | plus: 1 %}
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+
+      {% if sameTagCount >= minCommonTags %}
+      {%
+            include components/post.html
+              link=post.link
+              img=post.img
+              alt=post.alt
+              title=post.title
+              internal=post.internal
+          %}
+
+      {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
+
+      {% if maxRelatedCounter >= maxRelated %}
+      {% break %}
+      {% endif %}
+      {% endif %}
+
+      {% endfor %}
+
+    </div>
+  </div>
+</section>

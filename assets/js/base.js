@@ -46,7 +46,7 @@ function smoothScroll(selector) {
 }
 
 function expandView(target) {
-  var $highlights = document.querySelector("#" + target + " .is-higlights");
+  var $highlights = document.querySelector("#" + target + " .is-highlight");
   var $button = document.querySelector("#" + target + " .button.has-icon");
 
   $button.classList.toggle('is-flipped');
