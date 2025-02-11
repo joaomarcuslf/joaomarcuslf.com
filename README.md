@@ -1,6 +1,6 @@
 # joaomarcuslf.com
 
-[![Build and Deploy](https://github.com/joaomarcuslf/joaomarcuslf.com/actions/workflows/build_deploy.yml/badge.svg)](https://github.com/joaomarcuslf/joaomarcuslf.com/actions/workflows/build_deploy.yml)
+[![Deploy Next.js site to Pages](https://github.com/joaomarcuslf/joaomarcuslf.com/actions/workflows/nextjs.yml/badge.svg)](https://github.com/joaomarcuslf/joaomarcuslf.com/actions/workflows/nextjs.yml)
 
 ## Getting Started
 
