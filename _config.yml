@@ -14,14 +14,25 @@ codewars: https://www.codewars.com/users/joaomarcuslf/following
 sourcerer: https://sourcerer.io/joaomarcuslf2
 twitter: https://twitter.com/joaomarcuslf
 
+
+
 collections:
-  - skills
-  - projects
-  - jobs
+  posts:
+    output: true
+    permalink: /:collection/:name
+  skills:
+    output: false
+    permalink: /:collection/:name
+  projects:
+    output: false
+    permalink: /:collection/:name
+  jobs:
+    output: false
+    permalink: /:collection/:name
 
 google_analytics:
 
-url: http://joaomarcuslf.com/
+url: http://joaomarcuslf.com
 
 baseurl: ""
 
@@ -41,6 +52,7 @@ sass:
 plugins:
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-seo-tag
 
 exclude:
   - Gemfile
