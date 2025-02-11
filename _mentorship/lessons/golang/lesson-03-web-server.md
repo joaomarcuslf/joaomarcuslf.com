@@ -5,7 +5,13 @@ subtitle: Criando templates, e variáveis de templates.
 type: lesson
 ---
 
-Ponto de partida no repositório:
+## Expectativas
+
+Nessa aula vamos criar nosso servidor HTTP, e aprender a renderizar HTML utilizando valores providos pelo nosso servidor. E no conteúdo adicional vamos ver como atualizar o servidor sempre que salvarmos.
+
+----
+
+Ponto de partida desse post:
 
 <div>
   {%
@@ -18,8 +24,7 @@ Ponto de partida no repositório:
   %}
 </div>
 
-
-### Executando servidor
+## Executando servidor
 
 Para criar nosso servidor, nós vamos utilizar a [Design Pattern Command](https://refactoring.guru/pt-br/design-patterns/command), uma design pattern comportamental que vai ser muito útil para quando nós quisermos rodar o servidor em Go routines.
 
@@ -36,34 +41,34 @@ Abra o arquivo `http.go` e escreva o seguinte:
 package server
 
 import (
-	"fmt"
-	"net/http"
+  "fmt"
+  "net/http"
 
-	io "github.com/joaomarcuslf/qr-generator/services/io"
+  io "github.com/joaomarcuslf/qr-generator/services/io"
 )
 
 var cli *io.CLI = io.NewCLI()
 
 type Server struct {
-	Port string
+  Port string
 }
 
 func NewServer(port string) *Server {
-	return &Server{
-		Port: port,
-	}
+  return &Server{
+    Port: port,
+  }
 }
 
 func Index(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "OK")
+  fmt.Fprintf(w, "OK")
 }
 
 func (a *Server) Run() {
-	http.HandleFunc("/", Index)
+  http.HandleFunc("/", Index)
 
-	cli.Write("Server running on port: " + a.Port)
+  cli.Write("Server running on port: " + a.Port)
 
-	http.ListenAndServe(":"+a.Port, nil)
+  http.ListenAndServe(":"+a.Port, nil)
 }
 ```
 
@@ -75,12 +80,12 @@ Agora abra o `main.go`, e vamos atualizar o arquivo para usarmos o nosso servido
 package main
 
 import (
-	server "github.com/joaomarcuslf/qr-generator/server"
+  server "github.com/joaomarcuslf/qr-generator/server"
 )
 
 func main() {
-	server := server.NewServer("8000")
-	server.Run()
+  server := server.NewServer("8000")
+  server.Run()
 }
 ```
 
@@ -102,12 +107,12 @@ Abra o arquivo `html.go` e escreva o seguinte:
 package handlers
 
 import (
-	"fmt"
-	"net/http"
+  "fmt"
+  "net/http"
 )
 
 func Home(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "OK")
+  fmt.Fprintf(w, "OK")
 }
 ```
 
@@ -116,14 +121,14 @@ Em seguida vamos atualizar o `http.go` para usar o nosso handler:
 ```go
 import (
   /* ... */
-	web "github.com/joaomarcuslf/qr-generator/handlers/web"
-	/* ... */
+  web "github.com/joaomarcuslf/qr-generator/handlers/web"
+  /* ... */
 )
 
 /* ... */
 
 func (a *Server) Run() {
-	http.HandleFunc("/", web.Home)
+  http.HandleFunc("/", web.Home)
 
   /* ... */
 }
@@ -174,8 +179,7 @@ touch templates/index.html
 Abra o `index.html` e preencha com o seguinte HTML:
 
 ```html
-{% raw %}
-<html>
+{% raw %}<html>
 <head>
   <title>{{.Title}}</title>
   <meta charset="utf-8" />
@@ -226,15 +230,13 @@ Abra o `index.html` e preencha com o seguinte HTML:
     </div>
   </section>
 </body>
-</html>
-{% endraw %}
+</html>{% endraw %}
 ```
 
 Quero chamar atenção para alguns trechos do HTML:
 
 ```html
-{% raw %}
-<title>{{.Title}}</title>
+{% raw %}<title>{{.Title}}</title>
 
 <meta name="description" content="{{.Description}}">
 <meta property="og:description_safe" content="{{.Description}}" />
@@ -247,8 +249,7 @@ Quero chamar atenção para alguns trechos do HTML:
 
 {{if .Error}}
   <p class="help is-danger">{{.Error}}</p>
-{{end}}
-{% endraw %}
+{{end}}{% endraw %}
 ```
 
 Nesses trechos nós estamos utilizando três variáveis, `.Title`, `.Description` e `.Error`. Essas variáveis são enviadas pelo Go para o template, como se fossem lacunas. Vamos atualizar nosso `web/html.go`.
@@ -257,30 +258,30 @@ Nesses trechos nós estamos utilizando três variáveis, `.Title`, `.Description
 package handlers
 
 import (
-	"net/http"
-	"text/template"
+  "net/http"
+  "text/template"
 )
 
 type Page struct {
-	Title       string
-	Description string
-	Error       string
+  Title       string
+  Description string
+  Error       string
 }
 
 func Home(w http.ResponseWriter, r *http.Request) {
-	p := Page{
-		Title:       "QR Code Generator",
-		Description: "A page to generate QR",
-	}
+  p := Page{
+    Title:       "QR Code Generator",
+    Description: "A page to generate QR",
+  }
 
-	t, err := template.ParseFiles("templates/index.html")
+  t, err := template.ParseFiles("templates/index.html")
 
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-		return
-	}
+  if err != nil {
+    http.Error(w, err.Error(), http.StatusInternalServerError)
+    return
+  }
 
-	t.Execute(w, p)
+  t.Execute(w, p)
 }
 ```
 
@@ -290,22 +291,22 @@ E vamos atualizar nosso `http.go`, pois agora nós utilizamos pastas estáticas,
 /* ... */
 
 func (a *Server) Run() {
-	fs := http.FileServer(http.Dir("./static"))
-	http.Handle("/static/", http.StripPrefix("/static/", fs))
+  fs := http.FileServer(http.Dir("./static"))
+  http.Handle("/static/", http.StripPrefix("/static/", fs))
 
-	http.HandleFunc("/", web.Home)
+  http.HandleFunc("/", web.Home)
 
   /* ... */
 }
 ```
 
-### Concluindo
+## Concluindo
 
 Agora é só atualizar seu servidor, e abrir [http://localhost:8000/](http://localhost:8000/), você vai ver o nosso HTML. Por hora ele não funciona, e é o que vamos fazer na nossa próxima aula. Revise o que fizemos e brinque com o HTML, CSS. Entenda também as variáveis.
 
 Na próxima aula, nós vamos implementar a rota `/generator`.
 
-## Adicionais:
+## Adicionais
 
 Se você estiver cansado de ficar atualizando seu servidor, você pode utilizar o [cosmtrek/air](https://github.com/cosmtrek/air), siga o guia de instalação.
 
@@ -348,6 +349,6 @@ Abra `.vscode/launch.json`:
 }
 ```
 
-Agora é só abrir a Tab `Run and Debug` e clique em `Live Reload Server`. Prontinho, agora você não precisará rodar tantos comandos para atualizar seu servidor.
+Agora é só abrir a Tab `Run and Debug` e clique em `Live Reload Server`. Prontinho, agora você não precisará rodar tantos comandos para atualizar seu servidor. A outra opção(`Launch Package`), é para quando precisarmos debugar o servidor sem correr risco de ficar atualizando por qualquer mudança.
 
 {% include components/golang-mentorship-footer.md %}

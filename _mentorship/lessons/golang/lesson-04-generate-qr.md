@@ -5,7 +5,13 @@ subtitle: Gerando QR code via web.
 type: lesson
 ---
 
-Ponto de partida no repositório:
+## Expectativas
+
+Nessa aula vamos aprender a receber um valor enviado pelo formulário do HTML, e como retornar o nosso PNG usando interface de resposta HTTP.
+
+----
+
+Ponto de partida desse post:
 
 <div>
   {%
@@ -19,7 +25,7 @@ Ponto de partida no repositório:
 </div>
 
 
-### Adicionando o gerador
+## Adicionando o gerador
 
 Vamos começar a adicionar nossa rota responsável por gerar os QR codes. Primeira coisa que precisamos fazer é criar um novo arquivo dentro de `handlers/web`.
 
@@ -43,16 +49,16 @@ Vamos por parte, como vai funcionar:
 package handlers
 
 import (
-	"fmt"
-	"net/http"
+  "fmt"
+  "net/http"
 
-	generator "github.com/joaomarcuslf/qr-generator/services/generators"
+  generator "github.com/joaomarcuslf/qr-generator/services/generators"
 )
 
 func GenerateQr(w http.ResponseWriter, r *http.Request) {
-	qr := generator.NewQRCode()
+  qr := generator.NewQRCode()
 
-	qr.SetBarcode(cli.Read()).ToPNG(file)
+  qr.SetBarcode(cli.Read()).ToPNG(file)
 }
 ```
 
@@ -62,16 +68,16 @@ No nosso caso `cli.Read()` será `r.FormValue("dataString")`, e `file` será `w`
 package handlers
 
 import (
-	"fmt"
-	"net/http"
+  "fmt"
+  "net/http"
 
-	generator "github.com/joaomarcuslf/qr-generator/services/generators"
+  generator "github.com/joaomarcuslf/qr-generator/services/generators"
 )
 
 func GenerateQr(w http.ResponseWriter, r *http.Request) {
-	qr := generator.NewQRCode()
+  qr := generator.NewQRCode()
 
-	qr.SetBarcode(r.FormValue("dataString")).ToPNG(w)
+  qr.SetBarcode(r.FormValue("dataString")).ToPNG(w)
 }
 ```
 
@@ -81,24 +87,24 @@ Esse valor do dataString nós declaramos no nosso HTML na aula passada, dê uma 
 package handlers
 
 import (
-	"fmt"
-	"net/http"
+  "fmt"
+  "net/http"
 
-	generator "github.com/joaomarcuslf/qr-generator/services/generators"
+  generator "github.com/joaomarcuslf/qr-generator/services/generators"
 )
 
 func GenerateQr(w http.ResponseWriter, r *http.Request) {
-	qr := generator.NewQRCode()
+  qr := generator.NewQRCode()
 
-	err := qr.SetBarcode(r.FormValue("dataString")).ToPNG(w)
+  err := qr.SetBarcode(r.FormValue("dataString")).ToPNG(w)
 
-	if err != nil {
-		w.WriteHeader(http.StatusBadRequest)
+  if err != nil {
+    w.WriteHeader(http.StatusBadRequest)
 
-		w.Write([]byte(fmt.Sprintf("error: %s", err)))
+    w.Write([]byte(fmt.Sprintf("error: %s", err)))
 
-		return
-	}
+    return
+  }
 }
 ```
 
@@ -106,17 +112,17 @@ Agora vá em `services/generators/qrcode.go`, e atualize a função `SetBarcode`
 
 ```go
 func (generator *QRCode) SetBarcode(input string) *QRCode {
-	if input == "" {
-		return generator
-	}
+  if input == "" {
+    return generator
+  }
 
   /* ... */
 }
 
 func (generator *QRCode) ToPNG(w io.Writer) error {
-	if generator.barcode == nil {
-		return fmt.Errorf("invalid input provided")
-	}
+  if generator.barcode == nil {
+    return fmt.Errorf("invalid input provided")
+  }
 
   /* ... */
 }
@@ -126,12 +132,12 @@ Agora vamos para nosso `http.go`, e adicionar nosso mais novo handler:
 
 ```go
 func (a *Server) Run() {
-	/* ... */
+  /* ... */
 
-	http.HandleFunc("/", web.Home)
-	http.HandleFunc("/generator", web.GenerateQr)
+  http.HandleFunc("/", web.Home)
+  http.HandleFunc("/generator", web.GenerateQr)
 
-	/* ... */
+  /* ... */
 }
 ```
 
@@ -171,141 +177,159 @@ if err != nil {
 }
 ```
 
-Porém um olhar mais atento percebeu que estamos repetindo o código de Render da Home, e isso é um pouco desnecessário. Vamos refatorar ambos os códigos para termos um código mais limpo.
+Porém um olhar mais atento percebe que estamos repetindo o código de Render da Home, e isso pode ser um problema no futuro caso precisemos mudar o template. Vamos então, refatorar ambos os códigos para termos um código mais limpo.
 
 ```bash
 mkdir render
 touch render/page.go
 ```
 
-Abra o `render/page.go`, e vamos começar a escrever nosso código.
+Abra o `render/page.go`, o objetivo do nosso código será criar uma Struct que tenha como propriedade informações pertinentes para ser renderizadas, como `Status`, `Error`,  `Title`, `Descriptions`, e o mais importante, o `Template`.
 
 ```go
 package render
 
 import (
-	"net/http"
-	"text/template"
+  "net/http"
+  "text/template"
 )
 
 type Page struct {
-	Status      int
-	Title       string
-	Description string
-	Error       string
-	Template    string
+  Status      int
+  Title       string
+  Description string
+  Error       string
+  Template    string
 }
 
 func NewPage() *Page {
-	return &Page{}
+  return &Page{}
 }
+```
 
+Até aqui, você já deve estar habituado com o que escrevemos, porém a partir daqui temos nossas principais novidade. O método `SetMeta` preencherá as informações de forma genérica na nossa Struct, e com isso podemos criar páginas customizadas.
+
+```go
 func (page *Page) SetMeta(title, description, template string, status int) *Page {
-	page.Title = title
-	page.Description = description
-	page.Template = template
-	page.Status = status
+  page.Title = title
+  page.Description = description
+  page.Template = template
+  page.Status = status
 
-	return page
+  return page
 }
+```
 
+E com esse método genérico, podemos criar implementações específicas, por exemplo a página de Home, que vamos chamar de `AsHome`.
+
+```go
 func (page *Page) AsHome() *Page {
-	return page.SetMeta(
-		"QR Code Generator",
-		"A page to generate QR",
-		"templates/index.html",
-		http.StatusOK,
-	)
+  return page.SetMeta(
+    "QR Code Generator",
+    "A page to generate QR",
+    "templates/index.html",
+    http.StatusOK,
+  )
 }
+```
 
+A partir daqui vamos definir uma forma de definir situações de erro:
+
+```go
 func (page *Page) SetError(err error, status int) *Page {
-	page.Error = err.Error()
-	page.Status = status
+  page.Error = err.Error()
+  page.Status = status
 
-	return page
+  return page
 }
+```
 
+E nosso último método é o `Write`, que irá utilizar a interface de `http.ResponseWriter` para tentar ou renderizar o template, ou retornar um erro.
+
+```go
 func (page *Page) Write(w http.ResponseWriter) *Page {
-	t, err := template.ParseFiles(page.Template)
+  t, err := template.ParseFiles(page.Template)
 
-	if err != nil {
-		page.Status = http.StatusInternalServerError
-		http.Error(w, err.Error(), page.Status)
+  if err != nil {
+    page.Status = http.StatusInternalServerError
+    http.Error(w, err.Error(), page.Status)
 
-		return page
-	}
+    return page
+  }
 
-	w.WriteHeader(page.Status)
-	t.Execute(w, page)
+  w.WriteHeader(page.Status)
+  t.Execute(w, page)
 
-	return page
+  return page
 }
 ```
 
-Vamos ver o uso prático desse código primeiro no nosso `web/html.go`:
+Vamos atualizar os códigos antigos com esse novo, primeiro abra o `web/html.go`:
 
 ```go
 package handlers
 
 import (
-	"net/http"
+  "net/http"
 
-	render "github.com/joaomarcuslf/qr-generator/render"
+  render "github.com/joaomarcuslf/qr-generator/render"
 )
 
 func Home(w http.ResponseWriter, r *http.Request) {
-	render.NewPage().AsHome().Write(w)
+  render.NewPage().AsHome().Write(w)
 }
 ```
 
-Agora no nosso `web/generate.go`:
+Viu como ficou mais elegante? Agora no nosso `web/generate.go`, lembre-se que nessa página nós ou retornamos o Barcode como PNG, ou um HTML com o error gerado:
 
 ```go
 
 import (
-	"net/http"
+  "net/http"
 
-	render "github.com/joaomarcuslf/qr-generator/render"
-	generator "github.com/joaomarcuslf/qr-generator/services/generators"
+  render "github.com/joaomarcuslf/qr-generator/render"
+  generator "github.com/joaomarcuslf/qr-generator/services/generators"
 )
 
 func GenerateQr(w http.ResponseWriter, r *http.Request) {
-	qr := generator.NewQRCode()
+  qr := generator.NewQRCode()
 
-	err := qr.SetBarcode(r.FormValue("dataString")).ToPNG(w)
+  err := qr.SetBarcode(r.FormValue("dataString")).ToPNG(w)
 
-	if err != nil {
-		render.NewPage().AsHome().SetError(err, http.StatusBadRequest).Write(w)
-	}
+  if err != nil {
+    render.NewPage().AsHome().SetError(err, http.StatusBadRequest).Write(w)
+  }
 }
 ```
 
-Como o código ficou tão curto, ao invés de usarmos o `generator.go`, podemos mover a função para o `html.go`, pois esse arquivo é responsável pelo render de nossos HTMLs:
+Como o código ficou tão curto, ao invés de usarmos o `generator.go` como arquivo separado, podemos mover a função para o `html.go`, pois esse arquivo é responsável pelo render de nossos HTMLs:
 
 ```go
 package handlers
 
 import (
-	"net/http"
+  "net/http"
 
-	render "github.com/joaomarcuslf/qr-generator/render"
-	generator "github.com/joaomarcuslf/qr-generator/services/generators"
+  render "github.com/joaomarcuslf/qr-generator/render"
+  generator "github.com/joaomarcuslf/qr-generator/services/generators"
 )
 
 func Home(w http.ResponseWriter, r *http.Request) {
-	render.NewPage().AsHome().Write(w)
+  render.NewPage().AsHome().Write(w)
 }
 
 func GenerateQr(w http.ResponseWriter, r *http.Request) {
-	qr := generator.NewQRCode()
+  qr := generator.NewQRCode()
 
-	err := qr.SetBarcode(r.FormValue("dataString")).ToPNG(w)
+  err := qr.SetBarcode(r.FormValue("dataString")).ToPNG(w)
 
-	if err != nil {
-		render.NewPage().AsHome().SetError(err, http.StatusBadRequest).Write(w)
-	}
+  if err != nil {
+    render.NewPage().AsHome().SetError(err, http.StatusBadRequest).Write(w)
+  }
 }
 ```
+
+## Concluindo
 
 Pronto, agora seu código está bem mais conciso e simples. Com isso nós concluimos essa nova parte. No próximo passo, vamos adicionar a lib [gin-gonic/gin](https://github.com/gin-gonic/gin), o que irá facilitar transformar essa aplicação em uma API.
 

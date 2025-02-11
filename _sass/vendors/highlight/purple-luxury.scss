@@ -1,0 +1,72 @@
+@import "settings/settings";
+
+/*
+  Theme: Purple Luxury
+  Author: João Marcus de Lemos Fernandes <jmarcuslfernandes@gmail.com>
+*/
+
+.hljs {
+  background: $quinary;
+  color: $tertiary;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: $hp-olive;
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-meta {
+  color: $hp-violet;
+}
+
+.hljs-tag .hljs-name {
+  color: $hp-violet;
+}
+
+.hljs-tag .hljs-attr {
+  color: $gp-orange-mid;
+}
+
+.hljs-number,
+.hljs-built_in,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-deletion,
+.hljs-link {
+  color: $gp-orange-mid;
+}
+
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+  color: $gp-orange-light;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-function {
+  color: $accent;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-attribute {
+  color: $gp-orange-dark;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}

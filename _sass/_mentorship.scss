@@ -95,7 +95,7 @@
   border: 1rem $secondary solid !important;
 }
 
-.highlighter-rouge {
+.highlighter-rouge > .highlight {
   padding-bottom: 0.5em;
 
   pre,
@@ -104,4 +104,12 @@
     background-color: none !important;
     color: none !important;
   }
+}
+
+p > code.highlighter-rouge {
+  background: $quinary;
+  color: $tertiary;
+  padding: .25em !important;
+  font-size: .8em;
+  line-height: 1rem;
 }

@@ -32,6 +32,25 @@ Esse projeto tem a premissa de ser algo simples, porém explorando vários padr�
 
 ## O que é esperado de VOCÊ?
 
-Bom, primeiro eu espero que você tenha interesse em acompanhar esse tutorial. Segundo eu parto do princípio que você sabe pelo menos o básico de programação, lógica de programação, e está familiarizado com alguns termos. Muitas vezes eu irei linkar outras posts, ou artigos para você se ambientar com os termos que utilizo, então é esperado que você tenha interesse em acompanhar outros tutoriais.
+Bom, primeiro eu espero que você tenha interesse em acompanhar esse tutorial. Segundo eu parto do princípio que você sabe pelo menos o básico de programação, lógica de programação, e está familiarizado com alguns termos. Muitas vezes eu irei linkar outros posts, ou artigos para você se ambientar com os termos que utilizo, então é esperado que você tenha interesse em acompanhar outros tutoriais, para tirar proveito máximo da aula.
+
+Esse guia também parte do princípio que você já fez o [download e instalou o Golang](https://go.dev/) em sua máquina, e que você fez o [tutorial da página do Go](https://go.dev/tour/welcome/1). Sendo assim, você deve estar minimamente ambientado com a sintaxe, e com os princípios da linguagem.
+
+## Como começar?
+
+No início de cada aula, no topo da página você vai ter acesso a como ficou o repositório depois da aula anterior, então você começar de qualquer aula, caso tenha interesse somente em um tópico. Também no início das aulas terá as expectativas da aula, com isso podemos ficar alinhado o que você deve esperar de cada aula.
+
+Para começar, basta você criar uma pasta, eu sugiro você nomear essa pasta de `qr-generator`, em seguida inicie um novo pacote, não se esqueça de substituir o `joaomarcuslf` pelo seu username, e o `github.com` pelo repositório em Git que você estiver utilizando.
+
+```bash
+mkdir qr-generator
+go mod init github.com/joaomarcuslf/qr-generator
+```
+
+> Se você não está utilizando, seria muito bom você começar a usar Git, é uma ferramenta que já se tornou padrão na área, e pode te ajudar muito no futuro.
+
+A título de curiosidade, muitos projetos em Go estão no Github, então você vai se beneficiar muito de aprender a navegar nele.
+
+No mais, basta clicar em alguma aula que tenha interesse em começar, espero te ver logo.
 
 {% include components/golang-mentorship-footer.md %}

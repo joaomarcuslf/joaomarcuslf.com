@@ -5,7 +5,15 @@ subtitle: Um App simples gerador de QR code
 type: lesson
 ---
 
-Ponto de partida no repositório:
+## Expectativas
+
+Nessa aula vamos aprender como baixar um pacote em Go, como receber valores do usuários, e devolver valores na tela via `cli`, como importar tanto pacotes internos, como externos.
+
+> O termo CLI vem de Command Line Interface, você pode conhecer mais esse termo [aqui](https://en.wikipedia.org/wiki/Command-line_interface).
+
+----
+
+Ponto de partida desse post:
 
 <div>
   {%
@@ -18,7 +26,7 @@ Ponto de partida no repositório:
   %}
 </div>
 
-### Primeiros passos
+## Primeiros passos
 
 Vamos começar criando o nosso `main.go`, que será o nosso arquivo de entrada.
 
@@ -40,7 +48,7 @@ func main() {
 }
 ```
 
-O `main.go` como você já deve saber, é o arquivo principal de todo projeto em Go, ele inicia a execução do programa. Porém, como o Go é baseado em pacotes, temos que declarar o pacote `main` e logo depois importamos o pacote `fmt` para que possamos usar o mostrar como output do terminal uma mensagem.
+O `main.go` como você já deve saber, é o arquivo principal de todo projeto em Go, ele inicia a execução do programa. Porém, como o Go é baseado em pacotes, temos que declarar o pacote `main` e logo depois importamos o pacote `fmt` para que possamos mostrar como saída no console uma mensagem.
 
 Você pode ver seu código funcionando com:
 
@@ -50,7 +58,7 @@ go run main.go
 
 Agora, com isso, nós escrevemos nosso primeiro programa, e ainda que básico, será o nossa base para nossas próximas aulas, e no fim, você irá se surpreender com como ele vai ficar.
 
-### Adicionando Barcode
+## Adicionando Barcode
 
 Vamos desenvolver essa sessão utilizando a lib mais importante desse projeto: [boombuler/barcode](github.com/boombuler/barcode).
 
@@ -67,10 +75,10 @@ E para você importar a lib no nosso `main.go`, mude o import para seguir esse m
 ```go
 import (
   "image/png"
-	"os"
+  "os"
 
-	"github.com/boombuler/barcode"
-	"github.com/boombuler/barcode/qr"
+  "github.com/boombuler/barcode"
+  "github.com/boombuler/barcode/qr"
 )
 ```
 
@@ -127,7 +135,7 @@ go run main.go
 
 Com o fim desse código, você devve ver um arquivo `qrcode.png`, e se você ler o arquivo, você vai ver um QR code com a string que você passou.
 
-### Recebendo input do usuário
+## Recebendo input do usuário
 
 Bom, é bem sem graça você ter uma string estática sempre, então nós vamos receber input do usuário.
 
@@ -140,10 +148,10 @@ import (
 )
 
 func main() {
-	var input string
+  var input string
 
-	fmt.Println("Enter your string: ")
-	fmt.Scanln(&input)
+  fmt.Println("Enter your string: ")
+  fmt.Scanln(&input)
 
   /* ... */
 }
@@ -155,7 +163,7 @@ Vamos ver se o código funcionou:
 go run main.go
 ```
 
-### Concluindo
+## Concluindo
 
 Bom, seu código já está funcionando, e você consegue facilmente gerar um QR code com a string que você passou. Nas próximas aulas nós vamos refatorar nosso código para que nossa `main()` fique mais limpa.
 

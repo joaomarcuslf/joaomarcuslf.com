@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Como user meu Dotfiles
+title: Como usar meu Dotfiles
 subtitle: Configurações práticas para agilizar seu setup.
 img: /assets/images/posts/como-usar-meu-dotfiles.webp
 alt: Image with a Colorized terminal.
