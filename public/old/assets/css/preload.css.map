@@ -1,1 +1,0 @@
-{ "version": 3, "file": "preload.css", "sources": [ "preload.scss", "_sass/_preload.scss", "_sass/settings/preload.scss" ], "sourcesContent": [ "@import \"_preload\";\n", "@charset \"UTF-8\";\n\n@import \"settings/preload\";\n", "" ], "names": [], "mappings": "" }
