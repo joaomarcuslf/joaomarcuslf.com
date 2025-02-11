@@ -3,10 +3,12 @@ on:
   issue_comment:
     types: [created]
 jobs:
-  issue_reated:
-    # This job only runs for pull request comments
-    name: PR comment
+  issue_commented:
+    name: Issue comment
+    if: ${{ !github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "Comment on PR #${{ github.event.issue }}"
+          echo "Comment on issue #${{ github.event.issue.number }}"
+          echo "Comment on issue #${{ github.event.issue.body }}"
+          echo github.event.issue
