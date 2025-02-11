@@ -23,7 +23,7 @@
           title="View on GitHub"
           >GitHub</a
         >
-        {{if include.extra}}
+        {{if include.extra | size > 0}}
         <small>#{{include.extra}}</small>
         {{/if}}
       </p>
