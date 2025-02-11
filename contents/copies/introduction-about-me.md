@@ -1,13 +1,12 @@
 ---
 title: Hi, I'm João Marcus Fernandes
-subtitle: Staff Software Engineer
+subtitle: Staff Software Engineer | Back-end Specialist
 ---
 
-<h4>Go | Node.js | Ruby | Python | MongoDB | React.js</h4>
+**Tech Lead | Cloud Computing | Go / Golang | Node.js | MongoDB**
 
-I am a passionate software engineer and have been working since 2014. I've worked with companies in Brazil, North America (USA and Canada), Europe, and Asia. I have a degree in **System Analysis and Development**. I work mostly as a Back-end Engineer now, but in the past, I've worked with Beeon full-stack and Front-end. I also took many time holes as Tech Lead.
+I’m a seasoned software engineer with over 9 years of experience building scalable, efficient, and innovative solutions. I’ve worked with companies across **Brazil**, **North America (USA and Canada)**, **Europe**, and **Asia**, focusing on **Back-end Engineering**, **Software Architecture**, and **Tech Leadership**.
 
-I have experience with JavaScript/Typescript (React.js, Next.js, Vue.js), Golang, Python, Ruby (Ruby on Rails and Sinatra), and MongoDB, and I primarily work with AWS and GCP.
+My expertise includes **Go (Golang)**, **Node.js**, **Cloud Computing (AWS, GCP)**, **DevOps (CI/CD, Docker, Kubernetes)**, and **Agile methodologies (XP, Scrum)**. I’m passionate about **functional programming**, **TDD**, and implementing architectures like **Clean Architecture**, **Distributed Systems**, and **Event-Driven Design**.
 
-I am an advocate for functional programming. I've worked with all major paradigms, but I value doing things **Simple** and **Efficient**, which I feel are characteristic of functional programming.
-
+For a deeper dive into my experience, check out my **[Description Breakdown](#description)**.

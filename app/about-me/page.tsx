@@ -13,6 +13,7 @@ import { TopicMetadata, topicMetadataSerializer } from "@/types/topic";
 import { getContent, getContentMetadataList } from "@/utils/metadata";
 import { sortMetadataByRules, flatten } from "@/utils/helpers";
 import CalendarButton from "@/components/theme/calendar-button";
+import Description from "@/components/theme/description";
 
 export default function Projects() {
   const techMetadata = getContentMetadataList<SkillMetadata>(
@@ -45,6 +46,11 @@ export default function Projects() {
     copyMetadataSerializer,
     "introduction-about-me"
   );
+  const description = getContent<CopyMetadata>(
+    "copies",
+    copyMetadataSerializer,
+    "introduction-about-me-description"
+  );
   const topicsMetadata = getContentMetadataList<TopicMetadata>(
     "topics",
     topicMetadataSerializer
@@ -60,6 +66,7 @@ export default function Projects() {
         className="has-background bg-about-me typewriter"
       />
       <JobTimeline jobs={jobsMetadata} />
+      <Description title={description.title} content={description.content} className={""} />
       <ExpandedSkills
         skills={sortMetadataByRules<SkillMetadata>(
           flatten<SkillMetadata>([

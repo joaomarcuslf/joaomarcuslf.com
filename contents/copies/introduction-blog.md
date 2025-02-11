@@ -2,6 +2,9 @@
 title: My Tech Blog
 subtitle: Sometimes I fancy myself as a Tech Writer
 ---
-Here, you can find some presentations, external links to Medium, where I used to post, internal posts, and tutorials.
 
-Most of my posts derive from Mentorship or meetings with my peers, where they ask me to explain something, and I write a post about it.
+Welcome to my tech blog! Here, you’ll find a mix of **presentations**, **external links to Medium**, **internal posts**, and **tutorials**.
+
+Most of my posts are inspired by **mentorship sessions** or discussions with peers. When someone asks me to explain a concept or solve a problem, I often turn that into a blog post to share the knowledge with a wider audience. Whether it’s about **modern software paradigms**, **data structures**, **functional programming**, or **cloud computing**, my goal is to make complex topics accessible and practical.
+
+Feel free to explore, and if you have any questions or suggestions for future posts, don’t hesitate to reach out!

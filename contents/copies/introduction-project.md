@@ -1,9 +1,9 @@
 ---
 title: Interesting Projects
-subtitle: Most of my work is private due to being company-realized, but here are some public projects to which I've contributed or created something myself.
+subtitle: Here are some public projects I’ve contributed to or created myself.
 ---
-My portfolio showcases projects in languages I've experimented with and enjoyed. I like Test-Driven Development (TDD); As a result, you can expect to find tests in most of my projects, and sometimes I also write smoke-tests, and integration tests.
+My portfolio showcases projects in languages I’ve experimented with and enjoyed. I’m a strong advocate for **Test-Driven Development (TDD)**, so you’ll find tests in most of my projects—ranging from unit tests to smoke tests and integration tests.
 
-Some projects are old ideas and are not maintained anymore, but I keep them here for historical reasons.
+Some projects are older ideas and are no longer actively maintained, but I keep them here for historical context and to show the evolution of my work.
 
-Nowadays, most of my projects are in the stack: Go, React.js, Ruby on Rails, Node.js, and MongoDB.
+Today, most of my projects revolve around my core stack: **Go (Golang)**, **React.js**, **Ruby on Rails**, **Node.js**, and **MongoDB**. However, I’ve also had the opportunity to work with other technologies, including **Clojure**, **C**, and **IoT**, which have enriched my understanding of different programming paradigms and problem-solving approaches.

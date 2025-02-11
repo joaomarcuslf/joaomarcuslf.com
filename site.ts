@@ -1,19 +1,18 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default {
-  "name": "@joaomarcuslf.com - Full-stack Software engineer",
-  "description": "I'm Software Engineer since 2015 with great expertise in Front-end development. I like to teach a lot, and write some posts, you can check more here.",
+  "name": "João Marcus Fernandes - Staff Software Engineer | Back-end & Cloud Specialist",
+  "description": "I'm a seasoned Software Engineer with over 9 years of experience, specializing in Back-end development, Cloud Computing, and Tech Leadership. I share my knowledge through mentorship, technical articles, and open-source contributions. Explore my work and insights here.",
   "author": "João Marcus de Lemos Fernandes",
   "username": "joaomarcuslf",
   "canonical": "https://joaomarcuslf.com/",
-  "keywords": "Developer, Software engineer, Front-end, Full-stack, React, Javascript, Flask, Python, Joaomarcuslf, Tech Mentor, Mentorship, Mentoria, Senior Developer, Web development",
-  "abstract": "My presentation website as Software developer",
+  "keywords": "Software Engineer, Back-end Developer, Cloud Computing, Go (Golang), Node.js, Python, MongoDB, AWS, GCP, DevOps, CI/CD, Tech Lead, Software Architecture, Distributed Systems, Microservices, Mentorship, Technical Writing, João Marcus Fernandes",
+  "abstract": "My personal website as a Software Engineer, showcasing my expertise in Back-end development, Cloud Computing, and Tech Leadership.",
   "avatar": "https://avatars0.githubusercontent.com/u/53450523?s=400&u=ba2eb6e6c63bc38c54e7db04e5132c833a83169c&v=4",
   "email": "contact@joaomarcuslf.com",
   "linktr": "https://linktr.ee/joaomarcuslf",
   "url": "https://joaomarcuslf.com",
   "calendar": "https://calendly.com/joaomarcuslf",
   "themeColor": "#741b47",
-  "mobile": "+55 21 98843-2606",
   "socialMedias": [
     {
       "name": "Github",
@@ -113,9 +112,9 @@ export default {
       "Emotional Intelligence",
     ],
     "descriptionLines": [
-      "I am a software engineer with focus in Back-end development and cloud-based solutions.",
+      "I am a software engineer with a focus on Back-end development and cloud-based solutions.",
 
-      "Since 2014, I have been working in web development, beginning with small website projects, until working with robust, scalable systems for global organizations. My expertise lies in Back-end development with technologies like Go, Python, Ruby, and Node.js, and I have significant experience designing APIs and architecting distributed systems optimized for cloud environments (AWS, GCP, and Azure).",
+      "Since 2014, I have been working in web development, starting with small website projects and progressing to building robust, scalable systems for global organizations. My expertise lies in Back-end development with technologies like Go, Python, Ruby, and Node.js, and I have significant experience designing APIs and architecting distributed systems optimized for cloud environments (AWS, GCP, and Azure).",
 
       "While my primary focus is on Back-end systems, I also have a strong foundation in Front-end technologies, having worked with React.js, React Native, AngularJS (1.x), Angular 4, and Vue.js. Additionally, I have hands-on experience with data visualization and reporting, leveraging Python for BI and Data Science.",
 
