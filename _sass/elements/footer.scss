@@ -1,0 +1,11 @@
+@import "../settings/settings";
+
+.footer {
+  background-color: $darkest-gray;
+  color: $lightest-gray;
+  padding: 3rem 1.5rem;
+
+  strong {
+    color: $light-gray !important;
+  }
+}
