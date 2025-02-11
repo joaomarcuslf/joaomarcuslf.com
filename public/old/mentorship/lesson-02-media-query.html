@@ -1,4 +1,164 @@
-<!DOCTYPE html><html><head><title> HTML 02 - Utilizando media-query – João Marcus de Lemos Fernandes </title><meta charset="utf-8"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=6.0"/><meta name="robot" content="all"/><meta name="rating" content="general"/><meta name="distribution" content="global"/><meta name="language" content="en,pt"/><meta name="robots" content="index,follow"/><meta name="theme-color" content=""/><link rel="apple-touch-icon" href="/assets/images/logo-hex.webp"/><meta property="og:image" content="http://joaomarcuslf.com/assets/images/logo-hex.webp"/><meta property="og:title" content="HTML 02 - Utilizando media-query"/><meta property="twitter:title" content="HTML 02 - Utilizando media-query"/><meta property="og:site_name" content="HTML 02 - Utilizando media-query"/><meta name="description" content=" "/><meta property="og:description" content=" "/><link rel="alternate" type="application/rss+xml" title="HTML 02 - Utilizando media-query - " href="/feed.xml"></script><meta name="keywords" content="Developer, Software engineer, Front-end, Full-stack, React, Javascript, Flask, Python, Joaomarcuslf, Tech Mentor, Mentorship, Mentoria, Senior Developer, Web development"/><meta name="abstract" content="My presentation website as Software developer"/><meta name="author" content="João Marcus de Lemos Fernandes"/><meta property="og:locale" content="en"/><link rel="canonical" href="https://joaomarcuslf.com/"/><meta property="og:url" content="https://joaomarcuslf.com/"/><meta name="twitter:card" content="summary"/><meta name="twitter:site" content="@"/><meta name="twitter:creator" content="@joaomarcuslf"/><link rel="stylesheet" type="text/css" href="/assets/css/vendors.css"></script><link rel="stylesheet" type="text/css" href="/assets/css/style.css"/><link rel="stylesheet" type="text/css" href="/assets/css/mentorship.css"></script><link rel="alternate" type="application/rss+xml" title="@joaomarcuslf.com - Full-stack Software engineer - I'm Software Engineer since 2015 with great expertise in Front-end development. I like to teach a lot, and write some posts, you can check more here." href="/feed.xml"/><link rel="stylesheet" type="text/css" href="/assets/css/hljs.css"/></head><body><div id="main" role="main" class="main"><section class="hero is-link has-background is-mini bg-mentorship typewriter"><div class="hero-body"><h1 class="title" aria-label="HTML 02 - Utilizando media-query" aria-hidden="true"> HTML 02 - Utilizando media-query </h1><h2 class="subtitle">Se adaptando ao ambiente</h2></div></section><br/><div class="container"><article class="media"><div class="media-content"><div class="content"><div class="is-flex-container to-center"><img class="is-fullwidth" src="/assets/mentorship/retrospective.png"/></div><h2 id="retrospectiva">Retrospectiva</h2><ul><li>Entendemos o que é posicionamento.</li><li>Vimos a diferença entre elementos de blocos e linhas.</li><li>Começamos a entender o que é flex. <ul><li>Seus usos.</li><li>Porque ele é perfeito sem defeitos.</li></ul></li><li>Vimos sobre responsividade.</li><li>Brincamos de froggy.</li><li>E por fim começamos a fazer seu site.</li></ul><div class="is-flex-container to-center"><img class="is-fullwidth" src="/assets/mentorship/froggy.png"/></div><h2 id="qual-o-objetivo-final-dessa-aula">Qual o objetivo final dessa aula?</h2><div class="is-flex-container to-center"><img class="is-fullwidth" src="/assets/mentorship/menu-mobile-desktop.png"/></div><h2 id="vamos-falar-sobre-nomenclatura">Vamos falar sobre nomenclatura?</h2><div class="is-flex-container to-center"><img src="/assets/mentorship/measuring-screen.png"/></div><p>Vamos combinar alguns termos que eu vou utilizar nessa e em próximas aulas, esses termos se referem aos tamanhos das telas.</p><ul><li><strong>Mobile:</strong> Telas de celulares. Em termos de px vai até 600px;</li><li><strong>Tablet Portrait:</strong> Telas de tablet em pé. Em termos de px vai até 960px;</li><li><strong>Tablet Landscape:</strong> Telas de tablet deitado. Em termos de px vai até 1200px;</li><li><strong>Desktop:</strong> Telas de computador/notebook. Em termos de px vai até 1800px;</li><li><strong>Big Desktop:</strong> Telas de ultra wide, com largura variada. Em termos de px vai de 1801px até o infinito;</li></ul><p>Você pode guardar essa imagem como referência:</p><div class="is-flex-container to-center"><img src="/assets/mentorship/display-reference.png"/></div><h2 id="okay-mas-para-quê-eu-preciso-disso-tudo">Okay, mas para quê eu preciso disso tudo?</h2><p>Bom, precisa porque vamos usar Media-queries.</p><p>Media-queries são um tipo especial de regra do CSS, nele você pode dizer que alguns estilos só serão aplicados em tamanhos de tela específicos, eles seguem esse formato:</p><pre class="is-hljs">
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      HTML 02 - Utilizando media-query – João Marcus de Lemos Fernandes
+    </title>
+    <meta charset="utf-8" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=6.0"
+    />
+    <meta name="robot" content="all" />
+    <meta name="rating" content="general" />
+    <meta name="distribution" content="global" />
+    <meta name="language" content="en,pt" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="" />
+    <link rel="apple-touch-icon" href="/assets/images/logo-hex.webp" />
+    <meta
+      property="og:image"
+      content="http://joaomarcuslf.com/assets/images/logo-hex.webp"
+    />
+    <meta property="og:title" content="HTML 02 - Utilizando media-query" />
+    <meta property="twitter:title" content="HTML 02 - Utilizando media-query" />
+    <meta property="og:site_name" content="HTML 02 - Utilizando media-query" />
+    <meta name="description" content=" " />
+    <meta property="og:description" content=" " />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="HTML 02 - Utilizando media-query - "
+      href="/feed.xml"
+    />
+    <meta
+      name="keywords"
+      content="Developer, Software engineer, Front-end, Full-stack, React, Javascript, Flask, Python, Joaomarcuslf, Tech Mentor, Mentorship, Mentoria, Senior Developer, Web development"
+    />
+    <meta
+      name="abstract"
+      content="My presentation website as Software developer"
+    />
+    <meta name="author" content="João Marcus de Lemos Fernandes" />
+    <meta property="og:locale" content="en" />
+    <link rel="canonical" href="https://joaomarcuslf.com/" />
+    <meta property="og:url" content="https://joaomarcuslf.com/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@joaomarcuslf" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/vendors.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/mentorship.css" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="@joaomarcuslf.com - Full-stack Software engineer - I'm Software Engineer since 2015 with great expertise in Front-end development. I like to teach a lot, and write some posts, you can check more here."
+      href="/feed.xml"
+    />
+    <link rel="stylesheet" type="text/css" href="/assets/css/hljs.css" />
+  </head>
+  <body>
+    <div id="main" role="main" class="main">
+      <section
+        class="hero is-link has-background is-mini bg-mentorship typewriter"
+      >
+        <div class="hero-body">
+          <h1
+            class="title"
+            aria-label="HTML 02 - Utilizando media-query"
+            aria-hidden="true"
+          >
+            HTML 02 - Utilizando media-query
+          </h1>
+          <h2 class="subtitle">Se adaptando ao ambiente</h2>
+        </div>
+      </section>
+      <br />
+      <div class="container">
+        <article class="media">
+          <div class="media-content">
+            <div class="content">
+              <div class="is-flex-container to-center">
+                <img
+                  class="is-fullwidth"
+                  src="/assets/mentorship/retrospective.png"
+                />
+              </div>
+              <h2 id="retrospectiva">Retrospectiva</h2>
+              <ul>
+                <li>Entendemos o que é posicionamento.</li>
+                <li>Vimos a diferença entre elementos de blocos e linhas.</li>
+                <li>
+                  Começamos a entender o que é flex.
+                  <ul>
+                    <li>Seus usos.</li>
+                    <li>Porque ele é perfeito sem defeitos.</li>
+                  </ul>
+                </li>
+                <li>Vimos sobre responsividade.</li>
+                <li>Brincamos de froggy.</li>
+                <li>E por fim começamos a fazer seu site.</li>
+              </ul>
+              <div class="is-flex-container to-center">
+                <img class="is-fullwidth" src="/assets/mentorship/froggy.png" />
+              </div>
+              <h2 id="qual-o-objetivo-final-dessa-aula">
+                Qual o objetivo final dessa aula?
+              </h2>
+              <div class="is-flex-container to-center">
+                <img
+                  class="is-fullwidth"
+                  src="/assets/mentorship/menu-mobile-desktop.png"
+                />
+              </div>
+              <h2 id="vamos-falar-sobre-nomenclatura">
+                Vamos falar sobre nomenclatura?
+              </h2>
+              <div class="is-flex-container to-center">
+                <img src="/assets/mentorship/measuring-screen.png" />
+              </div>
+              <p>
+                Vamos combinar alguns termos que eu vou utilizar nessa e em
+                próximas aulas, esses termos se referem aos tamanhos das telas.
+              </p>
+              <ul>
+                <li>
+                  <strong>Mobile:</strong> Telas de celulares. Em termos de px
+                  vai até 600px;
+                </li>
+                <li>
+                  <strong>Tablet Portrait:</strong> Telas de tablet em pé. Em
+                  termos de px vai até 960px;
+                </li>
+                <li>
+                  <strong>Tablet Landscape:</strong> Telas de tablet deitado. Em
+                  termos de px vai até 1200px;
+                </li>
+                <li>
+                  <strong>Desktop:</strong> Telas de computador/notebook. Em
+                  termos de px vai até 1800px;
+                </li>
+                <li>
+                  <strong>Big Desktop:</strong> Telas de ultra wide, com largura
+                  variada. Em termos de px vai de 1801px até o infinito;
+                </li>
+              </ul>
+              <p>Você pode guardar essa imagem como referência:</p>
+              <div class="is-flex-container to-center">
+                <img src="/assets/mentorship/display-reference.png" />
+              </div>
+              <h2 id="okay-mas-para-quê-eu-preciso-disso-tudo">
+                Okay, mas para quê eu preciso disso tudo?
+              </h2>
+              <p>Bom, precisa porque vamos usar Media-queries.</p>
+              <p>
+                Media-queries são um tipo especial de regra do CSS, nele você
+                pode dizer que alguns estilos só serão aplicados em tamanhos de
+                tela específicos, eles seguem esse formato:
+              </p>
+              <pre class="is-hljs">
   <code class="css">
   // Estilo normal
   .container {
@@ -16,10 +176,128 @@
     }
   }
   </code>
-</pre><p><strong>Tipos de tela:</strong> all, print, screen, speech.</p><p>Tamanhos de tela são aqueles que vimos na tabela anterior.</p><p>Você pode colocar quantas condições quiser depois do @media e antes do primeiro <strong>{</strong>. Mas tente manter até no máximo 3.</p><pre class="is-hljs">
+</pre>
+              <p><strong>Tipos de tela:</strong> all, print, screen, speech.</p>
+              <p>Tamanhos de tela são aqueles que vimos na tabela anterior.</p>
+              <p>
+                Você pode colocar quantas condições quiser depois do @media e
+                antes do primeiro <strong>{</strong>. Mas tente manter até no
+                máximo 3.
+              </p>
+              <pre class="is-hljs">
   <code class="css">
   @media [TIPO DE TELA] and ([TAMANHO DA TELA]) {
     [ESTILO QUE SÓ SERÁ APLICADO EM DISPOSITIVOS QUE SEGUIREM ESSA REGRA]
   }
   </code>
-</pre><h3 id="quais-regras-de-tamanho-de-tela-mais-usadas">Quais regras de tamanho de tela mais usadas?</h3><ul><li><strong>width:</strong> Largura fixa da tela em px;</li><li><strong>height:</strong> Altura fixa da tela em px;</li><li><strong>orientation:</strong> Se o dispositivo está deitado ou em pé. (portrait / landscape);</li><li><strong>max-width:</strong> Dispositivo tem que ter até essa largura;</li><li><strong>min-width:</strong> Dispositivo tem que ter no mínimo essa largura;</li><li><strong>max-height:</strong> Dispositivo tem que ter no máximo essa altura;</li><li><strong>min-height:</strong> Dispositivo tem que ter no mínimo essa altura;</li></ul><h3 id="okay-chega-de-papo-furado-vamos-praticar">Okay, chega de papo furado, vamos praticar!</h3><p>Siga esses passos para você conseguir simular dispositivos no seu navegador:</p><ol><li>Abra o inspetor de elementos no chrome ou firefox.</li><li>Procure esse símbolo:</li></ol><div class="is-flex-container to-center"><img src="/assets/mentorship/responsive-guide-01.png"/></div><p><br/></p><p>Seu inspetor deve ter ficado mais ou meno assim. Esse primeiro retângulo a esquerda é a largura, o da direita é altura, se você reparar nessas marcações em cinza abaixo desses retângulos, são tamanhos já comuns no mercado. Você pode ou customizar ou seguir as marcações.</p><p>Com Medias-queries você pode escrver seu CSS direcionando a uma resolução específica e depois ir adicionando as customizações para outras resoluções, os tipos mais comuns de abordagem são:</p><ul><li><strong>Desktop-first:</strong> Modelo de estilização onde primeiro é feito o desktop, e depois vai fazendo modificações para outros dispositivos. Mais fácil no início do aprendizado.</li><li><strong>Mobile-first:</strong> Modelo de estilização onde primeiro é feito o mobile, e depois vai fazendo modificações para os outros dispositivos. Esse é o melhor jeito de se trabalhar, porém é difícil se acostumar no início.</li></ul><p>Utilizando media-query, você deve fazer com que seu menu suma no mobile, e fique com um botão que vá mostrar ou não ele.</p><p>Em próximas aulas nós vamos utilizar Javascript em conjunto com animações no CSS para que possamos controlar esse menu.</p><h2 id="desafio-para-próxima-aula">Desafio para próxima aula:</h2><div class="is-flex-container to-center"><img class="is-fullwidth" src="/assets/mentorship/section-site-01.png"/></div><p>Vamos começar a preparar a primeira sessão do seu site.</p><ul><li>Coloque uma cor de background, pode ser branco mesmo.</li><li>Estilize seu nome seguindo essa ideia de duas cores.</li><li>Coloque abaixo do seu nome seu e-mail, e profissão estudante de Front-end.</li><li>Coloque um textinho sobre você.</li></ul><p>Por hora ignore os ícones de rede sociais, em breve vamos adicioná-los.</p></div></div></article></div></div><script src="/assets/js/vendors/highlight.min.js"></script><script src="/assets/js/base.js"></script><script src="/assets/js/post-page.js"></script><script src="/assets/js/hljs.js"></script><script src="/assets/js/mentorship.js"></script></body></html>
+</pre>
+              <h3 id="quais-regras-de-tamanho-de-tela-mais-usadas">
+                Quais regras de tamanho de tela mais usadas?
+              </h3>
+              <ul>
+                <li><strong>width:</strong> Largura fixa da tela em px;</li>
+                <li><strong>height:</strong> Altura fixa da tela em px;</li>
+                <li>
+                  <strong>orientation:</strong> Se o dispositivo está deitado ou
+                  em pé. (portrait / landscape);
+                </li>
+                <li>
+                  <strong>max-width:</strong> Dispositivo tem que ter até essa
+                  largura;
+                </li>
+                <li>
+                  <strong>min-width:</strong> Dispositivo tem que ter no mínimo
+                  essa largura;
+                </li>
+                <li>
+                  <strong>max-height:</strong> Dispositivo tem que ter no máximo
+                  essa altura;
+                </li>
+                <li>
+                  <strong>min-height:</strong> Dispositivo tem que ter no mínimo
+                  essa altura;
+                </li>
+              </ul>
+              <h3 id="okay-chega-de-papo-furado-vamos-praticar">
+                Okay, chega de papo furado, vamos praticar!
+              </h3>
+              <p>
+                Siga esses passos para você conseguir simular dispositivos no
+                seu navegador:
+              </p>
+              <ol>
+                <li>Abra o inspetor de elementos no chrome ou firefox.</li>
+                <li>Procure esse símbolo:</li>
+              </ol>
+              <div class="is-flex-container to-center">
+                <img src="/assets/mentorship/responsive-guide-01.png" />
+              </div>
+              <p>
+                <br />
+              </p>
+              <p>
+                Seu inspetor deve ter ficado mais ou meno assim. Esse primeiro
+                retângulo a esquerda é a largura, o da direita é altura, se você
+                reparar nessas marcações em cinza abaixo desses retângulos, são
+                tamanhos já comuns no mercado. Você pode ou customizar ou seguir
+                as marcações.
+              </p>
+              <p>
+                Com Medias-queries você pode escrver seu CSS direcionando a uma
+                resolução específica e depois ir adicionando as customizações
+                para outras resoluções, os tipos mais comuns de abordagem são:
+              </p>
+              <ul>
+                <li>
+                  <strong>Desktop-first:</strong> Modelo de estilização onde
+                  primeiro é feito o desktop, e depois vai fazendo modificações
+                  para outros dispositivos. Mais fácil no início do aprendizado.
+                </li>
+                <li>
+                  <strong>Mobile-first:</strong> Modelo de estilização onde
+                  primeiro é feito o mobile, e depois vai fazendo modificações
+                  para os outros dispositivos. Esse é o melhor jeito de se
+                  trabalhar, porém é difícil se acostumar no início.
+                </li>
+              </ul>
+              <p>
+                Utilizando media-query, você deve fazer com que seu menu suma no
+                mobile, e fique com um botão que vá mostrar ou não ele.
+              </p>
+              <p>
+                Em próximas aulas nós vamos utilizar Javascript em conjunto com
+                animações no CSS para que possamos controlar esse menu.
+              </p>
+              <h2 id="desafio-para-próxima-aula">Desafio para próxima aula:</h2>
+              <div class="is-flex-container to-center">
+                <img
+                  class="is-fullwidth"
+                  src="/assets/mentorship/section-site-01.png"
+                />
+              </div>
+              <p>Vamos começar a preparar a primeira sessão do seu site.</p>
+              <ul>
+                <li>Coloque uma cor de background, pode ser branco mesmo.</li>
+                <li>Estilize seu nome seguindo essa ideia de duas cores.</li>
+                <li>
+                  Coloque abaixo do seu nome seu e-mail, e profissão estudante
+                  de Front-end.
+                </li>
+                <li>Coloque um textinho sobre você.</li>
+              </ul>
+              <p>
+                Por hora ignore os ícones de rede sociais, em breve vamos
+                adicioná-los.
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <script src="/assets/js/vendors/highlight.min.js"></script>
+    <script src="/assets/js/base.js"></script>
+    <script src="/assets/js/post-page.js"></script>
+    <script src="/assets/js/hljs.js"></script>
+    <script src="/assets/js/mentorship.js"></script>
+  </body>
+</html>

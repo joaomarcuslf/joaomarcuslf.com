@@ -1,14 +1,212 @@
-<!DOCTYPE html><html><head><title> HTML 01 - Encaixando na tela – João Marcus de Lemos Fernandes </title><meta charset="utf-8"/><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=6.0"/><meta name="robot" content="all"/><meta name="rating" content="general"/><meta name="distribution" content="global"/><meta name="language" content="en,pt"/><meta name="robots" content="index,follow"/><meta name="theme-color" content=""/><link rel="apple-touch-icon" href="/assets/images/logo-hex.webp"/><meta property="og:image" content="http://joaomarcuslf.com/assets/images/logo-hex.webp"/><meta property="og:title" content="HTML 01 - Encaixando na tela"/><meta property="twitter:title" content="HTML 01 - Encaixando na tela"/><meta property="og:site_name" content="HTML 01 - Encaixando na tela"/><meta name="description" content="O que é posicionamento? "/><meta property="og:description" content="O que é posicionamento? "/><link rel="alternate" type="application/rss+xml" title="HTML 01 - Encaixando na tela - O que é posicionamento? " href="/feed.xml"></script><meta name="keywords" content="Developer, Software engineer, Front-end, Full-stack, React, Javascript, Flask, Python, Joaomarcuslf, Tech Mentor, Mentorship, Mentoria, Senior Developer, Web development"/><meta name="abstract" content="My presentation website as Software developer"/><meta name="author" content="João Marcus de Lemos Fernandes"/><meta property="og:locale" content="en"/><link rel="canonical" href="https://joaomarcuslf.com/"/><meta property="og:url" content="https://joaomarcuslf.com/"/><meta name="twitter:card" content="summary"/><meta name="twitter:site" content="@"/><meta name="twitter:creator" content="@joaomarcuslf"/><link rel="stylesheet" type="text/css" href="/assets/css/vendors.css"></script><link rel="stylesheet" type="text/css" href="/assets/css/style.css"/><link rel="stylesheet" type="text/css" href="/assets/css/mentorship.css"></script><link rel="alternate" type="application/rss+xml" title="@joaomarcuslf.com - Full-stack Software engineer - I'm Software Engineer since 2015 with great expertise in Front-end development. I like to teach a lot, and write some posts, you can check more here." href="/feed.xml"/><link rel="stylesheet" type="text/css" href="/assets/css/hljs.css"/></head><body><div id="main" role="main" class="main"><section class="hero is-link has-background is-mini bg-mentorship typewriter"><div class="hero-body"><h1 class="title" aria-label="HTML 01 - Encaixando na tela" aria-hidden="true"> HTML 01 - Encaixando na tela </h1><h2 class="subtitle">Utilizando Flexbox, a obra-prima do CSS</h2></div></section><br/><div class="container"><article class="media"><div class="media-content"><div class="content"><h2 id="o-que-é-posicionamento">O que é posicionamento?</h2><p>Os elementos na tela eles possuem regras para como eles se “aconchegam” na tela. Normalmente essa regras são definidas pelo próprio navegador, podendo ser tanto elementos do tipo <strong>blocos</strong>, quanto os do tipo <strong>linhas</strong>.</p><p><strong>Blocos</strong>: Elementos de bloco tentam ocupar o máximo de espaço possível. Normalmente são utilizados para <strong>div</strong>idir elementos na tela. Sendo o próprio div um dos mais utilizados.</p><p><strong>Linha</strong>: Elementos de linha tentam ocupar apenas o espaço suficiente para eles. Normalmente são utilizados para mostrar textos, parágrafos, links e imagens.</p><div class="is-flex-container to-center"><img src="/assets/mentorship/grid-elements.png"/></div><p><br/></p><p>Apesar de não ser necessário, vou colocar aqui uma lista de elementos do blocos e linhas apenas para referência.</p><h3 id="blocos">Blocos:</h3><pre>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML 01 - Encaixando na tela – João Marcus de Lemos Fernandes</title>
+    <meta charset="utf-8" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=6.0"
+    />
+    <meta name="robot" content="all" />
+    <meta name="rating" content="general" />
+    <meta name="distribution" content="global" />
+    <meta name="language" content="en,pt" />
+    <meta name="robots" content="index,follow" />
+    <meta name="theme-color" content="" />
+    <link rel="apple-touch-icon" href="/assets/images/logo-hex.webp" />
+    <meta
+      property="og:image"
+      content="http://joaomarcuslf.com/assets/images/logo-hex.webp"
+    />
+    <meta property="og:title" content="HTML 01 - Encaixando na tela" />
+    <meta property="twitter:title" content="HTML 01 - Encaixando na tela" />
+    <meta property="og:site_name" content="HTML 01 - Encaixando na tela" />
+    <meta name="description" content="O que é posicionamento? " />
+    <meta property="og:description" content="O que é posicionamento? " />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="HTML 01 - Encaixando na tela - O que é posicionamento? "
+      href="/feed.xml"
+    />
+    <meta
+      name="keywords"
+      content="Developer, Software engineer, Front-end, Full-stack, React, Javascript, Flask, Python, Joaomarcuslf, Tech Mentor, Mentorship, Mentoria, Senior Developer, Web development"
+    />
+    <meta
+      name="abstract"
+      content="My presentation website as Software developer"
+    />
+    <meta name="author" content="João Marcus de Lemos Fernandes" />
+    <meta property="og:locale" content="en" />
+    <link rel="canonical" href="https://joaomarcuslf.com/" />
+    <meta property="og:url" content="https://joaomarcuslf.com/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@" />
+    <meta name="twitter:creator" content="@joaomarcuslf" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/vendors.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/mentorship.css" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="@joaomarcuslf.com - Full-stack Software engineer - I'm Software Engineer since 2015 with great expertise in Front-end development. I like to teach a lot, and write some posts, you can check more here."
+      href="/feed.xml"
+    />
+    <link rel="stylesheet" type="text/css" href="/assets/css/hljs.css" />
+  </head>
+  <body>
+    <div id="main" role="main" class="main">
+      <section
+        class="hero is-link has-background is-mini bg-mentorship typewriter"
+      >
+        <div class="hero-body">
+          <h1
+            class="title"
+            aria-label="HTML 01 - Encaixando na tela"
+            aria-hidden="true"
+          >
+            HTML 01 - Encaixando na tela
+          </h1>
+          <h2 class="subtitle">Utilizando Flexbox, a obra-prima do CSS</h2>
+        </div>
+      </section>
+      <br />
+      <div class="container">
+        <article class="media">
+          <div class="media-content">
+            <div class="content">
+              <h2 id="o-que-é-posicionamento">O que é posicionamento?</h2>
+              <p>
+                Os elementos na tela eles possuem regras para como eles se
+                “aconchegam” na tela. Normalmente essa regras são definidas pelo
+                próprio navegador, podendo ser tanto elementos do tipo
+                <strong>blocos</strong>, quanto os do tipo
+                <strong>linhas</strong>.
+              </p>
+              <p>
+                <strong>Blocos</strong>: Elementos de bloco tentam ocupar o
+                máximo de espaço possível. Normalmente são utilizados para
+                <strong>div</strong>idir elementos na tela. Sendo o próprio div
+                um dos mais utilizados.
+              </p>
+              <p>
+                <strong>Linha</strong>: Elementos de linha tentam ocupar apenas
+                o espaço suficiente para eles. Normalmente são utilizados para
+                mostrar textos, parágrafos, links e imagens.
+              </p>
+              <div class="is-flex-container to-center">
+                <img src="/assets/mentorship/grid-elements.png" />
+              </div>
+              <p>
+                <br />
+              </p>
+              <p>
+                Apesar de não ser necessário, vou colocar aqui uma lista de
+                elementos do blocos e linhas apenas para referência.
+              </p>
+              <h3 id="blocos">Blocos:</h3>
+              <pre>
 address, article, aside, blockquote, canvas, dd,
 div, dl, dt, fieldset, figcaption, figure, footer,
 form, h1-h6, header, hr, li, main, nav, noscript,
 ol, p, pre, section, table, tfoot, ul
-</pre><h3 id="linhas">Linhas:</h3><pre>
+</pre
+              >
+              <h3 id="linhas">Linhas:</h3>
+              <pre>
 a, abbr, acronym, b, bdo, big, br, button, cite, code,
 dfn, em, i, img, input, kbd, label, map, object, output,
 q, samp, script, select, small, span, strong, sub, sup,
 textarea, time, tt, var
-</pre><h3 id="gerações-web">Gerações web</h3><p>Por conta do caos que muitas vezes são gerados por conta de você misturar tags, ou mesmo a necessidade de você ter layouts mais avançados nós passamos por muitas gerações de estilização de telas:</p><h4 id="table">Table</h4><p>Uma época onde os layouts eram escritos utilizando a tag table, esse tipo de layout funcionava pois você trabalhava com proporções, porém com o avanço de dispositivos mobile, desenvolver com table era muito caótico, o que motivou a próxima geração.</p><h4 id="multiplas-páginas--pré-tableless">Multiplas páginas / Pré-tableless</h4><p>Nessa geração, ela foi marcada pelos sistemas entregarem páginas diferentes com base na resolução de tela que você estava acessando, normalmente funcionava assim: <em>www.meusite.com</em>, <em>www.mobile.meusite.com</em>. Essa época foi marcada pelos primeiros aparelhos celular que tinham acesso a internet, porém ainda muito limitado. O que ocasionou a próxima geração foi a dificuldade de manter várias páginas diferentes.</p><h4 id="responsive-layout--tableless">Responsive layout / Tableless</h4><p>Quando os dispositivos começaram a suportar renderizações mais sofisticadas, e a internet móvel ficou mais rápida, chegamos onde estamos atualmente, nós utilizamos o mesmo CSS, e HTML, porém com o uso de media-queries, nós podemos flexibilizar a tela para que ela vá se adaptando à resolução que estamos utilizando no dispositivo.</p><p>Essa geração também é marcada pelo nome Layout Adaptativa.</p><h2 id="conheça-flex">Conheça Flex</h2><p>Começando pelo nosso primeiro <code>display: flex;</code>, o Flex é uma forma de tornar elementos de bloco, e linha em um tipo de elemento mais flexível, hoje em dia é o padrão para criar telas que sigam uma ideia de responsividade.</p><p>Utilizando elementos flexíveis, você pode contruir páginas complexas sem muita dor de cabeça.</p><p>Você pode ver mais sobre o FLex aqui:</p><p><a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/flex">https://developer.mozilla.org/pt-BR/docs/Web/CSS/flex</a></p><p>Okay, mas o que é responsividade?</p><h3 id="reponsividade">Reponsividade</h3><p>Como vimos anteriormente, na geração passada, quando queríamos que um site fosse usável no celular, nós precisávamos criar sites diferentes e encaminhar com base no tamanho da tela.</p><p>Mas isso fazia com que você tinha que reescrever seu site, e com o passar do tempo, celulares com telas maiores, tablets, notebooks com telas menores surgiram. E com isso nasceu ideias de responsividade.</p><p>Veja mais aqui:</p><p><a href="https://developer.mozilla.org/pt-BR/docs/Learn/CSS/CSS_layout/Responsive_Design">https://developer.mozilla.org/pt-BR/docs/Learn/CSS/CSS_layout/Responsive_Design</a></p><h3 id="começando-com-o-flex">Começando com o Flex</h3><p>Com Flex, podemos definir que elementos vão tentar ocupar o máximo possível de largura e ir gradualmente quebrando linha com poucas linhas de css:</p><pre class="is-hljs">
+</pre
+              >
+              <h3 id="gerações-web">Gerações web</h3>
+              <p>
+                Por conta do caos que muitas vezes são gerados por conta de você
+                misturar tags, ou mesmo a necessidade de você ter layouts mais
+                avançados nós passamos por muitas gerações de estilização de
+                telas:
+              </p>
+              <h4 id="table">Table</h4>
+              <p>
+                Uma época onde os layouts eram escritos utilizando a tag table,
+                esse tipo de layout funcionava pois você trabalhava com
+                proporções, porém com o avanço de dispositivos mobile,
+                desenvolver com table era muito caótico, o que motivou a próxima
+                geração.
+              </p>
+              <h4 id="multiplas-páginas--pré-tableless">
+                Multiplas páginas / Pré-tableless
+              </h4>
+              <p>
+                Nessa geração, ela foi marcada pelos sistemas entregarem páginas
+                diferentes com base na resolução de tela que você estava
+                acessando, normalmente funcionava assim:
+                <em>www.meusite.com</em>, <em>www.mobile.meusite.com</em>. Essa
+                época foi marcada pelos primeiros aparelhos celular que tinham
+                acesso a internet, porém ainda muito limitado. O que ocasionou a
+                próxima geração foi a dificuldade de manter várias páginas
+                diferentes.
+              </p>
+              <h4 id="responsive-layout--tableless">
+                Responsive layout / Tableless
+              </h4>
+              <p>
+                Quando os dispositivos começaram a suportar renderizações mais
+                sofisticadas, e a internet móvel ficou mais rápida, chegamos
+                onde estamos atualmente, nós utilizamos o mesmo CSS, e HTML,
+                porém com o uso de media-queries, nós podemos flexibilizar a
+                tela para que ela vá se adaptando à resolução que estamos
+                utilizando no dispositivo.
+              </p>
+              <p>Essa geração também é marcada pelo nome Layout Adaptativa.</p>
+              <h2 id="conheça-flex">Conheça Flex</h2>
+              <p>
+                Começando pelo nosso primeiro <code>display: flex;</code>, o
+                Flex é uma forma de tornar elementos de bloco, e linha em um
+                tipo de elemento mais flexível, hoje em dia é o padrão para
+                criar telas que sigam uma ideia de responsividade.
+              </p>
+              <p>
+                Utilizando elementos flexíveis, você pode contruir páginas
+                complexas sem muita dor de cabeça.
+              </p>
+              <p>Você pode ver mais sobre o FLex aqui:</p>
+              <p>
+                <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/flex"
+                  >https://developer.mozilla.org/pt-BR/docs/Web/CSS/flex</a
+                >
+              </p>
+              <p>Okay, mas o que é responsividade?</p>
+              <h3 id="reponsividade">Reponsividade</h3>
+              <p>
+                Como vimos anteriormente, na geração passada, quando queríamos
+                que um site fosse usável no celular, nós precisávamos criar
+                sites diferentes e encaminhar com base no tamanho da tela.
+              </p>
+              <p>
+                Mas isso fazia com que você tinha que reescrever seu site, e com
+                o passar do tempo, celulares com telas maiores, tablets,
+                notebooks com telas menores surgiram. E com isso nasceu ideias
+                de responsividade.
+              </p>
+              <p>Veja mais aqui:</p>
+              <p>
+                <a
+                  href="https://developer.mozilla.org/pt-BR/docs/Learn/CSS/CSS_layout/Responsive_Design"
+                  >https://developer.mozilla.org/pt-BR/docs/Learn/CSS/CSS_layout/Responsive_Design</a
+                >
+              </p>
+              <h3 id="começando-com-o-flex">Começando com o Flex</h3>
+              <p>
+                Com Flex, podemos definir que elementos vão tentar ocupar o
+                máximo possível de largura e ir gradualmente quebrando linha com
+                poucas linhas de css:
+              </p>
+              <pre class="is-hljs">
   <code class="css">
   .container {
     display: flex;
@@ -22,4 +220,82 @@ textarea, time, tt, var
     min-width: 50px;
   }
   </code>
-</pre><div class="is-flex-container to-center"><img src="/assets/mentorship/grid-flex.png"/></div><h2 id="indo-além">Indo além</h2><p>O Flex ele possui muitas funcionalidades, ao invés de eu mostrar todas aqui, eu proponho um desafio a você, existe um jogo chamado Flexfroggy, nele voce deve ajudar sapos a não afundarem usando recursos do flex.</p><p><a href="https://flexboxfroggy.com/#pt-br">https://flexboxfroggy.com/#pt-br</a></p><p>Você também pode usar como referência pro futuro, esses dois posts que são verdadeira coletâneas sobre Flex.</p><ul><li><strong>PT:</strong><a href="https://origamid.com/projetos/flexbox-guia-completo/">https://origamid.com/projetos/flexbox-guia-completo/</a></li><li><strong>EN:</strong><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a></li></ul><h2 id="próximos-passos">Próximos passos</h2><p>Nós vamos ao longo desses posts sobr HTML, CSS, e JavaScript criar um site seu. Vamos dividir em pedaços, o primeiro será o de criar o menu lateral. Utilize o template que está abaixo.</p><p>Vamos escolher uma palheta de cores para seu site, você pode conferir nesse site algumas ideias:</p><ul><li><a href="https://www.canva.com/colors/color-palettes/">https://www.canva.com/colors/color-palettes/</a></li></ul><p>Caso tenha alguma dúvida, use essas cores temporariamente:</p><ul><li><a href="https://www.canva.com/colors/color-palettes/birthday-cake/">https://www.canva.com/colors/color-palettes/birthday-cake/</a></li></ul><div class="is-flex-container to-center"><img class="border-1-dark is-fullwidth" src="/assets/mentorship/template-example.png"/></div></div></div></article></div></div><script src="/assets/js/vendors/highlight.min.js"></script><script src="/assets/js/base.js"></script><script src="/assets/js/post-page.js"></script><script src="/assets/js/hljs.js"></script><script src="/assets/js/mentorship.js"></script></body></html>
+</pre>
+              <div class="is-flex-container to-center">
+                <img src="/assets/mentorship/grid-flex.png" />
+              </div>
+              <h2 id="indo-além">Indo além</h2>
+              <p>
+                O Flex ele possui muitas funcionalidades, ao invés de eu mostrar
+                todas aqui, eu proponho um desafio a você, existe um jogo
+                chamado Flexfroggy, nele voce deve ajudar sapos a não afundarem
+                usando recursos do flex.
+              </p>
+              <p>
+                <a href="https://flexboxfroggy.com/#pt-br"
+                  >https://flexboxfroggy.com/#pt-br</a
+                >
+              </p>
+              <p>
+                Você também pode usar como referência pro futuro, esses dois
+                posts que são verdadeira coletâneas sobre Flex.
+              </p>
+              <ul>
+                <li>
+                  <strong>PT:</strong>
+                  <a href="https://origamid.com/projetos/flexbox-guia-completo/"
+                    >https://origamid.com/projetos/flexbox-guia-completo/</a
+                  >
+                </li>
+                <li>
+                  <strong>EN:</strong>
+                  <a
+                    href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+                    >https://css-tricks.com/snippets/css/a-guide-to-flexbox/</a
+                  >
+                </li>
+              </ul>
+              <h2 id="próximos-passos">Próximos passos</h2>
+              <p>
+                Nós vamos ao longo desses posts sobr HTML, CSS, e JavaScript
+                criar um site seu. Vamos dividir em pedaços, o primeiro será o
+                de criar o menu lateral. Utilize o template que está abaixo.
+              </p>
+              <p>
+                Vamos escolher uma palheta de cores para seu site, você pode
+                conferir nesse site algumas ideias:
+              </p>
+              <ul>
+                <li>
+                  <a href="https://www.canva.com/colors/color-palettes/"
+                    >https://www.canva.com/colors/color-palettes/</a
+                  >
+                </li>
+              </ul>
+              <p>Caso tenha alguma dúvida, use essas cores temporariamente:</p>
+              <ul>
+                <li>
+                  <a
+                    href="https://www.canva.com/colors/color-palettes/birthday-cake/"
+                    >https://www.canva.com/colors/color-palettes/birthday-cake/</a
+                  >
+                </li>
+              </ul>
+              <div class="is-flex-container to-center">
+                <img
+                  class="border-1-dark is-fullwidth"
+                  src="/assets/mentorship/template-example.png"
+                />
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+    <script src="/assets/js/vendors/highlight.min.js"></script>
+    <script src="/assets/js/base.js"></script>
+    <script src="/assets/js/post-page.js"></script>
+    <script src="/assets/js/hljs.js"></script>
+    <script src="/assets/js/mentorship.js"></script>
+  </body>
+</html>
