@@ -64,7 +64,7 @@ A tríade do desenvolvimento front é o HTML, CSS, e JavaScript. Por mais que te
 #### Landing page
 
 <img
-  src="/assets/images/posts/assets/2021-09-27-ideias-para-seu-portfolio-01.webp"
+  src="/assets/includes/2021-09-27-ideias-para-seu-portfolio-01.png"
   alt="Codecademy Landing Page"
 />
 
@@ -99,7 +99,7 @@ Não se esqueça de incluir uma sessão para o catálogo, e talvez depoimentos s
 #### Componente de cadastro para newsletter
 
 <img
-  src="/assets/images/posts/assets/2021-09-27-ideias-para-seu-portfolio-02.webp"
+  src="/assets/includes/2021-09-27-ideias-para-seu-portfolio-02.png"
   alt="Filipedeschamps Newsletter"
 />
 
@@ -131,7 +131,7 @@ Não se esqueça de validar o e-mail do usuário, pode ser uma validação simpl
 #### Buscador do Github
 
 <img
-  src="/assets/images/posts/assets/2021-09-27-ideias-para-seu-portfolio-03.webp"
+  src="/assets/includes/2021-09-27-ideias-para-seu-portfolio-03.png"
   alt="Github searcher"
 />
 
@@ -170,7 +170,7 @@ Por conta do Back-end ser muito vasto em linguagens, eu irei indicar as que eu m
 
 <img
   class="image is-fullwidth"
-  src="/assets/images/posts/assets/2021-09-27-ideias-para-seu-portfolio-04.webp"
+  src="/assets/includes/2021-09-27-ideias-para-seu-portfolio-04.png"
   alt="Header example"
 />
 
@@ -194,7 +194,7 @@ Com isso em mente, você pode construir uma API que dado o navegador da requisi�
 #### API Restful que responda JSON e XML
 
 <img
-  src="/assets/images/posts/assets/2021-09-27-ideias-para-seu-portfolio-05.webp"
+  src="/assets/includes/2021-09-27-ideias-para-seu-portfolio-05.png"
   alt="Rest example"
 />
 
@@ -226,7 +226,7 @@ E elas são extremamente importantes para os softwares modernos, o desafio que e
 
 <img
   class="image is-fullwidth"
-  src="/assets/images/posts/assets/2021-09-27-ideias-para-seu-portfolio-06.webp"
+  src="/assets/includes/2021-09-27-ideias-para-seu-portfolio-06.png"
   alt="JWT logo"
 />
 
@@ -263,7 +263,7 @@ Vejo você no próximo!! Byeeee~
 <div class="has-text-centered">
   <img
     width="390"
-    src="/assets/images/posts/assets/octo-dancing.gif"
+    src="/assets/includes/octo-dancing.gif"
     alt="Image from the post"
   />
 </div>

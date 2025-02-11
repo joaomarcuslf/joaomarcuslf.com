@@ -35,14 +35,14 @@ Para uma primeira versão, eu irei utilizar uma versão simplificada <a href="ht
 ### 1. Vá na sua página inicial do Github e procure por esse botão de "Criar repositório"
 
 <img
-  src="/assets/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-00.webp"
+  src="/assets/includes/2021-09-21-criando-seu-primeiro-site-com-github-pages-00.png"
   alt="Image from the post"
 />
 
 ### 2. Em seguida coloque o nome do repositório seguindo o seguinte padrão: <code>seu-nome-de-usuário</code>.github.io
 
 <img
-  src="/assets/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-01.webp"
+  src="/assets/includes/2021-09-21-criando-seu-primeiro-site-com-github-pages-01.png"
   alt="Image from the post"
 />
 
@@ -53,7 +53,7 @@ Quando você cria um repositório com esse nome você está criando um repositó
 ### 3. Agora com o repositório criado pegue a url dele
 
 <img
-  src="/assets/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-02.webp"
+  src="/assets/includes/2021-09-21-criando-seu-primeiro-site-com-github-pages-02.png"
   alt="Image from the post"
 />
 
@@ -62,21 +62,21 @@ Não se esqueça de clicar na aba SSH, caso esse aviso em amarelo apareça, voc�
 ### 4. No VSCode digite <code>ctrl+shift+p</code> para abrir a palheta de comandos e digite <code>Git: Clone</code>
 
 <img
-  src="/assets/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-03.webp"
+  src="/assets/includes/2021-09-21-criando-seu-primeiro-site-com-github-pages-03.png"
   alt="Image from the post"
 />
 
 Dê <code>enter</code> e cole a URL que você copiou no passo anterior.
 
 <img
-  src="/assets/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-04.webp"
+  src="/assets/includes/2021-09-21-criando-seu-primeiro-site-com-github-pages-04.png"
   alt="Image from the post"
 />
 
 Quando o VSCode terminar de clonar seu repositório, abra-o em uma nova janela, e você deve ver algo desse gênero.
 
 <img
-  src="/assets/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-05.webp"
+  src="/assets/includes/2021-09-21-criando-seu-primeiro-site-com-github-pages-05.png"
   alt="Image from the post"
 />
 
@@ -85,7 +85,7 @@ Quando o VSCode terminar de clonar seu repositório, abra-o em uma nova janela, 
 ### 1. Crie um arquivo <code>index.html</code>, depois crie uma pasta chamada <code>assets</code> contendo esses outras pastas
 
 <img
-  src="/assets/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-06.webp"
+  src="/assets/includes/2021-09-21-criando-seu-primeiro-site-com-github-pages-06.png"
   alt="Image from the post"
 />
 
@@ -98,14 +98,14 @@ Caso você não tenha nada ainda nessas pastas, crie um arquivo chamado <code>.g
 ### 3. Adicione suas modificações no git (eu particularmente uso o próprio vscode para isso)
 
 <img
-  src="/assets/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-07.webp"
+  src="/assets/includes/2021-09-21-criando-seu-primeiro-site-com-github-pages-07.png"
   alt="Image from the post"
 />
 
 ### 4. Chame a palheta de comandos novamente com ctrl+shift+p e digite Git: Push
 
 <img
-  src="/assets/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-08.webp"
+  src="/assets/includes/2021-09-21-criando-seu-primeiro-site-com-github-pages-08.png"
   alt="Image from the post"
 />
 
@@ -114,7 +114,7 @@ Dê enter e todas suas modificações devem agora estar no Github
 ### 5. Pronto!
 
 <img
-  src="/assets/images/posts/assets/2021-09-21-criando-seu-primeiro-site-com-github-pages-09.webp"
+  src="/assets/includes/2021-09-21-criando-seu-primeiro-site-com-github-pages-09.png"
   alt="Image from the post"
 />
 
@@ -129,7 +129,7 @@ Vejo você no próximo!! Byeeee~
 <div class="has-text-centered">
   <img
     width="390"
-    src="/assets/images/posts/assets/octo-dancing.gif"
+    src="/assets/includes/octo-dancing.gif"
     alt="Image from the post"
   />
 </div>

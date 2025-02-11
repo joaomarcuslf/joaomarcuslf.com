@@ -104,7 +104,7 @@ Vejo você no próximo!! Byeeee~
 <div class="has-text-centered">
   <img
     width="390"
-    src="/assets/images/posts/assets/octo-dancing.gif"
+    src="/assets/includes/octo-dancing.gif"
     alt="Image from the post"
   />
 </div>

@@ -98,7 +98,7 @@ Você pode baixar o json que usaremos nesses exemplos <a href="{{ "/assets/json/
 Em seguida você pode rodar assim:
 
 <img
-  src="/assets/images/posts/assets/2021-11-02-como-buscar-dados-de-api-01.png"
+  src="/assets/includes/2021-11-02-como-buscar-dados-de-api-01.png"
   alt="Como rodar"
 />
 
@@ -324,7 +324,7 @@ Vejo você no próximo!! Byeeee~
 <div class="has-text-centered">
   <img
     width="390"
-    src="/assets/images/posts/assets/octo-dancing.gif"
+    src="/assets/includes/octo-dancing.gif"
     alt="Image from the post"
   />
 </div>
