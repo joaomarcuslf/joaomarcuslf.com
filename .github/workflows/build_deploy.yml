@@ -6,7 +6,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -14,17 +13,21 @@ jobs:
 
       - uses: actions/setup-node@v2
         with:
-          # update the Node version to meet your needs
-          node-version: 16
+          node-version: "lts/*"
           cache: npm
 
       - name: Build
         run: |
-          npm ci
-          # configure the build here
-
-      - name: Deploy
-        run: |
-          npm ci
+          npm install
           npm run build
+
+      - name: Add nojekyll
+        run: |
           touch out/.nojekyll
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
+          publish_branch: gh-pages
