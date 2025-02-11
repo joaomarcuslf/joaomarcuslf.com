@@ -9,7 +9,7 @@ internal: true
 draft: false
 redirect_from:
   - /s/dicas-1-job
-short_url: http://go-go-url-go.com/fA6UXwkL
+short_url: http://go-go-url-go.com/5dZxxkKX
 tags:
   - Beginner
   - Internal

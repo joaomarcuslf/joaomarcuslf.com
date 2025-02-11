@@ -9,5 +9,7 @@ techs:
   - Go
   - TDD
   - Clean Arch
+  - gRPC
+  - Rest
   - Heroku
 ---

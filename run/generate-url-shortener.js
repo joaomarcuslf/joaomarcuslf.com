@@ -1,8 +1,10 @@
-const yaml = require('yaml');
+const YAML = require('yaml');
 const fs = require('fs');
 const axios = require('axios').default;
 
 const configFile = fs.readFileSync('./_config.yml', 'utf8');
+
+const parsedConfig = YAML.parse(configFile)
 
 const posts = fs.readdirSync('./_posts');
 
@@ -54,7 +56,7 @@ posts.forEach(async (post) => {
       ob.short_url = data.short_url;
     } else {
       const { data } = await axios.post(`https://vast-thicket-55540.herokuapp.com/create-short-url`, {
-        "long_url": configFile.url + ob.link
+        "long_url": parsedConfig.url + ob.link
       });
 
       ob.short_url = data.short_url;
