@@ -1,0 +1,24 @@
+{
+    "recommendations": [
+        "gluons.vscode-atom-sass-snippet",
+        "formulahendry.auto-close-tag",
+        "formulahendry.auto-rename-tag",
+        "naumovs.color-highlight",
+        "ms-azuretools.vscode-docker",
+        "editorconfig.editorconfig",
+        "vincaslt.highlight-matching-tag",
+        "mohd-akram.vscode-html-format",
+        "zignd.html-css-class-completion",
+        "bierner.markdown-checkbox",
+        "telesoho.vscode-markdown-paste-image",
+        "bierner.markdown-preview-github-styles",
+        "mdickin.markdown-shortcuts",
+        "darkriszty.markdown-table-prettify",
+        "davidanson.vscode-markdownlint",
+        "miguel-savignano.ruby-symbols",
+        "mrmlnc.vscode-scss",
+        "redhat.vscode-yaml",
+        "ginfuru.ginfuru-vscode-jekyll-syntax",
+        "ginfuru.vscode-jekyll-snippets"
+    ]
+}

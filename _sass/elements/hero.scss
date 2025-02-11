@@ -16,11 +16,19 @@
   }
 
   &:not(.is-success) * {
-    color: $tertiary
+    color: $tertiary;
+
+    &.progress {
+      background-color: $quinary;
+    }
   }
 
   &.is-success *, &.is-light * {
-    color: $quinary
+    color: $quinary;
+
+    &.progress {
+      background-color: $tertiary;
+    }
   }
 
   &.is-dark {
