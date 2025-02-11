@@ -7,6 +7,11 @@ import gulpWebp from 'gulp-webp';
 import gulpUglify from 'gulp-uglify';
 import gulpImageResize from 'gulp-image-resize';
 
+import imageminPngquant from 'imagemin-pngquant';
+import imageminZopfli from 'imagemin-zopfli';
+import imageminMozjpeg from 'imagemin-mozjpeg';
+import imageminGiflossy from 'imagemin-giflossy';
+
 import del from 'del';
 
 import {
@@ -32,24 +37,29 @@ export const webp = () => {
 export const images = () => {
   return gulp.src(`${IMAGES_PATH}/**/*`)
     .pipe(gulpImagemin([
-      gulpImagemin.gifsicle({
-        interlaced: true
+      imageminPngquant({
+        speed: 1,
+        quality: [0.95, 1]
       }),
-      gulpImagemin.mozjpeg({
-        quality: 75,
-        progressive: true
+      imageminZopfli({
+        more: true
+
       }),
-      gulpImagemin.optipng({
-        optimizationLevel: 5
+      imageminGiflossy({
+        optimizationLevel: 3,
+        optimize: 3,
+        lossy: 2
       }),
       gulpImagemin.svgo({
         plugins: [{
-            removeViewBox: true
-          },
-          {
-            cleanupIDs: false
-          }
-        ]
+          removeViewBox: false
+        }]
+      }),
+      gulpImagemin.mozjpeg({
+        progressive: true
+      }),
+      imageminMozjpeg({
+        quality: 90
       })
     ]))
     .pipe(gulp.dest(`${DIST_PATH}/images`))
@@ -95,6 +105,7 @@ export const move = (path, target) => function _move() {
 }
 
 export const buildWebp = series(
+  clean,
   webp,
   thumbnails,
   move('./dist/images/**/*.webp', 'assets/images'),
@@ -103,10 +114,10 @@ export const buildWebp = series(
 export default series(
   clean,
   parallel(
-    webp,
     images,
     js,
   ),
+  webp,
   thumbnails,
   move('./dist/images/**/*', 'assets/images'),
   move('./dist/js/**/*', 'assets/js'),

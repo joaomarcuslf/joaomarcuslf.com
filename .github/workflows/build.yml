@@ -15,7 +15,7 @@ jobs:
 
       - name: Optimize Images 🖼️
         run: |
-          sudo apt-get install imagemagick graphicsmagick
+          sudo apt-get install imagemagick graphicsmagick libpng-dev
           npm install
           npm run build
 
