@@ -1,22 +1,3 @@
-<script>
-  function showDescription(id) {
-    var cleanUpElm = document.getElementsByClassName('event is-active');
-
-    if (cleanUpElm.length) {
-      cleanUpElm[0].classList.toggle('is-active');
-    }
-
-    var elm = document.getElementById(id);
-    elm.classList.toggle('is-active');
-
-    var description = document.getElementById("timelineDescription");
-    description.innerHTML = elm.children[1].innerHTML;
-
-    // Scroll to the element
-    smoothScroll(".timeline");
-  }
-</script>
-
 <section class="timeline hero is-light">
   <div class="hero-body">
     <h2 class="title">Work Timeline</h2>

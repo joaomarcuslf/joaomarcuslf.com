@@ -31,6 +31,7 @@ layout: default
       <div class="mentorship-lists-tree-categories">
         {% include components/mentorship-item.html item="Python" %}
         {% include components/mentorship-item.html item="Javascript" %}
+        {% include components/mentorship-item.html item="Go" %}
         {% include components/mentorship-item.html item="Ruby" %}
       </div>
 
@@ -113,8 +114,4 @@ layout: default
   </div>
 </section>
 
-<script>
-  function mailMe() {
-    window.location.href = "mailto:{{site.email}}?subject=Mentorship, your name&body=Hey, I want to talk about the mentorship."
-  }
-</script>
+<script src="{{ site.baseurl }}/js/mentorship.js"></script>
