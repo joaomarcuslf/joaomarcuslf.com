@@ -12,3 +12,4 @@ jobs:
         with:
           script: |
             console.log(context.issue);
+            console.log(context.comment);
