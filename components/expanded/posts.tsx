@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 
 import { PostMetadata } from "@/types/post";
-
 import PostView from "@/components/view//post";
 
 const getTags = (posts: PostMetadata[]) => {

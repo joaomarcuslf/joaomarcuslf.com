@@ -15,7 +15,7 @@ export default function Navbar() {
     if (isMenuOpen) {
       setIsMenuOpen(false);
     }
-  }, [activeLink]);
+  }, [activeLink, isMenuOpen]);
 
   return (
     <nav

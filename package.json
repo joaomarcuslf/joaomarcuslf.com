@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
@@ -24,6 +25,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "express": "^4.19.2",
+    "husky": "^9.0.11",
     "sass": "^1.77.4",
     "typescript": "^5"
   }
