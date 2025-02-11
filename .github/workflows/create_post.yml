@@ -1,44 +1,49 @@
-name: Create Post
+name: Auto feed creator
 on:
   issue_comment:
     types: [created]
 jobs:
   issue_commented:
-    name: Issue comment
+    name: On Issue comment
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
 
-      - name: Create file
+      - name: Create file from issue payload
         uses: actions/github-script@v4
         with:
           script: |
             const fs = require('fs');
 
-            const { author_association, body, created_at, issue } = context.payload.comment
+            const { author_association, body, created_at } = context.payload.comment
+            const { labels } = context.issue
 
-            console.log(issue.labels)
+            if (author_association == 'OWNER') {
+              const date = created_at.split("T")[0]
 
-            //if (author_association == 'OWNER') {
-            //  console.log(context.payload.comment)
-            //
-            //  const date = created_at.split("T")[0]
-            //
-            //  const title = body.split("\r\n").reduce(function (acc, elm) {
-            //    if (elm.includes('title: ')) {
-            //      return elm.replace('title: ', '').split('"').join('')
-            //    }
-            //    return acc;
-            //  }, "")
-            //
-            //  const name = title.replace(/[^\w\s]/gi, '').toLowerCase().split(" ").join("-")
-            //
-            //  fs.writeFileSync( `_posts/${date}-${name}.md`, body )
-            //}
+              const title = body.split("\r\n").reduce(function (acc, elm) {
+                if (elm.includes('title: ')) {
+                  return elm.replace('title: ', '').split('"').join('')
+                }
+                return acc;
+              }, "")
+
+              const layout = body.split("\r\n").reduce(function (acc, elm) {
+                if (elm.includes('layout: ')) {
+                  return elm.replace('layout: ', '').split('"').join('')
+                }
+                return acc;
+              }, "")
+
+
+              const name = title.replace(/[^\w\s]/gi, '').toLowerCase().split(" ").join("-")
+
+              fs.writeFileSync( `_${layout}/${date}-${name}.md`, body )
+            }
 
       - name: Commit file
         if: ${{ github.event.comment.author_association == 'OWNER'}}
         uses: EndBug/add-and-commit@v7
         with:
-          message: "Add Post from Issue"
+          message: "Auto add file to feed"
