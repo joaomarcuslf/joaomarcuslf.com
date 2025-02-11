@@ -3,6 +3,7 @@
 ## Getting started:
 
 ```sh
+    gem install github-pages
     jekyll serve
 ```
 
