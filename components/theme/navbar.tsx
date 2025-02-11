@@ -12,10 +12,8 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    if (isMenuOpen) {
-      setIsMenuOpen(false);
-    }
-  }, [activeLink, isMenuOpen]);
+    setIsMenuOpen(false);
+  }, [activeLink]);
 
   return (
     <nav
