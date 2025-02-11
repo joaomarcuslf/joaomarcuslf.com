@@ -122,6 +122,10 @@
           .projects-tags-level {
             flex: 1;
           }
+
+          .tag.is-highlight {
+            background-color: rgba($pre, .7);
+          }
         }
       }
     }

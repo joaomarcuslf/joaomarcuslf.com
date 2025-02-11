@@ -28,6 +28,9 @@
       <nav class="projects-tags-level level is-mobile">
         <div class="level-left">
           <div class="tags">
+            {% if include.collaborator %}
+              <span class="tag is-highlight">Collaborating</i></span>
+            {% endif %}
             {% for tech in include.techs %}
               <span class="tag">{{tech}}</i></span>
             {% endfor %}

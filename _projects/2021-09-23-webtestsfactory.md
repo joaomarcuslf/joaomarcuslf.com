@@ -5,7 +5,7 @@ repo: web-tests-factory
 user: arcoutch
 link: https://github.com/arctouch/web-tests-factory
 main: bash
-collabarator: true
+collaborator: true
 techs:
   - Bash
   - TDD
