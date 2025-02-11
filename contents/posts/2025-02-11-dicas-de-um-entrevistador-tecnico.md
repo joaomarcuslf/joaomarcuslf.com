@@ -16,7 +16,7 @@ tags:
   - Software Development
   - Data Structures
   - Software Engineering
-  - Algorithms
+  - Career
   - Programming
 ---
 
