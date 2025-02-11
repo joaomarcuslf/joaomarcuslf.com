@@ -1,7 +1,6 @@
----
 layout: skill
 name: "Go"
-progress: 84
+progress: 87
 categories:
   - gRPC
   - Concurrent Go
