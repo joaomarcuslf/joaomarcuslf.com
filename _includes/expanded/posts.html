@@ -3,6 +3,7 @@
     <h2 class="images-section-title">Posts</h2>
 
     <div class="tags">
+      <a id="tag-all" href="#all" class="tag is-info" onclick="filterPosts(getTagFromEvent(event))">Clear</a>
       {% for tag in site.tags %}
         {% assign filtered = tag[1] | where: 'draft', false %}
 

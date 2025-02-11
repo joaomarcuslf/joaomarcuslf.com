@@ -46,15 +46,15 @@ function smoothScroll(selector) {
 }
 
 function expandView(target) {
-  var $highlights = document.querySelector("#" + target + " .is-highlight");
-  var $button = document.querySelector("#" + target + " .button.has-icon");
+  var $highlights = document.querySelector('#' + target + ' .is-highlight');
+  var $button = document.querySelector('#' + target + ' .button.has-icon');
 
   $button.classList.toggle('is-flipped');
 
   $highlights.classList.toggle('is-expanded');
 
   setTimeout(function () {
-    smoothScroll("#" + target);
+    smoothScroll('#' + target);
   }, 250)
 }
 
@@ -68,18 +68,18 @@ function showDescription(id) {
   var elm = document.getElementById(id);
   elm.classList.toggle('is-active');
 
-  var description = document.getElementById("timelineDescription");
+  var description = document.getElementById('timelineDescription');
   description.innerHTML = elm.children[1].innerHTML;
 
   // Scroll to the element
-  smoothScroll(".timeline");
+  smoothScroll('.timeline');
 }
 
 function checkURLForTag() {
   var tag = window.location.hash.substr(1);
 
   if (tag) {
-    var activerOne = document.getElementById("tag-" + tag);
+    var activerOne = document.getElementById('tag-' + tag);
 
     if (activerOne) {
       activerOne.classList.add('is-dark');
@@ -91,7 +91,7 @@ function checkURLForTag() {
 function getTagFromEvent(event) {
   event.preventDefault();
 
-  var activerOne = document.querySelector(".tag.is-dark");
+  var activerOne = document.querySelector('.tag.is-dark');
 
   if (activerOne) {
     activerOne.classList.remove('is-dark');
@@ -103,14 +103,14 @@ function getTagFromEvent(event) {
 }
 
 function filterPosts(tag) {
-  var $posts = document.querySelectorAll(".images-section-item");
+  var $posts = document.querySelectorAll('.images-section-item');
 
   for (var i = 0; i < $posts.length; i++) {
     var $post = $posts[i];
 
-    var tags = $post.dataset.tags.toLowerCase().replace(/\ /g, "-").split(',');
+    var tags = $post.dataset.tags.toLowerCase().replace(/\ /g, '-').split(',');
 
-    if (tags.indexOf(tag) < 0) {
+    if (tags.indexOf(tag) < 0 && tag !== 'all') {
       $post.classList.add('is-hidden');
     } else {
       $post.classList.remove('is-hidden');
