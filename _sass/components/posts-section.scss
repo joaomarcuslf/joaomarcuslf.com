@@ -10,10 +10,10 @@
 @import "../generics/horizontal-center-container";
 
 .post {
-  margin: 27px .5em;
+  margin: 27px 0;
 
   @include for-tablet-portrait-and-down {
-    margin: 10px 0px;
+    margin: 10px 0;
   }
 
   .post-content {
@@ -70,15 +70,7 @@
     max-height: 500px;
     width: 100%;
 
-    padding: .0 10%;
-
-    @include for-tablet-landscape-and-down {
-      padding: 0% 5%;
-    }
-
-    @include for-tablet-portrait-and-down {
-      padding: 0;
-    }
+    padding: 0;
   }
 
   blockquote {

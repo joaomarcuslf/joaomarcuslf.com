@@ -12,11 +12,20 @@ layout: default
       {{page.subtitle}}
     </h2>
 
-    <div class="tags">
+    <div class="tags mb-0">
       {% for tag in page.tags %}
         <a id="tag-{{tag}}" href="/posts#{{ tag | slugify }}" class="tag is-light" >{{ tag }}</a>
       {% endfor %}
     </div>
+
+    <small>
+      {% capture words %}
+        {{ page.content | number_of_words | minus: 250 }}
+      {% endcapture %}
+      {% unless words contains "-" %}
+        {{ words | plus: 250 | divided_by: 180 | append: " minutes to read" }}
+      {% endunless %}
+    </small>
   </div>
 
 

@@ -133,6 +133,35 @@ No exemplo acima é a Newsletter do <a href="https://filipedeschamps.com.br/news
 
 #### Buscador do Github
 
+<img
+  src="/assets/images/posts/assets/2021-09-27-ideias-para-seu-portfolio-03.png"
+  alt="Github searcher"
+/>
+
+Você conhece o Github, certo? Você sabia que ele te permite acessar a API dele? Você pode checar toda a documentação dela aqui: <span class="code"><a target="blank" href="https://docs.github.com/en/rest">https://docs.github.com/en/rest</a></span>.
+
+Que tal você agora que conhece essa API, criar você mesmo um navegador de Github? Você pode adicionar um campo de busca que permita você buscar por usuário, e quando você selecionar esse usuário você mostre os repositórios, mostrando os commits, as estrelas.
+
+Esse tipo de projeto é ótimo pois você estará trabalhando consumindo uma API, e mostrando na tela, como esse tipo de projeto é mais elaborado, eu sugiro que você use um framework.
+
+###### Tecnologias recomentadas:
+
+<nav class="level is-mobile">
+  <div class="level-left">
+    <div class="tags">
+      <a class="tag is-dark" href="https://vuejs.org/" target="blank">Vue</a>
+      <a class="tag is-dark" href="https://reactjs.org/" target="blank">React</a>
+      <a class="tag is-dark" href="https://angular.io/" target="blank">Angular</a>
+    </div>
+  </div>
+</nav>
+
+<blockquote class="is-family-monospace">
+  <strong>Extra tip:</strong> <br />
+
+  Que tal além de criar o projeto você tentar também criar testes para o projeto? Pesquise sobre TDD, é uma forma de você escrever testes antes do código, o que faz com que seu código tenha uma segurança de como ele deve rodar.
+</blockquote>
+
 ### Back-end
 
 #### API Restful que responda JSON e XML
@@ -151,7 +180,7 @@ No exemplo acima é a Newsletter do <a href="https://filipedeschamps.com.br/news
 
 ### Concluindo
 
-Espero que você tenha gostado das ideias. Nossa área ela possui muitos desafios diversos, porém se você conhecer a base, tornará seu progresso muito menos doloso.
+Espero que você tenha gostado das ideias. Nossa área ela possui muitos desafios diversos, porém se você sober a base, seu progresso será muito menos doloroso.
 
 Vejo você no próximo!! Byeeee~
 
