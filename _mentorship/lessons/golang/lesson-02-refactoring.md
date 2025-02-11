@@ -177,3 +177,5 @@ func main() {
 ### Concluindo
 
 Nessa aula nós só refatoramos o código, na próxima nós vamos adicionar um servidor HTTP, e vamos mudar os inputs, e outputs para algo mais interessante.
+
+{% include components/golang-mentorship-footer.md %}

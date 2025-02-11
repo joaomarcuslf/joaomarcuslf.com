@@ -33,3 +33,5 @@ Esse projeto tem a premissa de ser algo simples, porém explorando vários padr�
 ## O que é esperado de VOCÊ?
 
 Bom, primeiro eu espero que você tenha interesse em acompanhar esse tutorial. Segundo eu parto do princípio que você sabe pelo menos o básico de programação, lógica de programação, e está familiarizado com alguns termos. Muitas vezes eu irei linkar outras posts, ou artigos para você se ambientar com os termos que utilizo, então é esperado que você tenha interesse em acompanhar outros tutoriais.
+
+{% include components/golang-mentorship-footer.md %}

@@ -172,14 +172,4 @@ Se, você estiver usando, e é recomendado que esteja, utilizando Git, não se e
 qrcode.png
 ```
 
-Link do projeto:
-
-<div>
-  {%
-    include components/project-card.html
-      main="go"
-      name="go-mentorship"
-      user="joaomarcuslf"
-      repo="go-mentorship"
-  %}
-</div>
+{% include components/golang-mentorship-footer.md %}

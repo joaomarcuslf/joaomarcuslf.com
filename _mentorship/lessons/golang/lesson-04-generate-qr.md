@@ -308,3 +308,5 @@ func GenerateQr(w http.ResponseWriter, r *http.Request) {
 ```
 
 Pronto, agora seu código está bem mais conciso e simples. Com isso nós concluimos essa nova parte. No próximo passo, vamos adicionar a lib [gin-gonic/gin](https://github.com/gin-gonic/gin), o que irá facilitar transformar essa aplicação em uma API.
+
+{% include components/golang-mentorship-footer.md %}

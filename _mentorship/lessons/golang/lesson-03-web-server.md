@@ -349,3 +349,5 @@ Abra `.vscode/launch.json`:
 ```
 
 Agora é só abrir a Tab `Run and Debug` e clique em `Live Reload Server`. Prontinho, agora você não precisará rodar tantos comandos para atualizar seu servidor.
+
+{% include components/golang-mentorship-footer.md %}
