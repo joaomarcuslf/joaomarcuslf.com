@@ -10,10 +10,7 @@ draft: false
 lang: pt
 tags:
   - Beginner
-  - Internal
   - Front-end
-  - Back-end
-  - Full-stack
   - Career
   - Portuguese
 ---

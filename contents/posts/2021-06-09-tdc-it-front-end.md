@@ -7,8 +7,8 @@ link: https://www.linkedin.com/posts/joaomarcuslf_tdc-eventogratuito-tecnologia-
 lang: pt
 tags:
   - Front-end
+  - Portuguese
   - Presentation
   - Middle
   - Arctouch
-  - Portuguese
 ---

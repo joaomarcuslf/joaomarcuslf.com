@@ -10,11 +10,9 @@ draft: false
 lang: pt
 tags:
   - Beginner
-  - Internal
-  - Hard-skills
-  - Collab
   - Career
   - Portuguese
+  - Hard-skills
 ---
 
 Se você está procurando seu primeiro emprego na área de desenvolvimento/TI, seja ele de Front-end, Back-end, Mobile, DevOps ou qualquer outra <span class="code">keyword</span>, você provavelmente já deve ter se deparado com alguns "nãos" e ficado sem entender o porquê. Em colaboração com a <a target="blank" href="https://twitter.com/EngineerRabbit">@EngineerRabbit</a>, nós elaboramos algumas dicas de habilidades e práticas que vão te ajudar a conseguir o seu primeiro emprego na carreira de dev.

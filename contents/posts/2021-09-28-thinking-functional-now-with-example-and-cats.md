@@ -7,10 +7,10 @@ link: https://joaomarcuslf.medium.com/thinking-functional-now-with-example-and-c
 lang: en
 tags:
   - Beginner
-  - Middle
-  - Arctouch
-  - Functional Programming
   - Algorithms
   - Programming
   - English
+  - Middle
+  - Arctouch
+  - JavaScript
 ---

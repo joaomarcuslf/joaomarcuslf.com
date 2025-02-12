@@ -10,9 +10,8 @@ draft: false
 lang: pt
 tags:
   - Beginner
-  - Internal
-  - Personal
   - Portuguese
+  - Personal
 ---
 
 Antigamente, era muito comum que as pessoas compartilhassem seus Setups, e eu particularmente adorava ler esses tipos de posts, até que eu decidi configurar o meu próprio Setup, e eu decidi fazer em cima do `oh-my-zsh` junto com alguns plugins, e uma adaptação de um tema muito famoso dele. E como eu sou muito bom em seguir modas que já morreram, resolvi fazer um post explicando o passo a passo de como eu inicio meu ambiente de desenvolvimento.

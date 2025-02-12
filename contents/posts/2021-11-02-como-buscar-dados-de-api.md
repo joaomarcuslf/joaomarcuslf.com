@@ -10,11 +10,10 @@ draft: false
 lang: pt
 tags:
   - Beginner
-  - Internal
-  - Hard-skills
-  - HTTP
   - Career
   - Portuguese
+  - Hard-skills
+  - JavaScript
 ---
 
 Você já precisou chamar uma API enquanto trabalhava no seu Front? Talvez você tenha encontrado um código na internet, mas não teve certeza de como ele funciona ou não entendeu todas as partes dele. Hoje, eu quero te ajudar a entender como fazer esse tipo de chamada, ou, como vamos chamar a partir de agora, <span class="code">requisições HTTP</span>.

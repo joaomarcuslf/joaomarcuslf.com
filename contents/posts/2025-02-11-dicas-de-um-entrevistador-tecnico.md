@@ -9,15 +9,13 @@ internal: true
 draft: false
 lang: pt
 tags:
-  - Portuguese
-  - Interview
-  - Data Structures
-  - Computer Science
-  - Software Development
-  - Data Structures
-  - Software Engineering
   - Career
+  - Data Structures
+  - Software Development
+  - Software Engineering
+  - Computer Science
   - Programming
+  - Portuguese
 ---
 
 Após mais de quatro anos conduzindo entrevistas técnicas, percebi que muitos candidatos cometem erros comuns que poderiam ser evitados com algumas orientações. Entrevistas podem ser desafiadoras, especialmente para quem fica nervoso ou ansioso, mas a boa notícia é que essa é uma habilidade que pode ser treinada e aprimorada. Neste artigo, vou compartilhar dicas práticas para cada etapa do processo de entrevista, desde a apresentação até o teste técnico. Vamos lá!

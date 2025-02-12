@@ -10,9 +10,8 @@ draft: false
 lang: en
 tags:
   - Beginner
-  - Internal
-  - Personal
   - English
+  - Personal
 ---
 
 In the past, it was quite common for people to share their setups, and I particularly loved reading these kinds of posts, until I decided to configure my own setup. I built it on top of `oh-my-zsh` with some plugins and an adaptation of one of its very popular themes. And since I'm great at following trends that have already faded, I decided to write a post explaining the step-by-step process of how I set up my development environment.

@@ -7,8 +7,7 @@ link: https://joaomarcuslf.medium.com/os-2-cen%C3%A1rios-problem%C3%A1ticos-mais
 lang: pt
 tags:
   - Front-end
-  - Teaser
+  - English
   - Middle
   - Arctouch
-  - English
 ---

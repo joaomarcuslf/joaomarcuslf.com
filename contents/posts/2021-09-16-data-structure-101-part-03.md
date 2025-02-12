@@ -8,11 +8,9 @@ lang: en
 tags:
   - Advanced
   - Data Structures
-  - Computer Science
   - Software Development
-  - Data Structures
   - Software Engineering
+  - Computer Science
   - Algorithms
   - Programming
-  - English
 ---
