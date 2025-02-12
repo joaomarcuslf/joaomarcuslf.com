@@ -88,7 +88,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
               <Link
                 id={`tag-${tag}`}
                 key={`tag-${tag}`}
-                href={`/posts#${tag}`}
+                href={`/blog#${tag}`}
                 className="tag is-light"
               >
                 {tag}

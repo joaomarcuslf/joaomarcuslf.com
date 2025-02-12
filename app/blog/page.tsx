@@ -9,6 +9,7 @@ import { getContent, getContentMetadataList } from "@/utils/metadata";
 
 export let metadata = {
   title: `Blog - ${site.name}`,
+  description: `I write a lot of Techinical Articles, about Technology, Career, Data Structures, for all levels. ${site.description}`,
 };
 
 export default function Posts() {

@@ -1,7 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default {
   "name": "João Marcus Fernandes - Staff Software Engineer | Back-end & Cloud Specialist",
-  "description": "I'm a seasoned Software Engineer with over 9 years of experience, specializing in Back-end development, Cloud Computing, and Tech Leadership. I share my knowledge through mentorship, technical articles, and open-source contributions. Explore my work and insights here.",
+  "description": "I'm a seasoned Software Engineer since 2014, specializing in Back-end development, Cloud Computing, and Tech Leadership. I share my knowledge through mentorship, technical articles, and open-source contributions. Explore my work and insights here.",
   "author": "João Marcus de Lemos Fernandes",
   "username": "joaomarcuslf",
   "canonical": "https://joaomarcuslf.com/",

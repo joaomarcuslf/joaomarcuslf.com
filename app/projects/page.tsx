@@ -9,6 +9,7 @@ import { getContent, getContentMetadataList } from "@/utils/metadata";
 
 export let metadata = {
   title: `Projects - ${site.name}`,
+  description: `In this page you can check some of my projects, including open-source contributions, personal projects, and more. ${site.description}`,
 };
 
 export default function Projects() {
