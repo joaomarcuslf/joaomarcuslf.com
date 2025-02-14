@@ -5,6 +5,7 @@ import Markdown from "markdown-to-jsx";
 import matter from "gray-matter";
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 import site from "@/site";
 import PostView from "@/components/view/post";
@@ -77,6 +78,10 @@ export default function PostPage({ params }: { params: { slug: string } }) {
   const relatedPosts = postsMetadata
     .filter((p) => p.tags.some((t) => post.tags.includes(t)))
     .slice(0, 3);
+
+  if (params.slug === post.key.replace("contents/posts/", "")) {
+    redirect(getCleanSlug(params.slug));
+  }
 
   return (
     <>
