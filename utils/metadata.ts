@@ -66,7 +66,12 @@ export function getContent<T>(domain: string, serializer: Serializer<T>, slug: s
   domain?: string;
 }): T & Contentdata {
   const folder = `contents/${domain}`;
-  const fileName = folder + `/${slug}.md`;
+
+  const files = fs.readdirSync(folder);
+
+  const foundFile = files.find((file) => file.toLowerCase().includes(slug.toLowerCase()));
+
+  const fileName = `${folder}/${foundFile}`;
 
   const content = fs.readFileSync(fileName, 'utf8');
 

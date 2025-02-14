@@ -15,6 +15,7 @@ import { calcRT } from "@/utils/text";
 import "@/public/css/hljs.scss";
 import CalendarButton from "@/components/theme/calendar-button";
 import Description from "@/components/theme/description";
+import { getCleanSlug } from "@/utils/helpers";
 
 const postsMetadata = getContentMetadataList<PostMetadata>(
   "posts",
@@ -23,9 +24,10 @@ const postsMetadata = getContentMetadataList<PostMetadata>(
 );
 
 export async function generateStaticParams() {
-  return postsMetadata.map((post) => ({
-    slug: post.key,
-  }));
+  return postsMetadata.flatMap((post) => [
+    { slug: post.key },
+    { slug: getCleanSlug(post.key) },
+  ]);
 }
 
 export const generateMetadata = async ({
@@ -69,6 +71,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
     postMetadataSerializer,
     params.slug
   );
+
   const readingTime = calcRT(post.content);
 
   const relatedPosts = postsMetadata

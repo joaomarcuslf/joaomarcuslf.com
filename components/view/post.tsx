@@ -2,11 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { PostMetadata } from "@/types/post";
+import { getCleanSlug } from "@/utils/helpers";
 
 export default function PostView({ post }: { post: PostMetadata }) {
   const WrapperComponent = ({ children }: { children: React.ReactNode}) => {
     return post.internal ? (
-      <Link className="images-section-item" href={post.slug}>
+      <Link className="images-section-item" href={getCleanSlug(post.slug)}>
         {children}
       </Link>
     ) : (

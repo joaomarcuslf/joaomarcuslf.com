@@ -50,3 +50,11 @@ export function sortMetadataByRules<T>(array: T[], rule: KeyPosition | KeyCompar
 
   return array.sort(rule)
 }
+
+export function getCleanSlug(slug: string): string {
+  if (slug.includes("/posts/")) {
+    return slug.replace(/\/?\d{4}-\d{2}-\d{2}-/, "/")
+  }
+
+  return slug.replace(/^\d{4}-\d{2}-\d{2}-/, "")
+}
