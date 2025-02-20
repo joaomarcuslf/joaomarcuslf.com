@@ -53,7 +53,7 @@ export default function Projects() {
   const description = getContent<CopyMetadata>(
     "copies",
     copyMetadataSerializer,
-    "introduction-about-me-description"
+    "introduction-description-breakdown"
   );
   const topicsMetadata = getContentMetadataList<TopicMetadata>(
     "topics",
