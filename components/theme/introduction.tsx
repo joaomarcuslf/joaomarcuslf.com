@@ -17,7 +17,7 @@ export default function Introduction({
     <section className={`introduction hero is-${theme} ${className}`}>
       <div className="hero-body">
         <h1 className="title">{title}</h1>
-        <h3 className="subtitle">{subtitle}</h3>
+        <h2 className="subtitle">{subtitle}</h2>
         <Markdown className="content is-normal has-text-centered">{content}</Markdown>
       </div>
     </section>

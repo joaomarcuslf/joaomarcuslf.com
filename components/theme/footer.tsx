@@ -13,7 +13,7 @@ export default function Footer() {
 
         <span className="icon-text mt-5 px-15 is-flex-container has-space-evenly">
           {(site?.socialMedias as SocialMetadata[])?.map((social) => (
-            <Link key={social.url} href={social.url} target="blank">
+            <Link key={social.url} href={social.url} target="blank" aria-label={`This link contains a Icon of ${social.name}`}>
               <span className="is-hidden">{social.name}</span>
               <span className="icon is-large">
                 <span className={`${social.icon} fa-lg`}> </span>

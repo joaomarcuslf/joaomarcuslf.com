@@ -27,7 +27,7 @@ export default function PostView({ post }: { post: PostMetadata }) {
         height="240"
       />
 
-      <h3 className="images-section-subtitle">{post.title}</h3>
+      <h4 className="images-section-subtitle">{post.title}</h4>
       <small>{post.lang?.toUpperCase()}</small>
     </WrapperComponent>
   );
