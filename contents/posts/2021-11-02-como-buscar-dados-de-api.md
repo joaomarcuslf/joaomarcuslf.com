@@ -3,7 +3,7 @@ layout: post
 title: Aprendendo a utilizar HTTP
 subtitle: Integrando seu Front-end com APIs de Back-end.
 img: /images/posts/como-buscar-dados-de-api.webp
-alt: prendendo a utilizar HTTP
+alt: This image contains a closed notebook, a pen, and a laptop in a table.
 link: /posts/2021-11-02-como-buscar-dados-de-api
 internal: true
 draft: false

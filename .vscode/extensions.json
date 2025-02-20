@@ -1,12 +1,6 @@
 {
   "recommendations": [
-    "gluons.vscode-atom-javascript-snippet",
-    "formulahendry.auto-close-tag",
-    "formulahendry.auto-rename-tag",
-    "naumovs.color-highlight",
     "editorconfig.editorconfig",
-    "dbaeumer.vscode-eslint",
-    "vincaslt.highlight-matching-tag"
-
+    "dbaeumer.vscode-eslint"
   ]
 }

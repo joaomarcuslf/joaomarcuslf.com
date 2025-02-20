@@ -3,7 +3,7 @@ layout: post
 title: Dicas para conseguir o seu primeiro emprego em TI
 subtitle: Quais habilidades são essenciais, e quais dicas te darão maior destaque nesse mercado concorrido.
 img: /images/posts/dicas-para-seu-primeiro-emprego.webp
-alt: Image with a Laptop and a Notebook
+alt: This is a image of a laptop, a cup of coffee, and a jar in a table.
 link: /posts/2021-10-04-dicas-para-seu-primeiro-emprego
 internal: true
 draft: false

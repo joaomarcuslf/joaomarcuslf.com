@@ -3,7 +3,7 @@ layout: post
 title: Ideias para você começar um Portfólio Dev
 subtitle: Como preencher tanto seu currículo quanto seu portfólio com ideias legais de projetos
 img: /images/posts/ideias-para-seu-portfolio.webp
-alt: Image with a Laptop and a Notebook
+alt: This is a zoomed image of a laptop with some code written.
 link: /posts/2021-09-27-ideias-para-seu-portfolio
 internal: true
 draft: false

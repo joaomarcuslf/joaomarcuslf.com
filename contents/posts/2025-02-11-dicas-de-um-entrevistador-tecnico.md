@@ -3,7 +3,7 @@ layout: post
 title: Dicas de um Entrevistador Técnico
 subtitle: Dicas para se sair bem em entrevistas técnicas
 img: /images/posts/interview-tips.webp
-alt:
+alt: This image contains two people, one black, one white, talking in a representation of a interview.
 link: /posts/2025-02-11-dicas-de-um-entrevistador-tecnico
 internal: true
 draft: false

@@ -2,7 +2,7 @@
 layout: post
 title: "Data Structure 101: Part 01"
 img: /images/posts/data-structure-101-part-01.webp
-alt: I want to do this series since I think, two or three years ago, and my motivation was that after some time working with several people, each with their level of computer science depth knowledge. I’ve…
+alt: This image contains a person writing in a notebook, a cup of coffee, and a laptop in a table.
 link: https://joaomarcuslf.medium.com/data-structure-101-part-01-54c1daed073b
 short_url: http://go-go-url-go.com/8r1gwsfA
 lang: en

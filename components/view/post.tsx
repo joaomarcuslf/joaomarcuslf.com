@@ -22,7 +22,7 @@ export default function PostView({ post }: { post: PostMetadata }) {
       <Image
         className="images-section-image"
         src={post?.img?.replace("/images", "/images/thumbnails")}
-        alt={post.alt}
+        alt={post.alt || `Image from ${post.title}`}
         width="466"
         height="240"
       />

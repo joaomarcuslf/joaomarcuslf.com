@@ -3,7 +3,7 @@ layout: post
 title: Criando seu primeiro site com GitHub Pages
 subtitle: Criando sites de forma simples com GitHub Pages
 img: /images/posts/criando-seu-primeiro-site-com-github-pages.webp
-alt: Image with a Laptop and a Notebook
+alt: This image contains a closed notebook, a bottle of water, and a laptop in a table.
 link: /posts/2021-09-21-criando-seu-primeiro-site-com-github-pages
 internal: true
 draft: false

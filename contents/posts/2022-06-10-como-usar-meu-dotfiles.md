@@ -3,7 +3,7 @@ layout: post
 title: Como usar meu Dotfiles
 subtitle: Configurações práticas para agilizar seu setup.
 img: /images/posts/como-usar-meu-dotfiles.webp
-alt: Image with a Colorized terminal.
+alt: This is a image with a Colorized terminal.
 link: /posts/2022-06-10-como-usar-meu-dotfiles
 internal: true
 draft: false
