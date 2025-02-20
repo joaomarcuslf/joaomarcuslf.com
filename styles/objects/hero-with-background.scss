@@ -2,6 +2,15 @@
 
 @import "../tools/medias-queries/all";
 
+body::after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  content: url("/images/background-home.webp") url("/images/background-projects.webp") url("/images/background-mentorship.webp") url("/images/background-posts.webp") url("/images/background-mentorship.webp");
+}
+
 .hero {
   &.has-background {
     min-height: 65vh;
