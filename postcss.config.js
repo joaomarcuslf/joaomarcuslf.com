@@ -23,7 +23,6 @@ let plugins = [
 ];
 
 if (process.env.NODE_ENV === "production") {
-  console.log("Production mode, adding PurgeCSS to PostCSS plugins");
   plugins.push([
     "@fullhuman/postcss-purgecss",
     {
