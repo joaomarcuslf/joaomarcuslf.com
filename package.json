@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "npx serve@latest out",
     "lint": "next lint",
-    "prepare": "husky"
+    "prepare": "husky",
+    "purgecss": "purgecss --css out/_next/static/css/*.css --content out/**/*.{html,js} --output out/_next/static/css"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
@@ -30,6 +31,7 @@
     "eslint-config-next": "14.2.3",
     "express": "^4.19.2",
     "husky": "^9.0.11",
+    "purgecss": "^7.0.2",
     "sass": "^1.77.4",
     "typescript": "^5"
   }
