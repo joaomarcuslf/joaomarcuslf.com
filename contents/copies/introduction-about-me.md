@@ -3,7 +3,7 @@ title: Hi, I'm João Marcus Fernandes
 subtitle: Staff Software Engineer | Back-end Specialist
 ---
 
-**Tech Lead | Cloud Computing | Go / Golang | Node.js | MongoDB**
+<h4>Tech Lead | Cloud Computing | Go / Golang | Node.js | MongoDB</h4>
 
 I’m a seasoned software engineer with over 9 years of experience building scalable, efficient, and innovative solutions. I’ve worked with companies across **Brazil**, **North America (USA and Canada)**, **Europe**, and **Asia**, focusing on **Back-end Engineering**, **Software Architecture**, and **Tech Leadership**.
 
