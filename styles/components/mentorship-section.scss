@@ -1,0 +1,87 @@
+@import "../settings/settings";
+
+@import "../tools/truncate";
+@import "../tools/opacity-animate";
+@import "../tools/medias-queries/all";
+@import "../tools/is-even";
+@import "../tools/not-last";
+
+@import "../generics/vertical-center-container";
+@import "../generics/horizontal-center-container";
+
+.mentorship {
+  margin: 0;
+
+  @include for-tablet-portrait-and-down {
+    margin: 10px 0;
+  }
+
+  .mentorship-content {
+    font-size: 1rem;
+
+    @include for-tablet-landscape-up {
+      font-weight: 500;
+
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        padding-top: 0.5rem;
+        margin-top: 0;
+      }
+
+      h2,
+      h3 {
+        padding-top: 0.8rem;
+      }
+    }
+
+    pre {
+      padding: 0 !important;
+    }
+  }
+
+  .level {
+    padding-bottom: 0.5rem;
+  }
+
+  .mentorship-content {
+    margin: 1% 15% 2%;
+
+    @include for-tablet-landscape-and-down {
+      margin: 1% 5% 2%;
+    }
+
+    @include for-tablet-portrait-and-down {
+      margin: 5px 15px 10px;
+    }
+
+    .title {
+      color: $quinary;
+
+      @include for-tablet-portrait-and-down {
+        font-size: 1.5rem;
+      }
+    }
+
+    .subtitle {
+      color: rgba($senary, 0.75);
+
+      @include for-tablet-portrait-and-down {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .post-cover-image {
+    max-height: 600px;
+    width: 100%;
+
+    padding: 0;
+  }
+
+  blockquote {
+    font-size: medium !important;
+  }
+}

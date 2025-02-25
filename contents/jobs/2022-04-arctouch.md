@@ -1,6 +1,6 @@
 ---
 start_date: "04/2022"
-end_date: "~"
+end_date: "03/2025"
 company_name: Arctouch
 company_img: arctouch.webp
 company_ref: https://www.linkedin.com/company/arctouch/

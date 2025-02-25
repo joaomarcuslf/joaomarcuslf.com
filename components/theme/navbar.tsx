@@ -60,11 +60,11 @@ export default function Navbar() {
             text="Projects"
             isActive={activeLink?.includes("/projects")}
           />
-          {/* <NavItem
-            href="/mentorship"
-            text="Mentorship"
-            isActive={activeLink?.includes("/mentorship")}
-          /> */}
+          <NavItem
+            href="/mentorships"
+            text="Mentorships"
+            isActive={activeLink?.includes("/mentorships")}
+          />
         </div>
 
         <div className="navbar-end">
