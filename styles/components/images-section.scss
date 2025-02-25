@@ -88,11 +88,11 @@
           padding-bottom: 1.5rem;
 
           @include is-even {
-            padding-left: 0.5rem;
+            padding-left: 0rem;
           }
 
           @include is-odd {
-            padding-right: 0.5rem;
+            padding-right: 0rem;
           }
         }
       }
@@ -101,6 +101,8 @@
         width: 100%;
 
         flex: 0 0 100% !important;
+
+        padding: 0 0 1.5rem 0;
       }
 
       &:hover {
